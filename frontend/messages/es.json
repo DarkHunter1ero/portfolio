@@ -1,0 +1,299 @@
+{
+  "Metadata": {
+    "title": "Diego Silva — Desarrollador Full Stack Senior",
+    "description": "Desarrollador Full Stack Senior especializado en aplicaciones empresariales seguras y escalables. Más de 6 años construyendo plataformas de identidad digital, microservicios y sistemas de autenticación con Java, Spring Boot y React.",
+    "ogTitle": "Diego Silva — Desarrollador Full Stack Senior",
+    "ogDescription": "Construyo aplicaciones empresariales seguras, escalables y de alto rendimiento. Explore mi trabajo en identidad digital, microservicios y desarrollo full-stack.",
+    "ogSiteName": "Diego Silva — Portafolio",
+    "ogImageAlt": "Diego Silva"
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Menú de navegación"
+  },
+  "SkipLink": {
+    "label": "Ir al contenido principal"
+  },
+  "Nav": {
+    "about": "Sobre mí",
+    "techStack": "Tecnologías",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "architecture": "Arquitectura",
+    "github": "GitHub",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Diego Silva",
+    "subtitle": "Desarrollador Full Stack Senior",
+    "tagline": "Construyo aplicaciones empresariales seguras, escalables y de alto rendimiento. Especializado en identidad digital, sistemas de autenticación y arquitectura de microservicios.",
+    "downloadCV": "Descargar CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "About": {
+    "heading": "Sobre mí",
+    "subheading": "El ingeniero detrás del código",
+    "bio": "Soy Ingeniero de Software con más de seis años de experiencia diseñando y desarrollando aplicaciones de nivel empresarial. Mi enfoque ha estado en la intersección entre seguridad y escalabilidad: construir sistemas que manejan millones de transacciones mientras protegen datos sensibles mediante firmas digitales, gestión de certificados y autenticación multicapa.\n\nEn ISA Interfase, he liderado el desarrollo de plataformas de identidad digital desde sus cimientos. Diseñé servicios de autenticación basados en OAuth2 y JWT, integré Módulos de Seguridad de Hardware (HSM) para operaciones criptográficas y desarrollé APIs REST que atienden a miles de usuarios concurrentes. Este trabajo implica un conocimiento profundo de PKI, gestión del ciclo de vida de certificados y protocolos de comunicación segura: el tipo de desafíos donde equivocarse no es una opción.\n\nMe desenvuelvo con igual soltura en el frontend, construyendo interfaces responsivas con React y Angular que hacen que los flujos de seguridad complejos sean intuitivos para el usuario final. Mi perspectiva full-stack significa que diseño APIs pensando en la interfaz de usuario y construyo interfaces que respetan las limitaciones de los sistemas distribuidos.\n\nMás allá del código, me importa la experiencia del desarrollador y la eficiencia del equipo. He implementado pipelines de CI/CD con Jenkins y Docker que redujeron el tiempo de despliegue en un 70%, y promuevo patrones de arquitectura limpia que hacen que el código sea mantenible a medida que los equipos crecen. Actualmente, estoy profundizando en infraestructura cloud y sistemas distribuidos, con un interés a largo plazo en el desarrollo de videojuegos como una salida creativa que afina mi pensamiento sistémico.",
+    "statYears": "Años de experiencia",
+    "statYearsValue": "6+",
+    "statProjects": "Proyectos empresariales",
+    "statProjectsValue": "50+",
+    "statTechs": "Tecnologías",
+    "statTechsValue": "30+"
+  },
+  "TechStack": {
+    "heading": "Tecnologías",
+    "subheading": "Tecnologías con las que trabajo a diario",
+    "categories": {
+      "Backend": "Backend",
+      "Frontend": "Frontend",
+      "Databases": "Bases de datos",
+      "DevOps & Infrastructure": "DevOps e Infraestructura",
+      "Security": "Seguridad"
+    }
+  },
+  "Experience": {
+    "heading": "Experiencia",
+    "subheading": "Donde he construido y entregado",
+    "present": "Presente",
+    "items": [
+      {
+        "description": "Diseño y desarrollo de plataformas empresariales de identidad digital y firma electrónica que atienden a miles de usuarios en industrias reguladas. Liderazgo de iniciativas full-stack, desde el diseño de bases de datos hasta frontends en React, con un fuerte énfasis en seguridad, escalabilidad y confiabilidad en producción.",
+        "highlights": [
+          "Diseñé e implementé servicios de autenticación OAuth2 / JWT que manejan miles de sesiones autenticadas diariamente, integrados con Módulos de Seguridad de Hardware (HSM) para protección de claves criptográficas.",
+          "Construí APIs REST consumidas por múltiples aplicaciones cliente (SPAs en Angular y React) con validación integral de entrada, limitación de tasa y registro de auditoría.",
+          "Lideré la migración de componentes monolíticos heredados a una arquitectura de microservicios contenerizados, reduciendo los ciclos de despliegue de horas a minutos con pipelines de CI/CD en Docker y Jenkins.",
+          "Desarrollé flujos de firma electrónica con gestión del ciclo de vida de certificados — generación, validación, revocación — cumpliendo con estándares regulatorios para identidad digital."
+        ]
+      },
+      {
+        "description": "Desarrollo de módulos Magento personalizados e integraciones de backend para clientes de comercio electrónico, automatizando flujos de facturación y ampliando las capacidades de la plataforma más allá de las funcionalidades predefinidas.",
+        "highlights": [
+          "Construí complementos Magento personalizados que automatizaron la facturación recurrente y la gestión de suscripciones, reduciendo la carga de facturación manual en un 60%.",
+          "Integré pasarelas de pago de terceros y APIs de envío en tiendas Magento existentes con despliegues sin tiempo de inactividad.",
+          "Desarrollé funcionalidades de backend en PHP que ampliaron el panel de administración de Magento para informes personalizados y paneles de gestión de inventario."
+        ]
+      },
+      {
+        "description": "Construcción de paneles de analítica y herramientas de automatización de marketing utilizando Google Analytics, Google Tag Manager y APIs de Laravel. Contribución a sitios WordPress y reportes basados en Excel para inteligencia de negocio.",
+        "highlights": [
+          "Implementé seguimiento de Google Analytics y Tag Manager en múltiples sitios web de clientes, permitiendo decisiones de marketing basadas en datos mediante paneles e informes personalizados.",
+          "Desarrollé APIs ligeras en Laravel (Lumen) para agregación de datos y reportes, consumiendo servicios externos y presentando información a través de interfaces limpias.",
+          "Creé pipelines automatizados de reportes en Excel que eliminaron más de 15 horas semanales de entrada manual de datos para los interesados del negocio."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Proyectos destacados",
+    "subheading": "Aplicaciones empresariales que he diseñado y entregado",
+    "viewOnGithub": "Ver en GitHub",
+    "liveDemo": "Demo en vivo",
+    "problem": "Problema",
+    "architecture": "Arquitectura",
+    "challenges": "Desafíos",
+    "items": [
+      {
+        "name": "ISCERT",
+        "description": "Plataforma empresarial para gestión de identidad digital, autenticación, ciclo de vida de certificados y firmas electrónicas. Una solución integral que permite a las organizaciones emitir, gestionar y verificar certificados digitales a escala.",
+        "problem": "Las organizaciones en industrias reguladas necesitaban una plataforma centralizada para gestionar identidades digitales, emitir certificados criptográficos y ejecutar firmas electrónicas legalmente vinculantes, todo mientras mantenían el cumplimiento con estándares estrictos de seguridad y ofrecían una experiencia de usuario fluida en interfaces web y móviles.",
+        "architecture": "Construida sobre una base de microservicios Spring Boot con PostgreSQL para datos transaccionales. Los flujos de autenticación utilizan OAuth2 con tokens JWT, respaldados por Módulos de Seguridad de Hardware (HSM) para operaciones criptográficas. El frontend en React se comunica a través de un API gateway seguro con validación de solicitudes en cada capa.",
+        "challenges": [
+          "Garantizar que las operaciones criptográficas cumplan con los estándares FIPS 140-2 manteniendo tiempos de respuesta inferiores a un segundo.",
+          "Diseñar listas de revocación de certificados (CRL) que se propaguen a través de servicios distribuidos sin comprometer la seguridad.",
+          "Construir una interfaz de usuario intuitiva para flujos de trabajo PKI complejos que usuarios no técnicos puedan navegar con confianza."
+        ]
+      },
+      {
+        "name": "MiRecibo",
+        "description": "Plataforma de firma digital de nóminas con control de acceso basado en roles y configuración multiempresa. Permite a las organizaciones firmar digitalmente y almacenar de forma segura documentos de nómina a escala.",
+        "problem": "Las empresas necesitaban una forma segura y auditable de firmar digitalmente documentos de nómina en lote mientras gestionaban jerarquías organizacionales complejas: diferentes roles tienen diferentes permisos de firma y visualización, y cada empresa tiene sus propios requisitos de configuración para plantillas de documentos y flujos de aprobación.",
+        "architecture": "Backend en Spring Boot con autorización basada en roles usando Spring Security. Las firmas digitales se aplican mediante operaciones criptográficas respaldadas por HSM. PostgreSQL almacena metadatos de documentos y registros de auditoría, mientras que los documentos firmados se almacenan en almacenamiento de objetos encriptado. Frontend en React con generación dinámica de formularios basada en configuraciones específicas de cada empresa.",
+        "challenges": [
+          "Implementar control de acceso granular basado en roles que admita matrices de permisos personalizadas por empresa sin degradación del rendimiento.",
+          "Manejar operaciones de firma masiva para miles de documentos mientras se proporciona retroalimentación de progreso en tiempo real a los usuarios."
+        ]
+      },
+      {
+        "name": "FirmaPDF",
+        "description": "Plataforma de firma digital masiva de PDF con integración de servicios de autenticación externos. Diseñada para entornos de alto rendimiento donde miles de PDF necesitan ser firmados con firmas digitales legalmente válidas.",
+        "problem": "Las empresas que generan grandes volúmenes de documentos PDF necesitaban una solución para aplicar firmas digitales a escala — piense en miles de facturas, contratos o informes por día — integrándose con proveedores de identidad existentes y asegurando que cada firma sea criptográficamente verificable y legalmente vinculante.",
+        "architecture": "La plataforma se integra con proveedores de identidad OAuth2 externos para la autenticación de usuarios. Las operaciones de firma de PDF se encolan y procesan de forma asíncrona usando un patrón de cola de mensajes, permitiendo al sistema manejar picos de demanda. Los servicios Spring Boot manejan la firma criptográfica real, y PostgreSQL rastrea el estado y los metadatos de cada operación.",
+        "challenges": [
+          "Procesar miles de solicitudes de firma concurrentes sin saturar los recursos HSM mediante encolamiento y procesamiento por lotes inteligente.",
+          "Integrarse con múltiples proveedores de autenticación externos, cada uno con diferentes formatos de token y requisitos de validación."
+        ]
+      },
+      {
+        "name": "Magento Billing Plugin",
+        "description": "Plugin Magento personalizado para gestión automatizada de procesos de facturación. Simplificó la facturación recurrente, el manejo de suscripciones y la integración de pasarelas de pago para clientes de comercio electrónico.",
+        "problem": "Los clientes de comercio electrónico que usaban Magento necesitaban facturación recurrente automatizada y gestión de suscripciones más allá de las capacidades nativas de la plataforma.",
+        "architecture": "Plugin Magento basado en PHP con backend MySQL, integrando pasarelas de pago de terceros y APIs de envío.",
+        "challenges": [
+          "Automatizar flujos de facturación recurrente dentro de las restricciones de arquitectura de plugins de Magento.",
+          "Integrar múltiples pasarelas de pago de terceros con despliegues sin tiempo de inactividad."
+        ]
+      },
+      {
+        "name": "Web Analytics & Tracking",
+        "description": "Implementación de infraestructura de seguimiento con Google Analytics y Google Tag Manager en las propiedades web de DIRECTV, permitiendo decisiones de marketing basadas en datos mediante paneles personalizados y reportes automatizados.",
+        "problem": "DIRECTV necesitaba seguimiento integral en múltiples sitios web para entender el comportamiento del usuario, medir el rendimiento de campañas y generar inteligencia de negocio accionable.",
+        "architecture": "Google Analytics y Tag Manager desplegados en múltiples sitios web de clientes con seguimiento de eventos personalizado. APIs en Laravel (Lumen) para agregación de datos y pipelines automatizados de reportes en Excel.",
+        "challenges": [
+          "Implementar seguimiento consistente en múltiples propiedades web dispares con diferentes arquitecturas.",
+          "Automatizar la generación de reportes para eliminar más de 15 horas semanales de entrada manual de datos."
+        ]
+      },
+      {
+        "name": "WordPress Corporate Site",
+        "description": "Mantenimiento y evolución del sitio web corporativo de DIRECTV en WordPress. Nuevas páginas, componentes de campañas comerciales y optimización de rendimiento para entornos de producción.",
+        "problem": "El sitio corporativo de DIRECTV requería evolución continua — nuevas páginas de campaña, mejoras de funcionalidades, corrección de bugs y optimización de rendimiento — mientras se mantenía la estabilidad en producción.",
+        "architecture": "CMS WordPress con desarrollo PHP personalizado para nuevas funcionalidades. HTML, CSS y JavaScript para componentes del frontend. Integración y mantenimiento de plugins de terceros.",
+        "challenges": [
+          "Equilibrar despliegues rápidos de campañas con estabilidad y rendimiento en producción.",
+          "Integrar y mantener plugins de terceros asegurando compatibilidad entre actualizaciones."
+        ]
+      },
+      {
+        "name": "Crowdfunding Platform",
+        "description": "Plataforma moderna de crowdfunding inspirada en Kickstarter, construida con arquitectura de microservicios. Un proyecto personal que muestra capacidades full-stack, desde infraestructura hasta interfaz de usuario.",
+        "problem": "La mayoría de las plataformas de crowdfunding son monolíticas, lo que dificulta escalar funcionalidades específicas de forma independiente o experimentar con nuevas características. Quise construir una plataforma que demuestre cómo un enfoque de microservicios puede resolver estos problemas mientras ofrece una experiencia de usuario limpia y moderna.",
+        "architecture": "Arquitectura de microservicios con servicios Spring Boot para campañas, usuarios, pagos y notificaciones, cada uno con su propia base de datos. Los servicios se comunican mediante APIs REST con autenticación basada en JWT. PostgreSQL para datos transaccionales. Docker Compose para desarrollo local. Frontend en React con un diseño limpio y responsivo.",
+        "challenges": [
+          "Gestionar transacciones distribuidas entre la creación de campañas, el procesamiento de pagos y los servicios de notificación sin un coordinador de transacciones distribuidas.",
+          "Diseñar una descomposición de servicios que equilibre la autonomía con la velocidad práctica de desarrollo para un proyecto individual."
+        ]
+      }
+    ]
+  },
+  "Architecture": {
+    "heading": "Arquitectura",
+    "subheading": "Cómo diseño y despliego sistemas",
+    "renderError": "No se pudo renderizar el diagrama",
+    "viewSource": "Ver código del diagrama",
+    "diagramAlt": "Diagrama de arquitectura",
+    "diagrams": {
+      "microservices": {
+        "label": "Arquitectura de Microservicios",
+        "description": "Arquitectura orientada a servicios utilizada en ISCERT y Crowdfunding Platform. Cada servicio es dueño de su dominio y datos, comunicándose mediante APIs REST con autenticación centralizada."
+      },
+      "docker": {
+        "label": "Orquestación Docker",
+        "description": "Entorno Docker multi-contenedor para desarrollo y producción. Cada servicio se ejecuta en su propio contenedor con orden de inicio orquestado y health checks."
+      },
+      "cicd": {
+        "label": "Pipeline CI/CD",
+        "description": "Pipeline de integración y despliegue continuo basado en Jenkins. Pruebas automatizadas, construcción y despliegue a producción con contenedores Docker."
+      },
+      "auth": {
+        "label": "Flujo de Autenticación",
+        "description": "Flujo de autenticación OAuth2 / JWT utilizado en plataformas de identidad digital. Se integra con HSM para operaciones criptográficas y soporta múltiples tipos de cliente."
+      },
+      "cloud": {
+        "label": "Infraestructura Cloud",
+        "description": "Arquitectura de despliegue cloud planificada utilizando servicios contenerizados con balanceo de carga, auto-escalado y servicios de base de datos gestionados."
+      }
+    }
+  },
+  "GitHub": {
+    "heading": "Actividad en GitHub",
+    "subheading": "Contribuciones open source y proyectos personales",
+    "reposCount": "Repositorios públicos",
+    "followersCount": "Seguidores",
+    "starsCount": "Estrellas",
+    "pinnedRepos": "Repositorios destacados",
+    "noRepos": "No se encontraron repositorios",
+    "unavailable": "Datos de GitHub no disponibles temporalmente",
+    "unavailableDesc": "No se pudieron obtener los datos de los repositorios. Visite mi perfil directamente.",
+    "error": "No se pudieron cargar los datos de GitHub"
+  },
+  "Contact": {
+    "heading": "Contacto",
+    "subheading": "Hablemos de su proyecto u oportunidad",
+    "name": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "usuario@ejemplo.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuénteme sobre su proyecto...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successMessage": "Le responderé pronto.",
+    "error": "Algo salió mal. Por favor, intente de nuevo.",
+    "rateLimit": "Demasiados envíos. Por favor, intente de nuevo en 15 minutos.",
+    "networkError": "No se pudo enviar el mensaje. Por favor, intente de nuevo o envíeme un correo directamente.",
+    "validation": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailInvalid": "Por favor, ingrese un correo electrónico válido",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "location": "Remoto — Latinoamérica",
+    "locationFallback": "Remoto",
+    "emailLabel": "Correo electrónico",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "Footer": {
+    "copyright": "Todos los derechos reservados.",
+    "backToTop": "Volver arriba",
+    "builtWith": "Construido con Next.js, TypeScript y Tailwind CSS",
+    "sendEmail": "Enviar correo",
+    "githubProfile": "Perfil de GitHub",
+    "linkedinProfile": "Perfil de LinkedIn"
+  },
+  "ThemeToggle": {
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La página que busca no existe o ha sido movida.",
+    "backHome": "Volver al inicio"
+  },
+  "ProjectDetail": {
+    "role": "Mi Rol",
+    "duration": "Duración",
+    "aboutHeading": "Acerca del proyecto",
+    "problemHeading": "El Problema",
+    "solutionHeading": "La Solución",
+    "featuresHeading": "Funcionalidades",
+    "participationHeading": "Mi Participación",
+    "challengesHeading": "Desafíos Técnicos",
+    "securityHeading": "Seguridad",
+    "impactHeading": "Impacto",
+    "technologiesHeading": "Tecnologías",
+    "architectureHeading": "Arquitectura",
+    "lessonsHeading": "Lecciones Aprendidas",
+    "galleryHeading": "Galería",
+    "useCasesHeading": "Casos de Uso",
+    "demoVideosHeading": "Videos Demo",
+    "instancesHeading": "Instancias",
+    "demoVideoTitle": "Video demo del proyecto",
+    "viewProject": "Ver proyecto",
+    "backToProjects": "← Volver a proyectos",
+    "exploreOther": "Explorar otros proyectos"
+  },
+  "Error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Por favor, intente de nuevo.",
+    "retry": "Intentar de nuevo"
+  },
+  "ErrorBoundary": {
+    "title": "Algo salió mal",
+    "description": "Esta sección encontró un error. Por favor, intente refrescar la página.",
+    "retry": "Intentar de nuevo"
+  },
+  "Common": {
+    "more": "más"
+  }
+}

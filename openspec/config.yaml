@@ -1,0 +1,51 @@
+# SDD Configuration — portfolio_workspace
+schema: spec-driven
+
+context: |
+  Project: Personal portfolio for Diego Silva (Senior Full Stack Developer)
+  Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
+  Backend: TBD (likely Node.js/Express for contact form; Java/Spring Boot under evaluation)
+  DevOps: Docker Compose
+  Architecture: Not yet established (greenfield project, zero code)
+  Testing: No test runner installed — Strict TDD disabled until tooling is added
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  detected: "2026-07-28"
+  test_runner:
+    command: ""
+    framework: none
+  test_layers:
+    unit: { available: false, tool: "-" }
+    integration: { available: false, tool: "-" }
+    e2e: { available: false, tool: "-" }
+  coverage:
+    available: false
+    command: "-"
+  quality_tools:
+    linter: { available: false, command: "-" }
+    type_checker: { available: false, command: "-" }
+    formatter: { available: false, command: "-" }

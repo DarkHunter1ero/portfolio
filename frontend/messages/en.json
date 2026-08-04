@@ -1,0 +1,299 @@
+{
+  "Metadata": {
+    "title": "Diego Silva — Senior Full Stack Developer",
+    "description": "Senior Full Stack Developer specializing in secure, scalable enterprise applications. 6+ years building digital identity platforms, microservices, and authentication systems with Java, Spring Boot, and React.",
+    "ogTitle": "Diego Silva — Senior Full Stack Developer",
+    "ogDescription": "I build secure, scalable and high-performance enterprise applications. Explore my work in digital identity, microservices, and full-stack development.",
+    "ogSiteName": "Diego Silva — Portfolio",
+    "ogImageAlt": "Diego Silva"
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Navigation menu"
+  },
+  "SkipLink": {
+    "label": "Skip to main content"
+  },
+  "Nav": {
+    "about": "About",
+    "techStack": "Tech Stack",
+    "experience": "Experience",
+    "projects": "Projects",
+    "architecture": "Architecture",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "Diego Silva",
+    "subtitle": "Senior Full Stack Developer",
+    "tagline": "I build secure, scalable and high-performance enterprise applications. Specialized in digital identity, authentication systems, and microservices architecture.",
+    "downloadCV": "Download CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "About": {
+    "heading": "About Me",
+    "subheading": "The engineer behind the code",
+    "bio": "I'm a Software Engineer with over six years of experience designing and delivering enterprise-grade applications. My focus has been on the intersection of security and scalability — building systems that handle millions of transactions while protecting sensitive data through digital signatures, certificate management, and multi-layered authentication.\n\nAt ISA Interfase, I've led the development of digital identity platforms from the ground up. I architected authentication services powered by OAuth2 and JWT, integrated Hardware Security Modules for cryptographic operations, and designed REST APIs that serve thousands of concurrent users. The work involves deep understanding of PKI, certificate lifecycle management, and secure communication protocols — the kind of challenges where getting it wrong isn't an option.\n\nI'm equally comfortable on the frontend, building responsive interfaces with React and Angular that make complex security workflows intuitive for end users. My full-stack perspective means I design APIs with the UI in mind, and I build UIs that respect the constraints of distributed systems.\n\nBeyond the code, I care about developer experience and team efficiency. I've set up CI/CD pipelines with Jenkins and Docker that reduced deployment time by 70%, and I advocate for clean architecture patterns that make codebases maintainable as teams grow. Currently, I'm deepening my expertise in cloud infrastructure and distributed systems, with a long-term interest in game development as a creative outlet that sharpens my systems thinking.",
+    "statYears": "Years of experience",
+    "statYearsValue": "6+",
+    "statProjects": "Enterprise projects",
+    "statProjectsValue": "50+",
+    "statTechs": "Technologies",
+    "statTechsValue": "30+"
+  },
+  "TechStack": {
+    "heading": "Tech Stack",
+    "subheading": "Technologies I work with daily",
+    "categories": {
+      "Backend": "Backend",
+      "Frontend": "Frontend",
+      "Databases": "Databases",
+      "DevOps & Infrastructure": "DevOps & Infrastructure",
+      "Security": "Security"
+    }
+  },
+  "Experience": {
+    "heading": "Experience",
+    "subheading": "Where I've built and shipped",
+    "present": "Present",
+    "items": [
+      {
+        "description": "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
+        "highlights": [
+          "Designed and implemented OAuth2 / JWT authentication services handling thousands of authenticated sessions daily, integrated with Hardware Security Modules (HSM) for cryptographic key protection.",
+          "Built REST APIs consumed by multiple client applications (Angular and React SPAs) with comprehensive input validation, rate limiting, and audit logging.",
+          "Led migration of legacy monolith components to a containerized microservices architecture, reducing deployment cycles from hours to minutes with Docker and Jenkins CI/CD pipelines.",
+          "Developed electronic signature workflows with certificate lifecycle management — generation, validation, revocation — compliant with regulatory standards for digital identity."
+        ]
+      },
+      {
+        "description": "Developed custom Magento modules and backend integrations for eCommerce clients, automating billing workflows and extending platform capabilities beyond out-of-the-box features.",
+        "highlights": [
+          "Built custom Magento plugins that automated recurring billing and subscription management, reducing manual invoicing overhead by 60%.",
+          "Integrated third-party payment gateways and shipping APIs into existing Magento stores with zero downtime deployments.",
+          "Developed backend features in PHP that extended the Magento admin panel for custom reporting and inventory management dashboards."
+        ]
+      },
+      {
+        "description": "Built analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
+        "highlights": [
+          "Implemented Google Analytics and Tag Manager tracking across multiple client websites, enabling data-driven marketing decisions through custom dashboards and reports.",
+          "Developed lightweight Laravel (Lumen) APIs for data aggregation and reporting, consuming external services and presenting insights through clean interfaces.",
+          "Created automated Excel reporting pipelines that eliminated 15+ hours of manual data entry per week for business stakeholders."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Featured Projects",
+    "subheading": "Enterprise applications I've architected and delivered",
+    "viewOnGithub": "View on GitHub",
+    "liveDemo": "Live Demo",
+    "problem": "Problem",
+    "architecture": "Architecture",
+    "challenges": "Challenges",
+    "items": [
+      {
+        "name": "ISCERT",
+        "description": "Enterprise platform for digital identity management, authentication, certificate lifecycle, and electronic signatures. A comprehensive solution that enables organizations to issue, manage, and verify digital certificates at scale.",
+        "problem": "Organizations in regulated industries needed a centralized platform to manage digital identities, issue cryptographic certificates, and execute legally binding electronic signatures — all while maintaining compliance with strict security standards and providing a seamless user experience across web and mobile interfaces.",
+        "architecture": "Built on a Spring Boot microservices backbone with PostgreSQL for transactional data. Authentication flows use OAuth2 with JWT tokens, backed by Hardware Security Modules (HSM) for cryptographic operations. The React frontend communicates through a secured API gateway with request validation at every layer.",
+        "challenges": [
+          "Ensuring cryptographic operations comply with FIPS 140-2 standards while maintaining sub-second response times.",
+          "Designing certificate revocation lists (CRLs) that propagate across distributed services without compromising security.",
+          "Building an intuitive UI for complex PKI workflows that non-technical users can navigate confidently."
+        ]
+      },
+      {
+        "name": "MiRecibo",
+        "description": "Digital payroll signing platform with role-based access control and multi-tenant company configuration. Enables organizations to digitally sign and securely store payroll documents at scale.",
+        "problem": "Companies needed a secure, auditable way to digitally sign payroll documents in bulk while managing complex organizational hierarchies — different roles have different signing and viewing permissions, and each company has its own configuration requirements for document templates and approval workflows.",
+        "architecture": "Spring Boot backend with role-based authorization using Spring Security. Digital signatures are applied via HSM-backed cryptographic operations. PostgreSQL stores document metadata and audit trails, while the actual signed documents are stored in encrypted object storage. React frontend with dynamic form generation based on company-specific configurations.",
+        "challenges": [
+          "Implementing granular role-based access that supports custom permission matrices per company without performance degradation.",
+          "Handling bulk signing operations for thousands of documents while providing real-time progress feedback to users."
+        ]
+      },
+      {
+        "name": "FirmaPDF",
+        "description": "Mass PDF digital signing platform with external authentication service integration. Designed for high-throughput environments where thousands of PDFs need to be signed with legally valid digital signatures.",
+        "problem": "Enterprises generating large volumes of PDF documents needed a solution to apply digital signatures at scale — think thousands of invoices, contracts, or reports per day — while integrating with existing identity providers and ensuring each signature is cryptographically verifiable and legally binding.",
+        "architecture": "The platform integrates with external OAuth2 identity providers for user authentication. PDF signing operations are queued and processed asynchronously using a message queue pattern, allowing the system to handle spikes in demand. Spring Boot services handle the actual cryptographic signing, and PostgreSQL tracks the status and metadata of every operation.",
+        "challenges": [
+          "Processing thousands of concurrent signing requests without overwhelming HSM resources through intelligent queuing and batching.",
+          "Integrating with multiple external authentication providers, each with different token formats and validation requirements."
+        ]
+      },
+      {
+        "name": "Magento Billing Plugin",
+        "description": "Custom Magento plugin for automated billing process management. Streamlined recurring invoicing, subscription handling, and payment gateway integration for e-commerce clients.",
+        "problem": "E-commerce clients using Magento needed automated recurring billing and subscription management beyond the platform's built-in capabilities.",
+        "architecture": "PHP-based Magento plugin with MySQL backend, integrating third-party payment gateways and shipping APIs.",
+        "challenges": [
+          "Automating recurring billing workflows within Magento's plugin architecture constraints.",
+          "Integrating multiple third-party payment gateways with zero-downtime deployments."
+        ]
+      },
+      {
+        "name": "Web Analytics & Tracking",
+        "description": "Implementation of Google Analytics and Google Tag Manager tracking infrastructure across DIRECTV's web properties, enabling data-driven marketing decisions through custom dashboards and automated reporting.",
+        "problem": "DIRECTV needed comprehensive tracking across multiple websites to understand user behavior, measure campaign performance, and generate actionable business intelligence.",
+        "architecture": "Google Analytics and Tag Manager deployed across multiple client websites with custom event tracking. Laravel (Lumen) APIs for data aggregation and Excel-based automated reporting pipelines.",
+        "challenges": [
+          "Implementing consistent tracking across multiple disparate web properties with different architectures.",
+          "Automating report generation to eliminate 15+ hours of weekly manual data entry."
+        ]
+      },
+      {
+        "name": "WordPress Corporate Site",
+        "description": "Maintenance and evolution of DIRECTV's corporate WordPress website. New pages, commercial campaign components, and performance optimization for production environments.",
+        "problem": "DIRECTV's corporate site required ongoing evolution — new campaign pages, feature enhancements, bug fixes, and performance optimization — while maintaining stability in production.",
+        "architecture": "WordPress CMS with custom PHP development for new functionality. HTML, CSS, and JavaScript for frontend components. Third-party plugin integration and maintenance.",
+        "challenges": [
+          "Balancing rapid campaign deployments with production stability and performance.",
+          "Integrating and maintaining third-party plugins while ensuring compatibility across updates."
+        ]
+      },
+      {
+        "name": "Crowdfunding Platform",
+        "description": "Modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. A personal project that showcases full-stack capabilities from infrastructure to UI.",
+        "problem": "Most crowdfunding platforms are monolithic, making it difficult to scale specific features independently or experiment with new functionality. I wanted to build a platform that demonstrates how a microservices approach can solve these problems while providing a clean, modern user experience.",
+        "architecture": "Microservices architecture with Spring Boot services for campaigns, users, payments, and notifications — each with its own database. Services communicate via REST APIs with JWT-based authentication. PostgreSQL for transactional data. Docker Compose for local development. React frontend with a clean, responsive design.",
+        "challenges": [
+          "Managing distributed transactions across campaign creation, payment processing, and notification services without a distributed transaction coordinator.",
+          "Designing a service decomposition that balances autonomy with practical development velocity for a solo project."
+        ]
+      }
+    ]
+  },
+  "Architecture": {
+    "heading": "Architecture",
+    "subheading": "How I design and deploy systems",
+    "renderError": "Diagram could not be rendered",
+    "viewSource": "View diagram source",
+    "diagramAlt": "Architecture diagram",
+    "diagrams": {
+      "microservices": {
+        "label": "Microservices Architecture",
+        "description": "Service-oriented architecture used in ISCERT and Crowdfunding Platform. Each service owns its domain and data, communicating through REST APIs with centralized authentication."
+      },
+      "docker": {
+        "label": "Docker Orchestration",
+        "description": "Multi-container Docker environment for development and production. Each service runs in its own container with orchestrated startup order and health checks."
+      },
+      "cicd": {
+        "label": "CI/CD Pipeline",
+        "description": "Jenkins-based continuous integration and deployment pipeline. Automated testing, building, and deployment to production with Docker containers."
+      },
+      "auth": {
+        "label": "Authentication Flow",
+        "description": "OAuth2 / JWT authentication flow used across digital identity platforms. Integrates with HSM for cryptographic operations and supports multiple client types."
+      },
+      "cloud": {
+        "label": "Cloud Infrastructure",
+        "description": "Planned cloud deployment architecture using containerized services with load balancing, auto-scaling, and managed database services."
+      }
+    }
+  },
+  "GitHub": {
+    "heading": "GitHub Activity",
+    "subheading": "Open source contributions and personal projects",
+    "reposCount": "Public repositories",
+    "followersCount": "Followers",
+    "starsCount": "Stars",
+    "pinnedRepos": "Pinned repositories",
+    "noRepos": "No repositories found",
+    "unavailable": "GitHub data temporarily unavailable",
+    "unavailableDesc": "Unable to fetch repository data. View my profile directly.",
+    "error": "Unable to load GitHub data"
+  },
+  "Contact": {
+    "heading": "Get in Touch",
+    "subheading": "Let's discuss your project or opportunity",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "I'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "rateLimit": "Too many submissions. Please try again in 15 minutes.",
+    "networkError": "Unable to send message. Please try again or email me directly.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "emailInvalid": "Please enter a valid email address",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "location": "Remote — Latin America",
+    "locationFallback": "Remote",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "Footer": {
+    "copyright": "All rights reserved.",
+    "backToTop": "Back to top",
+    "builtWith": "Built with Next.js, TypeScript & Tailwind CSS",
+    "sendEmail": "Send email",
+    "githubProfile": "GitHub profile",
+    "linkedinProfile": "LinkedIn profile"
+  },
+  "ThemeToggle": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "ProjectDetail": {
+    "role": "My Role",
+    "duration": "Duration",
+    "aboutHeading": "About the Project",
+    "problemHeading": "The Problem",
+    "solutionHeading": "The Solution",
+    "featuresHeading": "Features",
+    "participationHeading": "My Contribution",
+    "challengesHeading": "Technical Challenges",
+    "securityHeading": "Security",
+    "impactHeading": "Impact",
+    "technologiesHeading": "Technologies",
+    "architectureHeading": "Architecture",
+    "lessonsHeading": "Lessons Learned",
+    "galleryHeading": "Gallery",
+    "useCasesHeading": "Use Cases",
+    "demoVideosHeading": "Demo Videos",
+    "instancesHeading": "Instances",
+    "demoVideoTitle": "Project demo video",
+    "viewProject": "View Project",
+    "backToProjects": "← Back to Projects",
+    "exploreOther": "Explore Other Projects"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  },
+  "ErrorBoundary": {
+    "title": "Something went wrong",
+    "description": "This section encountered an error. Please try refreshing the page.",
+    "retry": "Try again"
+  },
+  "Common": {
+    "more": "more"
+  }
+}

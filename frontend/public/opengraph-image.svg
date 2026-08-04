@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect width="1200" height="4" y="0" fill="#2563eb"/>
+  <text x="600" y="280" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="72" font-weight="bold">Diego Silva</text>
+  <text x="600" y="340" text-anchor="middle" fill="#8888a0" font-family="system-ui, sans-serif" font-size="28">Senior Full Stack Developer</text>
+  <text x="600" y="400" text-anchor="middle" fill="#2563eb" font-family="monospace" font-size="16">diegosilva.dev</text>
+</svg>
