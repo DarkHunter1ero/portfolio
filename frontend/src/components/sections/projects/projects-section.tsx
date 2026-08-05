@@ -6,10 +6,10 @@ import { projects } from "@/data/projects";
 import type { Project } from "@/types";
 
 const COMPANY_ORDER = [
+  "Quiero Realizarlo",
   "ISA Interfase",
   "Beacon42",
   "Portlike · DIRECTV",
-  "Personal Project",
 ];
 
 function groupByCompany(projects: Project[]): Array<{

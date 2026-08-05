@@ -18,6 +18,7 @@
     "label": "Ir al contenido principal"
   },
   "Nav": {
+    "professionalProfile": "Perfil",
     "about": "Sobre mí",
     "techStack": "Tecnologías",
     "experience": "Experiencia",
@@ -32,7 +33,9 @@
     "tagline": "Construyo aplicaciones empresariales seguras, escalables y de alto rendimiento. Especializado en identidad digital, sistemas de autenticación y arquitectura de microservicios.",
     "downloadCV": "Descargar CV",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "years": "años",
+    "nationality": "Uruguayo"
   },
   "About": {
     "heading": "Sobre mí",
@@ -53,14 +56,33 @@
       "Frontend": "Frontend",
       "Databases": "Bases de datos",
       "DevOps & Infrastructure": "DevOps e Infraestructura",
-      "Security": "Seguridad"
+      "Architecture": "Arquitectura",
+      "Security": "Seguridad",
+      "Testing": "Testing",
+      "Tools": "Herramientas",
+      "Methodologies": "Metodologías",
+      "Operations & Support": "Operación y Soporte"
     }
   },
   "Experience": {
     "heading": "Experiencia",
     "subheading": "Donde he construido y entregado",
     "present": "Presente",
+    "viewCompany": "Ver todos los proyectos de {company}",
+    "viewDetails": "Ver detalles",
+    "backToExperience": "Volver a Experiencia",
+    "projectsAt": "Proyectos en {company}",
+    "technologiesUsed": "Tecnologías utilizadas",
+    "technologiesUsedDesc": "Tecnologías con las que trabajé durante mi tiempo en {company}",
     "items": [
+      {
+        "description": "Proyecto emprendedor personal — una plataforma moderna de crowdfunding inspirada en Kickstarter, construida con arquitectura de microservicios. Demuestra capacidades full-stack desde infraestructura hasta interfaz de usuario.",
+        "highlights": [
+          "Construí una plataforma de crowdfunding completa desde cero usando microservicios Spring Boot para campañas, usuarios, pagos y notificaciones.",
+          "Diseñé una descomposición de servicios que equilibra la autonomía con la velocidad práctica de desarrollo para un proyecto individual.",
+          "Implementé autenticación basada en JWT entre servicios con comunicación mediante APIs REST."
+        ]
+      },
       {
         "description": "Diseño y desarrollo de plataformas empresariales de identidad digital y firma electrónica que atienden a miles de usuarios en industrias reguladas. Liderazgo de iniciativas full-stack, desde el diseño de bases de datos hasta frontends en React, con un fuerte énfasis en seguridad, escalabilidad y confiabilidad en producción.",
         "highlights": [
@@ -292,6 +314,15 @@
     "title": "Algo salió mal",
     "description": "Esta sección encontró un error. Por favor, intente refrescar la página.",
     "retry": "Intentar de nuevo"
+  },
+  "ProfessionalProfile": {
+    "heading": "Perfil Profesional",
+    "subheading": "Lo que aporto",
+    "summary": "Soy Desarrollador Full Stack con una sólida especialización en Backend utilizando Java y Spring Boot, complementando mi experiencia con desarrollo Frontend mediante React y Angular utilizando TypeScript.\n\nDurante mi carrera profesional he participado en el diseño, desarrollo, mantenimiento y evolución de aplicaciones empresariales, trabajando principalmente bajo arquitecturas de microservicios y desarrollando APIs REST y SOAP para la integración entre sistemas. Poseo experiencia implementando mecanismos de autenticación mediante JWT y múltiples factores de autenticación (MFA), además de documentar servicios utilizando Swagger/OpenAPI para facilitar su consumo y mantenimiento.\n\nEn el desarrollo Backend utilizo Spring Boot junto con JPA para el acceso a datos, implementando buenas prácticas de diseño, manejo centralizado de errores mediante Controller Advice y excepciones personalizadas, buscando construir aplicaciones robustas, mantenibles y escalables.\n\nTrabajo habitualmente con bases de datos PostgreSQL y MySQL, escribiendo consultas SQL y modelando estructuras de datos según las necesidades de cada proyecto.\n\nTambién cuento con experiencia en Docker para la contenerización de aplicaciones y Jenkins para la implementación de procesos de Integración y Despliegue Continuo (CI/CD), automatizando la construcción y publicación de nuevas versiones.\n\nHe participado en despliegues sobre servidores Linux, administrando aplicaciones Java ejecutadas como servicios mediante systemd (systemctl), trabajando en entornos donde se utilizaban WildFly y Nginx como parte de la infraestructura de producción. De forma personal también he desplegado aplicaciones sobre Amazon Web Services (AWS), principalmente utilizando instancias EC2.\n\nPoseo conocimientos sobre arquitecturas basadas en microservicios, comunicación entre servicios y descubrimiento de servicios mediante Eureka. Actualmente continúo ampliando mis conocimientos incorporando Apache Kafka para la comunicación asincrónica entre microservicios, así como herramientas de observabilidad y métricas para el monitoreo de aplicaciones.\n\nDentro del área de seguridad informática adquirí una experiencia especializada trabajando con Infraestructura de Clave Pública (PKI), Autoridades Certificadoras (CA), emisión y revocación de certificados digitales, utilización de dispositivos HSM para la generación segura de pares de claves criptográficas y soluciones de firma digital de documentos.\n\nEn el área de calidad realizo pruebas funcionales utilizando Postman, pruebas de carga con JMeter y desarrollo aplicaciones que incorporan WebSockets para la actualización de información en tiempo real.\n\nHe trabajado bajo metodologías ágiles Scrum participando activamente en Daily Scrum, Sprint Planning, Sprint Reviews y Retrospectives, colaborando en la definición técnica de historias de usuario, estimación de tareas y planificación de sprints de dos semanas.\n\nDurante el desarrollo utilizo Jira para la gestión de tareas y Confluence para la documentación técnica, arquitecturas, procedimientos de despliegue y preparación de ambientes. También he colaborado en la resolución de incidentes de producción mediante el análisis de logs obtenidos junto a los equipos de Infraestructura y TI para identificar la causa raíz de errores y proponer soluciones.\n\nMe considero una persona orientada a la resolución de problemas, con facilidad para aprender nuevas tecnologías y un fuerte compromiso con la calidad del software, las buenas prácticas de desarrollo y la mejora continua.",
+    "problemSolving": "Resolución de Problemas",
+    "continuousLearning": "Aprendizaje Continuo",
+    "softwareQuality": "Calidad de Software",
+    "cleanCode": "Clean Code y SOLID"
   },
   "Common": {
     "more": "más"

@@ -15,7 +15,9 @@ export const profile: Profile = {
   linkedin: "https://www.linkedin.com/in/diego-silva-b258ba17a/",
   email: "diego1silva2@gmail.com",
   location: "Remote — Latin America",
+  birthDate: "1992-02-20",
+  nationality: "Uruguayan",
   photoUrl: "/images/yoCirculo.png",
-  cvUrlEn: "/Diego_Silva_CV_EN.pdf",
-  cvUrlEs: "/Diego_Silva_CV_ES.pdf",
+  cvUrlEn: "/CV/EN/Diego_Silva_CV.pdf",
+  cvUrlEs: "/CV/ES/Diego_Silva_CV.pdf",
 };

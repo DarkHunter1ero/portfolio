@@ -1,0 +1,180 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+cv:
+  name: Diego Silva
+  headline: Full Stack Java Developer – Semi Senior
+  location: San José de Mayo, Uruguay
+  email: diego1silva2@gmail.com
+  phone: +598 97 257 167
+  photo: ./foto_perfil.png
+
+  sections:
+    about_me:
+      - "Full Stack Web Developer specialized in Java with Semi-Senior level experience. With over 10 years in software development, I am passionate about building robust and secure technological solutions, especially in the areas of digital identity and electronic signature."
+      - "Throughout my career, I have developed a strong ability to analyze complex problems, design scalable architectures, and lead successful technological migrations. My approach combines technical rigor with a practical, business-oriented mindset."
+      - "I am a proactive professional with a high capacity to adapt to new challenges and technologies, always focused on optimizing processes and improving software quality."
+
+    detailed_experience:
+      - company: ISA INTERFASE (6+ years)
+        position: Full Stack Developer – Digital Security Specialist
+        start_date: 2019
+        end_date: 2025
+        location: Montevideo, Uruguay
+        summary: Development of digital identity, electronic signature, and secure authentication solutions
+        highlights:
+          - "Led the development and maintenance of digital signature applications integrated with external authentication systems such as Antel TuID"
+          - "Developed the MiRecibo platform for digital signing of payroll receipts, with role-based access and company-level configurations"
+          - "Creation and management of digital certificates for secure signing of PDF and XML documents"
+          - "Implementation of OAuth2 authentication services and development of secure APIs for critical applications"
+          - "Integration with HSMs (Hardware Security Modules) to automate certificate issuance, signing, and revocation"
+          - "Active participation in the architectural evolution toward microservices and distributed systems"
+          - "Worked in production environments with high availability and strict security requirements"
+
+      - company: Beacon42
+        position: Magento Developer – eCommerce Specialist
+        start_date: 2018
+        end_date: 2019
+        location: Montevideo, Uruguay
+        summary: Development of customized eCommerce solutions for Magento
+        highlights:
+          - "Developed a Magento plugin from scratch to manage billing workflows"
+          - "Implemented custom integrations for eCommerce platforms"
+          - "Gained deep knowledge of the Magento ecosystem and eCommerce architectures"
+          - "Collaborated in the growth of a fast-scaling startup"
+
+      - company: Portlike
+        position: Programmer Analyst – Web Development & Analysis
+        start_date: 2017
+        end_date: 2018
+        location: Montevideo, Uruguay
+        summary: First professional experience combining web development and data analysis
+        highlights:
+          - "Started as a Programmer Analyst, analyzing metrics and statistics using Google Analytics"
+          - "Generated reports and user behavior tracking with Google Tag Manager"
+          - "Created graphical Excel reports to support executive decision-making"
+          - "Maintained a Lumen (Laravel) project after demonstrating strong JavaScript skills"
+          - "Transitioned into the web development team, working mainly with WordPress"
+          - "Maintained and fixed bugs across multiple corporate client websites"
+
+    professional_journey:
+      - "**2017–2018:** Professional beginnings at Portlike combining web analysis and development"
+      - "**2018–2019:** Specialization in eCommerce with Magento at Beacon42"
+      - "**2019–2025:** Over 6 years at ISA INTERFASE as a digital security specialist"
+      - "**Growth:** From junior developer to semi-senior with technical leadership in critical projects"
+
+    key_achievements:
+      - "Over 6 years of continuous experience in digital security and electronic signature solutions"
+      - "Successful migration of multiple critical technologies (MySQL → PostgreSQL, Java 8 → 11, etc.)"
+      - "Implementation of high-availability systems using HSMs for certificate security"
+      - "Development of enterprise platforms used by multiple organizations"
+      - "Proven ability to grow from analyst roles to specialized developer positions"
+
+    specializations:
+      - label: Digital Security & Cryptography
+        details: "Electronic signature, digital certificates, HSM, OAuth2, multi-factor authentication"
+
+      - label: Java Backend Development
+        details: "Spring Boot, REST APIs, microservices, relational databases, security"
+
+      - label: Enterprise Systems
+        details: "Digital signature platforms, document management, high-availability systems"
+
+      - label: Technology Integration
+        details: "Technology migrations, legacy system integration, architecture modernization"
+
+    education:
+      - institution: Faculty of Engineering (UDELAR) & UTU
+        area: Computer Science Technologist
+        start_date: 2013
+        end_date: 2015
+        location: Uruguay
+        summary: "Joint university program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
+
+      - institution: Universidad del Trabajo del Uruguay (UTU)
+        area: Technical High School Degree in Electromechanics
+        start_date: 2007
+        end_date: 2009
+        location: Uruguay
+        summary: "Technical background in electromechanical systems that strengthened logical thinking and complex problem-solving skills."
+
+    technologies_expertise:
+      - label: Backend & Security
+        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs"
+
+      - label: Frontend & Web
+        details: "ReactJS, AngularJS, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
+
+      - label: Infrastructure & DevOps
+        details: "Wildfly, Tomcat, Docker, GitLab, Maven, Gradle, Log4j, OpenAPI"
+
+      - label: Tools & Methodologies
+        details: "Google Analytics, Google Tag Manager, Advanced Excel, Scrum, Git"
+
+    core_skills:
+      - "**Technical Leadership:** Ability to guide technology migrations and architectural evolution"
+      - "**Problem Solving:** Analytical approach to complex technical challenges"
+      - "**Adaptability:** Successful transitions across roles and technologies"
+      - "**Teamwork:** Effective collaboration in multidisciplinary teams"
+      - "**Technical Communication:** Ability to explain complex concepts to diverse audiences"
+      - "**Results-Oriented:** Practical focus on delivering business value"
+
+    significant_projects:
+      - "**ISCERT System:** Comprehensive digital identity solution with authentication, electronic signature, and certificate management"
+      - "**MiRecibo:** Enterprise platform for digital payroll signing with roles, configurable templates, and secure storage"
+      - "**FirmaPDF:** Web application for mass digital signing of PDF documents with external system integration"
+      - "**Magento Billing Plugin:** Custom billing solution for Magento-based eCommerce platforms"
+
+    professional_outlook:
+      - "Seeking to continue growing as a specialist in digital security and enterprise systems"
+      - "Interested in challenging projects involving distributed architectures and high scalability"
+      - "Motivated to contribute experience in technology migrations and system modernization"
+      - "Value environments that promote continuous learning and technological innovation"
+
+    personal_information:
+      - "**Age:** 33"
+      - "**Nationality:** Uruguayan"
+      - "**Marital Status:** Single"
+      - "**Date of Birth:** February 20, 1992"
+      - "**ID Number:** 4.860.251-1"
+      - "**Availability:** Immediate"
+      - "**Mobility:** Available for travel within Uruguay"
+
+    references:
+      - "**Juan Manuel Miraballes** – CEO / ISA INTERFASE – +598 99 336 405 – juan.miraballes@interfase.uy"
+      - "**Rodrigo Aratti** – CEO / ISA INTERFASE – +598 98 530 100"
+      - "**Matías Pintaluba** – CEO / ISA INTERFASE – Matías.Pintaluba@interfase.uy"
+
+design:
+  theme: classic
+  page:
+    size: a4
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+  colors:
+    body: rgb(0, 0, 0)
+    name: rgb(0, 79, 144)
+    headline: rgb(0, 79, 144)
+    section_titles: rgb(0, 79, 144)
+  typography:
+    font_family:
+      body: "Arial"
+      name: "Arial"
+      section_titles: "Arial"
+    font_size:
+      body: 10pt
+      name: 22pt
+      section_titles: 14pt
+  section_titles:
+    type: with_partial_line
+    space_above: 0.4cm
+    space_below: 0.2cm
+
+locale:
+  language: english
+  present: present
+
+settings:
+  current_date: "2026-01-20"
+  render_command:
+    pdf_path: Diego_Silva_CV.pdf

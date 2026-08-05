@@ -10,6 +10,8 @@ export interface Profile {
   linkedin: string;
   email: string;
   location?: string;
+  birthDate: string;
+  nationality: string;
   cvUrlEn: string;
   cvUrlEs: string;
 }
@@ -23,6 +25,7 @@ export interface Experience {
   description: string;
   highlights: string[];
   technologies: string[];
+  logo?: string;
 }
 
 // ─── Projects ──────────────────────────────────────────────

@@ -10,6 +10,11 @@ import {
   Database,
   Container,
   Shield,
+  Cpu,
+  FlaskConical,
+  Wrench,
+  Users,
+  Activity,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -18,6 +23,11 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Database,
   Container,
   Shield,
+  Cpu,
+  FlaskConical,
+  Wrench,
+  Users,
+  Activity,
 };
 
 interface TechBadgeProps {

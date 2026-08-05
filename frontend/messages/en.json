@@ -18,6 +18,7 @@
     "label": "Skip to main content"
   },
   "Nav": {
+    "professionalProfile": "Profile",
     "about": "About",
     "techStack": "Tech Stack",
     "experience": "Experience",
@@ -32,7 +33,9 @@
     "tagline": "I build secure, scalable and high-performance enterprise applications. Specialized in digital identity, authentication systems, and microservices architecture.",
     "downloadCV": "Download CV",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "years": "years old",
+    "nationality": "Uruguayan"
   },
   "About": {
     "heading": "About Me",
@@ -53,14 +56,33 @@
       "Frontend": "Frontend",
       "Databases": "Databases",
       "DevOps & Infrastructure": "DevOps & Infrastructure",
-      "Security": "Security"
+      "Architecture": "Architecture",
+      "Security": "Security",
+      "Testing": "Testing",
+      "Tools": "Tools",
+      "Methodologies": "Methodologies",
+      "Operations & Support": "Operations & Support"
     }
   },
   "Experience": {
     "heading": "Experience",
     "subheading": "Where I've built and shipped",
     "present": "Present",
+    "viewCompany": "View all {company} projects",
+    "viewDetails": "View details",
+    "backToExperience": "Back to Experience",
+    "projectsAt": "Projects at {company}",
+    "technologiesUsed": "Technologies Used",
+    "technologiesUsedDesc": "Technologies I worked with during my time at {company}",
     "items": [
+      {
+        "description": "Personal entrepreneurial project — a modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. Showcases full-stack capabilities from infrastructure to UI.",
+        "highlights": [
+          "Built a complete crowdfunding platform from scratch using Spring Boot microservices for campaigns, users, payments, and notifications.",
+          "Designed a service decomposition that balances autonomy with practical development velocity for a solo project.",
+          "Implemented JWT-based authentication across services with REST API communication."
+        ]
+      },
       {
         "description": "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
         "highlights": [
@@ -292,6 +314,15 @@
     "title": "Something went wrong",
     "description": "This section encountered an error. Please try refreshing the page.",
     "retry": "Try again"
+  },
+  "ProfessionalProfile": {
+    "heading": "Professional Profile",
+    "subheading": "What I bring to the table",
+    "summary": "I am a Full Stack Developer with a strong specialization in Backend using Java and Spring Boot, complementing my experience with Frontend development using React and Angular with TypeScript.\n\nThroughout my professional career I have participated in the design, development, maintenance, and evolution of enterprise applications, working primarily under microservices architectures and developing REST and SOAP APIs for system integration. I have experience implementing authentication mechanisms using JWT and Multi-Factor Authentication (MFA), as well as documenting services with Swagger/OpenAPI to facilitate consumption and maintenance.\n\nIn Backend development I use Spring Boot with JPA for data access, implementing good design practices, centralized error handling through Controller Advice, and custom exceptions — building robust, maintainable, and scalable applications.\n\nI regularly work with PostgreSQL and MySQL databases, writing SQL queries and modeling data structures according to each project's needs.\n\nI also have experience with Docker for application containerization and Jenkins for implementing Continuous Integration and Continuous Deployment (CI/CD) processes, automating the build and release of new versions.\n\nI have participated in deployments on Linux servers, managing Java applications running as services via systemd (systemctl), working in environments where WildFly and Nginx were part of the production infrastructure. Personally, I have also deployed applications on Amazon Web Services (AWS), primarily using EC2 instances.\n\nI have knowledge of microservices-based architectures, inter-service communication, and service discovery using Eureka. I am currently expanding my knowledge by incorporating Apache Kafka for asynchronous communication between microservices, as well as observability and metrics tools for application monitoring.\n\nWithin the information security area, I gained specialized experience working with Public Key Infrastructure (PKI), Certificate Authorities (CA), issuance and revocation of digital certificates, use of HSM devices for secure generation of cryptographic key pairs, and digital document signing solutions.\n\nIn the quality area, I perform functional testing using Postman, load testing with JMeter, and develop applications incorporating WebSockets for real-time information updates.\n\nI have worked under Agile Scrum methodologies, actively participating in Daily Scrum, Sprint Planning, Sprint Reviews, and Retrospectives, collaborating in the technical definition of user stories, task estimation, and two-week sprint planning.\n\nDuring development I use Jira for task management and Confluence for technical documentation, architectures, deployment procedures, and environment setup. I have also collaborated in resolving production incidents by analyzing logs obtained together with Infrastructure and IT teams to identify root causes of errors and propose solutions.\n\nI consider myself a problem-solving oriented person, with a facility for learning new technologies and a strong commitment to software quality, good development practices, and continuous improvement.",
+    "problemSolving": "Problem Solving",
+    "continuousLearning": "Continuous Learning",
+    "softwareQuality": "Software Quality",
+    "cleanCode": "Clean Code & SOLID"
   },
   "Common": {
     "more": "more"

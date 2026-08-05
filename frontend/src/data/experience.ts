@@ -2,9 +2,32 @@ import type { Experience } from "@/types";
 
 export const experience: Experience[] = [
   {
+    company: "Quiero Realizarlo",
+    role: "Founder & Full Stack Developer",
+    period: "2026 — Present",
+    description:
+      "Personal entrepreneurial project — a modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. Showcases full-stack capabilities from infrastructure to UI, demonstrating how a microservices approach enables independent scaling of specific features.",
+    highlights: [
+      "Built a complete crowdfunding platform from scratch using Spring Boot microservices for campaigns, users, payments, and notifications — each with its own database.",
+      "Designed a service decomposition that balances autonomy with practical development velocity for a solo project.",
+      "Implemented JWT-based authentication across services with REST API communication.",
+    ],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "JWT",
+      "Microservices",
+    ],
+  },
+  {
     company: "ISA Interfase",
     role: "Full Stack Java Developer",
-    period: "2019 — Present",
+    period: "2019 — Sept 2025",
+    logo: "/images/isa interfase.jpg",
     description:
       "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
     highlights: [
@@ -37,6 +60,7 @@ export const experience: Experience[] = [
     company: "Beacon42",
     role: "Magento Developer",
     period: "2018 — 2019",
+    logo: "/images/beacon42.png",
     description:
       "Developed custom Magento modules and backend integrations for eCommerce clients, automating billing workflows and extending platform capabilities beyond out-of-the-box features.",
     highlights: [
@@ -50,6 +74,7 @@ export const experience: Experience[] = [
     company: "Portlike",
     role: "Programmer Analyst",
     period: "2017 — 2018",
+    logo: "/images/portlike.png",
     description:
       "Built analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
     highlights: [

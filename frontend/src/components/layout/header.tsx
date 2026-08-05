@@ -11,15 +11,17 @@ import { navLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
-const navTranslationKeys: Record<string, string> = {
+const navTranslationKeys = {
+  "#professional-profile": "professionalProfile",
   "#about": "about",
-  "#tech-stack": "techStack",
   "#experience": "experience",
-  "#projects": "projects",
+  "#tech-stack": "techStack",
   "#architecture": "architecture",
   "#github": "github",
   "#contact": "contact",
-};
+} as const;
+
+type NavKey = (typeof navTranslationKeys)[keyof typeof navTranslationKeys];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -93,7 +95,7 @@ export function Header() {
                     : "text-muted-foreground hover:text-foreground hover:bg-card"
                 )}
               >
-                {t(navTranslationKeys[sectionKey] as never)}
+        {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
               </a>
               );
             })}

@@ -254,7 +254,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#projects",
+      link: "/#experience",
     },
     metadata: {
       title: "MiRecibo — Digital Payroll Platform",
@@ -558,7 +558,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#projects",
+      link: "/#experience",
     },
     metadata: {
       title: "ISCERT — Digital Certification Infrastructure",
@@ -791,12 +791,432 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#projects",
+      link: "/#experience",
     },
     metadata: {
       title: "FirmaPDF — Mass PDF Digital Signing Platform",
       description:
         "High-throughput platform for PAdES-compliant PDF digital signatures. Asynchronous processing, OAuth2 integration, and HSM-backed cryptographic operations.",
+    },
+  },
+  // ─── Magento Billing Plugin ──────────────────────────────────
+  {
+    slug: "magento-billing-plugin",
+    name: "Magento Billing Plugin",
+    subtitle: "Custom billing automation plugin for Magento eCommerce",
+    shortDescription:
+      "Custom Magento plugin that automated recurring billing, subscription management, and payment gateway integration for e-commerce clients, reducing manual invoicing overhead by 60%.",
+    heroImage: "/images/beacon42.png",
+    role: "Magento Developer",
+    duration: "2018 — 2019",
+    about:
+      "During my time at Beacon42, I developed a custom Magento plugin from scratch to manage complex billing workflows for e-commerce clients. The plugin automated recurring invoicing, subscription handling, and integrated multiple third-party payment gateways — all without requiring downtime during deployment.\n\nThe project required deep knowledge of Magento's plugin architecture, PHP development patterns, and eCommerce business logic. I gained hands-on experience with the Magento ecosystem while helping a fast-scaling startup deliver value to its clients.",
+    problem:
+      "E-commerce clients using Magento needed automated recurring billing and subscription management beyond the platform's built-in capabilities. Manual invoicing was time-consuming, error-prone, and didn't scale with their growing customer bases.",
+    solution:
+      "Built a custom PHP-based Magento plugin with MySQL backend that automated the entire billing lifecycle — from recurring invoice generation to payment gateway integration and subscription status tracking. The plugin extended Magento's admin panel with custom dashboards for reporting and inventory management.",
+    features: [
+      {
+        icon: "CreditCard",
+        title: "Recurring Billing",
+        description: "Automated generation and processing of recurring invoices based on configurable billing cycles.",
+      },
+      {
+        icon: "Server",
+        title: "Payment Gateway Integration",
+        description: "Seamless integration with multiple third-party payment gateways and shipping APIs.",
+      },
+      {
+        icon: "Monitor",
+        title: "Admin Panel Extension",
+        description: "Custom reporting dashboards and inventory management tools integrated into Magento's admin interface.",
+      },
+      {
+        icon: "Zap",
+        title: "Zero-Downtime Deployments",
+        description: "All integrations and updates deployed without service interruption for live e-commerce stores.",
+      },
+    ],
+    participation: [
+      "Designed and developed the Magento plugin architecture from scratch",
+      "Implemented recurring billing automation workflows",
+      "Integrated third-party payment gateways and shipping APIs",
+      "Extended Magento admin panel with custom reporting features",
+      "Ensured zero-downtime deployments for production e-commerce stores",
+    ],
+    technicalChallenges: [
+      {
+        title: "Plugin Architecture Constraints",
+        description: "Automating recurring billing workflows within Magento's plugin architecture constraints required creative use of cron jobs and event observers.",
+      },
+      {
+        title: "Multi-Gateway Integration",
+        description: "Each payment gateway had different API formats, authentication methods, and error handling patterns — requiring a unified abstraction layer.",
+      },
+    ],
+    security: {
+      description: "Handling payment data required compliance with security best practices for e-commerce platforms.",
+      items: [
+        {
+          title: "Payment Data Security",
+          description: "Secure handling of payment information with proper encryption and never storing raw credit card data.",
+        },
+        {
+          title: "API Key Management",
+          description: "Secure storage and rotation of third-party API credentials for payment gateways.",
+        },
+      ],
+    },
+    impact: [
+      { label: "Manual Work Reduced", value: "60%", icon: "Zap" },
+      { label: "Payment Gateways", value: "3+", icon: "CreditCard" },
+      { label: "Zero-Downtime Deploys", value: "100%", icon: "Server" },
+    ],
+    technologies: ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs"],
+    architecture: {
+      description:
+        "PHP-based Magento plugin with MySQL backend, integrating third-party payment gateways and shipping APIs. Extended the Magento admin panel for custom reporting and inventory management dashboards.",
+    },
+    lessonsLearned: [
+      "Deep understanding of Magento's plugin architecture and eCommerce ecosystems",
+      "Building abstraction layers for multi-provider integrations saves enormous maintenance effort",
+      "Zero-downtime deployments in e-commerce require careful planning around active user sessions",
+    ],
+    gallery: [
+      { src: "/images/beacon42.png", alt: "Beacon42 — Magento Development" },
+    ],
+    callToAction: {
+      text: "Explore other projects",
+      link: "/#experience",
+    },
+    metadata: {
+      title: "Magento Billing Plugin — eCommerce Automation",
+      description:
+        "Custom Magento plugin for automated billing, subscription management, and payment gateway integration. Reduced manual invoicing by 60%.",
+    },
+  },
+  // ─── Web Analytics & Tracking ────────────────────────────────
+  {
+    slug: "web-analytics-tracking",
+    name: "Web Analytics & Tracking",
+    subtitle: "Analytics infrastructure for DIRECTV web properties",
+    shortDescription:
+      "Implementation of Google Analytics and Google Tag Manager across DIRECTV's web properties, enabling data-driven marketing through custom dashboards and automated Excel reporting.",
+    heroImage: "/images/portlike.png",
+    role: "Programmer Analyst",
+    duration: "2017 — 2018",
+    about:
+      "At Portlike, I worked on analytics and tracking infrastructure for DIRECTV's web properties. My role combined web development with data analysis — implementing Google Analytics and Tag Manager tracking across multiple websites, building custom dashboards, and creating automated Excel reporting pipelines.\n\nThis was my first professional experience, where I transitioned from an analyst role into web development by demonstrating strong JavaScript skills and eventually maintaining Lumen (Laravel) projects and WordPress sites.",
+    problem:
+      "DIRECTV needed comprehensive tracking across multiple disparate websites to understand user behavior, measure campaign performance, and generate actionable business intelligence. Manual data entry for weekly reports consumed 15+ hours.",
+    solution:
+      "Deployed Google Analytics and Tag Manager with custom event tracking across all client websites. Built Laravel (Lumen) APIs for data aggregation and created automated Excel reporting pipelines that eliminated manual data entry entirely.",
+    features: [
+      {
+        icon: "Globe",
+        title: "Cross-Site Tracking",
+        description: "Consistent tracking infrastructure deployed across multiple web properties with different architectures.",
+      },
+      {
+        icon: "Database",
+        title: "Data Aggregation APIs",
+        description: "Laravel (Lumen) APIs consuming external services and presenting insights through clean interfaces.",
+      },
+      {
+        icon: "FileText",
+        title: "Automated Reporting",
+        description: "Excel reporting pipelines that eliminated 15+ hours of weekly manual data entry for business stakeholders.",
+      },
+      {
+        icon: "Monitor",
+        title: "Custom Dashboards",
+        description: "Data-driven marketing dashboards enabling real-time campaign performance measurement.",
+      },
+    ],
+    participation: [
+      "Implemented Google Analytics and Tag Manager across multiple client websites",
+      "Analyzed metrics and user behavior statistics",
+      "Generated reports and configured user behavior tracking",
+      "Created graphical Excel reports for executive decision-making",
+      "Developed Lumen (Laravel) APIs for data aggregation",
+    ],
+    technicalChallenges: [
+      {
+        title: "Disparate Web Architectures",
+        description: "Implementing consistent tracking across multiple web properties built with different technologies and architectures.",
+      },
+      {
+        title: "Report Automation",
+        description: "Automating complex Excel report generation to eliminate 15+ hours of weekly manual data entry while maintaining accuracy.",
+      },
+    ],
+    security: {
+      description: "Analytics implementation required careful handling of user data and compliance with privacy standards.",
+      items: [
+        {
+          title: "Data Privacy Compliance",
+          description: "Ensuring analytics tracking respected user privacy and complied with relevant data protection standards.",
+        },
+        {
+          title: "Access Control",
+          description: "Proper access management for Google Analytics and Tag Manager accounts across multiple stakeholders.",
+        },
+      ],
+    },
+    impact: [
+      { label: "Weekly Manual Work Saved", value: "15+ hrs", icon: "Clock" },
+      { label: "Websites Tracked", value: "Multiple", icon: "Globe" },
+      { label: "Report Automation", value: "100%", icon: "Zap" },
+    ],
+    technologies: ["Google Analytics", "Google Tag Manager", "Laravel", "PHP", "JavaScript", "Excel"],
+    architecture: {
+      description:
+        "Google Analytics and Tag Manager deployed across multiple client websites with custom event tracking. Laravel (Lumen) APIs for data aggregation and Excel-based automated reporting pipelines.",
+    },
+    lessonsLearned: [
+      "Data-driven decision making requires clean, consistent tracking infrastructure",
+      "Automating manual reporting processes delivers immediate tangible ROI",
+      "Combining analytical skills with development creates unique value in any team",
+    ],
+    gallery: [
+      { src: "/images/portlike.png", alt: "Portlike — Web Analytics" },
+    ],
+    callToAction: {
+      text: "Explore other projects",
+      link: "/#experience",
+    },
+    metadata: {
+      title: "Web Analytics & Tracking — DIRECTV",
+      description:
+        "Google Analytics and Tag Manager implementation across DIRECTV web properties. Automated reporting pipelines saving 15+ hours weekly.",
+    },
+  },
+  // ─── WordPress Corporate Site ────────────────────────────────
+  {
+    slug: "wordpress-corporate-site",
+    name: "WordPress Corporate Site",
+    subtitle: "Corporate website maintenance and evolution for DIRECTV",
+    shortDescription:
+      "Maintenance and evolution of DIRECTV's corporate WordPress website — new campaign pages, feature enhancements, performance optimization, and third-party plugin management.",
+    heroImage: "/images/takeoff.jpg",
+    role: "Web Developer",
+    duration: "2017 — 2018",
+    about:
+      "As part of my work at Portlike (alongside Takeoff, a partner company sharing the same office), I contributed to the maintenance and evolution of DIRECTV's corporate WordPress website. This involved developing new commercial campaign pages, fixing bugs, optimizing performance, and integrating third-party plugins.\n\nThe role required balancing rapid campaign deployment demands with production stability — ensuring that marketing teams could launch new pages quickly without compromising the site's reliability.",
+    problem:
+      "DIRECTV's corporate site required ongoing evolution — new campaign pages, feature enhancements, bug fixes, and performance optimization — while maintaining stability in a high-traffic production environment.",
+    solution:
+      "Developed new WordPress pages and components using custom PHP, HTML, CSS, and JavaScript. Managed third-party plugin integrations, performed bug fixes, and optimized site performance for production traffic.",
+    features: [
+      {
+        icon: "Layout",
+        title: "Campaign Pages",
+        description: "Custom commercial campaign landing pages developed rapidly to support marketing initiatives.",
+      },
+      {
+        icon: "Zap",
+        title: "Performance Optimization",
+        description: "Site speed improvements and production environment tuning for high-traffic scenarios.",
+      },
+      {
+        icon: "CheckCircle",
+        title: "Bug Fixes & Maintenance",
+        description: "Ongoing maintenance ensuring stability while new features were continuously deployed.",
+      },
+      {
+        icon: "Server",
+        title: "Plugin Management",
+        description: "Integration and maintenance of third-party WordPress plugins with compatibility assurance.",
+      },
+    ],
+    participation: [
+      "Developed new commercial campaign pages and components",
+      "Performed bug fixes and feature enhancements",
+      "Integrated and maintained third-party WordPress plugins",
+      "Optimized site performance for production environments",
+      "Ensured compatibility across plugin updates and WordPress versions",
+    ],
+    technicalChallenges: [
+      {
+        title: "Rapid Deployments vs Stability",
+        description: "Balancing the need for fast campaign page deployments with maintaining production stability and performance.",
+      },
+      {
+        title: "Plugin Compatibility",
+        description: "Ensuring third-party plugins remained compatible and secure across WordPress core updates.",
+      },
+    ],
+    security: {
+      description: "Maintaining a corporate website required attention to WordPress security best practices.",
+      items: [
+        {
+          title: "Plugin Security",
+          description: "Regular security audits of third-party plugins and timely updates to patch vulnerabilities.",
+        },
+        {
+          title: "Production Access Control",
+          description: "Controlled access to production environments with proper deployment procedures.",
+        },
+      ],
+    },
+    impact: [
+      { label: "Campaign Pages", value: "Multiple", icon: "Layout" },
+      { label: "Plugins Managed", value: "Multiple", icon: "Server" },
+      { label: "Production Stability", value: "Maintained", icon: "Shield" },
+    ],
+    technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
+    architecture: {
+      description:
+        "WordPress CMS with custom PHP development for new functionality. HTML, CSS, and JavaScript for frontend components. Third-party plugin integration and maintenance.",
+    },
+    lessonsLearned: [
+      "Production WordPress sites require disciplined plugin management and update strategies",
+      "Rapid marketing deployments need streamlined development workflows without sacrificing quality",
+      "Cross-team collaboration (Portlike + Takeoff) taught effective communication in shared office environments",
+    ],
+    gallery: [
+      { src: "/images/takeoff.jpg", alt: "Takeoff — WordPress Development" },
+    ],
+    callToAction: {
+      text: "Explore other projects",
+      link: "/#experience",
+    },
+    metadata: {
+      title: "WordPress Corporate Site — DIRECTV",
+      description:
+        "Maintenance and evolution of DIRECTV's corporate WordPress website. Campaign pages, performance optimization, and plugin management.",
+    },
+  },
+  // ─── Crowdfunding Platform ───────────────────────────────────
+  {
+    slug: "crowdfunding-platform",
+    name: "Crowdfunding Platform",
+    subtitle: "Modern microservices-based crowdfunding platform",
+    shortDescription:
+      "A modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. A personal project showcasing full-stack capabilities from infrastructure to UI as part of the Quiero Realizarlo initiative.",
+    heroImage: "/projects/placeholder.svg",
+    role: "Founder & Full Stack Developer",
+    duration: "2026 — Present",
+    about:
+      "Quiero Realizarlo is my personal entrepreneurial project — a modern crowdfunding platform that demonstrates how a microservices approach can solve the scaling and flexibility limitations of monolithic platforms.\n\nThe platform is built from the ground up using Spring Boot microservices for campaigns, users, payments, and notifications, each with independent databases. Services communicate via REST APIs with JWT-based authentication, orchestrated through Docker Compose for local development.\n\nThis project is my sandbox for exploring distributed systems, cloud infrastructure, and full-stack development — applying everything I've learned in enterprise environments to a product I own end-to-end.",
+    problem:
+      "Most crowdfunding platforms are monolithic, making it difficult to scale specific features independently or experiment with new functionality. I wanted to build a platform that demonstrates how a microservices approach can solve these problems while providing a clean, modern user experience.",
+    solution:
+      "Designed a microservices architecture with independent Spring Boot services for campaigns, users, payments, and notifications — each with its own PostgreSQL database. Services communicate through REST APIs with centralized JWT authentication. The React frontend provides a responsive, modern interface.",
+    features: [
+      {
+        icon: "Server",
+        title: "Microservices Architecture",
+        description: "Independent services for campaigns, users, payments, and notifications, each with dedicated databases.",
+      },
+      {
+        icon: "Key",
+        title: "JWT Authentication",
+        description: "Centralized token-based authentication across all microservices with secure API communication.",
+      },
+      {
+        icon: "CreditCard",
+        title: "Payment Processing",
+        description: "Dedicated payment service handling transactions with proper isolation from campaign logic.",
+      },
+      {
+        icon: "Globe",
+        title: "Responsive React Frontend",
+        description: "Modern, responsive UI built with React and TypeScript connected to the microservices backend.",
+      },
+      {
+        icon: "Database",
+        title: "Independent Databases",
+        description: "Each service owns its data — PostgreSQL for transactional data with proper domain boundaries.",
+      },
+      {
+        icon: "Container",
+        title: "Docker Orchestration",
+        description: "Docker Compose for local development with orchestrated service startup and health checks.",
+      },
+    ],
+    participation: [
+      "Designed the complete microservices architecture and service boundaries",
+      "Implemented all backend services (campaigns, users, payments, notifications)",
+      "Built the React frontend with TypeScript",
+      "Configured Docker Compose for local development orchestration",
+      "Designed database schemas for each independent service",
+    ],
+    technicalChallenges: [
+      {
+        title: "Distributed Transactions",
+        description: "Managing distributed transactions across campaign creation, payment processing, and notification services without a distributed transaction coordinator.",
+      },
+      {
+        title: "Service Decomposition",
+        description: "Designing a service decomposition that balances domain autonomy with practical development velocity for a solo project.",
+      },
+      {
+        title: "Data Consistency",
+        description: "Maintaining data consistency across independent databases while allowing each service to evolve independently.",
+      },
+    ],
+    security: {
+      description: "The platform implements security best practices from the ground up, applying enterprise patterns to a personal project.",
+      items: [
+        {
+          title: "JWT-Based Auth",
+          description: "Token-based authentication with proper expiration, refresh tokens, and secure token storage.",
+        },
+        {
+          title: "API Security",
+          description: "All inter-service communication secured with proper authentication and input validation.",
+        },
+        {
+          title: "Data Isolation",
+          description: "Independent databases ensure that a compromise in one service doesn't expose data from others.",
+        },
+      ],
+    },
+    impact: [
+      { label: "Microservices", value: "4", icon: "Server" },
+      { label: "Independent DBs", value: "4", icon: "Database" },
+      { label: "API Gateway", value: "Centralized", icon: "Shield" },
+      { label: "Docker Services", value: "5+", icon: "Container" },
+    ],
+    technologies: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Microservices"],
+    architecture: {
+      description:
+        "Microservices architecture with Spring Boot services for campaigns, users, payments, and notifications — each with its own database. Services communicate via REST APIs with JWT-based authentication. PostgreSQL for transactional data. Docker Compose for local development. React frontend with a clean, responsive design.",
+      mermaidCode: `graph TD
+    AG[API Gateway] --> Auth
+    AG --> CS[Campaign Service]
+    AG --> US[User Service]
+    AG --> PS[Payment Service]
+    AG --> NS[Notification Service]
+    Auth --> AuthDB[(Auth DB)]
+    CS --> CSDB[(Campaign DB)]
+    US --> USDB[(User DB)]
+    PS --> PSDB[(Payment DB)]
+    NS --> NSDB[(Notification DB)]
+    style AG fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style Auth fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
+    style CS fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
+    style US fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
+    style PS fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
+    style NS fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5`,
+    },
+    lessonsLearned: [
+      "Distributed transactions are the hardest problem in microservices — eventual consistency patterns are essential",
+      "Service boundaries should be drawn around business domains, not technical layers",
+      "For solo projects, start with fewer services and split as complexity genuinely demands it",
+    ],
+    gallery: [
+      { src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" },
+    ],
+    callToAction: {
+      text: "Explore other projects",
+      link: "/#experience",
+    },
+    metadata: {
+      title: "Crowdfunding Platform — Quiero Realizarlo",
+      description:
+        "Modern microservices-based crowdfunding platform. Spring Boot, React, PostgreSQL, and Docker. Personal entrepreneurial project.",
     },
   },
 ];

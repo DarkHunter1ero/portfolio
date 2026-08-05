@@ -6,15 +6,17 @@ import { X } from "lucide-react";
 import { navLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
-const navTranslationKeys: Record<string, string> = {
+const navTranslationKeys = {
+  "#professional-profile": "professionalProfile",
   "#about": "about",
-  "#tech-stack": "techStack",
   "#experience": "experience",
-  "#projects": "projects",
+  "#tech-stack": "techStack",
   "#architecture": "architecture",
   "#github": "github",
   "#contact": "contact",
-};
+} as const;
+
+type NavKey = (typeof navTranslationKeys)[keyof typeof navTranslationKeys];
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -78,7 +80,7 @@ export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) 
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
-            {t(navTranslationKeys[sectionKey] as never)}
+            {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
           </a>
             );
           })}

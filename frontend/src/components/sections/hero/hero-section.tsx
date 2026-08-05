@@ -3,9 +3,11 @@ import Image from "next/image";
 import { HeroBackground } from "./hero-background";
 import { HeroCTA } from "./hero-cta";
 import { profile } from "@/data/profile";
+import { calculateAge } from "@/lib/utils";
 
 export async function HeroSection() {
   const t = await getTranslations("Hero");
+  const age = calculateAge(profile.birthDate);
 
   return (
     <section
@@ -41,6 +43,24 @@ export async function HeroSection() {
               sizes="(max-width: 640px) 128px, 160px"
               priority
             />
+          </div>
+
+          <div className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <span>
+              {age} {t("years")}
+            </span>
+            <span className="text-border">·</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Image
+                src="https://flagcdn.com/w20/uy.png"
+                alt="Uruguay"
+                width={16}
+                height={12}
+                className="rounded-sm"
+                unoptimized
+              />
+              {t("nationality")}
+            </span>
           </div>
         </div>
 

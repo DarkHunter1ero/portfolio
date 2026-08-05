@@ -84,6 +84,7 @@ export const projects: Project[] = [
   {
     name: "Magento Billing Plugin",
     company: "Beacon42",
+    slug: "magento-billing-plugin",
     description:
       "Custom Magento plugin for automated billing process management. Streamlined recurring invoicing, subscription handling, and payment gateway integration for e-commerce clients.",
     problem:
@@ -101,6 +102,7 @@ export const projects: Project[] = [
   {
     name: "Web Analytics & Tracking",
     company: "Portlike · DIRECTV",
+    slug: "web-analytics-tracking",
     description:
       "Implementation of Google Analytics and Google Tag Manager tracking infrastructure across DIRECTV's web properties, enabling data-driven marketing decisions through custom dashboards and automated reporting.",
     problem:
@@ -124,6 +126,7 @@ export const projects: Project[] = [
   {
     name: "WordPress Corporate Site",
     company: "Portlike · DIRECTV",
+    slug: "wordpress-corporate-site",
     description:
       "Maintenance and evolution of DIRECTV's corporate WordPress website — developed at Portlike alongside Takeoff (partner company sharing the same office). New pages, commercial campaign components, and performance optimization for production environments.",
     problem:
@@ -140,7 +143,8 @@ export const projects: Project[] = [
   // ─── Personal ───
   {
     name: "Crowdfunding Platform",
-    company: "Personal Project",
+    company: "Quiero Realizarlo",
+    slug: "crowdfunding-platform",
     description:
       "Modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. A personal project that showcases full-stack capabilities from infrastructure to UI.",
     problem:
