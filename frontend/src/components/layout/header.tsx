@@ -17,7 +17,6 @@ const navTranslationKeys = {
   "#experience": "experience",
   "#tech-stack": "techStack",
   "#architecture": "architecture",
-  "#github": "github",
   "#contact": "contact",
 } as const;
 
