@@ -62,13 +62,26 @@ function getIcon(name: string): LucideIcon {
   return iconMap[name] ?? Shield;
 }
 
-// ─── Mermaid (lazy) ───────────────────────────────────────────
+// ─── Mermaid / React Flow (lazy) ────────────────────────────
 
 const MermaidDiagram = dynamic(
   () =>
     import(
       "@/components/sections/architecture/mermaid-diagram"
     ).then((mod) => mod.MermaidDiagram),
+  {
+    ssr: false,
+    loading: () => (
+      <Skeleton className="w-full min-h-[300px] rounded-2xl" />
+    ),
+  }
+);
+
+const ReactFlowDiagram = dynamic(
+  () =>
+    import(
+      "@/components/sections/architecture/react-flow-diagram"
+    ).then((mod) => mod.ReactFlowDiagram),
   {
     ssr: false,
     loading: () => (
@@ -783,7 +796,18 @@ function ProjectArchitecture({
           </p>
         </motion.div>
 
-        {project.architecture.mermaidCode && (
+        {project.architecture.reactFlowData && (
+          <motion.div
+            {...(prefersReduced ? {} : {
+              ...sectionAnim,
+              transition: { ...sectionAnim.transition, delay: 0.1 },
+            })}
+          >
+            <ReactFlowDiagram data={project.architecture.reactFlowData} />
+          </motion.div>
+        )}
+
+        {!project.architecture.reactFlowData && project.architecture.mermaidCode && (
           <motion.div
             {...(prefersReduced ? {} : {
               ...sectionAnim,

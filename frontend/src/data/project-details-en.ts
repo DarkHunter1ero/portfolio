@@ -207,47 +207,36 @@ export const projectDetailsEn: ProjectDetail[] = [
     architecture: {
       description:
         "MiRecibo is a monolithic Groovy/Grails application that centralizes authentication, payroll batch processing, electronic payslip generation, digital signature workflows, and notifications into a single deployable unit backed by MySQL.",
-      mermaidCode: `graph TB
-    User["👤 Employee"]
-    Admin["👨‍💼 Company Administrator"]
-
-    Frontend["Angular Frontend"]
-
-    subgraph MIRECIBO["MiRecibo - Monolithic Application"]
-        Monolith["Groovy / Grails"]
-
-        Auth["Authentication & Authorization"]
-        Payroll["Payroll Batch Processing"]
-        Documents["Electronic Payslips"]
-        Signature["Digital Signature Workflow"]
-        Notifications["Notifications<br/>Web + Email"]
-
-        Monolith --> Auth
-        Monolith --> Payroll
-        Monolith --> Documents
-        Monolith --> Signature
-        Monolith --> Notifications
-    end
-
-    DB[("MySQL Database")]
-    Mail["Mail Server"]
-
-    User --> Frontend
-    Admin --> Frontend
-
-    Frontend --> Monolith
-
-    Monolith --> DB
-
-    Notifications --> Mail
-
-    Payroll --> Documents
-
-    Documents --> Signature
-
-    style Frontend fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style Monolith fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
-    style Mail fill:#92400e,stroke:#78350f,color:#fff`,
+      reactFlowData: {
+        direction: "TB",
+        nodes: [
+          { id: "User", data: { label: "👤 Employee" }, style: { background: "#2563eb", border: "1px solid #1d4ed8", color: "#fff" } },
+          { id: "Admin", data: { label: "👨‍💼 Company Administrator" }, style: { background: "#2563eb", border: "1px solid #1d4ed8", color: "#fff" } },
+          { id: "Frontend", data: { label: "Angular Frontend" }, style: { background: "#2563eb", border: "1px solid #1d4ed8", color: "#fff" } },
+          { id: "Monolith", data: { label: "Groovy / Grails" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Auth", data: { label: "Authentication & Authorization" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Payroll", data: { label: "Payroll Batch Processing" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Documents", data: { label: "Electronic Payslips" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Signature", data: { label: "Digital Signature Workflow" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Notifications", data: { label: "Notifications\nWeb + Email" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "DB", type: "database", data: { label: "MySQL Database" } },
+          { id: "Mail", data: { label: "Mail Server" }, style: { background: "#92400e", border: "1px solid #78350f", color: "#fff" } },
+        ],
+        edges: [
+          { id: "e-user-frontend", source: "User", target: "Frontend" },
+          { id: "e-admin-frontend", source: "Admin", target: "Frontend" },
+          { id: "e-frontend-monolith", source: "Frontend", target: "Monolith" },
+          { id: "e-monolith-auth", source: "Monolith", target: "Auth" },
+          { id: "e-monolith-payroll", source: "Monolith", target: "Payroll" },
+          { id: "e-monolith-documents", source: "Monolith", target: "Documents" },
+          { id: "e-monolith-signature", source: "Monolith", target: "Signature" },
+          { id: "e-monolith-notifications", source: "Monolith", target: "Notifications" },
+          { id: "e-monolith-db", source: "Monolith", target: "DB" },
+          { id: "e-notifications-mail", source: "Notifications", target: "Mail" },
+          { id: "e-payroll-documents", source: "Payroll", target: "Documents" },
+          { id: "e-documents-signature", source: "Documents", target: "Signature" },
+        ],
+      },
     },
     impact: [
       {
@@ -538,45 +527,31 @@ export const projectDetailsEn: ProjectDetail[] = [
     architecture: {
       description:
         "ISCERT is built on a microservices architecture with three core layers: the Authentication Service provides centralized OAuth2/JWT-based identity verification; the Certificate Management Service orchestrates the business logic of certificate requests, approvals, and lifecycle coordination; and the Certificate Authority Service integrates with external CA providers (KeyOne and CA Gateway/Manager System) to perform the actual cryptographic issuance and revocation of digital certificates. The entire stack runs on Java/Spring Boot, packaged as JARs, deployed on Linux with Nginx as reverse proxy, orchestrated with Docker, and backed by PostgreSQL.",
-      mermaidCode: `graph LR
-    Client["👤 User"]
-
-    subgraph ISCERT["ISCERT Platform"]
-        direction LR
-        Auth["🔐 Auth Server<br/>Spring Boot<br/>Embedded WildFly<br/>OAuth2<br/>JWT<br/>2FA / OTP<br/>Thymeleaf UI"]
-        Crypto["🔑 Crypto Services<br/>Spring Boot<br/>Embedded WildFly<br/>Certificate Lifecycle<br/>Document Signing"]
-        CA["📜 CA Management<br/>Spring Boot<br/>Embedded WildFly<br/>Certificate Issuance<br/>Certificate Revocation<br/>Multi-CA Routing"]
-    end
-
-    AuthDB[("PostgreSQL")]
-    CryptoDB[("PostgreSQL")]
-
-    HSM["🏛 HSM"]
-    KeyOne["KeyOne CA"]
-    Gateway["CA Gateway"]
-
-    Client --> Auth
-
-    Auth -->|"JWT"| Crypto
-    Auth -->|"JWT"| CA
-
-    Crypto -->|"HTTP"| CA
-
-    Crypto -->|"PKCS#11"| HSM
-
-    CA --> KeyOne
-    CA --> Gateway
-
-    Auth --> AuthDB
-    Crypto --> CryptoDB
-
-    style Client fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style Auth fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
-    style Crypto fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
-    style CA fill:#1e1e24,stroke:#2a2a35,color:#f0f0f5
-    style HSM fill:#7c3aed,stroke:#5b21b6,color:#fff
-    style KeyOne fill:#92400e,stroke:#78350f,color:#fff
-    style Gateway fill:#92400e,stroke:#78350f,color:#fff`,
+      reactFlowData: {
+        direction: "LR",
+        nodes: [
+          { id: "Client", data: { label: "👤 User" }, style: { background: "#2563eb", border: "1px solid #1d4ed8", color: "#fff" } },
+          { id: "Auth", data: { label: "🔐 Auth Server\nSpring Boot\nEmbedded WildFly\nOAuth2\nJWT\n2FA / OTP\nThymeleaf UI" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "Crypto", data: { label: "🔑 Crypto Services\nSpring Boot\nEmbedded WildFly\nCertificate Lifecycle\nDocument Signing" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "CA", data: { label: "📜 CA Management\nSpring Boot\nEmbedded WildFly\nCertificate Issuance\nCertificate Revocation\nMulti-CA Routing" }, style: { background: "#1e1e24", border: "1px solid #2a2a35", color: "#f0f0f5" } },
+          { id: "AuthDB", type: "database", data: { label: "PostgreSQL" } },
+          { id: "CryptoDB", type: "database", data: { label: "PostgreSQL" } },
+          { id: "HSM", data: { label: "🏛 HSM" }, style: { background: "#7c3aed", border: "1px solid #5b21b6", color: "#fff" } },
+          { id: "KeyOne", data: { label: "KeyOne CA" }, style: { background: "#92400e", border: "1px solid #78350f", color: "#fff" } },
+          { id: "Gateway", data: { label: "CA Gateway" }, style: { background: "#92400e", border: "1px solid #78350f", color: "#fff" } },
+        ],
+        edges: [
+          { id: "e-client-auth", source: "Client", target: "Auth" },
+          { id: "e-auth-crypto", source: "Auth", target: "Crypto", label: "JWT" },
+          { id: "e-auth-ca", source: "Auth", target: "CA", label: "JWT" },
+          { id: "e-crypto-ca", source: "Crypto", target: "CA", label: "HTTP" },
+          { id: "e-crypto-hsm", source: "Crypto", target: "HSM", label: "PKCS#11" },
+          { id: "e-ca-keyone", source: "CA", target: "KeyOne" },
+          { id: "e-ca-gateway", source: "CA", target: "Gateway" },
+          { id: "e-auth-authdb", source: "Auth", target: "AuthDB" },
+          { id: "e-crypto-cryptodb", source: "Crypto", target: "CryptoDB" },
+        ],
+      },
     },
     useCases: [
       {

@@ -127,6 +127,26 @@ export interface ProjectDemoVideo {
   url: string;
 }
 
+export interface ReactFlowDiagramNode {
+  id: string;
+  type?: "default" | "database";
+  data: { label: string };
+  style?: Record<string, string>;
+}
+
+export interface ReactFlowDiagramEdge {
+  id: string;
+  source: string;
+  target: string;
+  label?: string;
+}
+
+export interface ReactFlowDiagramData {
+  direction?: "TB" | "LR";
+  nodes: ReactFlowDiagramNode[];
+  edges: ReactFlowDiagramEdge[];
+}
+
 export interface ProjectDetail {
   slug: string;
   name: string;
@@ -149,6 +169,7 @@ export interface ProjectDetail {
   architecture?: {
     description: string;
     mermaidCode?: string;
+    reactFlowData?: ReactFlowDiagramData;
   };
   lessonsLearned: string[];
   gallery: GalleryImage[];
