@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { ThemeToggle } from "./theme-toggle";
 import { MobileMenu } from "./mobile-menu";
 import { LocaleSwitcher } from "./locale-switcher";
 import { navLinks } from "@/data/navigation";
@@ -13,10 +12,10 @@ import { Menu } from "lucide-react";
 
 const navTranslationKeys = {
   "#professional-profile": "professionalProfile",
-  "#about": "about",
+  "#specialties": "specialties",
   "#experience": "experience",
   "#tech-stack": "techStack",
-  "#architecture": "architecture",
+  "#education": "education",
   "#contact": "contact",
 } as const;
 
@@ -102,7 +101,6 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <LocaleSwitcher />
-            <ThemeToggle />
             <button
               className="md:hidden p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-card transition-colors"
               onClick={() => setMobileOpen(true)}

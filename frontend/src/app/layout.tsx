@@ -63,7 +63,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head><JsonLd /></head>
       <body className="min-h-screen bg-background font-[family-name:var(--font-inter)] antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <ThemeProvider attribute="class" forcedTheme="dark" enableSystem={false} disableTransitionOnChange>
             <SkipLink />
             <Header />
             <main id="main-content">{children}</main>

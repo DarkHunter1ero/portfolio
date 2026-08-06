@@ -91,14 +91,35 @@ Ejecuta español primero, después inglés.
 3. Mueven **solo el PDF** a `frontend/public/CV/<idioma>/`
 4. Descartan el resto de archivos generados (HTML, Markdown, PNG, Typst)
 
-## Editar el CV
+## Editar el CV — regla de sincronización ⚠️
 
 Los datos del CV viven en dos archivos YAML independientes:
 
 - **Español** → `Diego_Silva_CV_ES.yaml`
 - **Inglés**  → `Diego_Silva_CV_EN.yaml`
 
-Editá el YAML correspondiente y ejecutá el script de ese idioma para regenerar.
+**Regla: si modificás uno, modificá el otro.**
+
+Cada vez que agregues, quites o reordenes una sección, item, highlight o dato en un archivo, hacé el mismo cambio en el otro con su traducción correspondiente. Ambos archivos deben tener **exactamente la misma estructura** (misma cantidad de secciones, ítems y sub-ítems).
+
+### Verificar sincronización
+
+Antes de regenerar los PDFs, verificá que ambos archivos estén alineados:
+
+```powershell
+.\scripts\sync-check.ps1
+```
+
+Esto compara la cantidad de secciones, ítems principales y highlights entre ambos YAML. Si encontrás diferencias, corregilas antes de seguir.
+
+### Después de editar
+
+Editá el YAML correspondiente y ejecutá el script de ese idioma para regenerar:
+
+```powershell
+.\scripts\generate-cv-es.ps1   # o .\scripts\generate-cv-en.ps1
+.\scripts\generate-cv-all.ps1  # o ambos a la vez
+```
 
 La foto de perfil (`foto_perfil.png`) es compartida por ambos YAML y debe estar en la raíz de `renderCV-external/`.
 
@@ -112,7 +133,8 @@ renderCV-external/
 ├── scripts/
 │   ├── generate-cv-es.ps1     # Genera PDF español → frontend/public/CV/ES/
 │   ├── generate-cv-en.ps1     # Genera PDF inglés  → frontend/public/CV/EN/
-│   └── generate-cv-all.ps1    # Genera ambos
+│   ├── generate-cv-all.ps1    # Genera ambos
+│   └── sync-check.ps1         # Verifica que EN y ES tengan la misma estructura
 ├── README.md
 └── rendercv_output/           # Temporal (RenderCV escribe acá, los scripts lo limpian)
 

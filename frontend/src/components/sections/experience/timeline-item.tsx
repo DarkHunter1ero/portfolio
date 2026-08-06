@@ -28,6 +28,15 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
   const translatedDescription = typeof expItem?.description === "string" ? expItem.description : item.description;
   const translatedHighlights = Array.isArray(expItem?.highlights) ? (expItem.highlights as string[]) : item.highlights;
 
+  // Translated project descriptions
+  const projectsMessages = (messages as Record<string, unknown>).Projects as Record<string, unknown> | undefined;
+  const translatedProjectsItems = (projectsMessages?.items as Array<Record<string, string>> | undefined) ?? [];
+
+  function getTranslatedProjectDesc(name: string): string {
+    const tItem = translatedProjectsItems.find((p) => p.name === name);
+    return tItem?.description ?? "";
+  }
+
   // Match projects to this company
   const companyProjects = projects.filter((p) => {
     const pc = (p.company ?? "").toLowerCase();
@@ -52,14 +61,15 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
         isLeft ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
       )}
     >
-      {/* Timeline dot */}
+      {/* Timeline dot — on the center line (right edge for left cards, left edge for right cards) */}
       <div
         className={cn(
           "absolute w-3 h-3 rounded-full bg-accent border-2 border-background",
           "top-6",
-          "md:top-6",
-          isLeft ? "md:-right-[6.5px]" : "md:-left-[6.5px]",
-          "left-[-6.5px] md:left-auto"
+          "left-[-6px]",
+          isLeft
+            ? "md:left-auto md:-right-[6px]"
+            : "md:-left-[6px]"
         )}
       />
 
@@ -78,8 +88,8 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
             </div>
           ) : (
             <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-              <span className="text-accent font-[family-name:var(--font-playfair)] text-lg font-bold">
-                {item.company.charAt(0)}
+              <span className="text-accent font-[family-name:var(--font-playfair)] text-sm font-bold tracking-tight">
+                {item.company.match(/\b\w/g)?.slice(0, 2).join("") ?? item.company.charAt(0)}
               </span>
             </div>
           )}
@@ -143,7 +153,7 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
                       {project.name}
                     </p>
                     <p className="text-[10px] text-muted-foreground line-clamp-2 leading-snug mt-0.5">
-                      {project.description}
+                      {getTranslatedProjectDesc(project.name) || project.description}
                     </p>
                     {project.slug && (
                       <a

@@ -79,8 +79,8 @@ export async function ContactSection() {
             />
             <ContactInfoItem
               icon={MapPin}
-              label={t("location")}
-              value={profile.location ?? t("locationFallback")}
+              label={t("locationLabel")}
+              value={t("locationValue")}
             />
           </div>
 

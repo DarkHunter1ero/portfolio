@@ -15,6 +15,14 @@ interface CompanyDetailViewProps {
 export async function CompanyDetailView({ company, companyProjects }: CompanyDetailViewProps) {
   const t = await getTranslations("Experience");
   const tPd = await getTranslations("ProjectDetail");
+  const tHero = await getTranslations("Hero");
+  const tProjects = await getTranslations("Projects");
+  const translatedProjectItems = tProjects.raw("items") as Array<{ name: string; description: string }>;
+
+  function getTranslatedDesc(name: string): string {
+    const item = translatedProjectItems.find((p) => p.name === name);
+    return item?.description ?? "";
+  }
 
   // Aggregate unique technologies from all projects
   const allTechs = Array.from(
@@ -100,7 +108,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {project.description}
+                  {getTranslatedDesc(project.name) || project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -126,7 +134,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-accent hover:underline ml-3"
                   >
-                    GitHub
+                    {tHero("github")}
                     <ExternalLink className="h-3 w-3" />
                   </a>
                 )}

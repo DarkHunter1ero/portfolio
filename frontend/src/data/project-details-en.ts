@@ -1,6 +1,6 @@
 import type { ProjectDetail } from "@/types";
 
-export const projectDetails: ProjectDetail[] = [
+export const projectDetailsEn: ProjectDetail[] = [
   {
     slug: "mirecibo",
     name: "MiRecibo",
@@ -18,12 +18,12 @@ export const projectDetails: ProjectDetail[] = [
         description:
           "Pioneer platform for electronic payroll receipt management in Uruguay, integrating with the country's largest payroll systems. Supports electronic signature, digital signature, and timestamping for legal validity.",
         highlights: [
-          "Firma electrónica",
-          "Firma digital",
-          "Sellado de tiempo",
-          "Integración con sistemas de liquidación",
+          "Electronic Signature",
+          "Digital Signature",
+          "Timestamping",
+          "Payroll System Integration",
           "HSM",
-          "CI Electrónica",
+          "Electronic ID Card",
         ],
         videoUrl: "https://www.youtube.com/watch?v=w2G8tXRKwhk",
         image: "/images/mirecibo-uy.jpg",
@@ -38,8 +38,8 @@ export const projectDetails: ProjectDetail[] = [
           "PAdES",
           "HSM",
           "Tokens",
-          "Tarjetas criptográficas",
-          "Custodia en la nube",
+          "Cryptographic Smart Cards",
+          "Cloud Custody",
         ],
         videoUrl: "https://www.youtube.com/watch?v=snnrY5ExBdM",
         image: "/images/mirecibo-py.jpg",
@@ -54,43 +54,43 @@ export const projectDetails: ProjectDetail[] = [
     features: [
       {
         icon: "FileText",
-        title: "Gestión electrónica de recibos",
+        title: "Electronic Receipt Management",
         description:
           "Complete digital lifecycle for payroll receipts — generation, distribution, signing, and archival without a single sheet of paper.",
       },
       {
         icon: "FileSignature",
-        title: "Firma electrónica",
+        title: "Electronic Signature",
         description:
           "Legally valid electronic signatures that authenticate the employer's identity and the document's integrity.",
       },
       {
         icon: "Key",
-        title: "Firma digital",
+        title: "Digital Signature",
         description:
           "Cryptographic digital signatures backed by HSM, providing the highest level of legal validity and non-repudiation.",
       },
       {
         icon: "Clock",
-        title: "Sellado de tiempo",
+        title: "Timestamping",
         description:
           "Timestamp authority integration that certifies exactly when each document was signed, ensuring long-term verifiability.",
       },
       {
         icon: "Database",
-        title: "Integración con sistemas de liquidación",
+        title: "Payroll System Integration",
         description:
           "Standardized APIs that connect with any payroll system, receiving receipt data automatically each pay cycle.",
       },
       {
         icon: "Users",
-        title: "Portal para empleados",
+        title: "Employee Portal",
         description:
           "Secure web portal where employees can view, download, and verify their signed receipts at any time.",
       },
       {
         icon: "Globe",
-        title: "Gestión multiempresa",
+        title: "Multi-Company Management",
         description:
           "Multi-tenant architecture supporting multiple legal entities, each with independent configuration, workflows, and users.",
       },
@@ -114,51 +114,51 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         icon: "CreditCard",
-        title: "CI Electrónica",
+        title: "Electronic ID Card",
         description:
           "Integration with Uruguay's national electronic identity card for strong citizen authentication.",
       },
       {
         icon: "HardDrive",
-        title: "Repositorio seguro",
+        title: "Secure Repository",
         description:
           "Encrypted document repository ensuring signed receipts remain protected, immutable, and always available.",
       },
     ],
     participation: [
-      "Diseño de APIs REST para la integración con sistemas de liquidación de sueldos y portales de empleados",
-      "Implementación de funcionalidades core de la plataforma: gestión de recibos, flujos de firma y notificaciones",
-      "Integración con módulos de firma electrónica y digital, incluyendo HSM y sellado de tiempo",
-      "Lógica de negocio para flujos de aprobación multiempresa con control de acceso basado en roles",
-      "Persistencia de datos con PostgreSQL: esquemas relacionales, consultas optimizadas y migraciones",
-      "Integración con otros sistemas: CI Electrónica (Uruguay), tokens criptográficos y tarjetas inteligentes (Paraguay)",
-      "Optimización de rendimiento para operaciones de firma masiva de miles de recibos por ciclo",
-      "Corrección de incidencias en entornos productivos con seguimiento de errores y despliegue de hotfixes",
-      "Trabajo colaborativo con equipos de frontend, QA, infraestructura y producto para entregas iterativas",
+      "Designed REST APIs for payroll system integration and employee portals",
+      "Implemented core platform features: receipt management, signature workflows, and notifications",
+      "Integrated electronic and digital signature modules, including HSM and timestamping",
+      "Built business logic for multi-company approval workflows with role-based access control",
+      "Implemented data persistence with PostgreSQL: relational schemas, optimized queries, and migrations",
+      "Integrated with external systems: Electronic ID Card (Uruguay), cryptographic tokens, and smart cards (Paraguay)",
+      "Optimized performance for bulk signing of thousands of receipts per pay cycle",
+      "Resolved production incidents with error tracking and hotfix deployment",
+      "Collaborated with frontend, QA, infrastructure, and product teams for iterative delivery",
     ],
     technicalChallenges: [
       {
-        title: "Integración con distintos sistemas",
+        title: "Integration with Diverse Systems",
         description:
           "Connecting MiRecibo with diverse payroll systems — each with its own data format, schedule, and authentication — required building a flexible integration layer that normalizes input without losing fidelity.",
       },
       {
-        title: "Seguridad",
+        title: "Security",
         description:
           "Handling sensitive payroll data and cryptographic keys demanded defense-in-depth: encrypted storage, HSM for key operations, TLS everywhere, and strict access controls at every layer.",
       },
       {
-        title: "Procesamiento de documentos",
+        title: "Document Processing",
         description:
           "Generating, signing, and delivering thousands of receipts per pay cycle required efficient PDF generation pipelines and asynchronous processing to maintain throughput.",
       },
       {
-        title: "Compatibilidad con diferentes mecanismos de firma",
+        title: "Signature Mechanism Compatibility",
         description:
           "Uruguay and Paraguay have different legal frameworks and certification mechanisms — the platform had to abstract signature operations to support both electronic signatures, digital signatures, smart cards, and cryptographic tokens uniformly.",
       },
       {
-        title: "Escalabilidad",
+        title: "Scalability",
         description:
           "The platform needed to handle peak loads during pay cycles — when thousands of employees access their receipts simultaneously — without degradation in response times or signing throughput.",
       },
@@ -168,39 +168,39 @@ export const projectDetails: ProjectDetail[] = [
         "MiRecibo was designed with security as a foundational requirement, not an afterthought. Handling sensitive payroll data and cryptographic signing operations demanded a comprehensive security architecture.",
       items: [
         {
-          title: "Firma Digital",
+          title: "Digital Signature",
           description:
             "Cryptographic signatures backed by asymmetric key pairs stored in HSM, providing the highest level of legal validity under Uruguayan and Paraguayan law.",
         },
         {
-          title: "Firma Electrónica",
+          title: "Electronic Signature",
           description:
             "Electronic signatures that authenticate identity and intent, with audit trails that meet regulatory requirements for payroll documentation.",
         },
         {
-          title: "No Repudio",
+          title: "Non-Repudiation",
           description:
             "Every signature is cryptographically bound to the signer's identity, making it impossible to deny having signed a document — critical for legal validity.",
         },
         {
-          title: "Sellado de Tiempo",
+          title: "Timestamping",
           description:
             "RFC 3161-compliant timestamps from a trusted Time Stamp Authority (TSA) certify exactly when each document was signed, ensuring long-term verifiability even after certificates expire.",
         },
         {
-          title: "Protección de documentos",
+          title: "Document Protection",
           description:
             "Signed documents are stored in an encrypted repository with integrity checks that detect any tampering. PDF/A format ensures long-term archival compatibility.",
         },
         {
-          title: "Integridad",
+          title: "Integrity",
           description:
             "Cryptographic hashes of every document are stored alongside the signatures, allowing independent verification that the document has not been altered since signing.",
         },
         {
-          title: "Autenticación",
+          title: "Authentication",
           description:
-            "Multi-factor authentication with OAuth2 and JWT tokens, integrated with national identity systems (CI Electrónica in Uruguay) for strong citizen authentication.",
+            "Multi-factor authentication with OAuth2 and JWT tokens, integrated with national identity systems (Electronic ID Card in Uruguay) for strong citizen authentication.",
         },
       ],
     },
@@ -251,23 +251,23 @@ export const projectDetails: ProjectDetail[] = [
     },
     impact: [
       {
-        label: "Usuarios",
-        value: "80.000+",
+        label: "Users",
+        value: "80,000+",
         icon: "Users",
       },
       {
-        label: "Reducción de papel",
+        label: "Paper Reduction",
         value: "100%",
         icon: "FileText",
       },
       {
-        label: "Automatización",
-        value: "Total",
+        label: "Automation",
+        value: "Complete",
         icon: "Zap",
       },
       {
-        label: "Optimización RRHH",
-        value: "Significativa",
+        label: "HR Optimization",
+        value: "Significant",
         icon: "Clock",
       },
     ],
@@ -327,31 +327,31 @@ export const projectDetails: ProjectDetail[] = [
     features: [
       {
         icon: "Shield",
-        title: "Autoridad Certificadora",
+        title: "Certification Authority",
         description:
           "Full Certification Authority functionality — issue, manage, and revoke X.509 digital certificates with configurable policies and templates.",
       },
       {
         icon: "FileSignature",
-        title: "Firma Digital",
+        title: "Digital Signature",
         description:
           "Cryptographic digital signatures backed by HSM, providing legal validity and non-repudiation for electronic documents and transactions.",
       },
       {
         icon: "FileText",
-        title: "Firma Electrónica",
+        title: "Electronic Signature",
         description:
           "Electronic signature workflows with identity verification and audit trails, suitable for internal approvals and less formal processes.",
       },
       {
         icon: "CheckCircle",
-        title: "Validación de certificados",
+        title: "Certificate Validation",
         description:
           "OCSP and CRL services for real-time certificate status checking, ensuring revoked or expired certificates are detected immediately.",
       },
       {
         icon: "Users",
-        title: "Gestión de identidades",
+        title: "Identity Management",
         description:
           "Centralized identity management with integration to existing directories (LDAP, Active Directory) and external identity providers.",
       },
@@ -363,7 +363,7 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         icon: "Fingerprint",
-        title: "Autenticación",
+        title: "Authentication",
         description:
           "Strong, certificate-based authentication that replaces passwords with cryptographic proof of identity — resistant to phishing and credential theft.",
       },
@@ -375,7 +375,7 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         icon: "HardDrive",
-        title: "Custodia criptográfica",
+        title: "Cryptographic Custody",
         description:
           "Secure custody of cryptographic material with role-based access controls, audit logging, and tamper-evident storage.",
       },
@@ -399,45 +399,45 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         icon: "Smartphone",
-        title: "Autenticación Multifactor",
+        title: "Multi-Factor Authentication",
         description:
           "Multi-factor authentication combining certificates with biometrics, OTP, or push notifications for defense-in-depth.",
       },
     ],
     participation: [
-      "Diseño de APIs REST para los servicios de certificación, validación y firma digital",
-      "Implementación de flujos de emisión, renovación y revocación de certificados X.509",
-      "Integración con HSM para la protección de claves privadas de la Autoridad Certificadora",
-      "Desarrollo de servicios OCSP y CRL para validación de estado de certificados en tiempo real",
-      "Lógica de negocio para políticas de certificación: plantillas, restricciones de uso y períodos de validez",
-      "Persistencia de certificados, solicitudes y registros de auditoría en PostgreSQL",
-      "Integración con directorios corporativos (LDAP/Active Directory) para la gestión de identidades",
-      "Optimización de rendimiento para validaciones masivas de certificados en entornos de alta concurrencia",
-      "Trabajo colaborativo con equipos de seguridad, infraestructura y producto para alinear la PKI con los requisitos regulatorios",
+      "Designed REST APIs for certification, validation, and digital signature services",
+      "Implemented certificate issuance, renewal, and revocation workflows for X.509 certificates",
+      "Integrated HSM for protecting Certification Authority private keys",
+      "Developed OCSP and CRL services for real-time certificate status validation",
+      "Built business logic for certification policies: templates, usage restrictions, and validity periods",
+      "Implemented persistence of certificates, requests, and audit logs in PostgreSQL",
+      "Integrated with corporate directories (LDAP/Active Directory) for identity management",
+      "Optimized performance for bulk certificate validations in high-concurrency environments",
+      "Collaborated with security, infrastructure, and product teams to align PKI with regulatory requirements",
     ],
     technicalChallenges: [
       {
-        title: "Seguridad",
+        title: "Security",
         description:
           "As a Certification Authority, ISCERT is a high-value target — protecting root keys in HSM, enforcing strict access controls, and maintaining tamper-evident audit trails were non-negotiable requirements.",
       },
       {
-        title: "Criptografía",
+        title: "Cryptography",
         description:
           "Implementing certificate issuance, signature verification, and revocation required deep understanding of X.509, PKCS standards, OCSP, CRLs, and cryptographic algorithms (RSA, ECDSA, SHA-2/3).",
       },
       {
-        title: "Escalabilidad",
+        title: "Scalability",
         description:
           "Certificate validation services (OCSP) must respond in milliseconds even under thousands of concurrent requests — requiring aggressive caching, optimized database queries, and horizontal scaling.",
       },
       {
-        title: "Alta disponibilidad",
+        title: "High Availability",
         description:
           "The Certification Authority must be available 24/7 — certificate issuance delays can block critical business processes. This required redundant HSM deployment and database replication.",
       },
       {
-        title: "Integración con dispositivos seguros",
+        title: "Secure Device Integration",
         description:
           "Supporting smart cards, USB tokens, and HSM from different vendors required abstracting device-specific protocols behind a unified cryptographic service interface.",
       },
@@ -452,32 +452,32 @@ export const projectDetails: ProjectDetail[] = [
             "Full Public Key Infrastructure with a multi-tier CA hierarchy — Root CA (offline, air-gapped) and Issuing CAs (online, HSM-backed) following best practices for key separation.",
         },
         {
-          title: "Firma Digital",
+          title: "Digital Signature",
           description:
             "Cryptographic signatures using asymmetric key pairs generated and stored in FIPS 140-2 Level 3 certified HSMs.",
         },
         {
-          title: "Criptografía",
+          title: "Cryptography",
           description:
             "Industry-standard algorithms (RSA 2048/4096, ECDSA P-256/P-384, SHA-256/384/512) with algorithm agility to migrate as cryptographic standards evolve.",
         },
         {
-          title: "No Repudio",
+          title: "Non-Repudiation",
           description:
             "Every signature and certificate issuance is cryptographically attributable to a specific identity, with audit trails that provide legal evidence of who did what and when.",
         },
         {
-          title: "Integridad",
+          title: "Integrity",
           description:
             "All certificates, CRLs, and signed documents include cryptographic hashes that enable independent verification of data integrity at any point in the future.",
         },
         {
-          title: "Confidencialidad",
+          title: "Confidentiality",
           description:
             "Certificate private keys are generated inside HSMs and never leave the secure hardware boundary — even administrators cannot extract them.",
         },
         {
-          title: "Certificados X509",
+          title: "X.509 Certificates",
           description:
             "Full support for the X.509 v3 standard with custom extensions, certificate policies, key usage constraints, and subject alternative names.",
         },
@@ -495,28 +495,28 @@ export const projectDetails: ProjectDetail[] = [
     },
     impact: [
       {
-        label: "Transformación Digital",
-        value: "Habilitada",
+        label: "Digital Transformation",
+        value: "Enabled",
         icon: "Zap",
       },
       {
-        label: "Automatización",
+        label: "Automation",
         value: "End-to-End",
         icon: "CheckCircle",
       },
       {
-        label: "Procesos Paperless",
-        value: "Completos",
+        label: "Paperless Processes",
+        value: "Complete",
         icon: "FileText",
       },
       {
-        label: "Seguridad Empresarial",
-        value: "Grado PKI",
+        label: "Enterprise Security",
+        value: "PKI Grade",
         icon: "Shield",
       },
       {
-        label: "Validez Legal",
-        value: "Garantizada",
+        label: "Legal Validity",
+        value: "Guaranteed",
         icon: "Lock",
       },
     ],
@@ -580,32 +580,32 @@ export const projectDetails: ProjectDetail[] = [
     },
     useCases: [
       {
-        title: "Gobierno Digital",
+        title: "Digital Government",
         description:
           "National and local government agencies use ISCERT to issue digital certificates to citizens and public servants, enabling legally valid electronic procedures, digital signatures on official documents, and secure access to government services.",
       },
       {
-        title: "Documentos electrónicos",
+        title: "Electronic Documents",
         description:
           "Organizations sign contracts, agreements, and official documents with digital signatures that carry the same legal weight as handwritten signatures — eliminating printing, courier costs, and processing delays.",
       },
       {
-        title: "Firma de contratos",
+        title: "Contract Signing",
         description:
           "Legal and procurement departments execute contracts digitally, with cryptographic proof of each party's identity and the exact time of signing — enforceable in court.",
       },
       {
-        title: "Identidad Digital",
+        title: "Digital Identity",
         description:
           "The platform serves as the identity provider for enterprise SSO, replacing passwords with certificate-based authentication that is resistant to phishing, credential stuffing, and replay attacks.",
       },
       {
-        title: "Autenticación",
+        title: "Authentication",
         description:
           "Applications across the organization consume ISCERT's authentication services through standard protocols (OAuth2, SAML, RADIUS), enabling strong, centralized authentication without each app managing its own credential store.",
       },
       {
-        title: "Automatización de procesos",
+        title: "Process Automation",
         description:
           "Business processes that previously required physical signatures — purchase orders, expense reports, HR documents — are fully digitized with cryptographic signing, automated routing, and immutable audit trails.",
       },
@@ -653,19 +653,19 @@ export const projectDetails: ProjectDetail[] = [
     features: [
       {
         icon: "FileText",
-        title: "Firma masiva PDF",
+        title: "Mass PDF Signing",
         description:
           "Sign hundreds or thousands of PDFs in a single batch operation with progress tracking and partial failure handling.",
       },
       {
         icon: "Fingerprint",
-        title: "Integración OAuth2",
+        title: "OAuth2 Integration",
         description:
           "Connect with any OAuth2 identity provider — corporate directories, social logins, or government identity systems — for user authentication and authorization.",
       },
       {
         icon: "Zap",
-        title: "Procesamiento asíncrono",
+        title: "Asynchronous Processing",
         description:
           "Non-blocking API design: submit signing jobs and continue working while the platform processes documents in the background with real-time status updates.",
       },
@@ -677,25 +677,25 @@ export const projectDetails: ProjectDetail[] = [
       },
       {
         icon: "CheckCircle",
-        title: "Validación de firma",
+        title: "Signature Validation",
         description:
           "Built-in signature validation that verifies the cryptographic integrity, certificate chain, and timestamp of every signed PDF.",
       },
       {
         icon: "Server",
-        title: "API REST",
+        title: "REST API",
         description:
           "Clean REST API for submitting PDFs, checking job status, and retrieving signed documents — easily integrated into existing workflows and applications.",
       },
       {
         icon: "Key",
-        title: "Gestión de certificados",
+        title: "Certificate Management",
         description:
           "Centralized certificate management with automatic renewal reminders, expiration monitoring, and multi-certificate support for different signing profiles.",
       },
       {
         icon: "Database",
-        title: "Auditoría",
+        title: "Audit Trail",
         description:
           "Complete audit trail of every signing operation: who signed, when, with which certificate, and the cryptographic fingerprint of the resulting document.",
       },
@@ -707,39 +707,39 @@ export const projectDetails: ProjectDetail[] = [
       },
     ],
     participation: [
-      "Diseño de la API REST para el envío de documentos, consulta de estado y descarga de PDFs firmados",
-      "Implementación del pipeline de firma: recepción de PDFs, encolado, firma criptográfica y notificación de resultados",
-      "Integración con proveedores de identidad OAuth2 para la autenticación y autorización de operaciones de firma",
-      "Desarrollo de la lógica de firma PAdES: inserción de firmas en la estructura PDF con cadenas de certificados y timestamps",
-      "Persistencia de trabajos de firma y registros de auditoría en PostgreSQL",
-      "Optimización del procesamiento asíncrono para manejar picos de demanda sin degradación",
-      "Implementación de reintentos y manejo de fallos parciales en lotes de firma masiva",
-      "Corrección de incidencias en producción: análisis de fallos de firma, certificados expirados y timeouts de HSM",
-      "Trabajo colaborativo con equipos de integración para conectar FirmaPDF con los sistemas generadores de documentos",
+      "Designed the REST API for document submission, status checking, and signed PDF download",
+      "Implemented the signing pipeline: PDF reception, queuing, cryptographic signing, and result notification",
+      "Integrated with OAuth2 identity providers for signing operation authentication and authorization",
+      "Developed PAdES signing logic: embedding signatures in the PDF structure with certificate chains and timestamps",
+      "Implemented persistence for signing jobs and audit logs in PostgreSQL",
+      "Optimized asynchronous processing to handle demand peaks without degradation",
+      "Implemented retries and partial failure handling for bulk signing batches",
+      "Resolved production incidents: signing failures, expired certificates, and HSM timeouts",
+      "Collaborated with integration teams to connect FirmaPDF with document-generating systems",
     ],
     technicalChallenges: [
       {
-        title: "Procesamiento de alto volumen",
+        title: "High-Volume Processing",
         description:
           "Handling thousands of concurrent signing requests requires careful queue management, connection pooling to the HSM, and backpressure mechanisms to prevent resource exhaustion.",
       },
       {
-        title: "Cumplimiento PAdES",
+        title: "PAdES Compliance",
         description:
           "PAdES has multiple levels (B-B, B-T, B-LT, B-LTA) with increasing requirements for timestamps, revocation data, and long-term validation material — each level required precise PDF structure manipulation.",
       },
       {
-        title: "Integración con múltiples IdPs",
+        title: "Multi-IdP Integration",
         description:
           "Each identity provider has its own OAuth2 implementation nuances — token formats, scopes, refresh behaviors — requiring a flexible authentication layer that adapts to each provider.",
       },
       {
-        title: "Manejo de fallos parciales",
+        title: "Partial Failure Handling",
         description:
           "In a batch of 5000 PDFs, if 3 fail due to corrupted input and 2 fail due to HSM timeouts, the platform must report failures precisely without blocking the 4995 successful signatures.",
       },
       {
-        title: "Rendimiento del HSM",
+        title: "HSM Throughput",
         description:
           "HSMs have finite signing throughput — typically hundreds of operations per second. Optimizing connection pooling, request batching, and key caching was essential to avoid the HSM becoming the bottleneck.",
       },
@@ -749,12 +749,12 @@ export const projectDetails: ProjectDetail[] = [
         "FirmaPDF operates at the intersection of document integrity and identity trust. Every signed PDF must be independently verifiable — by recipients, auditors, and courts — without relying on the platform's availability.",
       items: [
         {
-          title: "Firma Digital PAdES",
+          title: "PAdES Digital Signature",
           description:
             "Signatures follow the PAdES standard, embedding the full certificate chain and revocation data (OCSP/CRL) directly into the PDF for offline validation.",
         },
         {
-          title: "Integridad de documentos",
+          title: "Document Integrity",
           description:
             "The digital signature covers the entire PDF content — any modification after signing invalidates the signature, providing tamper-evident protection.",
         },
@@ -764,17 +764,17 @@ export const projectDetails: ProjectDetail[] = [
             "Private signing keys are generated and stored inside FIPS 140-2 certified HSMs. They never exist in application memory or on disk.",
         },
         {
-          title: "Autenticación OAuth2",
+          title: "OAuth2 Authentication",
           description:
             "Every signing operation is authenticated through OAuth2 identity providers, ensuring that only authorized users can initiate signatures with specific certificates.",
         },
         {
-          title: "No Repudio",
+          title: "Non-Repudiation",
           description:
             "The combination of OAuth2 authentication, HSM-backed signatures, and embedded timestamps creates a non-repudiable record of who signed what and when.",
         },
         {
-          title: "Auditoría",
+          title: "Audit Trail",
           description:
             "All signing operations are logged with cryptographic hashes — the audit trail itself is verifiable and can demonstrate the chain of custody for every signed document.",
         },
@@ -782,22 +782,22 @@ export const projectDetails: ProjectDetail[] = [
     },
     impact: [
       {
-        label: "Documentos firmados",
-        value: "Miles/día",
+        label: "Documents Signed",
+        value: "Thousands/day",
         icon: "FileText",
       },
       {
-        label: "Reducción de tiempo",
+        label: "Time Reduction",
         value: "90%+",
         icon: "Clock",
       },
       {
-        label: "Validez Legal",
+        label: "Legal Validity",
         value: "PAdES",
         icon: "Shield",
       },
       {
-        label: "Automatización",
+        label: "Automation",
         value: "End-to-End",
         icon: "Zap",
       },
@@ -831,17 +831,17 @@ export const projectDetails: ProjectDetail[] = [
     ],
     useCases: [
       {
-        title: "TuID — Identidad Digital",
+        title: "TuID — Digital Identity",
         description:
-          "FirmaPDF powers the document signing capabilities of TuID (Tu Identidad Digital), ANTEL's digital identity platform for Uruguay. TuID users register, verify their identity, authenticate with multiple security levels (password, OTP, biometrics), and sign PDF documents electronically with full legal validity — all through FirmaPDF's signing engine.",
+          "FirmaPDF powers the document signing capabilities of TuID (Your Digital Identity), ANTEL's digital identity platform for Uruguay. TuID users register, verify their identity, authenticate with multiple security levels (password, OTP, biometrics), and sign PDF documents electronically with full legal validity — all through FirmaPDF's signing engine.",
       },
       {
-        title: "Firma de contratos",
+        title: "Contract Signing",
         description:
           "Organizations sign thousands of contracts digitally per month — employment agreements, vendor contracts, NDAs — with PAdES-compliant signatures that are independently verifiable.",
       },
       {
-        title: "Documentos de compliance",
+        title: "Compliance Documents",
         description:
           "Regulated industries use FirmaPDF to sign and timestamp compliance documents, ensuring cryptographic proof of integrity and non-repudiation for audits and regulatory submissions.",
       },

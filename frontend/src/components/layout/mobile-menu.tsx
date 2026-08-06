@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 
 const navTranslationKeys = {
   "#professional-profile": "professionalProfile",
-  "#about": "about",
+  "#specialties": "specialties",
   "#experience": "experience",
   "#tech-stack": "techStack",
-  "#architecture": "architecture",
+  "#education": "education",
   "#contact": "contact",
 } as const;
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
 import { CompanyDetailView } from "@/components/sections/projects/company-detail-view";
@@ -13,9 +14,10 @@ export async function generateMetadata({
   params,
 }: CompanyPageProps): Promise<Metadata> {
   const { company: slug } = await params;
+  const t = await getTranslations("Error");
 
   const exp = experience.find((e) => companySlug(e.company) === slug);
-  if (!exp) return { title: "Company Not Found" };
+  if (!exp) return { title: t("title") };
 
   return {
     title: `${exp.company} — Diego Silva`,

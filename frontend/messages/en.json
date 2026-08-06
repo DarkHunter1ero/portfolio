@@ -19,18 +19,16 @@
   },
   "Nav": {
     "professionalProfile": "Profile",
-    "about": "About",
-    "techStack": "Tech Stack",
+    "specialties": "Specialties",
     "experience": "Experience",
-    "projects": "Projects",
-    "architecture": "Architecture",
-    "github": "GitHub",
+    "techStack": "Tech Stack",
+    "education": "Education",
     "contact": "Contact"
   },
   "Hero": {
     "title": "Diego Silva",
-    "subtitle": "Senior Full Stack Developer",
-    "tagline": "I build secure, scalable and high-performance enterprise applications. Specialized in digital identity, authentication systems, and microservices architecture.",
+    "subtitle": "Backend / Full Stack Developer — Java, Spring Boot, Microservices & Enterprise Architecture",
+    "tagline": "Specialized in Java, Spring Boot, Microservices, REST APIs, Enterprise Architecture, and DevOps. I build secure, scalable systems for digital identity and electronic signatures.",
     "downloadCV": "Download CV",
     "github": "GitHub",
     "linkedin": "LinkedIn",
@@ -63,6 +61,24 @@
       "Methodologies": "Methodologies",
       "Operations & Support": "Operations & Support"
     }
+  },
+  "Specialties": {
+    "heading": "Specialties",
+    "subheading": "Core areas of expertise",
+    "items": [
+      { "name": "Java & Spring Boot", "description": "Core backend stack — Spring MVC, Spring Data JPA, Spring Security, Hibernate. Building enterprise APIs and microservices." },
+      { "name": "Microservices", "description": "Designing and implementing distributed architectures with independent services, service discovery via Eureka, and inter-service communication." },
+      { "name": "APIs REST & SOAP", "description": "Designing, building, and documenting RESTful and SOAP web services with Swagger/OpenAPI for seamless system integration." },
+      { "name": "OAuth2 / JWT", "description": "Implementing token-based authentication, multi-factor authentication (MFA), and centralized auth services for enterprise applications." },
+      { "name": "PKI & Digital Certificates", "description": "Public Key Infrastructure — certificate issuance, revocation, HSM integration, digital signatures, and certificate lifecycle management." },
+      { "name": "PostgreSQL", "description": "Relational database design, complex SQL queries, query optimization, and schema modeling for transactional systems." },
+      { "name": "Docker", "description": "Application containerization, Docker Compose for local development, and multi-service orchestration." },
+      { "name": "Jenkins", "description": "Continuous Integration and Continuous Deployment pipelines — automated builds, testing, and deployment to production." },
+      { "name": "Linux", "description": "Server administration, systemd service management (systemctl), and application deployment on Linux environments." },
+      { "name": "Nginx", "description": "Reverse proxy configuration, load balancing, and serving static assets in production environments." },
+      { "name": "React", "description": "Building responsive single-page applications with React, TypeScript, and component-based architecture." },
+      { "name": "Angular", "description": "Enterprise frontend development with Angular, TypeScript, and reactive programming patterns." }
+    ]
   },
   "Experience": {
     "heading": "Experience",
@@ -233,6 +249,33 @@
     "unavailableDesc": "Unable to fetch repository data. View my profile directly.",
     "error": "Unable to load GitHub data"
   },
+  "Education": {
+    "heading": "Education",
+    "subheading": "Academic background",
+    "items": [
+      {
+        "institution": "UTEC — Universidad Tecnológica",
+        "degree": "Technologist in Computer Science",
+        "period": "2013 — 2015",
+        "type": "tertiary",
+        "description": "Joint university program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
+      },
+      {
+        "institution": "UTU — Universidad del Trabajo del Uruguay",
+        "degree": "Technical High School Degree in Electromechanics",
+        "period": "2007 — 2009",
+        "type": "technical",
+        "description": "Technical background in electromechanical systems that strengthened logical thinking and complex problem-solving skills."
+      },
+      {
+        "institution": "Liceo Nº 2 — San José de Mayo",
+        "degree": "Ciclo Básico (Secondary Education)",
+        "period": "2004 — 2006",
+        "type": "secondary",
+        "description": "Foundational secondary education with emphasis on sciences and mathematics."
+      }
+    ]
+  },
   "Contact": {
     "heading": "Get in Touch",
     "subheading": "Let's discuss your project or opportunity",
@@ -254,8 +297,9 @@
       "emailInvalid": "Please enter a valid email address",
       "messageMin": "Message must be at least 10 characters"
     },
-    "location": "Remote — Latin America",
     "locationFallback": "Remote",
+    "locationLabel": "Location",
+    "locationValue": "Remote — Latin America",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub"

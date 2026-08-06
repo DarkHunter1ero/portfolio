@@ -143,7 +143,7 @@ export const projects: Project[] = [
   // ─── Personal ───
   {
     name: "Crowdfunding Platform",
-    company: "Quiero Realizarlo",
+    company: "QR S.A.S.",
     slug: "crowdfunding-platform",
     description:
       "Modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. A personal project that showcases full-stack capabilities from infrastructure to UI.",
