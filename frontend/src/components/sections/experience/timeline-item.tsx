@@ -23,14 +23,20 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
   const isLeft = index % 2 === 0;
   const messages = useMessages();
   const tCommon = useTranslations("Common");
-  const expItems = (messages as Record<string, unknown>).Experience as Record<string, unknown> | undefined;
+  const expItems = (messages as Record<string, unknown>).Experience as
+    Record<string, unknown> | undefined;
   const expItem = (expItems?.items as Array<Record<string, unknown>> | undefined)?.[index];
-  const translatedDescription = typeof expItem?.description === "string" ? expItem.description : item.description;
-  const translatedHighlights = Array.isArray(expItem?.highlights) ? (expItem.highlights as string[]) : item.highlights;
+  const translatedDescription =
+    typeof expItem?.description === "string" ? expItem.description : item.description;
+  const translatedHighlights = Array.isArray(expItem?.highlights)
+    ? (expItem.highlights as string[])
+    : item.highlights;
 
   // Translated project descriptions
-  const projectsMessages = (messages as Record<string, unknown>).Projects as Record<string, unknown> | undefined;
-  const translatedProjectsItems = (projectsMessages?.items as Array<Record<string, string>> | undefined) ?? [];
+  const projectsMessages = (messages as Record<string, unknown>).Projects as
+    Record<string, unknown> | undefined;
+  const translatedProjectsItems =
+    (projectsMessages?.items as Array<Record<string, string>> | undefined) ?? [];
 
   function getTranslatedProjectDesc(name: string): string {
     const tItem = translatedProjectsItems.find((p) => p.name === name);
@@ -67,9 +73,7 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
           "absolute w-3 h-3 rounded-full bg-accent border-2 border-background",
           "top-6",
           "left-[-6px]",
-          isLeft
-            ? "md:left-auto md:-right-[6px]"
-            : "md:-left-[6px]"
+          isLeft ? "md:left-auto md:-right-[6px]" : "md:-left-[6px]"
         )}
       />
 
@@ -149,9 +153,7 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
                     />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-medium text-foreground truncate">
-                      {project.name}
-                    </p>
+                    <p className="text-xs font-medium text-foreground truncate">{project.name}</p>
                     <p className="text-[10px] text-muted-foreground line-clamp-2 leading-snug mt-0.5">
                       {getTranslatedProjectDesc(project.name) || project.description}
                     </p>

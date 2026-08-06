@@ -4,8 +4,7 @@ export const projectDetails: ProjectDetail[] = [
   {
     slug: "mirecibo",
     name: "MiRecibo",
-    subtitle:
-      "Digital payroll receipt management platform with electronic and digital signatures",
+    subtitle: "Digital payroll receipt management platform with electronic and digital signatures",
     shortDescription:
       "Enterprise platform for completely digitizing the delivery and signing of payroll receipts. Eliminates paper, integrates with any payroll system, and deploys Cloud or On-Premise.",
     heroImage: "/images/mirecibo-uy.jpg",
@@ -636,8 +635,7 @@ export const projectDetails: ProjectDetail[] = [
   {
     slug: "firmapdf",
     name: "FirmaPDF",
-    subtitle:
-      "Mass PDF digital signing platform with external identity provider integration",
+    subtitle: "Mass PDF digital signing platform with external identity provider integration",
     shortDescription:
       "High-throughput platform for applying legally valid digital signatures to PDF documents at scale. Integrates with OAuth2 identity providers and processes thousands of documents asynchronously.",
     heroImage: "/images/tuid-firma.jpg",
@@ -886,22 +884,26 @@ export const projectDetails: ProjectDetail[] = [
       {
         icon: "CreditCard",
         title: "Recurring Billing",
-        description: "Automated generation and processing of recurring invoices based on configurable billing cycles.",
+        description:
+          "Automated generation and processing of recurring invoices based on configurable billing cycles.",
       },
       {
         icon: "Server",
         title: "Payment Gateway Integration",
-        description: "Seamless integration with multiple third-party payment gateways and shipping APIs.",
+        description:
+          "Seamless integration with multiple third-party payment gateways and shipping APIs.",
       },
       {
         icon: "Monitor",
         title: "Admin Panel Extension",
-        description: "Custom reporting dashboards and inventory management tools integrated into Magento's admin interface.",
+        description:
+          "Custom reporting dashboards and inventory management tools integrated into Magento's admin interface.",
       },
       {
         icon: "Zap",
         title: "Zero-Downtime Deployments",
-        description: "All integrations and updates deployed without service interruption for live e-commerce stores.",
+        description:
+          "All integrations and updates deployed without service interruption for live e-commerce stores.",
       },
     ],
     participation: [
@@ -914,23 +916,28 @@ export const projectDetails: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Plugin Architecture Constraints",
-        description: "Automating recurring billing workflows within Magento's plugin architecture constraints required creative use of cron jobs and event observers.",
+        description:
+          "Automating recurring billing workflows within Magento's plugin architecture constraints required creative use of cron jobs and event observers.",
       },
       {
         title: "Multi-Gateway Integration",
-        description: "Each payment gateway had different API formats, authentication methods, and error handling patterns — requiring a unified abstraction layer.",
+        description:
+          "Each payment gateway had different API formats, authentication methods, and error handling patterns — requiring a unified abstraction layer.",
       },
     ],
     security: {
-      description: "Handling payment data required compliance with security best practices for e-commerce platforms.",
+      description:
+        "Handling payment data required compliance with security best practices for e-commerce platforms.",
       items: [
         {
           title: "Payment Data Security",
-          description: "Secure handling of payment information with proper encryption and never storing raw credit card data.",
+          description:
+            "Secure handling of payment information with proper encryption and never storing raw credit card data.",
         },
         {
           title: "API Key Management",
-          description: "Secure storage and rotation of third-party API credentials for payment gateways.",
+          description:
+            "Secure storage and rotation of third-party API credentials for payment gateways.",
         },
       ],
     },
@@ -949,9 +956,7 @@ export const projectDetails: ProjectDetail[] = [
       "Building abstraction layers for multi-provider integrations saves enormous maintenance effort",
       "Zero-downtime deployments in e-commerce require careful planning around active user sessions",
     ],
-    gallery: [
-      { src: "/images/beacon42.png", alt: "Beacon42 — Magento Development" },
-    ],
+    gallery: [{ src: "/images/beacon42.png", alt: "Beacon42 — Magento Development" }],
     callToAction: {
       text: "Explore other projects",
       link: "/#experience",
@@ -982,22 +987,26 @@ export const projectDetails: ProjectDetail[] = [
       {
         icon: "Globe",
         title: "Cross-Site Tracking",
-        description: "Consistent tracking infrastructure deployed across multiple web properties with different architectures.",
+        description:
+          "Consistent tracking infrastructure deployed across multiple web properties with different architectures.",
       },
       {
         icon: "Database",
         title: "Data Aggregation APIs",
-        description: "Laravel (Lumen) APIs consuming external services and presenting insights through clean interfaces.",
+        description:
+          "Laravel (Lumen) APIs consuming external services and presenting insights through clean interfaces.",
       },
       {
         icon: "FileText",
         title: "Automated Reporting",
-        description: "Excel reporting pipelines that eliminated 15+ hours of weekly manual data entry for business stakeholders.",
+        description:
+          "Excel reporting pipelines that eliminated 15+ hours of weekly manual data entry for business stakeholders.",
       },
       {
         icon: "Monitor",
         title: "Custom Dashboards",
-        description: "Data-driven marketing dashboards enabling real-time campaign performance measurement.",
+        description:
+          "Data-driven marketing dashboards enabling real-time campaign performance measurement.",
       },
     ],
     participation: [
@@ -1010,23 +1019,28 @@ export const projectDetails: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Disparate Web Architectures",
-        description: "Implementing consistent tracking across multiple web properties built with different technologies and architectures.",
+        description:
+          "Implementing consistent tracking across multiple web properties built with different technologies and architectures.",
       },
       {
         title: "Report Automation",
-        description: "Automating complex Excel report generation to eliminate 15+ hours of weekly manual data entry while maintaining accuracy.",
+        description:
+          "Automating complex Excel report generation to eliminate 15+ hours of weekly manual data entry while maintaining accuracy.",
       },
     ],
     security: {
-      description: "Analytics implementation required careful handling of user data and compliance with privacy standards.",
+      description:
+        "Analytics implementation required careful handling of user data and compliance with privacy standards.",
       items: [
         {
           title: "Data Privacy Compliance",
-          description: "Ensuring analytics tracking respected user privacy and complied with relevant data protection standards.",
+          description:
+            "Ensuring analytics tracking respected user privacy and complied with relevant data protection standards.",
         },
         {
           title: "Access Control",
-          description: "Proper access management for Google Analytics and Tag Manager accounts across multiple stakeholders.",
+          description:
+            "Proper access management for Google Analytics and Tag Manager accounts across multiple stakeholders.",
         },
       ],
     },
@@ -1035,7 +1049,14 @@ export const projectDetails: ProjectDetail[] = [
       { label: "Websites Tracked", value: "Multiple", icon: "Globe" },
       { label: "Report Automation", value: "100%", icon: "Zap" },
     ],
-    technologies: ["Google Analytics", "Google Tag Manager", "Laravel", "PHP", "JavaScript", "Excel"],
+    technologies: [
+      "Google Analytics",
+      "Google Tag Manager",
+      "Laravel",
+      "PHP",
+      "JavaScript",
+      "Excel",
+    ],
     architecture: {
       description:
         "Google Analytics and Tag Manager deployed across multiple client websites with custom event tracking. Laravel (Lumen) APIs for data aggregation and Excel-based automated reporting pipelines.",
@@ -1045,9 +1066,7 @@ export const projectDetails: ProjectDetail[] = [
       "Automating manual reporting processes delivers immediate tangible ROI",
       "Combining analytical skills with development creates unique value in any team",
     ],
-    gallery: [
-      { src: "/images/portlike.png", alt: "Portlike — Web Analytics" },
-    ],
+    gallery: [{ src: "/images/portlike.png", alt: "Portlike — Web Analytics" }],
     callToAction: {
       text: "Explore other projects",
       link: "/#experience",
@@ -1078,22 +1097,26 @@ export const projectDetails: ProjectDetail[] = [
       {
         icon: "Layout",
         title: "Campaign Pages",
-        description: "Custom commercial campaign landing pages developed rapidly to support marketing initiatives.",
+        description:
+          "Custom commercial campaign landing pages developed rapidly to support marketing initiatives.",
       },
       {
         icon: "Zap",
         title: "Performance Optimization",
-        description: "Site speed improvements and production environment tuning for high-traffic scenarios.",
+        description:
+          "Site speed improvements and production environment tuning for high-traffic scenarios.",
       },
       {
         icon: "CheckCircle",
         title: "Bug Fixes & Maintenance",
-        description: "Ongoing maintenance ensuring stability while new features were continuously deployed.",
+        description:
+          "Ongoing maintenance ensuring stability while new features were continuously deployed.",
       },
       {
         icon: "Server",
         title: "Plugin Management",
-        description: "Integration and maintenance of third-party WordPress plugins with compatibility assurance.",
+        description:
+          "Integration and maintenance of third-party WordPress plugins with compatibility assurance.",
       },
     ],
     participation: [
@@ -1106,23 +1129,28 @@ export const projectDetails: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Rapid Deployments vs Stability",
-        description: "Balancing the need for fast campaign page deployments with maintaining production stability and performance.",
+        description:
+          "Balancing the need for fast campaign page deployments with maintaining production stability and performance.",
       },
       {
         title: "Plugin Compatibility",
-        description: "Ensuring third-party plugins remained compatible and secure across WordPress core updates.",
+        description:
+          "Ensuring third-party plugins remained compatible and secure across WordPress core updates.",
       },
     ],
     security: {
-      description: "Maintaining a corporate website required attention to WordPress security best practices.",
+      description:
+        "Maintaining a corporate website required attention to WordPress security best practices.",
       items: [
         {
           title: "Plugin Security",
-          description: "Regular security audits of third-party plugins and timely updates to patch vulnerabilities.",
+          description:
+            "Regular security audits of third-party plugins and timely updates to patch vulnerabilities.",
         },
         {
           title: "Production Access Control",
-          description: "Controlled access to production environments with proper deployment procedures.",
+          description:
+            "Controlled access to production environments with proper deployment procedures.",
         },
       ],
     },
@@ -1141,9 +1169,7 @@ export const projectDetails: ProjectDetail[] = [
       "Rapid marketing deployments need streamlined development workflows without sacrificing quality",
       "Cross-team collaboration (Portlike + Takeoff) taught effective communication in shared office environments",
     ],
-    gallery: [
-      { src: "/images/takeoff.jpg", alt: "Takeoff — WordPress Development" },
-    ],
+    gallery: [{ src: "/images/takeoff.jpg", alt: "Takeoff — WordPress Development" }],
     callToAction: {
       text: "Explore other projects",
       link: "/#experience",
@@ -1174,32 +1200,38 @@ export const projectDetails: ProjectDetail[] = [
       {
         icon: "Server",
         title: "Microservices Architecture",
-        description: "Independent services for campaigns, users, payments, and notifications, each with dedicated databases.",
+        description:
+          "Independent services for campaigns, users, payments, and notifications, each with dedicated databases.",
       },
       {
         icon: "Key",
         title: "JWT Authentication",
-        description: "Centralized token-based authentication across all microservices with secure API communication.",
+        description:
+          "Centralized token-based authentication across all microservices with secure API communication.",
       },
       {
         icon: "CreditCard",
         title: "Payment Processing",
-        description: "Dedicated payment service handling transactions with proper isolation from campaign logic.",
+        description:
+          "Dedicated payment service handling transactions with proper isolation from campaign logic.",
       },
       {
         icon: "Globe",
         title: "Responsive React Frontend",
-        description: "Modern, responsive UI built with React and TypeScript connected to the microservices backend.",
+        description:
+          "Modern, responsive UI built with React and TypeScript connected to the microservices backend.",
       },
       {
         icon: "Database",
         title: "Independent Databases",
-        description: "Each service owns its data — PostgreSQL for transactional data with proper domain boundaries.",
+        description:
+          "Each service owns its data — PostgreSQL for transactional data with proper domain boundaries.",
       },
       {
         icon: "Container",
         title: "Docker Orchestration",
-        description: "Docker Compose for local development with orchestrated service startup and health checks.",
+        description:
+          "Docker Compose for local development with orchestrated service startup and health checks.",
       },
     ],
     participation: [
@@ -1212,31 +1244,38 @@ export const projectDetails: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Distributed Transactions",
-        description: "Managing distributed transactions across campaign creation, payment processing, and notification services without a distributed transaction coordinator.",
+        description:
+          "Managing distributed transactions across campaign creation, payment processing, and notification services without a distributed transaction coordinator.",
       },
       {
         title: "Service Decomposition",
-        description: "Designing a service decomposition that balances domain autonomy with practical development velocity for a solo project.",
+        description:
+          "Designing a service decomposition that balances domain autonomy with practical development velocity for a solo project.",
       },
       {
         title: "Data Consistency",
-        description: "Maintaining data consistency across independent databases while allowing each service to evolve independently.",
+        description:
+          "Maintaining data consistency across independent databases while allowing each service to evolve independently.",
       },
     ],
     security: {
-      description: "The platform implements security best practices from the ground up, applying enterprise patterns to a personal project.",
+      description:
+        "The platform implements security best practices from the ground up, applying enterprise patterns to a personal project.",
       items: [
         {
           title: "JWT-Based Auth",
-          description: "Token-based authentication with proper expiration, refresh tokens, and secure token storage.",
+          description:
+            "Token-based authentication with proper expiration, refresh tokens, and secure token storage.",
         },
         {
           title: "API Security",
-          description: "All inter-service communication secured with proper authentication and input validation.",
+          description:
+            "All inter-service communication secured with proper authentication and input validation.",
         },
         {
           title: "Data Isolation",
-          description: "Independent databases ensure that a compromise in one service doesn't expose data from others.",
+          description:
+            "Independent databases ensure that a compromise in one service doesn't expose data from others.",
         },
       ],
     },
@@ -1246,7 +1285,16 @@ export const projectDetails: ProjectDetail[] = [
       { label: "API Gateway", value: "Centralized", icon: "Shield" },
       { label: "Docker Services", value: "5+", icon: "Container" },
     ],
-    technologies: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Microservices"],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "JWT",
+      "Microservices",
+    ],
     architecture: {
       description:
         "Microservices architecture with Spring Boot services for campaigns, users, payments, and notifications — each with its own database. Services communicate via REST APIs with JWT-based authentication. PostgreSQL for transactional data. Docker Compose for local development. React frontend with a clean, responsive design.",
@@ -1273,9 +1321,7 @@ export const projectDetails: ProjectDetail[] = [
       "Service boundaries should be drawn around business domains, not technical layers",
       "For solo projects, start with fewer services and split as complexity genuinely demands it",
     ],
-    gallery: [
-      { src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" },
-    ],
+    gallery: [{ src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" }],
     callToAction: {
       text: "Explore other projects",
       link: "/#experience",

@@ -40,12 +40,10 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             {this.props.title ?? "Something went wrong"}
           </h3>
           <p className="text-sm text-muted-foreground mb-6 max-w-md">
-            {this.props.description ?? "This section encountered an error. Please try refreshing the page."}
+            {this.props.description ??
+              "This section encountered an error. Please try refreshing the page."}
           </p>
-          <Button
-            variant="outline"
-            onClick={() => this.setState({ hasError: false, error: null })}
-          >
+          <Button variant="outline" onClick={() => this.setState({ hasError: false, error: null })}>
             {this.props.retryLabel ?? "Try again"}
           </Button>
         </div>

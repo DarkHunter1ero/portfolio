@@ -82,6 +82,15 @@ export const experience: Experience[] = [
       "Developed lightweight Laravel (Lumen) APIs for data aggregation and reporting, consuming external services and presenting insights through clean interfaces.",
       "Created automated Excel reporting pipelines that eliminated 15+ hours of manual data entry per week for business stakeholders.",
     ],
-    technologies: ["PHP", "Laravel", "Lumen", "JavaScript", "WordPress", "Google Analytics", "Google Tag Manager", "MySQL"],
+    technologies: [
+      "PHP",
+      "Laravel",
+      "Lumen",
+      "JavaScript",
+      "WordPress",
+      "Google Analytics",
+      "Google Tag Manager",
+      "MySQL",
+    ],
   },
 ];

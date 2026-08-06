@@ -16,12 +16,7 @@ export function HeroCTA() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
       <motion.div {...buttonTap}>
-        <Button
-          asChild
-          variant="accent"
-          size="lg"
-          className="gap-2 font-medium"
-        >
+        <Button asChild variant="accent" size="lg" className="gap-2 font-medium">
           <Link href={cvUrl} download>
             <Download className="h-4 w-4" />
             {t("downloadCV")}

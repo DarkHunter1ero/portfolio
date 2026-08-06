@@ -18,14 +18,34 @@ import {
 } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
-  Server, Cpu, Globe, Key, Shield, Database,
-  ContainerIcon, Zap, Terminal, Cloud, Layout, Monitor,
+  Server,
+  Cpu,
+  Globe,
+  Key,
+  Shield,
+  Database,
+  ContainerIcon,
+  Zap,
+  Terminal,
+  Cloud,
+  Layout,
+  Monitor,
 };
 
 // Maps specialty index to icon name
 const specialtyIcons = [
-  "Server", "Cpu", "Globe", "Key", "Shield", "Database",
-  "ContainerIcon", "Zap", "Terminal", "Cloud", "Layout", "Monitor",
+  "Server",
+  "Cpu",
+  "Globe",
+  "Key",
+  "Shield",
+  "Database",
+  "ContainerIcon",
+  "Zap",
+  "Terminal",
+  "Cloud",
+  "Layout",
+  "Monitor",
 ];
 
 export async function SpecialtiesSection() {
@@ -33,17 +53,9 @@ export async function SpecialtiesSection() {
   const items = t.raw("items") as Array<{ name: string; description: string }>;
 
   return (
-    <section
-      id="specialties"
-      className="py-24 sm:py-32"
-      aria-labelledby="specialties-heading"
-    >
+    <section id="specialties" className="py-24 sm:py-32" aria-labelledby="specialties-heading">
       <Container>
-        <SectionHeading
-          id="specialties-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="specialties-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {items.map((specialty, i) => {

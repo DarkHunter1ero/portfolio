@@ -24,22 +24,17 @@ export async function AboutSection() {
   return (
     <section id="about" className="py-24 sm:py-32" aria-labelledby="about-heading">
       <Container>
-        <SectionHeading
-          id="about-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="about-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-4">
-            {t("bio").split("\n\n").map((paragraph, i) => (
-              <p
-                key={i}
-                className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))}
+            {t("bio")
+              .split("\n\n")
+              .map((paragraph, i) => (
+                <p key={i} className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
           </div>
 
           <div className="flex flex-col gap-4">

@@ -12,10 +12,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 768, 1024, 1280, 1536],
   },
   experimental: {
-    optimizePackageImports: [
-      "lucide-react",
-      "@radix-ui/react-dialog",
-    ],
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-dialog"],
   },
 };
 

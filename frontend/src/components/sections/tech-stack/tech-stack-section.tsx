@@ -14,11 +14,7 @@ export async function TechStackSection() {
       aria-labelledby="tech-stack-heading"
     >
       <Container>
-        <SectionHeading
-          id="tech-stack-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="tech-stack-heading" title={t("heading")} subtitle={t("subheading")} />
         <TechStackGrid categories={techStack} />
       </Container>
     </section>

@@ -5,12 +5,7 @@ import { ProjectCard } from "./project-card";
 import { projects } from "@/data/projects";
 import type { Project } from "@/types";
 
-const COMPANY_ORDER = [
-  "Quiero Realizarlo",
-  "ISA Interfase",
-  "Beacon42",
-  "Portlike · DIRECTV",
-];
+const COMPANY_ORDER = ["Quiero Realizarlo", "ISA Interfase", "Beacon42", "Portlike · DIRECTV"];
 
 function groupByCompany(projects: Project[]): Array<{
   company: string;
@@ -43,17 +38,9 @@ export async function ProjectsSection() {
   let flatIndex = 0;
 
   return (
-    <section
-      id="projects"
-      className="py-24 sm:py-32 bg-card/30"
-      aria-labelledby="projects-heading"
-    >
+    <section id="projects" className="py-24 sm:py-32 bg-card/30" aria-labelledby="projects-heading">
       <Container>
-        <SectionHeading
-          id="projects-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="projects-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="space-y-10">
           {groups.map((group) => {
@@ -69,11 +56,7 @@ export async function ProjectsSection() {
                 )}
                 <div className="grid md:grid-cols-2 gap-8">
                   {group.items.map((project, i) => (
-                    <ProjectCard
-                      key={project.name}
-                      project={project}
-                      index={startIndex + i}
-                    />
+                    <ProjectCard key={project.name} project={project} index={startIndex + i} />
                   ))}
                 </div>
               </div>

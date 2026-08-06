@@ -8,17 +8,9 @@ export async function ArchitectureSection() {
   const t = await getTranslations("Architecture");
 
   return (
-    <section
-      id="architecture"
-      className="py-24 sm:py-32"
-      aria-labelledby="architecture-heading"
-    >
+    <section id="architecture" className="py-24 sm:py-32" aria-labelledby="architecture-heading">
       <Container>
-        <SectionHeading
-          id="architecture-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="architecture-heading" title={t("heading")} subtitle={t("subheading")} />
         <DiagramTabs diagrams={architectureDiagrams} />
       </Container>
     </section>

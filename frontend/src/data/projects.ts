@@ -65,15 +65,7 @@ export const projects: Project[] = [
       "Enterprises generating large volumes of PDF documents needed a solution to apply digital signatures at scale — think thousands of invoices, contracts, or reports per day — while integrating with existing identity providers and ensuring each signature is cryptographically verifiable and legally binding.",
     architecture:
       "The platform integrates with external OAuth2 identity providers for user authentication. PDF signing operations are queued and processed asynchronously using a message queue pattern, allowing the system to handle spikes in demand. Spring Boot services handle the actual cryptographic signing, and PostgreSQL tracks the status and metadata of every operation.",
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "PostgreSQL",
-      "OAuth2",
-      "JWT",
-      "React",
-      "Docker",
-    ],
+    technologies: ["Java", "Spring Boot", "PostgreSQL", "OAuth2", "JWT", "React", "Docker"],
     challenges: [
       "Processing thousands of concurrent signing requests without overwhelming HSM resources through intelligent queuing and batching.",
       "Integrating with multiple external authentication providers, each with different token formats and validation requirements.",

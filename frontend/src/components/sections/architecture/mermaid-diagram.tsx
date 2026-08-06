@@ -46,10 +46,7 @@ export function MermaidDiagram({ code }: MermaidDiagramProps) {
           // Clear previous render
           containerRef.current.innerHTML = "";
 
-          const { svg } = await mermaid.render(
-            `mermaid-${Date.now()}`,
-            code
-          );
+          const { svg } = await mermaid.render(`mermaid-${Date.now()}`, code);
 
           if (!cancelled) {
             containerRef.current.innerHTML = svg;

@@ -10,9 +10,7 @@ interface CompanyPageProps {
   params: Promise<{ company: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: CompanyPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
   const { company: slug } = await params;
   const t = await getTranslations("Error");
 

@@ -13,9 +13,7 @@ export function ThemeToggle() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return (
-      <div className="h-9 w-9 rounded-full" />
-    );
+    return <div className="h-9 w-9 rounded-full" />;
   }
 
   const isDark = theme === "dark";

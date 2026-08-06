@@ -26,11 +26,7 @@ export async function EducationSection() {
       aria-labelledby="education-heading"
     >
       <Container>
-        <SectionHeading
-          id="education-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="education-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="relative mt-16 max-w-3xl mx-auto">
           {/* Vertical line */}
@@ -40,10 +36,7 @@ export async function EducationSection() {
             {items.map((item, _index) => {
               const Icon = iconMap[item.type] ?? GraduationCap;
               return (
-                <article
-                  key={item.institution}
-                  className="relative pl-14"
-                >
+                <article key={item.institution} className="relative pl-14">
                   {/* Icon on the timeline */}
                   <div className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 border-2 border-background">
                     <Icon className="h-5 w-5 text-accent" />
@@ -56,9 +49,7 @@ export async function EducationSection() {
                     <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-1">
                       {item.degree}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {item.institution}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{item.institution}</p>
                     <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
                       {item.description}
                     </p>

@@ -4,8 +4,7 @@ export const projectDetailsEs: ProjectDetail[] = [
   {
     slug: "mirecibo",
     name: "MiRecibo",
-    subtitle:
-      "Plataforma de gestión digital de recibos de sueldo con firma electrónica y digital",
+    subtitle: "Plataforma de gestión digital de recibos de sueldo con firma electrónica y digital",
     shortDescription:
       "Plataforma empresarial para digitalizar completamente la entrega y firma de recibos de sueldo. Elimina el papel, se integra con cualquier sistema de liquidación y se despliega en Cloud u On-Premise.",
     heroImage: "/images/mirecibo-uy.jpg",
@@ -886,22 +885,26 @@ export const projectDetailsEs: ProjectDetail[] = [
       {
         icon: "CreditCard",
         title: "Facturación Recurrente",
-        description: "Generación y procesamiento automatizado de facturas recurrentes basado en ciclos de facturación configurables.",
+        description:
+          "Generación y procesamiento automatizado de facturas recurrentes basado en ciclos de facturación configurables.",
       },
       {
         icon: "Server",
         title: "Integración de Pasarelas de Pago",
-        description: "Integración sin fricción con múltiples pasarelas de pago de terceros y APIs de envío.",
+        description:
+          "Integración sin fricción con múltiples pasarelas de pago de terceros y APIs de envío.",
       },
       {
         icon: "Monitor",
         title: "Extensión del Panel de Administración",
-        description: "Dashboards de reportes personalizados y herramientas de gestión de inventario integrados en la interfaz de administración de Magento.",
+        description:
+          "Dashboards de reportes personalizados y herramientas de gestión de inventario integrados en la interfaz de administración de Magento.",
       },
       {
         icon: "Zap",
         title: "Despliegues Sin Tiempo de Inactividad",
-        description: "Todas las integraciones y actualizaciones desplegadas sin interrupción del servicio para tiendas e-commerce en producción.",
+        description:
+          "Todas las integraciones y actualizaciones desplegadas sin interrupción del servicio para tiendas e-commerce en producción.",
       },
     ],
     participation: [
@@ -914,23 +917,28 @@ export const projectDetailsEs: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Restricciones de la Arquitectura del Plugin",
-        description: "Automatizar flujos de facturación recurrente dentro de las restricciones de la arquitectura de plugins de Magento requirió uso creativo de cron jobs y observadores de eventos.",
+        description:
+          "Automatizar flujos de facturación recurrente dentro de las restricciones de la arquitectura de plugins de Magento requirió uso creativo de cron jobs y observadores de eventos.",
       },
       {
         title: "Integración Multi-Pasarela",
-        description: "Cada pasarela de pago tenía diferentes formatos de API, métodos de autenticación y patrones de manejo de errores — requiriendo una capa de abstracción unificada.",
+        description:
+          "Cada pasarela de pago tenía diferentes formatos de API, métodos de autenticación y patrones de manejo de errores — requiriendo una capa de abstracción unificada.",
       },
     ],
     security: {
-      description: "Manejar datos de pago requirió cumplimiento con las mejores prácticas de seguridad para plataformas e-commerce.",
+      description:
+        "Manejar datos de pago requirió cumplimiento con las mejores prácticas de seguridad para plataformas e-commerce.",
       items: [
         {
           title: "Seguridad de Datos de Pago",
-          description: "Manejo seguro de información de pago con encriptación adecuada y sin almacenar nunca datos de tarjetas de crédito en crudo.",
+          description:
+            "Manejo seguro de información de pago con encriptación adecuada y sin almacenar nunca datos de tarjetas de crédito en crudo.",
         },
         {
           title: "Gestión de Claves API",
-          description: "Almacenamiento seguro y rotación de credenciales API de terceros para pasarelas de pago.",
+          description:
+            "Almacenamiento seguro y rotación de credenciales API de terceros para pasarelas de pago.",
         },
       ],
     },
@@ -949,9 +957,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Construir capas de abstracción para integraciones multi-proveedor ahorra un enorme esfuerzo de mantenimiento",
       "Los despliegues sin tiempo de inactividad en e-commerce requieren planificación cuidadosa en torno a las sesiones de usuario activas",
     ],
-    gallery: [
-      { src: "/images/beacon42.png", alt: "Beacon42 — Desarrollo Magento" },
-    ],
+    gallery: [{ src: "/images/beacon42.png", alt: "Beacon42 — Desarrollo Magento" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/#experience",
@@ -982,22 +988,26 @@ export const projectDetailsEs: ProjectDetail[] = [
       {
         icon: "Globe",
         title: "Seguimiento Multi-Sitio",
-        description: "Infraestructura de seguimiento consistente desplegada en múltiples propiedades web con diferentes arquitecturas.",
+        description:
+          "Infraestructura de seguimiento consistente desplegada en múltiples propiedades web con diferentes arquitecturas.",
       },
       {
         icon: "Database",
         title: "APIs de Agregación de Datos",
-        description: "APIs Laravel (Lumen) que consumen servicios externos y presentan insights a través de interfaces limpias.",
+        description:
+          "APIs Laravel (Lumen) que consumen servicios externos y presentan insights a través de interfaces limpias.",
       },
       {
         icon: "FileText",
         title: "Reportes Automatizados",
-        description: "Pipelines de reportes Excel que eliminaron más de 15 horas semanales de entrada manual de datos para los stakeholders de negocio.",
+        description:
+          "Pipelines de reportes Excel que eliminaron más de 15 horas semanales de entrada manual de datos para los stakeholders de negocio.",
       },
       {
         icon: "Monitor",
         title: "Dashboards Personalizados",
-        description: "Dashboards de marketing basados en datos que permiten medir el rendimiento de campañas en tiempo real.",
+        description:
+          "Dashboards de marketing basados en datos que permiten medir el rendimiento de campañas en tiempo real.",
       },
     ],
     participation: [
@@ -1010,23 +1020,28 @@ export const projectDetailsEs: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Arquitecturas Web Dispares",
-        description: "Implementar seguimiento consistente en múltiples propiedades web construidas con diferentes tecnologías y arquitecturas.",
+        description:
+          "Implementar seguimiento consistente en múltiples propiedades web construidas con diferentes tecnologías y arquitecturas.",
       },
       {
         title: "Automatización de Reportes",
-        description: "Automatizar la generación de reportes Excel complejos para eliminar más de 15 horas semanales de entrada manual de datos manteniendo la precisión.",
+        description:
+          "Automatizar la generación de reportes Excel complejos para eliminar más de 15 horas semanales de entrada manual de datos manteniendo la precisión.",
       },
     ],
     security: {
-      description: "La implementación de analítica requirió manejo cuidadoso de datos de usuario y cumplimiento con estándares de privacidad.",
+      description:
+        "La implementación de analítica requirió manejo cuidadoso de datos de usuario y cumplimiento con estándares de privacidad.",
       items: [
         {
           title: "Cumplimiento de Privacidad de Datos",
-          description: "Asegurar que el seguimiento analítico respetara la privacidad del usuario y cumpliera con los estándares de protección de datos relevantes.",
+          description:
+            "Asegurar que el seguimiento analítico respetara la privacidad del usuario y cumpliera con los estándares de protección de datos relevantes.",
         },
         {
           title: "Control de Acceso",
-          description: "Gestión adecuada de acceso a cuentas de Google Analytics y Tag Manager entre múltiples stakeholders.",
+          description:
+            "Gestión adecuada de acceso a cuentas de Google Analytics y Tag Manager entre múltiples stakeholders.",
         },
       ],
     },
@@ -1035,7 +1050,14 @@ export const projectDetailsEs: ProjectDetail[] = [
       { label: "Sitios Web Monitoreados", value: "Múltiples", icon: "Globe" },
       { label: "Automatización de Reportes", value: "100%", icon: "Zap" },
     ],
-    technologies: ["Google Analytics", "Google Tag Manager", "Laravel", "PHP", "JavaScript", "Excel"],
+    technologies: [
+      "Google Analytics",
+      "Google Tag Manager",
+      "Laravel",
+      "PHP",
+      "JavaScript",
+      "Excel",
+    ],
     architecture: {
       description:
         "Google Analytics y Tag Manager desplegados en múltiples sitios web de clientes con seguimiento de eventos personalizados. APIs Laravel (Lumen) para agregación de datos y pipelines de reportes automatizados basados en Excel.",
@@ -1045,9 +1067,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Automatizar procesos de reportes manuales entrega un ROI inmediato y tangible",
       "Combinar habilidades analíticas con desarrollo crea un valor único en cualquier equipo",
     ],
-    gallery: [
-      { src: "/images/portlike.png", alt: "Portlike — Analítica Web" },
-    ],
+    gallery: [{ src: "/images/portlike.png", alt: "Portlike — Analítica Web" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/#experience",
@@ -1078,22 +1098,26 @@ export const projectDetailsEs: ProjectDetail[] = [
       {
         icon: "Layout",
         title: "Páginas de Campaña",
-        description: "Landing pages de campañas comerciales personalizadas desarrolladas rápidamente para apoyar iniciativas de marketing.",
+        description:
+          "Landing pages de campañas comerciales personalizadas desarrolladas rápidamente para apoyar iniciativas de marketing.",
       },
       {
         icon: "Zap",
         title: "Optimización de Rendimiento",
-        description: "Mejoras de velocidad del sitio y ajustes del entorno de producción para escenarios de alto tráfico.",
+        description:
+          "Mejoras de velocidad del sitio y ajustes del entorno de producción para escenarios de alto tráfico.",
       },
       {
         icon: "CheckCircle",
         title: "Corrección de Errores y Mantenimiento",
-        description: "Mantenimiento continuo asegurando estabilidad mientras se desplegaban nuevas funcionalidades de forma continua.",
+        description:
+          "Mantenimiento continuo asegurando estabilidad mientras se desplegaban nuevas funcionalidades de forma continua.",
       },
       {
         icon: "Server",
         title: "Gestión de Plugins",
-        description: "Integración y mantenimiento de plugins WordPress de terceros con garantía de compatibilidad.",
+        description:
+          "Integración y mantenimiento de plugins WordPress de terceros con garantía de compatibilidad.",
       },
     ],
     participation: [
@@ -1106,23 +1130,28 @@ export const projectDetailsEs: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Despliegues Rápidos vs Estabilidad",
-        description: "Equilibrar la necesidad de despliegues rápidos de páginas de campaña con mantener la estabilidad y el rendimiento en producción.",
+        description:
+          "Equilibrar la necesidad de despliegues rápidos de páginas de campaña con mantener la estabilidad y el rendimiento en producción.",
       },
       {
         title: "Compatibilidad de Plugins",
-        description: "Asegurar que los plugins de terceros permanecieran compatibles y seguros durante las actualizaciones del core de WordPress.",
+        description:
+          "Asegurar que los plugins de terceros permanecieran compatibles y seguros durante las actualizaciones del core de WordPress.",
       },
     ],
     security: {
-      description: "Mantener un sitio web corporativo requirió atención a las mejores prácticas de seguridad de WordPress.",
+      description:
+        "Mantener un sitio web corporativo requirió atención a las mejores prácticas de seguridad de WordPress.",
       items: [
         {
           title: "Seguridad de Plugins",
-          description: "Auditorías de seguridad regulares de plugins de terceros y actualizaciones oportunas para parchar vulnerabilidades.",
+          description:
+            "Auditorías de seguridad regulares de plugins de terceros y actualizaciones oportunas para parchar vulnerabilidades.",
         },
         {
           title: "Control de Acceso a Producción",
-          description: "Acceso controlado a entornos de producción con procedimientos de despliegue adecuados.",
+          description:
+            "Acceso controlado a entornos de producción con procedimientos de despliegue adecuados.",
         },
       ],
     },
@@ -1141,9 +1170,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Los despliegues rápidos de marketing necesitan flujos de desarrollo optimizados sin sacrificar calidad",
       "La colaboración entre equipos (Portlike + Takeoff) enseñó comunicación efectiva en entornos de oficina compartidos",
     ],
-    gallery: [
-      { src: "/images/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" },
-    ],
+    gallery: [{ src: "/images/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/#experience",
@@ -1174,32 +1201,38 @@ export const projectDetailsEs: ProjectDetail[] = [
       {
         icon: "Server",
         title: "Arquitectura de Microservicios",
-        description: "Servicios independientes para campañas, usuarios, pagos y notificaciones, cada uno con bases de datos dedicadas.",
+        description:
+          "Servicios independientes para campañas, usuarios, pagos y notificaciones, cada uno con bases de datos dedicadas.",
       },
       {
         icon: "Key",
         title: "Autenticación JWT",
-        description: "Autenticación centralizada basada en tokens en todos los microservicios con comunicación API segura.",
+        description:
+          "Autenticación centralizada basada en tokens en todos los microservicios con comunicación API segura.",
       },
       {
         icon: "CreditCard",
         title: "Procesamiento de Pagos",
-        description: "Servicio de pagos dedicado que maneja transacciones con aislamiento adecuado de la lógica de campañas.",
+        description:
+          "Servicio de pagos dedicado que maneja transacciones con aislamiento adecuado de la lógica de campañas.",
       },
       {
         icon: "Globe",
         title: "Frontend React Responsivo",
-        description: "UI moderna y responsiva construida con React y TypeScript conectada al backend de microservicios.",
+        description:
+          "UI moderna y responsiva construida con React y TypeScript conectada al backend de microservicios.",
       },
       {
         icon: "Database",
         title: "Bases de Datos Independientes",
-        description: "Cada servicio es dueño de sus datos — PostgreSQL para datos transaccionales con límites de dominio adecuados.",
+        description:
+          "Cada servicio es dueño de sus datos — PostgreSQL para datos transaccionales con límites de dominio adecuados.",
       },
       {
         icon: "Container",
         title: "Orquestación con Docker",
-        description: "Docker Compose para desarrollo local con inicio orquestado de servicios y health checks.",
+        description:
+          "Docker Compose para desarrollo local con inicio orquestado de servicios y health checks.",
       },
     ],
     participation: [
@@ -1212,31 +1245,38 @@ export const projectDetailsEs: ProjectDetail[] = [
     technicalChallenges: [
       {
         title: "Transacciones Distribuidas",
-        description: "Gestionar transacciones distribuidas entre la creación de campañas, el procesamiento de pagos y los servicios de notificación sin un coordinador de transacciones distribuidas.",
+        description:
+          "Gestionar transacciones distribuidas entre la creación de campañas, el procesamiento de pagos y los servicios de notificación sin un coordinador de transacciones distribuidas.",
       },
       {
         title: "Descomposición de Servicios",
-        description: "Diseñar una descomposición de servicios que equilibre la autonomía de dominio con una velocidad de desarrollo práctica para un proyecto individual.",
+        description:
+          "Diseñar una descomposición de servicios que equilibre la autonomía de dominio con una velocidad de desarrollo práctica para un proyecto individual.",
       },
       {
         title: "Consistencia de Datos",
-        description: "Mantener la consistencia de datos entre bases de datos independientes permitiendo que cada servicio evolucione de forma independiente.",
+        description:
+          "Mantener la consistencia de datos entre bases de datos independientes permitiendo que cada servicio evolucione de forma independiente.",
       },
     ],
     security: {
-      description: "La plataforma implementa las mejores prácticas de seguridad desde los cimientos, aplicando patrones empresariales a un proyecto personal.",
+      description:
+        "La plataforma implementa las mejores prácticas de seguridad desde los cimientos, aplicando patrones empresariales a un proyecto personal.",
       items: [
         {
           title: "Autenticación Basada en JWT",
-          description: "Autenticación basada en tokens con expiración adecuada, tokens de refresco y almacenamiento seguro de tokens.",
+          description:
+            "Autenticación basada en tokens con expiración adecuada, tokens de refresco y almacenamiento seguro de tokens.",
         },
         {
           title: "Seguridad de API",
-          description: "Toda la comunicación entre servicios asegurada con autenticación adecuada y validación de entrada.",
+          description:
+            "Toda la comunicación entre servicios asegurada con autenticación adecuada y validación de entrada.",
         },
         {
           title: "Aislamiento de Datos",
-          description: "Las bases de datos independientes aseguran que un compromiso en un servicio no exponga los datos de los demás.",
+          description:
+            "Las bases de datos independientes aseguran que un compromiso en un servicio no exponga los datos de los demás.",
         },
       ],
     },
@@ -1246,7 +1286,16 @@ export const projectDetailsEs: ProjectDetail[] = [
       { label: "API Gateway", value: "Centralizado", icon: "Shield" },
       { label: "Servicios Docker", value: "5+", icon: "Container" },
     ],
-    technologies: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Microservicios"],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "JWT",
+      "Microservicios",
+    ],
     architecture: {
       description:
         "Arquitectura de microservicios con servicios Spring Boot para campañas, usuarios, pagos y notificaciones — cada uno con su propia base de datos. Los servicios se comunican vía APIs REST con autenticación basada en JWT. PostgreSQL para datos transaccionales. Docker Compose para desarrollo local. Frontend React con un diseño limpio y responsivo.",

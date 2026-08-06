@@ -20,12 +20,8 @@ export default function Error({
 
   return (
     <Container className="min-h-screen flex flex-col items-center justify-center text-center">
-      <h2 className="text-2xl font-bold text-foreground mb-4">
-        {t("title")}
-      </h2>
-      <p className="text-muted-foreground mb-8 max-w-md">
-        {t("description")}
-      </p>
+      <h2 className="text-2xl font-bold text-foreground mb-4">{t("title")}</h2>
+      <p className="text-muted-foreground mb-8 max-w-md">{t("description")}</p>
       {process.env.NODE_ENV === "development" && (
         <pre className="text-xs text-muted-foreground mb-6 p-4 rounded-lg bg-card border border-border max-w-xl overflow-x-auto text-left">
           {error.message}

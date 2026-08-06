@@ -73,9 +73,7 @@ function TechCategoryCard({ category, index }: TechCategoryCardProps) {
         ease: "easeOut",
         delay: index * 0.1,
       }}
-      whileHover={
-        prefersReduced ? undefined : { scale: 1.02, y: -2 }
-      }
+      whileHover={prefersReduced ? undefined : { scale: 1.02, y: -2 }}
       className="rounded-2xl border border-border bg-card shadow-lg shadow-black/10 p-6 transition-shadow hover:shadow-xl hover:shadow-black/20"
     >
       <div className="flex items-center gap-3 mb-4">
@@ -104,11 +102,7 @@ export function TechStackGrid({ categories }: TechStackGridProps) {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
       {categories.map((category, index) => (
-        <TechCategoryCard
-          key={category.name}
-          category={category}
-          index={index}
-        />
+        <TechCategoryCard key={category.name} category={category} index={index} />
       ))}
     </div>
   );

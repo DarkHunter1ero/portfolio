@@ -29,10 +29,7 @@ export async function ProfessionalProfileSection() {
 
         <div className="mt-12 max-w-3xl mx-auto space-y-4">
           {paragraphs.map((paragraph, i) => (
-            <p
-              key={i}
-              className="text-sm text-muted-foreground leading-relaxed"
-            >
+            <p key={i} className="text-sm text-muted-foreground leading-relaxed">
               {paragraph}
             </p>
           ))}

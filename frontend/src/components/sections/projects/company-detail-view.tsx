@@ -17,7 +17,10 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
   const tPd = await getTranslations("ProjectDetail");
   const tHero = await getTranslations("Hero");
   const tProjects = await getTranslations("Projects");
-  const translatedProjectItems = tProjects.raw("items") as Array<{ name: string; description: string }>;
+  const translatedProjectItems = tProjects.raw("items") as Array<{
+    name: string;
+    description: string;
+  }>;
 
   function getTranslatedDesc(name: string): string {
     const item = translatedProjectItems.find((p) => p.name === name);
@@ -25,9 +28,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
   }
 
   // Aggregate unique technologies from all projects
-  const allTechs = Array.from(
-    new Set(companyProjects.flatMap((p) => p.technologies))
-  );
+  const allTechs = Array.from(new Set(companyProjects.flatMap((p) => p.technologies)));
 
   return (
     <div className="min-h-screen">

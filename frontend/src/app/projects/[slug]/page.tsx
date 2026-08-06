@@ -17,9 +17,7 @@ async function getProjectDetails(locale: string): Promise<ProjectDetail[]> {
   return mod.projectDetailsEn;
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const locale = await getLocale();
   const t = await getTranslations("NotFound");

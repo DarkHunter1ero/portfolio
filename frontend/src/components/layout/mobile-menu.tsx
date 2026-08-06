@@ -66,23 +66,23 @@ export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) 
         </button>
 
         {navLinks.map((link) => {
-            const sectionKey = link.href.replace(/^\//, ""); // "/#about" → "#about"
-            return (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={onClose}
-            className={cn(
-              "text-2xl font-[family-name:var(--font-playfair)] transition-colors duration-200",
-              activeSection === sectionKey
-                ? "text-accent"
-                : "text-muted-foreground hover:text-foreground"
-            )}
-          >
-            {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
-          </a>
-            );
-          })}
+          const sectionKey = link.href.replace(/^\//, ""); // "/#about" → "#about"
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={onClose}
+              className={cn(
+                "text-2xl font-[family-name:var(--font-playfair)] transition-colors duration-200",
+                activeSection === sectionKey
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
+            </a>
+          );
+        })}
       </div>
     </div>
   );

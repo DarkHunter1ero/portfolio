@@ -61,9 +61,7 @@ export async function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-border text-center">
-          <p className="text-xs text-muted-foreground">
-            {t("builtWith")}
-          </p>
+          <p className="text-xs text-muted-foreground">{t("builtWith")}</p>
         </div>
       </div>
     </footer>

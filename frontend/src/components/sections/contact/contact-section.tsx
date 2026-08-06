@@ -44,17 +44,9 @@ export async function ContactSection() {
   const t = await getTranslations("Contact");
 
   return (
-    <section
-      id="contact"
-      className="py-24 sm:py-32"
-      aria-labelledby="contact-heading"
-    >
+    <section id="contact" className="py-24 sm:py-32" aria-labelledby="contact-heading">
       <Container>
-        <SectionHeading
-          id="contact-heading"
-          title={t("heading")}
-          subtitle={t("subheading")}
-        />
+        <SectionHeading id="contact-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left: contact info */}
@@ -77,11 +69,7 @@ export async function ContactSection() {
               value="DarkHunter1ero"
               href={profile.github}
             />
-            <ContactInfoItem
-              icon={MapPin}
-              label={t("locationLabel")}
-              value={t("locationValue")}
-            />
+            <ContactInfoItem icon={MapPin} label={t("locationLabel")} value={t("locationValue")} />
           </div>
 
           {/* Right: form */}

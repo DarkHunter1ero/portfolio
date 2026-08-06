@@ -66,18 +66,54 @@
     "heading": "Especialidades",
     "subheading": "Áreas principales de experiencia",
     "items": [
-      { "name": "Java y Spring Boot", "description": "Stack principal de backend — Spring MVC, Spring Data JPA, Spring Security, Hibernate. Construcción de APIs empresariales y microservicios." },
-      { "name": "Microservicios", "description": "Diseño e implementación de arquitecturas distribuidas con servicios independientes, descubrimiento de servicios con Eureka y comunicación entre servicios." },
-      { "name": "APIs REST y SOAP", "description": "Diseño, construcción y documentación de servicios web RESTful y SOAP con Swagger/OpenAPI para integración entre sistemas." },
-      { "name": "OAuth2 / JWT", "description": "Implementación de autenticación basada en tokens, autenticación multifactor (MFA) y servicios de autenticación centralizada para aplicaciones empresariales." },
-      { "name": "PKI y Certificados Digitales", "description": "Infraestructura de Clave Pública — emisión y revocación de certificados, integración con HSM, firmas digitales y gestión del ciclo de vida de certificados." },
-      { "name": "PostgreSQL", "description": "Diseño de bases de datos relacionales, consultas SQL complejas, optimización de consultas y modelado de esquemas para sistemas transaccionales." },
-      { "name": "Docker", "description": "Contenerización de aplicaciones, Docker Compose para desarrollo local y orquestación de múltiples servicios." },
-      { "name": "Jenkins", "description": "Pipelines de Integración y Despliegue Continuo — construcción, pruebas y despliegue automatizado a producción." },
-      { "name": "Linux", "description": "Administración de servidores, gestión de servicios con systemd (systemctl) y despliegue de aplicaciones en entornos Linux." },
-      { "name": "Nginx", "description": "Configuración de proxy inverso, balanceo de carga y servido de activos estáticos en entornos de producción." },
-      { "name": "React", "description": "Construcción de aplicaciones de una sola página (SPA) responsivas con React, TypeScript y arquitectura basada en componentes." },
-      { "name": "Angular", "description": "Desarrollo frontend empresarial con Angular, TypeScript y patrones de programación reactiva." }
+      {
+        "name": "Java y Spring Boot",
+        "description": "Stack principal de backend — Spring MVC, Spring Data JPA, Spring Security, Hibernate. Construcción de APIs empresariales y microservicios."
+      },
+      {
+        "name": "Microservicios",
+        "description": "Diseño e implementación de arquitecturas distribuidas con servicios independientes, descubrimiento de servicios con Eureka y comunicación entre servicios."
+      },
+      {
+        "name": "APIs REST y SOAP",
+        "description": "Diseño, construcción y documentación de servicios web RESTful y SOAP con Swagger/OpenAPI para integración entre sistemas."
+      },
+      {
+        "name": "OAuth2 / JWT",
+        "description": "Implementación de autenticación basada en tokens, autenticación multifactor (MFA) y servicios de autenticación centralizada para aplicaciones empresariales."
+      },
+      {
+        "name": "PKI y Certificados Digitales",
+        "description": "Infraestructura de Clave Pública — emisión y revocación de certificados, integración con HSM, firmas digitales y gestión del ciclo de vida de certificados."
+      },
+      {
+        "name": "PostgreSQL",
+        "description": "Diseño de bases de datos relacionales, consultas SQL complejas, optimización de consultas y modelado de esquemas para sistemas transaccionales."
+      },
+      {
+        "name": "Docker",
+        "description": "Contenerización de aplicaciones, Docker Compose para desarrollo local y orquestación de múltiples servicios."
+      },
+      {
+        "name": "Jenkins",
+        "description": "Pipelines de Integración y Despliegue Continuo — construcción, pruebas y despliegue automatizado a producción."
+      },
+      {
+        "name": "Linux",
+        "description": "Administración de servidores, gestión de servicios con systemd (systemctl) y despliegue de aplicaciones en entornos Linux."
+      },
+      {
+        "name": "Nginx",
+        "description": "Configuración de proxy inverso, balanceo de carga y servido de activos estáticos en entornos de producción."
+      },
+      {
+        "name": "React",
+        "description": "Construcción de aplicaciones de una sola página (SPA) responsivas con React, TypeScript y arquitectura basada en componentes."
+      },
+      {
+        "name": "Angular",
+        "description": "Desarrollo frontend empresarial con Angular, TypeScript y patrones de programación reactiva."
+      }
     ]
   },
   "Experience": {

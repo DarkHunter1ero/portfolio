@@ -33,9 +33,7 @@ export async function fetchUserProfile(): Promise<GitHubUser> {
   return res.json();
 }
 
-export async function fetchGitHubRepos(
-  pinnedList: string[]
-): Promise<GitHubRepo[]> {
+export async function fetchGitHubRepos(pinnedList: string[]): Promise<GitHubRepo[]> {
   // First fetch pinned repos (they get priority placement)
   const pinnedResults = await Promise.allSettled(
     pinnedList.map(async (fullName) => {
@@ -53,13 +51,10 @@ export async function fetchGitHubRepos(
 
       // Fetch languages for pinned repos
       try {
-        const langRes = await fetch(
-          `${GITHUB_API}/repos/${fullName}/languages`,
-          {
-            headers: getHeaders(),
-            next: { revalidate: 3600 },
-          }
-        );
+        const langRes = await fetch(`${GITHUB_API}/repos/${fullName}/languages`, {
+          headers: getHeaders(),
+          next: { revalidate: 3600 },
+        });
         if (langRes.ok) {
           repo.languages = await langRes.json();
         }
@@ -73,19 +68,15 @@ export async function fetchGitHubRepos(
 
   const pinnedRepos = pinnedResults
     .filter(
-      (r): r is PromiseFulfilledResult<GitHubRepo> =>
-        r.status === "fulfilled" && r.value !== null
+      (r): r is PromiseFulfilledResult<GitHubRepo> => r.status === "fulfilled" && r.value !== null
     )
     .map((r) => r.value);
 
   // Then fetch general repos
-  const reposRes = await fetch(
-    `${GITHUB_API}/users/${USERNAME}/repos?sort=updated&per_page=30`,
-    {
-      headers: getHeaders(),
-      next: { revalidate: 3600 },
-    }
-  );
+  const reposRes = await fetch(`${GITHUB_API}/users/${USERNAME}/repos?sort=updated&per_page=30`, {
+    headers: getHeaders(),
+    next: { revalidate: 3600 },
+  });
 
   const allRepos: GitHubRepo[] = reposRes.ok ? await reposRes.json() : [];
 

@@ -66,18 +66,54 @@
     "heading": "Specialties",
     "subheading": "Core areas of expertise",
     "items": [
-      { "name": "Java & Spring Boot", "description": "Core backend stack — Spring MVC, Spring Data JPA, Spring Security, Hibernate. Building enterprise APIs and microservices." },
-      { "name": "Microservices", "description": "Designing and implementing distributed architectures with independent services, service discovery via Eureka, and inter-service communication." },
-      { "name": "APIs REST & SOAP", "description": "Designing, building, and documenting RESTful and SOAP web services with Swagger/OpenAPI for seamless system integration." },
-      { "name": "OAuth2 / JWT", "description": "Implementing token-based authentication, multi-factor authentication (MFA), and centralized auth services for enterprise applications." },
-      { "name": "PKI & Digital Certificates", "description": "Public Key Infrastructure — certificate issuance, revocation, HSM integration, digital signatures, and certificate lifecycle management." },
-      { "name": "PostgreSQL", "description": "Relational database design, complex SQL queries, query optimization, and schema modeling for transactional systems." },
-      { "name": "Docker", "description": "Application containerization, Docker Compose for local development, and multi-service orchestration." },
-      { "name": "Jenkins", "description": "Continuous Integration and Continuous Deployment pipelines — automated builds, testing, and deployment to production." },
-      { "name": "Linux", "description": "Server administration, systemd service management (systemctl), and application deployment on Linux environments." },
-      { "name": "Nginx", "description": "Reverse proxy configuration, load balancing, and serving static assets in production environments." },
-      { "name": "React", "description": "Building responsive single-page applications with React, TypeScript, and component-based architecture." },
-      { "name": "Angular", "description": "Enterprise frontend development with Angular, TypeScript, and reactive programming patterns." }
+      {
+        "name": "Java & Spring Boot",
+        "description": "Core backend stack — Spring MVC, Spring Data JPA, Spring Security, Hibernate. Building enterprise APIs and microservices."
+      },
+      {
+        "name": "Microservices",
+        "description": "Designing and implementing distributed architectures with independent services, service discovery via Eureka, and inter-service communication."
+      },
+      {
+        "name": "APIs REST & SOAP",
+        "description": "Designing, building, and documenting RESTful and SOAP web services with Swagger/OpenAPI for seamless system integration."
+      },
+      {
+        "name": "OAuth2 / JWT",
+        "description": "Implementing token-based authentication, multi-factor authentication (MFA), and centralized auth services for enterprise applications."
+      },
+      {
+        "name": "PKI & Digital Certificates",
+        "description": "Public Key Infrastructure — certificate issuance, revocation, HSM integration, digital signatures, and certificate lifecycle management."
+      },
+      {
+        "name": "PostgreSQL",
+        "description": "Relational database design, complex SQL queries, query optimization, and schema modeling for transactional systems."
+      },
+      {
+        "name": "Docker",
+        "description": "Application containerization, Docker Compose for local development, and multi-service orchestration."
+      },
+      {
+        "name": "Jenkins",
+        "description": "Continuous Integration and Continuous Deployment pipelines — automated builds, testing, and deployment to production."
+      },
+      {
+        "name": "Linux",
+        "description": "Server administration, systemd service management (systemctl), and application deployment on Linux environments."
+      },
+      {
+        "name": "Nginx",
+        "description": "Reverse proxy configuration, load balancing, and serving static assets in production environments."
+      },
+      {
+        "name": "React",
+        "description": "Building responsive single-page applications with React, TypeScript, and component-based architecture."
+      },
+      {
+        "name": "Angular",
+        "description": "Enterprise frontend development with Angular, TypeScript, and reactive programming patterns."
+      }
     ]
   },
   "Experience": {

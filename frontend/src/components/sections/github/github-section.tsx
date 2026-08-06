@@ -12,12 +12,8 @@ async function GitHubFallback() {
   return (
     <div className="text-center py-12">
       <Github className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-      <h3 className="text-lg font-semibold text-foreground mb-2">
-        {t("unavailable")}
-      </h3>
-      <p className="text-sm text-muted-foreground mb-6">
-        {t("unavailableDesc")}
-      </p>
+      <h3 className="text-lg font-semibold text-foreground mb-2">{t("unavailable")}</h3>
+      <p className="text-sm text-muted-foreground mb-6">{t("unavailableDesc")}</p>
       <a
         href="https://github.com/DarkHunter1ero"
         target="_blank"
@@ -34,25 +30,14 @@ export async function GitHubSection() {
   const t = await getTranslations("GitHub");
 
   try {
-    const [profile, repos] = await Promise.all([
-      fetchUserProfile(),
-      fetchGitHubRepos(pinnedRepos),
-    ]);
+    const [profile, repos] = await Promise.all([fetchUserProfile(), fetchGitHubRepos(pinnedRepos)]);
 
     const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
 
     return (
-      <section
-        id="github"
-        className="py-24 sm:py-32 bg-card/30"
-        aria-labelledby="github-heading"
-      >
+      <section id="github" className="py-24 sm:py-32 bg-card/30" aria-labelledby="github-heading">
         <Container>
-          <SectionHeading
-            id="github-heading"
-            title={t("heading")}
-            subtitle={t("subheading")}
-          />
+          <SectionHeading id="github-heading" title={t("heading")} subtitle={t("subheading")} />
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto mb-12">
@@ -61,27 +46,21 @@ export async function GitHubSection() {
               <span className="block font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">
                 {profile.public_repos}
               </span>
-              <span className="text-xs text-muted-foreground">
-                {t("reposCount")}
-              </span>
+              <span className="text-xs text-muted-foreground">{t("reposCount")}</span>
             </div>
             <div className="text-center p-4 rounded-2xl border border-border bg-card/50">
               <Users className="h-5 w-5 text-accent mx-auto mb-2" />
               <span className="block font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">
                 {profile.followers}
               </span>
-              <span className="text-xs text-muted-foreground">
-                {t("followersCount")}
-              </span>
+              <span className="text-xs text-muted-foreground">{t("followersCount")}</span>
             </div>
             <div className="text-center p-4 rounded-2xl border border-border bg-card/50">
               <Github className="h-5 w-5 text-accent mx-auto mb-2" />
               <span className="block font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">
                 {totalStars}
               </span>
-              <span className="text-xs text-muted-foreground">
-                {t("starsCount")}
-              </span>
+              <span className="text-xs text-muted-foreground">{t("starsCount")}</span>
             </div>
           </div>
 
@@ -96,17 +75,9 @@ export async function GitHubSection() {
     );
   } catch {
     return (
-      <section
-        id="github"
-        className="py-24 sm:py-32 bg-card/30"
-        aria-labelledby="github-heading"
-      >
+      <section id="github" className="py-24 sm:py-32 bg-card/30" aria-labelledby="github-heading">
         <Container>
-          <SectionHeading
-            id="github-heading"
-            title={t("heading")}
-            subtitle={t("subheading")}
-          />
+          <SectionHeading id="github-heading" title={t("heading")} subtitle={t("subheading")} />
           <GitHubFallback />
         </Container>
       </section>

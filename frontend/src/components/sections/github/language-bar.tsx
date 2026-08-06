@@ -41,8 +41,7 @@ export function LanguageBar({ languages }: LanguageBarProps) {
                 className="h-full first:rounded-l-full last:rounded-r-full"
                 style={{
                   width: `${pct}%`,
-                  backgroundColor:
-                    LANGUAGE_COLORS[lang] ?? LANGUAGE_COLORS.default,
+                  backgroundColor: LANGUAGE_COLORS[lang] ?? LANGUAGE_COLORS.default,
                 }}
                 title={`${lang}: ${Math.round(pct)}%`}
               />
@@ -57,8 +56,7 @@ export function LanguageBar({ languages }: LanguageBarProps) {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="h-full first:rounded-l-full last:rounded-r-full"
               style={{
-                backgroundColor:
-                  LANGUAGE_COLORS[lang] ?? LANGUAGE_COLORS.default,
+                backgroundColor: LANGUAGE_COLORS[lang] ?? LANGUAGE_COLORS.default,
               }}
               title={`${lang}: ${Math.round(pct)}%`}
             />

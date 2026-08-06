@@ -26,15 +26,13 @@ export function ContactForm() {
     email: "",
     message: "",
   });
-  const [fieldErrors, setFieldErrors] = useState<
-    Partial<Record<keyof ContactFormData, string>>
-  >({});
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof ContactFormData, string>>>(
+    {}
+  );
   const [state, setState] = useState<FormState>({ status: "idle" });
   const formRef = useRef<HTMLFormElement>(null);
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
@@ -139,12 +137,8 @@ export function ContactForm() {
         className="rounded-2xl border border-green-800/30 bg-green-900/10 p-8 text-center"
       >
         <CheckCircle className="h-12 w-12 text-green-400 mx-auto mb-4" />
-        <h3 className="text-lg font-semibold text-foreground mb-2">
-          {t("successTitle")}
-        </h3>
-        <p className="text-sm text-muted-foreground">
-          {t("successMessage")}
-        </p>
+        <h3 className="text-lg font-semibold text-foreground mb-2">{t("successTitle")}</h3>
+        <p className="text-sm text-muted-foreground">{t("successMessage")}</p>
       </motion.div>
     );
   }
@@ -153,10 +147,7 @@ export function ContactForm() {
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" noValidate>
       {/* Error alert */}
       {state.status === "error" && (
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}>
           <Alert variant="destructive">
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>{state.message}</AlertDescription>
@@ -166,10 +157,7 @@ export function ContactForm() {
 
       {/* Name */}
       <div>
-        <label
-          htmlFor="contact-name"
-          className="block text-sm font-medium text-foreground mb-1.5"
-        >
+        <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-1.5">
           {t("name")}
         </label>
         <Input
@@ -191,10 +179,7 @@ export function ContactForm() {
 
       {/* Email */}
       <div>
-        <label
-          htmlFor="contact-email"
-          className="block text-sm font-medium text-foreground mb-1.5"
-        >
+        <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-1.5">
           {t("email")}
         </label>
         <Input

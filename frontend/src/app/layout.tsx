@@ -47,7 +47,12 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t.ogDescription,
       images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: t.ogImageAlt }],
     },
-    twitter: { card: "summary_large_image", title: t.ogTitle, description: t.ogDescription, images: ["/opengraph-image.png"] },
+    twitter: {
+      card: "summary_large_image",
+      title: t.ogTitle,
+      description: t.ogDescription,
+      images: ["/opengraph-image.png"],
+    },
     robots: { index: true, follow: true },
   };
 }
@@ -59,11 +64,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const messages = messagesMap[locale];
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
-      <head><JsonLd /></head>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <head>
+        <JsonLd />
+      </head>
       <body className="min-h-screen bg-background font-[family-name:var(--font-inter)] antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProvider attribute="class" forcedTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <ThemeProvider
+            attribute="class"
+            forcedTheme="dark"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
             <SkipLink />
             <Header />
             <main id="main-content">{children}</main>

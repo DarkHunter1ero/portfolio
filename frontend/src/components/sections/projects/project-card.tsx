@@ -30,16 +30,13 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const t = useTranslations("Projects");
   const td = useTranslations("ProjectDetail");
   const messages = useMessages();
-  const projectItems = (
-    (messages as Record<string, unknown>).Projects as Record<string, unknown>
-  )?.items as Array<TranslatedProjectItem> | undefined;
+  const projectItems = ((messages as Record<string, unknown>).Projects as Record<string, unknown>)
+    ?.items as Array<TranslatedProjectItem> | undefined;
 
   const translatedItem = projectItems?.find((p) => p.name === project.name);
   const description = translatedItem?.description ?? project.description;
   const slug = project.slug ?? project.name.toLowerCase().replace(/\s+/g, "-");
-  const hasDetailPage =
-    project.slug != null &&
-    projectDetails.some((p) => p.slug === project.slug);
+  const hasDetailPage = project.slug != null && projectDetails.some((p) => p.slug === project.slug);
 
   return (
     <motion.article
@@ -52,9 +49,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         delay: index * 0.1,
       }}
       whileHover={
-        prefersReduced
-          ? undefined
-          : { y: -4, transition: { duration: 0.3, ease: "easeOut" } }
+        prefersReduced ? undefined : { y: -4, transition: { duration: 0.3, ease: "easeOut" } }
       }
       className="group rounded-2xl border border-border bg-card shadow-lg shadow-black/10 overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-shadow"
     >
@@ -126,11 +121,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 size="sm"
                 className="gap-1.5 text-muted-foreground hover:text-accent"
               >
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
                   {t("viewOnGithub")}
                 </a>
@@ -145,11 +136,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 size="sm"
                 className="gap-1.5 text-muted-foreground hover:text-accent"
               >
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" />
                   {t("liveDemo")}
                 </a>

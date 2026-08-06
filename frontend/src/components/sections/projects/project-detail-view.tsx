@@ -66,14 +66,10 @@ function getIcon(name: string): LucideIcon {
 
 const MermaidDiagram = dynamic(
   () =>
-    import(
-      "@/components/sections/architecture/mermaid-diagram"
-    ).then((mod) => mod.MermaidDiagram),
+    import("@/components/sections/architecture/mermaid-diagram").then((mod) => mod.MermaidDiagram),
   {
     ssr: false,
-    loading: () => (
-      <Skeleton className="w-full min-h-[300px] rounded-2xl" />
-    ),
+    loading: () => <Skeleton className="w-full min-h-[300px] rounded-2xl" />,
   }
 );
 
@@ -94,13 +90,7 @@ function extractYoutubeId(url: string): string | null {
   return null;
 }
 
-function VideoEmbed({
-  url,
-  className,
-}: {
-  url: string;
-  className?: string;
-}) {
+function VideoEmbed({ url, className }: { url: string; className?: string }) {
   const t = useTranslations("ProjectDetail");
   const videoId = extractYoutubeId(url);
   if (!videoId) return null;
@@ -109,7 +99,7 @@ function VideoEmbed({
     <div
       className={cn(
         "relative aspect-video rounded-xl overflow-hidden border border-border bg-black/40",
-        className,
+        className
       )}
     >
       <iframe
@@ -135,13 +125,7 @@ const sectionAnim = {
 
 // ─── ProjectHero ──────────────────────────────────────────────
 
-function ProjectHero({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectHero({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
@@ -151,10 +135,7 @@ function ProjectHero({
 
       <Container className="relative z-10">
         {/* Back link */}
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="mb-8"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="mb-8">
           <Link
             href="/#projects"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
@@ -166,10 +147,7 @@ function ProjectHero({
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text column */}
-          <motion.div
-            {...(prefersReduced ? {} : sectionAnim)}
-            className="space-y-6"
-          >
+          <motion.div {...(prefersReduced ? {} : sectionAnim)} className="space-y-6">
             <div className="inline-flex items-center gap-3">
               <Badge variant="secondary" className="text-xs">
                 {project.role}
@@ -194,17 +172,16 @@ function ProjectHero({
 
           {/* Media column (video or image) */}
           <motion.div
-            {...(prefersReduced ? {} : {
-              ...sectionAnim,
-              transition: { ...sectionAnim.transition, delay: 0.15 },
-            })}
+            {...(prefersReduced
+              ? {}
+              : {
+                  ...sectionAnim,
+                  transition: { ...sectionAnim.transition, delay: 0.15 },
+                })}
             className="relative"
           >
             {project.videoUrl ? (
-              <VideoEmbed
-                url={project.videoUrl}
-                className="shadow-2xl shadow-accent/5"
-              />
+              <VideoEmbed url={project.videoUrl} className="shadow-2xl shadow-accent/5" />
             ) : (
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-2xl shadow-accent/5">
                 <Image
@@ -227,13 +204,7 @@ function ProjectHero({
 
 // ─── InstancesSection ─────────────────────────────────────────
 
-function InstancesSection({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function InstancesSection({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   if (!project.instances || project.instances.length === 0) return null;
@@ -251,10 +222,12 @@ function InstancesSection({
           {project.instances.map((instance, idx) => (
             <motion.div
               key={instance.country}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.1 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.1 },
+                  })}
               className="rounded-2xl border border-border bg-card p-8 shadow-lg shadow-black/10"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -290,9 +263,7 @@ function InstancesSection({
                 ))}
               </div>
 
-              {instance.videoUrl && (
-                <VideoEmbed url={instance.videoUrl} />
-              )}
+              {instance.videoUrl && <VideoEmbed url={instance.videoUrl} />}
             </motion.div>
           ))}
         </div>
@@ -303,22 +274,13 @@ function InstancesSection({
 
 // ─── ProjectAbout ─────────────────────────────────────────────
 
-function ProjectAbout({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectAbout({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("aboutHeading")}
           </h2>
@@ -330,10 +292,12 @@ function ProjectAbout({
             {project.about.split("\n\n").map((paragraph, i) => (
               <motion.p
                 key={i}
-                {...(prefersReduced ? {} : {
-                  ...sectionAnim,
-                  transition: { ...sectionAnim.transition, delay: i * 0.1 },
-                })}
+                {...(prefersReduced
+                  ? {}
+                  : {
+                      ...sectionAnim,
+                      transition: { ...sectionAnim.transition, delay: i * 0.1 },
+                    })}
                 className="text-sm text-muted-foreground leading-relaxed"
               >
                 {paragraph}
@@ -343,10 +307,12 @@ function ProjectAbout({
 
           {/* Sidebar info */}
           <motion.aside
-            {...(prefersReduced ? {} : {
-              ...sectionAnim,
-              transition: { ...sectionAnim.transition, delay: 0.2 },
-            })}
+            {...(prefersReduced
+              ? {}
+              : {
+                  ...sectionAnim,
+                  transition: { ...sectionAnim.transition, delay: 0.2 },
+                })}
             className="space-y-6"
           >
             <div className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-black/10">
@@ -410,17 +376,17 @@ function ProjectProblemSolution({
                 {t("problemHeading")}
               </h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {project.problem}
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{project.problem}</p>
           </motion.div>
 
           {/* Solution */}
           <motion.div
-            {...(prefersReduced ? {} : {
-              ...sectionAnim,
-              transition: { ...sectionAnim.transition, delay: 0.1 },
-            })}
+            {...(prefersReduced
+              ? {}
+              : {
+                  ...sectionAnim,
+                  transition: { ...sectionAnim.transition, delay: 0.1 },
+                })}
             className="rounded-2xl border border-emerald-500/20 bg-card p-8 shadow-lg shadow-black/10"
           >
             <div className="flex items-center gap-3 mb-4">
@@ -431,9 +397,7 @@ function ProjectProblemSolution({
                 {t("solutionHeading")}
               </h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {project.solution}
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{project.solution}</p>
           </motion.div>
         </div>
       </Container>
@@ -487,22 +451,13 @@ function LightbulbIcon() {
 
 // ─── ProjectFeatures ──────────────────────────────────────────
 
-function ProjectFeatures({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectFeatures({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("featuresHeading")}
           </h2>
@@ -514,10 +469,12 @@ function ProjectFeatures({
             return (
               <motion.div
                 key={feature.title}
-                {...(prefersReduced ? {} : {
-                  ...sectionAnim,
-                  transition: { ...sectionAnim.transition, delay: idx * 0.05 },
-                })}
+                {...(prefersReduced
+                  ? {}
+                  : {
+                      ...sectionAnim,
+                      transition: { ...sectionAnim.transition, delay: idx * 0.05 },
+                    })}
                 whileHover={
                   prefersReduced
                     ? undefined
@@ -557,20 +514,19 @@ function ProjectParticipation({
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("participationHeading")}
           </h2>
         </motion.div>
 
         <motion.div
-          {...(prefersReduced ? {} : {
-            ...sectionAnim,
-            transition: { ...sectionAnim.transition, delay: 0.1 },
-          })}
+          {...(prefersReduced
+            ? {}
+            : {
+                ...sectionAnim,
+                transition: { ...sectionAnim.transition, delay: 0.1 },
+              })}
           className="max-w-4xl mx-auto rounded-2xl border border-border bg-card p-8 sm:p-10 shadow-lg shadow-black/10"
         >
           <ul className="space-y-4">
@@ -579,9 +535,7 @@ function ProjectParticipation({
                 <div className="mt-0.5 flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-accent/10">
                   <CheckCircle className="h-3.5 w-3.5 text-accent" />
                 </div>
-                <span className="text-sm text-muted-foreground leading-relaxed">
-                  {item}
-                </span>
+                <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
@@ -593,22 +547,13 @@ function ProjectParticipation({
 
 // ─── ProjectChallenges ────────────────────────────────────────
 
-function ProjectChallenges({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectChallenges({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("challengesHeading")}
           </h2>
@@ -618,10 +563,12 @@ function ProjectChallenges({
           {project.technicalChallenges.map((challenge, idx) => (
             <motion.div
               key={challenge.title}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.07 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.07 },
+                  })}
               className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-black/10"
             >
               <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mb-3">
@@ -640,22 +587,13 @@ function ProjectChallenges({
 
 // ─── ProjectSecurity ──────────────────────────────────────────
 
-function ProjectSecurity({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectSecurity({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Shield className="h-8 w-8 text-accent" />
           </div>
@@ -673,10 +611,12 @@ function ProjectSecurity({
           {project.security.items.map((item, idx) => (
             <motion.div
               key={item.title}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.06 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.06 },
+                  })}
               className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-black/10"
             >
               <div className="flex items-center gap-3 mb-3">
@@ -687,9 +627,7 @@ function ProjectSecurity({
                   {item.title}
                 </h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -700,22 +638,13 @@ function ProjectSecurity({
 
 // ─── ProjectImpact ────────────────────────────────────────────
 
-function ProjectImpact({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectImpact({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("impactHeading")}
           </h2>
@@ -727,10 +656,12 @@ function ProjectImpact({
             return (
               <motion.div
                 key={metric.label}
-                {...(prefersReduced ? {} : {
-                  ...sectionAnim,
-                  transition: { ...sectionAnim.transition, delay: idx * 0.08 },
-                })}
+                {...(prefersReduced
+                  ? {}
+                  : {
+                      ...sectionAnim,
+                      transition: { ...sectionAnim.transition, delay: idx * 0.08 },
+                    })}
                 className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-black/10 text-center"
               >
                 {Icon && (
@@ -743,9 +674,7 @@ function ProjectImpact({
                 <div className="font-[family-name:var(--font-mono)] text-3xl sm:text-4xl font-bold text-foreground mb-2">
                   {metric.value}
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  {metric.label}
-                </div>
+                <div className="text-sm text-muted-foreground">{metric.label}</div>
               </motion.div>
             );
           })}
@@ -771,10 +700,7 @@ function ProjectArchitecture({
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("architectureHeading")}
           </h2>
@@ -785,10 +711,12 @@ function ProjectArchitecture({
 
         {project.architecture.mermaidCode && (
           <motion.div
-            {...(prefersReduced ? {} : {
-              ...sectionAnim,
-              transition: { ...sectionAnim.transition, delay: 0.1 },
-            })}
+            {...(prefersReduced
+              ? {}
+              : {
+                  ...sectionAnim,
+                  transition: { ...sectionAnim.transition, delay: 0.1 },
+                })}
           >
             <MermaidDiagram code={project.architecture.mermaidCode} />
           </motion.div>
@@ -800,22 +728,13 @@ function ProjectArchitecture({
 
 // ─── ProjectLessons ───────────────────────────────────────────
 
-function ProjectLessons({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectLessons({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("lessonsHeading")}
           </h2>
@@ -825,18 +744,18 @@ function ProjectLessons({
           {project.lessonsLearned.map((lesson, idx) => (
             <motion.div
               key={idx}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.07 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.07 },
+                  })}
               className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-lg shadow-black/10"
             >
               <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-accent/10 mt-0.5">
                 <Zap className="h-4 w-4 text-accent" />
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {lesson}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{lesson}</p>
             </motion.div>
           ))}
         </div>
@@ -847,13 +766,7 @@ function ProjectLessons({
 
 // ─── ProjectUseCases ──────────────────────────────────────────
 
-function ProjectUseCases({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectUseCases({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   if (!project.useCases || project.useCases.length === 0) return null;
@@ -861,10 +774,7 @@ function ProjectUseCases({
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("useCasesHeading")}
           </h2>
@@ -874,18 +784,18 @@ function ProjectUseCases({
           {project.useCases.map((uc, idx) => (
             <motion.div
               key={uc.title}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.06 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.06 },
+                  })}
               className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-black/10"
             >
               <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mb-2">
                 {uc.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {uc.description}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{uc.description}</p>
             </motion.div>
           ))}
         </div>
@@ -896,13 +806,7 @@ function ProjectUseCases({
 
 // ─── ProjectDemoVideos ────────────────────────────────────────
 
-function ProjectDemoVideos({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectDemoVideos({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   if (!project.demoVideos || project.demoVideos.length === 0) return null;
@@ -910,10 +814,7 @@ function ProjectDemoVideos({
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("demoVideosHeading")}
           </h2>
@@ -923,18 +824,15 @@ function ProjectDemoVideos({
           {project.demoVideos.map((video, idx) => (
             <motion.div
               key={video.url}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.1 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.1 },
+                  })}
             >
-              <VideoEmbed
-                url={video.url}
-                className="shadow-lg shadow-black/10"
-              />
-              <p className="mt-3 text-sm text-muted-foreground text-center">
-                {video.title}
-              </p>
+              <VideoEmbed url={video.url} className="shadow-lg shadow-black/10" />
+              <p className="mt-3 text-sm text-muted-foreground text-center">{video.title}</p>
             </motion.div>
           ))}
         </div>
@@ -945,13 +843,7 @@ function ProjectDemoVideos({
 
 // ─── ProjectGallery ───────────────────────────────────────────
 
-function ProjectGallery({
-  project,
-  t,
-}: {
-  project: ProjectDetail;
-  t: (key: string) => string;
-}) {
+function ProjectGallery({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
   if (!project.gallery || project.gallery.length === 0) return null;
@@ -959,10 +851,7 @@ function ProjectGallery({
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center mb-16"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {t("galleryHeading")}
           </h2>
@@ -972,10 +861,12 @@ function ProjectGallery({
           {project.gallery.map((img, idx) => (
             <motion.div
               key={img.alt}
-              {...(prefersReduced ? {} : {
-                ...sectionAnim,
-                transition: { ...sectionAnim.transition, delay: idx * 0.08 },
-              })}
+              {...(prefersReduced
+                ? {}
+                : {
+                    ...sectionAnim,
+                    transition: { ...sectionAnim.transition, delay: idx * 0.08 },
+                  })}
               className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-secondary/30"
             >
               <Image
@@ -995,20 +886,13 @@ function ProjectGallery({
 
 // ─── ProjectCTA ───────────────────────────────────────────────
 
-function ProjectCTA({
-  project,
-}: {
-  project: ProjectDetail;
-}) {
+function ProjectCTA({ project }: { project: ProjectDetail }) {
   const prefersReduced = useReducedMotion();
 
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
-        <motion.div
-          {...(prefersReduced ? {} : sectionAnim)}
-          className="text-center"
-        >
+        <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center">
           <Separator className="mb-12" />
           <Link href={project.callToAction.link}>
             <Button variant="outline" size="lg" className="gap-2">

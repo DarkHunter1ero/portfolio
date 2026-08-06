@@ -9,13 +9,10 @@ import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const MermaidDiagram = dynamic(
-  () =>
-    import("./mermaid-diagram").then((mod) => mod.MermaidDiagram),
+  () => import("./mermaid-diagram").then((mod) => mod.MermaidDiagram),
   {
     ssr: false,
-    loading: () => (
-      <Skeleton className="w-full min-h-[400px] rounded-2xl" />
-    ),
+    loading: () => <Skeleton className="w-full min-h-[400px] rounded-2xl" />,
   }
 );
 
