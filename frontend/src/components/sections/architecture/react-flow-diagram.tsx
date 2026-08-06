@@ -7,46 +7,255 @@ import {
   type Edge,
   Handle,
   Position,
+  type NodeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import type {
-  ReactFlowDiagramData,
-} from "@/types";
+import {
+  UserRound,
+  Monitor,
+  Server,
+  Database,
+  Cloud,
+  Shield,
+} from "lucide-react";
+import type { ReactFlowDiagramData } from "@/types";
 
-// ─── Custom Database node ────────────────────────────────────────
+// ─── Variant palette ─────────────────────────────────────────────
 
-function DatabaseNode({ data }: { data: { label: string } }) {
+type Variant =
+  | "user"
+  | "frontend"
+  | "service"
+  | "database"
+  | "external"
+  | "hardware";
+
+const variantMeta = {
+  user: {
+    bg: "bg-blue-600",
+    border: "border-blue-500",
+    text: "text-white",
+    icon: UserRound,
+    shape: "rounded-full px-5",
+    iconBg: "bg-blue-500/40",
+  },
+  frontend: {
+    bg: "bg-blue-600",
+    border: "border-blue-500",
+    text: "text-white",
+    icon: Monitor,
+    shape: "rounded-xl",
+    iconBg: "bg-blue-500/40",
+  },
+  service: {
+    bg: "bg-[#1e1e24]",
+    border: "border-[#2a2a35]",
+    text: "text-[#f0f0f5]",
+    icon: Server,
+    shape: "rounded-xl border-l-[3px] border-l-blue-500",
+    iconBg: "bg-zinc-700/60",
+  },
+  database: {
+    bg: "bg-[#1a1a1f]",
+    border: "border-[#2a2a35]",
+    text: "text-[#f0f0f5]",
+    icon: Database,
+    shape: "",
+    iconBg: "bg-zinc-700/60",
+  },
+  external: {
+    bg: "bg-amber-900/80",
+    border: "border-amber-700 border-dashed",
+    text: "text-[#fef3c7]",
+    icon: Cloud,
+    shape: "rounded-xl",
+    iconBg: "bg-amber-800/60",
+  },
+  hardware: {
+    bg: "bg-violet-800/80",
+    border: "border-violet-600",
+    text: "text-[#ede9fe]",
+    icon: Shield,
+    shape: "rounded-xl",
+    iconBg: "bg-violet-700/60",
+  },
+} as const;
+
+// ─── Custom Node ─────────────────────────────────────────────────
+
+type CustomNodeData = { label: string; variant?: Variant };
+type CustomNodeType = Node<CustomNodeData>;
+
+function CustomNode({ data }: NodeProps<CustomNodeType>) {
+  const variant = data.variant ?? "service";
+  const meta = variantMeta[variant];
+
+  if (variant === "database") {
+    return (
+      <div className="flex flex-col items-center min-w-[150px]">
+        <Handle
+          type="target"
+          position={Position.Top}
+          className="!bg-zinc-500 !w-3 !h-3 !border-0"
+        />
+        <div className="relative z-10 mb-[-12px]">
+          <span className="inline-block rounded-full bg-zinc-700 px-3 py-0.5 text-[10px] font-bold tracking-wider text-zinc-300 border border-zinc-600">
+            DB
+          </span>
+        </div>
+        <div className="w-full h-5 bg-[#222228] border border-[#2a2a35] border-b-0 rounded-t-[50%_/_18px]" />
+        <div className="w-full flex items-center gap-2.5 bg-[#1a1a1f] border-x border-[#2a2a35] px-5 py-3">
+          <div className="flex-shrink-0 rounded-md bg-zinc-700/60 p-1.5">
+            <Database className="h-4 w-4 text-zinc-300" />
+          </div>
+          <span className="text-xs font-medium text-[#f0f0f5] leading-snug whitespace-pre-line">
+            {data.label}
+          </span>
+        </div>
+        <div className="w-full h-5 bg-[#1a1a1f] border border-[#2a2a35] border-t-0 rounded-b-[50%_/_18px]" />
+        <Handle
+          type="source"
+          position={Position.Bottom}
+          className="!bg-zinc-500 !w-3 !h-3 !border-0"
+        />
+      </div>
+    );
+  }
+
+  const Icon = meta.icon;
+
   return (
-    <div className="relative">
+    <div
+      className={`
+        ${meta.bg} ${meta.border} ${meta.text} ${meta.shape}
+        flex items-center gap-3 px-4 py-3 shadow-md
+        border min-w-[160px] max-w-[240px]
+      `}
+    >
       <Handle
         type="target"
         position={Position.Top}
-        className="!bg-zinc-600"
-      />
-      <div
-        className="
-          bg-[#1a1a1f] border border-[#2a2a35] rounded-b-[40%] rounded-t-[40%]
-          px-6 py-3 min-w-[120px] text-center
-          text-xs font-medium text-[#f0f0f5]
-          shadow-sm
-        "
-        dangerouslySetInnerHTML={{ __html: data.label }}
+        className="!bg-zinc-500 !w-3 !h-3 !border-0"
       />
       <Handle
         type="source"
         position={Position.Bottom}
-        className="!bg-zinc-600"
+        className="!bg-zinc-500 !w-3 !h-3 !border-0"
       />
+      <div className={`flex-shrink-0 rounded-md ${meta.iconBg} p-1.5`}>
+        <Icon className="h-4 w-4" />
+      </div>
+      <span className="text-xs font-medium leading-snug whitespace-pre-line">
+        {data.label}
+      </span>
     </div>
   );
 }
 
-const nodeTypes = {
-  database: DatabaseNode,
-};
+const nodeTypes = { default: CustomNode, database: CustomNode };
+
+// ─── Layout helper ────────────────────────────────────────────────
+
+interface RawNode {
+  id: string;
+  data: { label: string; variant?: Variant };
+  style?: Record<string, string>;
+}
+
+interface RawEdge {
+  id: string;
+  source: string;
+  target: string;
+  label?: string;
+}
+
+function layoutNodes(
+  rawNodes: RawNode[],
+  rawEdges: RawEdge[],
+  direction: "TB" | "LR",
+  dagreModule: typeof import("@dagrejs/dagre")
+): { nodes: Node[]; edges: Edge[] } {
+  const g = new dagreModule.graphlib.Graph();
+
+  g.setGraph({
+    rankdir: direction,
+    nodesep: 80,
+    ranksep: 100,
+    marginx: 50,
+    marginy: 50,
+  });
+
+  g.setDefaultEdgeLabel(() => ({}));
+
+  const NODE_W = 190;
+  const NODE_H = 64;
+
+  for (const node of rawNodes) {
+    g.setNode(node.id, { width: NODE_W, height: NODE_H });
+  }
+
+  for (const edge of rawEdges) {
+    g.setEdge(edge.source, edge.target);
+  }
+
+  dagreModule.layout(g);
+
+  const nodes: Node[] = rawNodes.map((node) => {
+    const pos = g.node(node.id)!;
+    const x = pos.x - NODE_W / 2;
+    const y = pos.y - NODE_H / 2;
+
+    return {
+      id: node.id,
+      type: "default",
+      position: { x, y },
+      data: {
+        label: node.data.label,
+        variant: node.data.variant ?? "service",
+      } satisfies CustomNodeData,
+      style: {
+        width: NODE_W,
+        ...node.style,
+      },
+      sourcePosition:
+        direction === "TB" ? Position.Bottom : Position.Right,
+      targetPosition: direction === "TB" ? Position.Top : Position.Left,
+    };
+  });
+
+  const edges: Edge[] = rawEdges.map((edge) => ({
+    id: edge.id,
+    source: edge.source,
+    target: edge.target,
+    label: edge.label ?? undefined,
+    type: "smoothstep",
+    style: { stroke: "#3f3f46", strokeWidth: 2 },
+    labelStyle: { fill: "#a1a1aa", fontSize: 11, fontWeight: 600 },
+    labelBgStyle: { fill: "#18181b", opacity: 0.95 },
+    labelBgPadding: [8, 4] as [number, number],
+    labelBgBorderRadius: 4,
+    markerEnd: {
+      type: "arrowclosed",
+      color: "#52525b",
+      width: 18,
+      height: 18,
+    },
+  }));
+
+  return { nodes, edges };
+}
+
+// ─── Default edge options ─────────────────────────────────────────
 
 const defaultEdgeOptions = {
-  style: { stroke: "#2a2a35", strokeWidth: 2 },
+  type: "smoothstep",
+  style: { stroke: "#3f3f46", strokeWidth: 2 },
+  markerEnd: {
+    type: "arrowclosed" as const,
+    color: "#52525b",
+    width: 18,
+    height: 18,
+  },
 };
 
 // ─── Component ────────────────────────────────────────────────────
@@ -65,76 +274,17 @@ export function ReactFlowDiagram({ data }: ReactFlowDiagramProps) {
     let cancelled = false;
 
     async function computeLayout() {
-      const dagre = await import("@dagrejs/dagre");
-
+      const dagreModule = await import("@dagrejs/dagre");
       if (cancelled) return;
 
-      const direction = data.direction ?? "TB";
-      const g = new dagre.graphlib.Graph();
+      const result = layoutNodes(
+        data.nodes as RawNode[],
+        data.edges,
+        data.direction ?? "TB",
+        dagreModule
+      );
 
-      g.setGraph({
-        rankdir: direction,
-        nodesep: 60,
-        ranksep: 80,
-        marginx: 40,
-        marginy: 40,
-      });
-
-      g.setDefaultEdgeLabel(() => ({}));
-
-      const NODE_W = 180;
-      const NODE_H = 56;
-
-      for (const node of data.nodes) {
-        g.setNode(node.id, { width: NODE_W, height: NODE_H });
-      }
-
-      for (const edge of data.edges) {
-        g.setEdge(edge.source, edge.target);
-      }
-
-      dagre.layout(g);
-
-      const nodes: Node[] = data.nodes.map((node) => {
-        const pos = g.node(node.id)!;
-        const x = pos.x - NODE_W / 2;
-        const y = pos.y - NODE_H / 2;
-
-        return {
-          id: node.id,
-          type: node.type === "database" ? "database" : "default",
-          position: { x, y },
-          data: { label: node.data.label },
-          style: {
-            width: NODE_W,
-            ...node.style,
-          },
-          sourcePosition:
-            direction === "TB" ? Position.Bottom : Position.Right,
-          targetPosition:
-            direction === "TB" ? Position.Top : Position.Left,
-        };
-      });
-
-      const edges: Edge[] = data.edges.map((edge) => ({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        label: edge.label ?? undefined,
-        style: { stroke: "#2a2a35", strokeWidth: 2 },
-        labelStyle: { fill: "#888", fontSize: 11 },
-        labelBgStyle: { fill: "#1a1a1f" },
-        markerEnd: {
-          type: "arrowclosed",
-          color: "#2a2a35",
-          width: 16,
-          height: 16,
-        },
-      }));
-
-      if (!cancelled) {
-        setLaidOut({ nodes, edges });
-      }
+      if (!cancelled) setLaidOut(result);
     }
 
     computeLayout();
@@ -146,7 +296,7 @@ export function ReactFlowDiagram({ data }: ReactFlowDiagramProps) {
 
   const onInit = useCallback(
     (instance: { fitView: (opts?: { duration?: number }) => void }) => {
-      setTimeout(() => instance.fitView({ duration: 300 }), 80);
+      setTimeout(() => instance.fitView({ duration: 400 }), 100);
     },
     []
   );
@@ -156,33 +306,11 @@ export function ReactFlowDiagram({ data }: ReactFlowDiagramProps) {
       role="img"
       aria-label="Architecture diagram"
       className="rounded-2xl border border-[#2a2a35] bg-[#0a0a0b] overflow-hidden"
-      style={{ width: "100%", height: 500 }}
+      style={{ width: "100%", height: 550 }}
     >
       <style>{`
-        .react-flow__node-default {
-          background: #1e1e24 !important;
-          border: 1px solid #2a2a35 !important;
-          border-radius: 8px !important;
-          color: #f0f0f5 !important;
-          font-size: 12px !important;
-          font-weight: 500 !important;
-          padding: 12px 16px !important;
-          text-align: center !important;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-          width: auto !important;
-          min-width: 140px !important;
-          white-space: pre-line !important;
-          line-height: 1.5 !important;
-        }
-        .react-flow__node-default .react-flow__handle {
-          background: #52525b !important;
-          width: 8px !important;
-          height: 8px !important;
-          border: none !important;
-        }
-        .react-flow__attribution {
-          display: none !important;
-        }
+        .react-flow__attribution { display: none !important; }
+        .react-flow__background { background: #0a0a0b !important; }
       `}</style>
       <ReactFlow
         nodes={laidOut?.nodes ?? []}
@@ -195,6 +323,8 @@ export function ReactFlowDiagram({ data }: ReactFlowDiagramProps) {
         elementsSelectable={false}
         panOnDrag
         zoomOnScroll
+        minZoom={0.3}
+        maxZoom={2}
         fitView
         proOptions={{ hideAttribution: true }}
       />

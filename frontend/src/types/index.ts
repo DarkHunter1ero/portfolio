@@ -130,7 +130,10 @@ export interface ProjectDemoVideo {
 export interface ReactFlowDiagramNode {
   id: string;
   type?: "default" | "database";
-  data: { label: string };
+  data: {
+    label: string;
+    variant?: "user" | "frontend" | "service" | "database" | "external" | "hardware";
+  };
   style?: Record<string, string>;
 }
 
