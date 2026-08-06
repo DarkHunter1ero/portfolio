@@ -91,7 +91,12 @@ pipeline {
         // ═══════════════════════════════════════════════════════════
         stage('Deploy Frontend to Vercel') {
             when {
-                branch 'main'
+                expression {
+                    // Works for both Pipeline and Multibranch jobs.
+                    // In a simple Pipeline job BRANCH_NAME is null → deploy.
+                    // In Multibranch, only deploy from 'main'.
+                    env.BRANCH_NAME == null || env.BRANCH_NAME == 'main'
+                }
             }
             steps {
                 bat """
