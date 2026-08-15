@@ -15,7 +15,11 @@ export function LocaleSwitcher() {
   const handleSwitch = useCallback(() => {
     document.cookie = `NEXT_LOCALE=${switchTo};path=/;max-age=31536000;SameSite=Lax`;
     startTransition(() => {
-      router.replace(window.location.pathname);
+      // router.replace() only re-renders the page segment; layouts persist across
+      // navigations, so the root layout (which owns locale detection and the
+      // NextIntlClientProvider) would never re-run. router.refresh() re-fetches
+      // the whole route from the server, layout included.
+      router.refresh();
     });
   }, [switchTo, router]);
 

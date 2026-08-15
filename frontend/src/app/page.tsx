@@ -6,8 +6,6 @@ import { TechStackSection } from "@/components/sections/tech-stack/tech-stack-se
 import { EducationSection } from "@/components/sections/education/education-section";
 import { ContactSection } from "@/components/sections/contact/contact-section";
 
-export const revalidate = 3600;
-
 export default async function HomePage() {
   return (
     <>
