@@ -59,7 +59,13 @@
       "Testing": "Testing",
       "Tools": "Tools",
       "Methodologies": "Methodologies",
-      "Operations & Support": "Operations & Support"
+      "Operations & Support": "Operations & Support",
+      "Hardware": "Hardware",
+      "Operating Systems": "Operating Systems",
+      "Networking": "Networking",
+      "Backup & Recovery": "Backup & Recovery",
+      "Automation": "Automation",
+      "Support & Client Relations": "Support & Client Relations"
     }
   },
   "Specialties": {

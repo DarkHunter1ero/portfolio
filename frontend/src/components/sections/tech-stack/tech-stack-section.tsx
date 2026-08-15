@@ -2,10 +2,14 @@ import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { TechStackGrid } from "./tech-category-card";
-import { techStack } from "@/data/tech-stack";
+import type { TechCategory } from "@/types";
 
-export async function TechStackSection() {
+// Fallback: dev tech stack data
+import { techStack as devTechStack } from "@/data/dev/tech-stack";
+
+export async function TechStackSection({ categories }: { categories?: TechCategory[] }) {
   const t = await getTranslations("TechStack");
+  const techStackToUse = categories || devTechStack;
 
   return (
     <section
@@ -15,7 +19,7 @@ export async function TechStackSection() {
     >
       <Container>
         <SectionHeading id="tech-stack-heading" title={t("heading")} subtitle={t("subheading")} />
-        <TechStackGrid categories={techStack} />
+        <TechStackGrid categories={techStackToUse} />
       </Container>
     </section>
   );

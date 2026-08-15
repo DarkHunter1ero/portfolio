@@ -7,7 +7,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import type { Experience } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/data/projects";
+import { projects } from "@/data/dev/projects";
 import { companySlug, cn } from "@/lib/utils";
 
 interface TimelineItemProps {
@@ -16,9 +16,10 @@ interface TimelineItemProps {
   tPresent: string;
   tViewCompany: string;
   tViewDetails: string;
+  useDataValues?: boolean;
 }
 
-function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: TimelineItemProps) {
+function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails, useDataValues }: TimelineItemProps) {
   const prefersReduced = useReducedMotion();
   const isLeft = index % 2 === 0;
   const messages = useMessages();
@@ -26,11 +27,16 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
   const expItems = (messages as Record<string, unknown>).Experience as
     Record<string, unknown> | undefined;
   const expItem = (expItems?.items as Array<Record<string, unknown>> | undefined)?.[index];
-  const translatedDescription =
-    typeof expItem?.description === "string" ? expItem.description : item.description;
-  const translatedHighlights = Array.isArray(expItem?.highlights)
-    ? (expItem.highlights as string[])
-    : item.highlights;
+  const translatedDescription = useDataValues
+    ? item.description
+    : typeof expItem?.description === "string"
+      ? expItem.description
+      : item.description;
+  const translatedHighlights = useDataValues
+    ? item.highlights
+    : Array.isArray(expItem?.highlights)
+      ? (expItem.highlights as string[])
+      : item.highlights;
 
   // Translated project descriptions
   const projectsMessages = (messages as Record<string, unknown>).Projects as
@@ -187,9 +193,10 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails }: Tim
 interface ExperienceTimelineProps {
   items: Experience[];
   tPresent: string;
+  useDataValues?: boolean;
 }
 
-export function ExperienceTimeline({ items, tPresent }: ExperienceTimelineProps) {
+export function ExperienceTimeline({ items, tPresent, useDataValues }: ExperienceTimelineProps) {
   const t = useTranslations("Experience");
 
   return (
@@ -209,6 +216,7 @@ export function ExperienceTimeline({ items, tPresent }: ExperienceTimelineProps)
             tPresent={tPresent}
             tViewCompany={t("viewCompany")}
             tViewDetails={t("viewDetails")}
+            useDataValues={useDataValues}
           />
         ))}
       </div>

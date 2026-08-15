@@ -17,6 +17,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+type SpecialtyItem = {
+  name: string;
+  description: string;
+};
+
 const iconMap: Record<string, LucideIcon> = {
   Server,
   Cpu,
@@ -32,7 +37,6 @@ const iconMap: Record<string, LucideIcon> = {
   Monitor,
 };
 
-// Maps specialty index to icon name
 const specialtyIcons = [
   "Server",
   "Cpu",
@@ -48,9 +52,12 @@ const specialtyIcons = [
   "Monitor",
 ];
 
-export async function SpecialtiesSection() {
+// Fallback: import from dev data if no items prop provided
+import { specialties as devSpecialties } from "@/data/dev/specialties";
+
+export async function SpecialtiesSection({ items }: { items?: SpecialtyItem[] }) {
   const t = await getTranslations("Specialties");
-  const items = t.raw("items") as Array<{ name: string; description: string }>;
+  const specialtyItems = items || devSpecialties;
 
   return (
     <section id="specialties" className="py-24 sm:py-32" aria-labelledby="specialties-heading">
@@ -58,7 +65,7 @@ export async function SpecialtiesSection() {
         <SectionHeading id="specialties-heading" title={t("heading")} subtitle={t("subheading")} />
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {items.map((specialty, i) => {
+          {specialtyItems.map((specialty, i) => {
             const iconName = specialtyIcons[i] ?? "Server";
             const Icon = iconMap[iconName] ?? Server;
             return (

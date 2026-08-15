@@ -10,10 +10,10 @@ interface ProjectPageProps {
 
 async function getProjectDetails(locale: string): Promise<ProjectDetail[]> {
   if (locale === "es") {
-    const mod = await import("@/data/project-details-es");
+    const mod = await import("@/data/dev/project-details-es");
     return mod.projectDetailsEs;
   }
-  const mod = await import("@/data/project-details-en");
+  const mod = await import("@/data/dev/project-details-en");
   return mod.projectDetailsEn;
 }
 

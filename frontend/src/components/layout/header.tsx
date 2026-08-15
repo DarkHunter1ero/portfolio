@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { MobileMenu } from "./mobile-menu";
 import { LocaleSwitcher } from "./locale-switcher";
-import { navLinks } from "@/data/navigation";
+import { navLinks } from "@/data/dev/navigation";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 

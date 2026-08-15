@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { DiagramTabs } from "./diagram-tabs";
-import { architectureDiagrams } from "@/data/architecture";
+import { architectureDiagrams } from "@/data/dev/architecture";
 
 export async function ArchitectureSection() {
   const t = await getTranslations("Architecture");

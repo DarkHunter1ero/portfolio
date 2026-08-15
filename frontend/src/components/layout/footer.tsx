@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Github, Linkedin, ArrowUp, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { profile } from "@/data/profile";
+import { profile } from "@/data/dev/profile";
 
 export async function Footer() {
   const t = await getTranslations("Footer");

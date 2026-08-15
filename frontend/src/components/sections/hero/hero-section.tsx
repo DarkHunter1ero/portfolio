@@ -2,10 +2,18 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { HeroBackground } from "./hero-background";
 import { HeroCTA } from "./hero-cta";
-import { profile } from "@/data/profile";
+import { profile as devProfile } from "@/data/dev/profile";
 import { calculateAge } from "@/lib/utils";
 
-export async function HeroSection() {
+// Type derived from the imported profile value
+type DevProfile = typeof devProfile;
+
+export async function HeroSection({
+  profile: customProfile,
+}: {
+  profile?: DevProfile | undefined;
+}) {
+  const profile = customProfile || devProfile;
   const t = await getTranslations("Hero");
   const age = calculateAge(profile.birthDate);
 

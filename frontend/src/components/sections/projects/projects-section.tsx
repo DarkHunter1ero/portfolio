@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { ProjectCard } from "./project-card";
-import { projects } from "@/data/projects";
+import { projects } from "@/data/dev/projects";
 import type { Project } from "@/types";
 
 const COMPANY_ORDER = ["Quiero Realizarlo", "ISA Interfase", "Beacon42", "Portlike · DIRECTV"];

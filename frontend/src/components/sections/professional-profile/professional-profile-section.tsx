@@ -1,18 +1,15 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
-import { Briefcase, Lightbulb, Scale, Wrench } from "lucide-react";
 
-const softSkills = [
-  { label: "problemSolving", icon: Lightbulb },
-  { label: "continuousLearning", icon: Briefcase },
-  { label: "softwareQuality", icon: Scale },
-  { label: "cleanCode", icon: Wrench },
-];
-
-export async function ProfessionalProfileSection() {
+export async function ProfessionalProfileSection({
+  summary: customSummary,
+}: {
+  summary?: string;
+} = {}) {
   const t = await getTranslations("ProfessionalProfile");
-  const paragraphs = t("summary").split("\n\n");
+  const rawSummary = customSummary || t("summary");
+  const paragraphs = rawSummary.split("\n\n");
 
   return (
     <section
@@ -32,19 +29,6 @@ export async function ProfessionalProfileSection() {
             <p key={i} className="text-sm text-muted-foreground leading-relaxed">
               {paragraph}
             </p>
-          ))}
-        </div>
-
-        {/* Soft skills badges */}
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {softSkills.map(({ label, icon: Icon }) => (
-            <span
-              key={label}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground"
-            >
-              <Icon className="h-4 w-4 text-accent" />
-              {t(label)}
-            </span>
           ))}
         </div>
       </Container>

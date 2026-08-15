@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
-import { navLinks } from "@/data/navigation";
+import { navLinks } from "@/data/dev/navigation";
 import { cn } from "@/lib/utils";
 
 const navTranslationKeys = {

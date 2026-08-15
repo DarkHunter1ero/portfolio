@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { RepoCard } from "./repo-card";
 import { fetchUserProfile, fetchGitHubRepos } from "@/lib/github";
-import { pinnedRepos } from "@/data/pinned-repos";
+import { pinnedRepos } from "@/data/dev/pinned-repos";
 import { Github, FolderGit2, Users } from "lucide-react";
 
 async function GitHubFallback() {

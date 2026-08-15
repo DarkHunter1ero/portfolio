@@ -1,0 +1,328 @@
+{
+  "Metadata": {
+    "title": "Diego Silva — IT Support & Technology Services",
+    "description": "IT Support Services for businesses and individuals. PC repair, maintenance, networking, malware removal, and custom automation. 6+ years in the IT world.",
+    "ogTitle": "Diego Silva — IT Support & Technology Services",
+    "ogDescription": "Comprehensive IT support: repair, maintenance, networking, security, and custom automation. Services for businesses and individuals. Remote and on-site support.",
+    "ogSiteName": "Diego Silva — IT Support",
+    "ogImageAlt": "Diego Silva — IT Support Technician"
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Navigation menu"
+  },
+  "SkipLink": {
+    "label": "Skip to main content"
+  },
+  "Nav": {
+    "professionalProfile": "Profile",
+    "specialties": "Services",
+    "experience": "Experience",
+    "techStack": "Tools",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "Diego Silva",
+    "subtitle": "IT Support & Technology Services",
+    "tagline": "PC repair, maintenance, networking, malware removal, and custom automation. 6+ years in the IT world. Services for businesses and individuals — on-site and remote.",
+    "downloadCV": "Download CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "years": "years old",
+    "nationality": "Uruguayan"
+  },
+  "About": {
+    "heading": "About Me",
+    "subheading": "The technician who understands code",
+    "bio": "I'm an IT Support Technician with over six years of experience in the technology world. My background spans from hardware repair and maintenance to enterprise software development, giving me a unique perspective: I understand both hardware and software, both the cable and the code.\n\nI offer comprehensive IT support services: PC and laptop repair and maintenance, operating system installation and configuration, malware removal, performance optimization, data backup and recovery, network and printer configuration, and remote support to solve problems without the need for on-site visits.\n\nWhat sets me apart from a traditional technician is my background as a software developer. This means I don't just fix computers: I can create custom automations, integrate systems, develop tools that optimize your processes, and provide IT consulting with a real understanding of how the software running on your machines works. For businesses and SMEs, this translates into a more complete and strategic service.\n\nI work remotely and on-site depending on the need. I believe in a close, transparent service focused on solving the root problem — not just the symptom. If you need reliable IT support, with the guarantee of someone who understands technology end to end, I'm here to help.",
+    "statYears": "Years of experience",
+    "statYearsValue": "6+",
+    "statProjects": "Services offered",
+    "statProjectsValue": "10+",
+    "statTechs": "Tools",
+    "statTechsValue": "30+"
+  },
+  "TechStack": {
+    "heading": "Tools & Technologies",
+    "subheading": "What I work with daily",
+    "categories": {
+      "Hardware": "Hardware",
+      "Sistemas Operativos": "Operating Systems",
+      "Seguridad": "Security",
+      "Redes": "Networking",
+      "Backup y Datos": "Backup & Data",
+      "Desarrollo y Automatización": "Development & Automation",
+      "Herramientas": "Tools",
+      "Soporte y Atención": "Support & Customer Service"
+    }
+  },
+  "Specialties": {
+    "heading": "Services",
+    "subheading": "What I can do for you or your business",
+    "items": [
+      {
+        "name": "PC & Laptop Repair",
+        "description": "Hardware and software diagnosis and repair. Component replacement, screen repair, keyboards, batteries, and motherboard troubleshooting."
+      },
+      {
+        "name": "Windows & OS Installation",
+        "description": "Clean installation and configuration of Windows, drivers, essential software, and operating system optimization for maximum performance."
+      },
+      {
+        "name": "Malware & Virus Removal",
+        "description": "Detection and removal of viruses, malware, spyware, and adware. Antivirus installation and real-time protection configuration."
+      },
+      {
+        "name": "Performance Optimization",
+        "description": "Temporary file cleanup, defragmentation, hardware upgrades (RAM, SSD), and system tuning to speed up slow computers."
+      },
+      {
+        "name": "Backup & Data Recovery",
+        "description": "Critical data backup, data recovery from damaged drives, migration to new equipment, and automatic backup configuration."
+      },
+      {
+        "name": "Networking & Connectivity",
+        "description": "Router configuration, WiFi setup, wired networks, connectivity troubleshooting, and network coverage extension."
+      },
+      {
+        "name": "Printers & Peripherals",
+        "description": "Installation and configuration of printers, scanners, cameras, and other peripherals. Driver and connectivity troubleshooting."
+      },
+      {
+        "name": "Remote Support",
+        "description": "Remote technical assistance via remote desktop tools. Quick problem resolution without the need for on-site visits."
+      },
+      {
+        "name": "IT Consulting for Businesses",
+        "description": "IT infrastructure consulting, preventive maintenance, upgrade planning, and technology asset management for small and medium businesses."
+      },
+      {
+        "name": "Custom Automation",
+        "description": "Development of custom scripts, tools, and automations to optimize repetitive processes. My experience as a developer allows me to create solutions that a traditional technician cannot offer."
+      }
+    ]
+  },
+  "Experience": {
+    "heading": "Experience",
+    "subheading": "My journey in the IT world",
+    "present": "Present",
+    "viewCompany": "View all {company} projects",
+    "viewDetails": "View details",
+    "backToExperience": "Back to Experience",
+    "projectsAt": "Projects at {company}",
+    "technologiesUsed": "Technologies Used",
+    "technologiesUsedDesc": "Technologies I worked with during my time at {company}",
+    "items": [
+      {
+        "description": "IT support services for individuals and small businesses. Equipment repair, preventive maintenance, malware removal, network configuration, data backup, and custom automation. Remote and on-site support.",
+        "highlights": [
+          "Comprehensive IT support services: diagnosis, repair, preventive maintenance, and consulting.",
+          "Custom automations and tools thanks to my software development experience.",
+          "Remote and on-site support with fast response and personalized follow-up."
+        ]
+      },
+      {
+        "description": "Enterprise platform development with experience in server infrastructure, Linux system administration, CI/CD with Docker and Jenkins, and production issue resolution.",
+        "highlights": [
+          "Linux server administration with systemd, diagnosis, and production incident resolution.",
+          "Implementation of CI/CD pipelines with Docker and Jenkins that automated deployments and reduced operational errors.",
+          "Information security experience: PKI, digital certificates, sensitive data protection."
+        ]
+      },
+      {
+        "description": "Custom Magento module development for eCommerce with production deployments, server administration, and technical customer support.",
+        "highlights": [
+          "Zero-downtime deployments in production environments, ensuring operational continuity.",
+          "Direct technical support to clients for issue resolution on their platforms.",
+          "Third-party API integration with monitoring and error handling."
+        ]
+      },
+      {
+        "description": "Development of analytics and automation tools. Implementation of tracking and automated reporting for corporate clients such as DIRECTV.",
+        "highlights": [
+          "Report automation that eliminated 15+ hours of manual work per week.",
+          "Maintenance and evolution of WordPress sites in production, ensuring stability.",
+          "Implementation of web tracking and analytics solutions for enterprise clients."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Completed Projects",
+    "subheading": "Some IT support work",
+    "viewOnGithub": "View on GitHub",
+    "liveDemo": "Live Demo",
+    "problem": "Problem",
+    "architecture": "Approach",
+    "challenges": "Solution",
+    "items": []
+  },
+  "Architecture": {
+    "heading": "Work Methodology",
+    "subheading": "How I work with my clients",
+    "renderError": "Diagram could not be rendered",
+    "viewSource": "View diagram source",
+    "diagramAlt": "Methodology diagram",
+    "diagrams": {
+      "microservices": {
+        "label": "Support Process",
+        "description": "My work process: initial diagnosis, transparent budget, service execution, client verification, and post-service follow-up."
+      },
+      "docker": {
+        "label": "Business Services",
+        "description": "For businesses I offer: infrastructure assessment, scheduled preventive maintenance, incident response, technical documentation, and improvement consulting."
+      },
+      "cicd": {
+        "label": "Individual Services",
+        "description": "For individuals: on-site or remote repair, new equipment installation and configuration, virus removal, data backup, and performance optimization."
+      },
+      "auth": {
+        "label": "Remote Support",
+        "description": "Remote technical assistance via TeamViewer/AnyDesk. Quick diagnosis, software issue resolution, configuration, and training without the need for on-site visits."
+      },
+      "cloud": {
+        "label": "Custom Automations",
+        "description": "My differentiator: I create custom scripts and tools to automate repetitive tasks, migrate data, generate reports, or integrate systems — something a traditional technician cannot offer."
+      }
+    }
+  },
+  "GitHub": {
+    "heading": "GitHub Activity",
+    "subheading": "Open source projects and tools",
+    "reposCount": "Public repositories",
+    "followersCount": "Followers",
+    "starsCount": "Stars",
+    "pinnedRepos": "Pinned repositories",
+    "noRepos": "No repositories found",
+    "unavailable": "GitHub data unavailable",
+    "unavailableDesc": "Unable to fetch repository data. Visit my profile directly.",
+    "error": "Unable to load GitHub data"
+  },
+  "Education": {
+    "heading": "Education",
+    "subheading": "Academic background",
+    "items": [
+      {
+        "institution": "UTEC — Universidad Tecnológica",
+        "degree": "Technologist in Computer Science",
+        "period": "2013 — 2015",
+        "type": "tertiary",
+        "description": "University program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
+      },
+      {
+        "institution": "UTU — Universidad del Trabajo del Uruguay",
+        "degree": "Technical High School Degree in Electromechanics",
+        "period": "2007 — 2009",
+        "type": "technical",
+        "description": "Technical foundation in electromechanical systems that developed my logical thinking and ability to solve complex technical problems — essential for hardware diagnosis and repair."
+      },
+      {
+        "institution": "Liceo Nº 2 — San José de Mayo",
+        "degree": "Ciclo Básico (Secondary Education)",
+        "period": "2004 — 2006",
+        "type": "secondary",
+        "description": "Foundational secondary education with emphasis on sciences and mathematics."
+      }
+    ]
+  },
+  "Contact": {
+    "heading": "Contact",
+    "subheading": "Reach out with no obligation about your equipment or business",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me what you need...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "I'll get back to you shortly.",
+    "error": "Something went wrong. Please try again.",
+    "rateLimit": "Too many submissions. Please try again in 15 minutes.",
+    "networkError": "Unable to send message. Please try again or email me directly.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "emailInvalid": "Please enter a valid email address",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "locationFallback": "Remote",
+    "locationLabel": "Location",
+    "locationValue": "Remote and on-site — Latin America",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "Footer": {
+    "copyright": "All rights reserved.",
+    "backToTop": "Back to top",
+    "builtWith": "Built with Next.js, TypeScript & Tailwind CSS",
+    "sendEmail": "Send email",
+    "githubProfile": "GitHub profile",
+    "linkedinProfile": "LinkedIn profile",
+    "devPortfolioLink": "Looking for software development? → Visit my web development portfolio"
+  },
+  "ThemeToggle": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "ProjectDetail": {
+    "role": "My Role",
+    "duration": "Duration",
+    "aboutHeading": "About the Service",
+    "problemHeading": "The Problem",
+    "solutionHeading": "The Solution",
+    "featuresHeading": "Details",
+    "participationHeading": "Work Performed",
+    "challengesHeading": "Challenges",
+    "securityHeading": "Security",
+    "impactHeading": "Result",
+    "technologiesHeading": "Tools",
+    "architectureHeading": "Approach",
+    "lessonsHeading": "Conclusions",
+    "galleryHeading": "Gallery",
+    "useCasesHeading": "Cases",
+    "demoVideosHeading": "Videos",
+    "instancesHeading": "Instances",
+    "demoVideoTitle": "Demo video",
+    "viewProject": "View details",
+    "backToProjects": "← Back",
+    "exploreOther": "View other services"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  },
+  "ErrorBoundary": {
+    "title": "Something went wrong",
+    "description": "This section encountered an error. Please try refreshing the page.",
+    "retry": "Try again"
+  },
+  "ProfessionalProfile": {
+    "heading": "Professional Profile",
+    "subheading": "Why choose me",
+    "summary": "I'm an IT Support Technician with over six years of experience in the IT world. My training as a Computer Science Technologist and my background as a software developer give me a unique perspective: I don't just fix computers, I understand how every layer of technology works.\n\nI offer comprehensive IT support services for businesses and individuals:\n\n• PC and laptop repair and maintenance — hardware diagnosis, component replacement, troubleshooting.\n• Windows and operating system installation and configuration — formatting, drivers, optimization.\n• Malware, virus, and spyware removal — deep cleaning and protection.\n• Performance optimization — RAM and SSD upgrades, system tuning.\n• Data backup and recovery — critical information protection.\n• Network, WiFi, router, and printer configuration.\n• Remote support — fast resolution without on-site visits.\n• IT consulting for businesses — preventive maintenance, technology planning.\n\nMy key differentiator: I'm a software developer. This means I can create custom automations, scripts that eliminate repetitive tasks, personalized tools, and system integrations — something no traditional technician can offer. For an SME, this translates into real efficiency and a much more complete service.\n\nI work with seriousness, transparency, and commitment. Every service includes clear diagnosis, a budget with no surprises, and post-work follow-up. If you're looking for quality IT support, from someone who truly understands technology end to end, I'm here to help.",
+    "problemSolving": "Problem Solving",
+    "continuousLearning": "Continuous Learning",
+    "softwareQuality": "Service Quality",
+    "cleanCode": "Attention to Detail"
+  },
+  "Common": {
+    "more": "more"
+  }
+}

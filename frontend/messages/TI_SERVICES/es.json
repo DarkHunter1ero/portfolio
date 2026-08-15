@@ -1,0 +1,328 @@
+{
+  "Metadata": {
+    "title": "Diego Silva — Soporte TI y Servicios Informáticos",
+    "description": "Servicios de Soporte Informático para empresas y particulares. Reparación de PCs, mantenimiento, redes, eliminación de malware y automatizaciones a medida. Más de 6 años en el mundo IT.",
+    "ogTitle": "Diego Silva — Soporte TI y Servicios Informáticos",
+    "ogDescription": "Soporte TI integral: reparación, mantenimiento, redes, seguridad y automatizaciones a medida. Servicios para empresas y particulares. Atención remota y presencial.",
+    "ogSiteName": "Diego Silva — Soporte TI",
+    "ogImageAlt": "Diego Silva — Técnico en Soporte Informático"
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Menú de navegación"
+  },
+  "SkipLink": {
+    "label": "Ir al contenido principal"
+  },
+  "Nav": {
+    "professionalProfile": "Perfil",
+    "specialties": "Servicios",
+    "experience": "Experiencia",
+    "techStack": "Herramientas",
+    "education": "Formación",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Diego Silva",
+    "subtitle": "Soporte Informático y Servicios TI",
+    "tagline": "Reparación de PCs, mantenimiento, redes, eliminación de malware y automatizaciones a medida. Más de 6 años en el mundo IT. Servicios para empresas y particulares — presencial y remoto.",
+    "downloadCV": "Descargar CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "years": "años",
+    "nationality": "Uruguayo"
+  },
+  "About": {
+    "heading": "Sobre mí",
+    "subheading": "El técnico que entiende de código",
+    "bio": "Soy Técnico en Soporte Informático con más de seis años de experiencia en el mundo de la tecnología. Mi trayectoria abarca desde la reparación y mantenimiento de equipos hasta el desarrollo de software empresarial, lo que me da una perspectiva única: entiendo tanto el hardware como el software, tanto el cable como el código.\n\nOfrezco servicios de soporte TI integrales: reparación y mantenimiento de PCs y notebooks, instalación y configuración de sistemas operativos, eliminación de malware, optimización de rendimiento, backup y recuperación de datos, configuración de redes e impresoras, y soporte remoto para resolver problemas sin necesidad de desplazamiento.\n\nLo que me diferencia de un técnico tradicional es mi background como desarrollador de software. Esto significa que no solo arreglo computadoras: puedo crear automatizaciones a medida, integrar sistemas, desarrollar herramientas que optimicen tus procesos y ofrecer consultoría TI con una comprensión real de cómo funciona el software que corre en tus equipos. Para empresas y pymes, esto se traduce en un servicio más completo y estratégico.\n\nTrabajo de forma remota y presencial según la necesidad. Creo en un servicio cercano, transparente y orientado a resolver el problema de raíz — no solo el síntoma. Si necesitás soporte TI confiable, con la garantía de alguien que entiende la tecnología de punta a punta, estoy para ayudarte.",
+    "statYears": "Años de experiencia",
+    "statYearsValue": "6+",
+    "statProjects": "Servicios ofrecidos",
+    "statProjectsValue": "10+",
+    "statTechs": "Herramientas",
+    "statTechsValue": "30+"
+  },
+  "TechStack": {
+    "heading": "Herramientas y Tecnologías",
+    "subheading": "Con lo que trabajo a diario",
+    "categories": {
+      "Hardware": "Hardware",
+      "Sistemas Operativos": "Sistemas Operativos",
+      "Seguridad": "Seguridad",
+      "Redes": "Redes",
+      "Backup y Datos": "Backup y Datos",
+      "Desarrollo y Automatización": "Desarrollo y Automatización",
+      "Herramientas": "Herramientas",
+      "Soporte y Atención": "Soporte y Atención"
+    }
+  },
+  "Specialties": {
+    "heading": "Servicios",
+    "subheading": "Lo que puedo hacer por vos o tu empresa",
+    "items": [
+      {
+        "name": "Reparación de PCs y Notebooks",
+        "description": "Diagnóstico y reparación de hardware y software. Reemplazo de componentes, solución de pantallas, teclados, baterías y fallas de placa madre."
+      },
+      {
+        "name": "Instalación de Windows y SO",
+        "description": "Instalación limpia y configuración de Windows, drivers, programas esenciales y optimización del sistema operativo para máximo rendimiento."
+      },
+      {
+        "name": "Eliminación de Malware y Virus",
+        "description": "Detección y eliminación de virus, malware, spyware y adware. Instalación de antivirus y configuración de protección en tiempo real."
+      },
+      {
+        "name": "Optimización de Rendimiento",
+        "description": "Limpieza de archivos temporales, desfragmentación, upgrade de hardware (RAM, SSD), y ajustes de sistema para acelerar equipos lentos."
+      },
+      {
+        "name": "Backup y Recuperación de Datos",
+        "description": "Backup de información crítica, recuperación de datos de discos dañados, migración a nuevos equipos y configuración de copias de seguridad automáticas."
+      },
+      {
+        "name": "Redes y Conectividad",
+        "description": "Configuración de routers, WiFi, redes cableadas, solución de problemas de conectividad y extensión de cobertura de red."
+      },
+      {
+        "name": "Impresoras y Periféricos",
+        "description": "Instalación y configuración de impresoras, escáneres, cámaras y otros periféricos. Solución de problemas de drivers y conectividad."
+      },
+      {
+        "name": "Soporte Remoto",
+        "description": "Asistencia técnica a distancia mediante herramientas de escritorio remoto. Resolución rápida de problemas sin necesidad de desplazamiento."
+      },
+      {
+        "name": "Consultoría TI para Empresas",
+        "description": "Asesoramiento en infraestructura TI, mantenimiento preventivo, planificación de upgrades y gestión de activos tecnológicos para pequeñas y medianas empresas."
+      },
+      {
+        "name": "Automatizaciones a Medida",
+        "description": "Desarrollo de scripts, herramientas y automatizaciones personalizadas para optimizar procesos repetitivos. Mi experiencia como desarrollador me permite crear soluciones que un técnico tradicional no puede ofrecer."
+      }
+    ]
+  },
+  "Experience": {
+    "heading": "Experiencia",
+    "subheading": "Trayectoria en el mundo IT",
+    "present": "Presente",
+    "viewCompany": "Ver todos los proyectos de {company}",
+    "viewDetails": "Ver detalles",
+    "backToExperience": "Volver a Experiencia",
+    "projectsAt": "Proyectos en {company}",
+    "technologiesUsed": "Tecnologías utilizadas",
+    "technologiesUsedDesc": "Tecnologías con las que trabajé durante mi tiempo en {company}",
+    "items": [
+      {
+        "description": "Servicios de soporte TI para particulares y pequeñas empresas. Reparación de equipos, mantenimiento preventivo, eliminación de malware, configuración de redes, backup de datos y automatizaciones a medida. Atención remota y presencial.",
+        "highlights": [
+          "Servicio integral de soporte TI: diagnóstico, reparación, mantenimiento preventivo y consultoría.",
+          "Automatizaciones y herramientas a medida gracias a mi experiencia en desarrollo de software.",
+          "Soporte remoto y presencial con respuesta rápida y seguimiento personalizado."
+        ]
+      },
+      {
+        "description": "Desarrollo de plataformas empresariales con experiencia en infraestructura de servidores, administración de sistemas Linux, CI/CD con Docker y Jenkins, y resolución de problemas de producción.",
+        "highlights": [
+          "Administración de servidores Linux con systemd, diagnóstico y resolución de incidentes en producción.",
+          "Implementación de pipelines CI/CD con Docker y Jenkins que automatizaron despliegues y redujeron errores operativos.",
+          "Experiencia en seguridad informática: PKI, certificados digitales, protección de datos sensibles."
+        ]
+      },
+      {
+        "description": "Desarrollo de módulos Magento para eCommerce con despliegues en producción, administración de servidores y soporte técnico a clientes.",
+        "highlights": [
+          "Despliegues sin downtime en entornos de producción, asegurando continuidad operativa.",
+          "Soporte técnico directo a clientes para resolución de problemas en sus plataformas.",
+          "Integración de APIs de terceros con monitoreo y manejo de errores."
+        ]
+      },
+      {
+        "description": "Desarrollo de herramientas de análisis y automatización. Implementación de tracking y reportes automatizados para clientes corporativos como DIRECTV.",
+        "highlights": [
+          "Automatización de reportes que eliminó 15+ horas semanales de trabajo manual.",
+          "Mantenimiento y evolución de sitios WordPress en producción, asegurando estabilidad.",
+          "Implementación de soluciones de tracking y analítica web para clientes empresariales."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "heading": "Proyectos Realizados",
+    "subheading": "Algunos trabajos de soporte TI",
+    "viewOnGithub": "Ver en GitHub",
+    "liveDemo": "Demo en vivo",
+    "problem": "Problema",
+    "architecture": "Enfoque",
+    "challenges": "Solución",
+    "items": []
+  },
+  "Architecture": {
+    "heading": "Metodología de Trabajo",
+    "subheading": "Cómo trabajo con mis clientes",
+    "renderError": "No se pudo renderizar el diagrama",
+    "viewSource": "Ver código del diagrama",
+    "diagramAlt": "Diagrama de metodología",
+    "diagrams": {
+      "microservices": {
+        "label": "Proceso de Soporte",
+        "description": "Mi proceso de trabajo: diagnóstico inicial, presupuesto transparente, ejecución del servicio, verificación con el cliente y seguimiento post-servicio."
+      },
+      "docker": {
+        "label": "Servicios para Empresas",
+        "description": "Para empresas ofrezco: relevamiento de infraestructura, mantenimiento preventivo programado, respuesta a incidentes, documentación técnica y consultoría de mejoras."
+      },
+      "cicd": {
+        "label": "Servicios para Particulares",
+        "description": "Para particulares: reparación a domicilio o remota, instalación y configuración de equipos nuevos, eliminación de virus, backup de datos y optimización de rendimiento."
+      },
+      "auth": {
+        "label": "Soporte Remoto",
+        "description": "Asistencia técnica a distancia mediante TeamViewer/AnyDesk. Diagnóstico rápido, resolución de problemas de software, configuración y capacitación sin necesidad de desplazamiento."
+      },
+      "cloud": {
+        "label": "Automatizaciones",
+        "description": "Mi diferenciador: creo scripts y herramientas a medida para automatizar tareas repetitivas, migrar datos, generar reportes o integrar sistemas — algo que un técnico tradicional no puede ofrecer."
+      }
+    }
+  },
+  "GitHub": {
+    "heading": "Actividad en GitHub",
+    "subheading": "Proyectos y herramientas de código abierto",
+    "reposCount": "Repositorios públicos",
+    "followersCount": "Seguidores",
+    "starsCount": "Estrellas",
+    "pinnedRepos": "Repositorios destacados",
+    "noRepos": "No se encontraron repositorios",
+    "unavailable": "Datos de GitHub no disponibles",
+    "unavailableDesc": "No se pudieron obtener los datos de los repositorios. Visite mi perfil directamente.",
+    "error": "No se pudieron cargar los datos de GitHub"
+  },
+  "Education": {
+    "heading": "Formación",
+    "subheading": "Trayectoria académica",
+    "items": [
+      {
+        "institution": "UTEC — Universidad Tecnológica",
+        "degree": "Tecnólogo en Informática",
+        "period": "2013 — 2015",
+        "type": "tertiary",
+        "description": "Carrera universitaria que combina fundamentos teóricos con aplicación práctica. Formación integral en desarrollo de software, arquitecturas de sistemas y gestión de proyectos tecnológicos."
+      },
+      {
+        "institution": "UTU — Universidad del Trabajo del Uruguay",
+        "degree": "Bachillerato Tecnológico en Electromecánica",
+        "period": "2007 — 2009",
+        "type": "technical",
+        "description": "Base técnica en sistemas electromecánicos que desarrolló mi pensamiento lógico y capacidad para resolver problemas técnicos complejos — fundamental para el diagnóstico y reparación de hardware."
+      },
+      {
+        "institution": "Liceo Nº 2 — San José de Mayo",
+        "degree": "Ciclo Básico (Enseñanza Secundaria)",
+        "period": "2004 — 2006",
+        "type": "secondary",
+        "description": "Formación secundaria básica con énfasis en ciencias y matemática."
+      }
+    ]
+  },
+  "Contact": {
+    "heading": "Contacto",
+    "subheading": "Consultame sin compromiso por tu equipo o tu empresa",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "usuario@ejemplo.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Contame qué necesitás...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successMessage": "Te respondo a la brevedad.",
+    "error": "Algo salió mal. Por favor, intentá de nuevo.",
+    "rateLimit": "Demasiados envíos. Por favor, intentá de nuevo en 15 minutos.",
+    "networkError": "No se pudo enviar el mensaje. Por favor, intentá de nuevo o enviame un correo directamente.",
+    "validation": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailInvalid": "Por favor, ingresá un correo electrónico válido",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "locationFallback": "Remoto",
+    "locationLabel": "Ubicación",
+    "locationValue": "Remoto y presencial — Latinoamérica",
+    "emailLabel": "Correo electrónico",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "Footer": {
+    "copyright": "Todos los derechos reservados.",
+    "backToTop": "Volver arriba",
+    "builtWith": "Construido con Next.js, TypeScript y Tailwind CSS",
+    "sendEmail": "Enviar correo",
+    "githubProfile": "Perfil de GitHub",
+    "linkedinProfile": "Perfil de LinkedIn",
+    "devPortfolioLink": "¿Buscás desarrollo de software? Mirá mi portfolio de desarrollo web →"
+  },
+  "ThemeToggle": {
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscás no existe o fue movida.",
+    "backHome": "Volver al inicio"
+  },
+  "ProjectDetail": {
+    "role": "Mi Rol",
+    "duration": "Duración",
+    "aboutHeading": "Acerca del servicio",
+    "problemHeading": "El Problema",
+    "solutionHeading": "La Solución",
+    "featuresHeading": "Detalles",
+    "participationHeading": "Trabajo Realizado",
+    "challengesHeading": "Desafíos",
+    "securityHeading": "Seguridad",
+    "impactHeading": "Resultado",
+    "technologiesHeading": "Herramientas",
+    "architectureHeading": "Enfoque",
+    "lessonsHeading": "Conclusiones",
+    "galleryHeading": "Galería",
+    "useCasesHeading": "Casos",
+    "demoVideosHeading": "Videos",
+    "instancesHeading": "Instancias",
+    "demoVideoTitle": "Video demostrativo",
+    "viewProject": "Ver detalle",
+    "backToProjects": "← Volver",
+    "exploreOther": "Ver otros servicios"
+  },
+  "Error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Por favor, intentá de nuevo.",
+    "retry": "Intentar de nuevo"
+  },
+  "ErrorBoundary": {
+    "title": "Algo salió mal",
+    "description": "Esta sección encontró un error. Por favor, intentá refrescar la página.",
+    "retry": "Intentar de nuevo"
+  },
+  "ProfessionalProfile": {
+    "heading": "Perfil Profesional",
+    "subheading": "Por qué elegirme",
+    "summary": "Soy Técnico en Soporte Informático con más de seis años de experiencia en el mundo IT. Mi formación como Tecnólogo en Informática y mi trayectoria como desarrollador de software me dan una perspectiva única: no solo reparo computadoras, entiendo cómo funciona cada capa de la tecnología.\n\nOfrezco servicios de soporte TI integrales para empresas y particulares:\n\n• Reparación y mantenimiento de PCs y notebooks — diagnóstico de hardware, reemplazo de componentes, solución de fallas.\n• Instalación y configuración de Windows y sistemas operativos — formateo, drivers, optimización.\n• Eliminación de malware, virus y spyware — limpieza profunda y protección.\n• Optimización de rendimiento — upgrades de RAM y SSD, ajustes de sistema.\n• Backup y recuperación de datos — protección de información crítica.\n• Configuración de redes, WiFi, routers e impresoras.\n• Soporte remoto — resolución rápida sin desplazamiento.\n• Consultoría TI para empresas — mantenimiento preventivo, planificación tecnológica.\n\nMi gran diferenciador: soy desarrollador de software. Esto significa que puedo crear automatizaciones a medida, scripts que eliminen tareas repetitivas, herramientas personalizadas e integraciones entre sistemas — algo que ningún técnico tradicional te puede ofrecer. Para una pyme, esto se traduce en eficiencia real y un servicio mucho más completo.\n\nTrabajo con seriedad, transparencia y compromiso. Cada servicio incluye diagnóstico claro, presupuesto sin sorpresas y seguimiento post-trabajo. Si buscás soporte TI de calidad, con alguien que realmente entiende la tecnología de punta a punta, estoy para ayudarte.",
+    "problemSolving": "Resolución de Problemas",
+    "continuousLearning": "Aprendizaje Continuo",
+    "softwareQuality": "Calidad de Servicio",
+    "cleanCode": "Atención al Detalle"
+  },
+  "Common": {
+    "more": "más"
+  }
+}

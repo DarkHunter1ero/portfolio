@@ -3,11 +3,8 @@ import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 import { SkipLink } from "@/components/layout/skip-link";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { detectLocale, messagesMap } from "@/lib/i18n";
+import { getMessagesForRequest } from "@/lib/i18n";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -31,47 +28,23 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await detectLocale();
-  const t = messagesMap[locale].Metadata;
-
-  return {
-    metadataBase: new URL("https://diegosilva.dev"),
-    title: { template: `%s | ${t.ogSiteName}`, default: t.title },
-    description: t.description,
-    openGraph: {
-      type: "website",
-      locale: locale === "es" ? "es_LA" : "en_US",
-      siteName: t.ogSiteName,
-      title: t.ogTitle,
-      description: t.ogDescription,
-      images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: t.ogImageAlt }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t.ogTitle,
-      description: t.ogDescription,
-      images: ["/opengraph-image.png"],
-    },
-    robots: { index: true, follow: true },
-  };
-}
+// Single metadataBase shared by the dev portfolio (/) and the soporte site (/soporte)
+export const metadata: Metadata = {
+  metadataBase: new URL("https://diegosilva.dev"),
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await detectLocale();
+  const { locale, messages, route } = await getMessagesForRequest();
   // Enable next-intl Server Component APIs (getTranslations, etc.)
   setRequestLocale(locale);
-  const messages = messagesMap[locale];
 
   return (
     <html
       lang={locale}
+      data-portfolio={route}
       suppressHydrationWarning
       className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <JsonLd />
-      </head>
       <body className="min-h-screen bg-background font-[family-name:var(--font-inter)] antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider
@@ -81,9 +54,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             disableTransitionOnChange
           >
             <SkipLink />
-            <Header />
-            <main id="main-content">{children}</main>
-            <Footer />
+            {children}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

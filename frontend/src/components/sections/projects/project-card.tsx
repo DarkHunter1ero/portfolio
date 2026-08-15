@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations, useMessages } from "next-intl";
 import { Link } from "@/i18n/routing";
 import type { Project } from "@/types";
-import { projectDetails } from "@/data/project-details";
+import { projectDetails } from "@/data/dev/project-details";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";

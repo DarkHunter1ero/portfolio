@@ -1,0 +1,15 @@
+export const profile = {
+  name: "Diego Silva",
+  title: "Técnico en Soporte Informático",
+  tagline: "Experto en soporte técnico y automatizaciones a medida",
+  bio: "Diego es técnico en soporte informático con experiencia en automatizaciones a medida y atención al cliente empresarial.",
+  photo: "/images/yoCirculo.png",
+  photoUrl: "/images/yoCirculo.png",
+  github: "",
+  linkedin: "",
+  cvUrlEn: "/CV/EN/Diego_Silva_CV.pdf",
+  cvUrlEs: "/CV/ES/Diego_Silva_CV.pdf",
+  email: "diego1silva2@gmail.com",
+  birthDate: "1990-01-01",
+  nationality: "Uruguayo",
+};

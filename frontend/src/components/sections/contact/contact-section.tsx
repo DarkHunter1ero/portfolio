@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { ContactForm } from "./contact-form";
-import { profile } from "@/data/profile";
+import { profile } from "@/data/dev/profile";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 
 interface ContactInfoItemProps {
