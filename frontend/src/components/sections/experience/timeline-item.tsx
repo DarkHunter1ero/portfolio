@@ -19,7 +19,14 @@ interface TimelineItemProps {
   useDataValues?: boolean;
 }
 
-function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails, useDataValues }: TimelineItemProps) {
+function TimelineItem({
+  item,
+  index,
+  tPresent,
+  tViewCompany,
+  tViewDetails,
+  useDataValues,
+}: TimelineItemProps) {
   const prefersReduced = useReducedMotion();
   const isLeft = index % 2 === 0;
   const messages = useMessages();

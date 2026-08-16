@@ -65,18 +65,14 @@ async function resolvePortfolioRoute(): Promise<PortfolioRoute> {
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  const locale = await resolveLocale(await requestLocale) as Locale;
+  const locale = (await resolveLocale(await requestLocale)) as Locale;
   const route = await resolvePortfolioRoute();
 
   // Mirrors lib/i18n.ts `getMessagesFor` on a per-locale basis. Kept inline
   // (rather than reusing the switch) so next-intl's getRequestConfig owns a
   // self-contained message source that standalone build tracing can resolve.
   const map =
-    route === "soporte"
-      ? soporteMessages
-      : route === "dev"
-        ? devMessages
-        : landingMessages;
+    route === "soporte" ? soporteMessages : route === "dev" ? devMessages : landingMessages;
   const messages = map[locale] ?? map.en;
 
   return {

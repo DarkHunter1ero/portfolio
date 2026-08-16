@@ -83,7 +83,11 @@ export function getMetadataFor(route: PortfolioRoute, locale: Locale): MetadataM
  * Returns the messages object for the current request by reading the
  * `x-portfolio-route` header and the locale cookie/header.
  */
-export async function getMessagesForRequest(): Promise<{ locale: Locale; messages: Messages; route: PortfolioRoute }> {
+export async function getMessagesForRequest(): Promise<{
+  locale: Locale;
+  messages: Messages;
+  route: PortfolioRoute;
+}> {
   const route = await getPortfolioRoute();
   const locale = await detectLocale();
   const messages = getMessagesFor(route, locale);

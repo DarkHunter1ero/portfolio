@@ -9,7 +9,10 @@
   },
   "SkipLink": { "label": "Saltar al contenido principal" },
   "LocaleSwitcher": { "label": "Cambiar idioma", "en": "Inglés", "es": "Español" },
-  "ThemeToggle": { "switchToLight": "Cambiar a tema claro", "switchToDark": "Cambiar a tema oscuro" },
+  "ThemeToggle": {
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
   "NotFound": {
     "title": "Página no encontrada",
     "description": "La página que busca no existe o ha sido movida.",
