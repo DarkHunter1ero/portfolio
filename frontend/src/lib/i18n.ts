@@ -3,8 +3,10 @@ import enDevMessages from "../../messages/WEB_DEVELOPER/en.json";
 import esDevMessages from "../../messages/WEB_DEVELOPER/es.json";
 import enSoporteMessages from "../../messages/TI_SERVICES/en.json";
 import esSoporteMessages from "../../messages/TI_SERVICES/es.json";
+import enLandingMessages from "../../messages/LANDING/en.json";
+import esLandingMessages from "../../messages/LANDING/es.json";
 
-export type PortfolioRoute = "dev" | "soporte";
+export type PortfolioRoute = "dev" | "soporte" | "landing";
 export type Locale = "en" | "es";
 
 // All message files share the same key structure; use a general type to avoid
@@ -19,33 +21,46 @@ export const soporteMessagesMap: Record<Locale, Messages> = {
   en: enSoporteMessages,
   es: esSoporteMessages,
 };
+export const landingMessagesMap: Record<Locale, Messages> = {
+  en: enLandingMessages,
+  es: esLandingMessages,
+};
 
 /**
  * Returns the portfolio route for the current request, read from the
- * `x-portfolio-route` header set by middleware. Defaults to "dev".
+ * `x-portfolio-route` header set by middleware. Defaults to "landing" so
+ * unknown/missing labels never silently fall back to the dev portfolio.
  */
 export async function getPortfolioRoute(): Promise<PortfolioRoute> {
   try {
     const headersList = await headers();
     const route = headersList.get("x-portfolio-route");
-    if (route === "soporte" || route === "dev") return route;
+    if (route === "soporte" || route === "dev" || route === "landing") return route;
   } catch {
     // headers() not available (static generation)
   }
-  return "dev";
+  return "landing";
 }
 
 /**
  * Returns the messages object for a given portfolio route and locale.
+ * The switch is intentionally exhaustive over `PortfolioRoute` with no
+ * `default` arm so `tsc` surfaces any unhandled branch at compile time.
  */
 export function getMessagesFor(route: PortfolioRoute, locale: Locale) {
-  const map = route === "soporte" ? soporteMessagesMap : devMessagesMap;
-  return map[locale] ?? map.en;
+  switch (route) {
+    case "dev":
+      return devMessagesMap[locale] ?? devMessagesMap.en;
+    case "soporte":
+      return soporteMessagesMap[locale] ?? soporteMessagesMap.en;
+    case "landing":
+      return landingMessagesMap[locale] ?? landingMessagesMap.en;
+  }
 }
 
 /**
  * Strongly-typed shape of the "Metadata" section present in all message files.
- * Both WEB_DEVELOPER and TI_SERVICES share this structure.
+ * WEB_DEVELOPER, TI_SERVICES, and LANDING all share this structure.
  */
 export interface MetadataMessages {
   title: string;

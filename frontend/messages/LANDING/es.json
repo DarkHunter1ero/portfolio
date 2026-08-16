@@ -1,0 +1,41 @@
+﻿{
+  "Metadata": {
+    "title": "Diego Silva — Full Stack Developer y Soporte TI",
+    "description": "Dos portfolios, un ingeniero. Explora el portfolio de Desarrollo Web de Diego Silva (Java, Spring Boot, microservicios, React) o su portfolio de Servicios de Soporte y Tecnología TI.",
+    "ogTitle": "Diego Silva — Elige un Portfolio",
+    "ogDescription": "Desarrollador Web (Java, Spring Boot, microservicios) o Soporte y Servicios de Tecnología TI. Elige el portfolio que se ajuste a lo que buscas.",
+    "ogSiteName": "Diego Silva — Portfolio",
+    "ogImageAlt": "Diego Silva — Selector de portfolio"
+  },
+  "SkipLink": { "label": "Saltar al contenido principal" },
+  "LocaleSwitcher": { "label": "Cambiar idioma", "en": "Inglés", "es": "Español" },
+  "ThemeToggle": { "switchToLight": "Cambiar a tema claro", "switchToDark": "Cambiar a tema oscuro" },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La página que busca no existe o ha sido movida.",
+    "backHome": "Volver al inicio"
+  },
+  "Error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Por favor, intente de nuevo.",
+    "retry": "Intentar de nuevo"
+  },
+  "Hero": {
+    "eyebrow": "Elige un portfolio",
+    "title": "Diego Silva",
+    "subtitle": "Desarrollador Full Stack & Especialista en Soporte TI",
+    "bio": "Dos caras de una misma carrera — ingeniería backend empresarial con Java y Spring Boot, y soporte TI práctico para empresas y particulares. Elige el portfolio que necesitas."
+  },
+  "Landing-CTA": {
+    "dev": {
+      "label": "Web Developer",
+      "href": "/dev",
+      "description": "Java, Spring Boot, microservicios, React y arquitectura empresarial."
+    },
+    "soporte": {
+      "label": "TI / Soporte",
+      "href": "/soporte",
+      "description": "Reparación de PC, mantenimiento, redes, seguridad y automatización a medida."
+    }
+  }
+}

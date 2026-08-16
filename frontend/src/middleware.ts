@@ -4,7 +4,12 @@ import type { NextRequest } from "next/server";
 /**
  * Lightweight middleware that labels the current route group so that
  * server components and next-intl's getRequestConfig can load the
- * portfolio-specific messages (WEB_DEVELOPER vs TI_SERVICES).
+ * portfolio-specific messages (LANDING, WEB_DEVELOPER, TI_SERVICES).
+ *
+ * Labels:
+ *  - `pathname` starts with `/dev`     → "dev"
+ *  - `pathname` starts with `/soporte` → "soporte"
+ *  - otherwise (incl. `/`, `/api`, unknown) → "landing"
  *
  * The header is consumed by:
  *  - src/app/layout.tsx        → NextIntlClientProvider messages
@@ -13,7 +18,14 @@ import type { NextRequest } from "next/server";
  */
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const portfolioRoute = pathname.startsWith("/soporte") ? "soporte" : "dev";
+  let portfolioRoute: string;
+  if (pathname.startsWith("/dev")) {
+    portfolioRoute = "dev";
+  } else if (pathname.startsWith("/soporte")) {
+    portfolioRoute = "soporte";
+  } else {
+    portfolioRoute = "landing";
+  }
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-portfolio-route", portfolioRoute);

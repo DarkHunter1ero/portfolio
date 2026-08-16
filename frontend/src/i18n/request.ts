@@ -9,8 +9,10 @@ import enDevMessages from "../../messages/WEB_DEVELOPER/en.json";
 import esDevMessages from "../../messages/WEB_DEVELOPER/es.json";
 import enSoporteMessages from "../../messages/TI_SERVICES/en.json";
 import esSoporteMessages from "../../messages/TI_SERVICES/es.json";
+import enLandingMessages from "../../messages/LANDING/en.json";
+import esLandingMessages from "../../messages/LANDING/es.json";
 
-// Cast to a general type so the dev/soporte message union doesn't break
+// Cast to a general type so the dev/soporte/landing message union doesn't break
 // the IntlProvider / getRequestConfig type contracts.
 type Messages = Record<string, Record<string, unknown> | unknown>;
 
@@ -21,6 +23,10 @@ const devMessages: Record<string, Messages> = {
 const soporteMessages: Record<string, Messages> = {
   en: enSoporteMessages as Messages,
   es: esSoporteMessages as Messages,
+};
+const landingMessages: Record<string, Messages> = {
+  en: enLandingMessages as Messages,
+  es: esLandingMessages as Messages,
 };
 
 async function resolveLocale(requestLocale: string | undefined): Promise<string> {
@@ -51,21 +57,27 @@ async function resolveLocale(requestLocale: string | undefined): Promise<string>
 async function resolvePortfolioRoute(): Promise<PortfolioRoute> {
   try {
     const route = (await headers()).get("x-portfolio-route");
-    if (route === "soporte" || route === "dev") return route;
+    if (route === "soporte" || route === "dev" || route === "landing") return route;
   } catch {
     // headers() is not available during static generation
   }
-  return "dev";
+  return "landing";
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await resolveLocale(await requestLocale) as Locale;
   const route = await resolvePortfolioRoute();
 
-  const messages =
+  // Mirrors lib/i18n.ts `getMessagesFor` on a per-locale basis. Kept inline
+  // (rather than reusing the switch) so next-intl's getRequestConfig owns a
+  // self-contained message source that standalone build tracing can resolve.
+  const map =
     route === "soporte"
-      ? (soporteMessages[locale] ?? soporteMessages.en)
-      : (devMessages[locale] ?? devMessages.en);
+      ? soporteMessages
+      : route === "dev"
+        ? devMessages
+        : landingMessages;
+  const messages = map[locale] ?? map.en;
 
   return {
     locale,
