@@ -165,7 +165,7 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails, useDa
                     </p>
                     {project.slug && (
                       <a
-                        href={`/projects/${project.slug}`}
+                        href={`/dev/projects/${project.slug}`}
                         className="inline-flex items-center gap-1 text-[10px] text-accent hover:underline mt-1"
                       >
                         <ExternalLink className="h-3 w-3" />
@@ -178,7 +178,7 @@ function TimelineItem({ item, index, tPresent, tViewCompany, tViewDetails, useDa
             </div>
 
             <Button variant="outline" size="sm" className="gap-1 text-xs" asChild>
-              <a href={`/companies/${slug}`}>
+              <a href={`/dev/companies/${slug}`}>
                 {tViewCompany.replace("{company}", item.company)}
                 <ArrowRight className="h-3 w-3" />
               </a>

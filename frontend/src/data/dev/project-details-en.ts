@@ -298,7 +298,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "MiRecibo — Digital Payroll Platform",
@@ -624,7 +624,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "ISCERT — Digital Certification Infrastructure",
@@ -856,7 +856,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "FirmaPDF — Mass PDF Digital Signing Platform",
@@ -959,7 +959,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     gallery: [{ src: "/images/beacon42.png", alt: "Beacon42 — Magento Development" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Magento Billing Plugin — eCommerce Automation",
@@ -1069,7 +1069,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     gallery: [{ src: "/images/portlike.png", alt: "Portlike — Web Analytics" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Web Analytics & Tracking — DIRECTV",
@@ -1172,7 +1172,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     gallery: [{ src: "/images/takeoff.jpg", alt: "Takeoff — WordPress Development" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "WordPress Corporate Site — DIRECTV",
@@ -1324,7 +1324,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     gallery: [{ src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Crowdfunding Platform — QR S.A.S.",

@@ -38,7 +38,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
 
         <Container className="relative z-10">
           <Link
-            href="/#experience"
+            href="/dev#experience"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -122,7 +122,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
 
                 {project.slug && (
                   <Button variant="outline" size="sm" className="gap-1 text-xs" asChild>
-                    <a href={`/projects/${project.slug}`}>
+                    <a href={`/dev/projects/${project.slug}`}>
                       <ExternalLink className="h-3 w-3" />
                       {tPd("viewProject")}
                     </a>

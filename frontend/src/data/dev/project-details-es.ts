@@ -298,7 +298,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "MiRecibo — Plataforma de Recibos de Sueldo Digitales",
@@ -624,7 +624,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "ISCERT — Infraestructura de Certificación Digital",
@@ -857,7 +857,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "FirmaPDF — Plataforma de Firma Digital Masiva de PDF",
@@ -960,7 +960,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     gallery: [{ src: "/images/beacon42.png", alt: "Beacon42 — Desarrollo Magento" }],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Plugin de Facturación Magento — Automatización eCommerce",
@@ -1070,7 +1070,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     gallery: [{ src: "/images/portlike.png", alt: "Portlike — Analítica Web" }],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Analítica y Seguimiento Web — DIRECTV",
@@ -1173,7 +1173,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     gallery: [{ src: "/images/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" }],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Sitio Corporativo WordPress — DIRECTV",
@@ -1327,7 +1327,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/#experience",
+      link: "/dev#experience",
     },
     metadata: {
       title: "Plataforma de Crowdfunding — QR S.A.S.",

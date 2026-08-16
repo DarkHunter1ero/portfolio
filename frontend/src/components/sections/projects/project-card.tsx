@@ -106,7 +106,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 size="sm"
                 className="gap-1.5 text-accent hover:text-accent"
               >
-                <Link href={`/projects/${slug}`}>
+                  <Link href={`/dev/projects/${slug}`}>
                   {td("viewProject")}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>

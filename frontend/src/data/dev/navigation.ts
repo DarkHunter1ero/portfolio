@@ -4,10 +4,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "Professional Profile", href: "/#professional-profile" },
-  { label: "Specialties", href: "/#specialties" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Tech Stack", href: "/#tech-stack" },
-  { label: "Education", href: "/#education" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Professional Profile", href: "/dev#professional-profile" },
+  { label: "Specialties", href: "/dev#specialties" },
+  { label: "Experience", href: "/dev#experience" },
+  { label: "Tech Stack", href: "/dev#tech-stack" },
+  { label: "Education", href: "/dev#education" },
+  { label: "Contact", href: "/dev#contact" },
 ];

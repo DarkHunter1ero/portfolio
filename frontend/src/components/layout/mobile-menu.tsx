@@ -66,7 +66,13 @@ export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) 
         </button>
 
         {navLinks.map((link) => {
-          const sectionKey = link.href.replace(/^\//, ""); // "/#about" → "#about"
+          // Extract the "#anchor" portion regardless of the path prefix.
+          // After the navLinks rebase to "/dev#anchor", the old
+          // `link.href.replace(/^\//, "")` would yield "dev#anchor" and miss
+          // the navTranslationKeys map. Slicing from "#" keeps the active
+          // section comparison and translation-key lookup working.
+          const hashIndex = link.href.indexOf("#");
+          const sectionKey = hashIndex >= 0 ? link.href.slice(hashIndex) : link.href;
           return (
             <a
               key={link.href}

@@ -28,7 +28,11 @@ export function Header() {
   const pathname = usePathname();
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
-  const isHome = pathname === "/" || pathname === "/es";
+  // After the route rebase, the dev home lives at /dev. Hash anchors resolve
+  // against /dev, so the isHome scroll-section observer must fire only here.
+  // The legacy `|| pathname === "/es"` branch never matched (locales are not
+  // in the URL with localePrefix: "never") and is dropped.
+  const isHome = pathname === "/dev";
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -70,7 +74,7 @@ export function Header() {
           aria-label={tHeader("mainNav")}
         >
           <Link
-            href="/"
+            href="/dev"
             className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
           >
             {tHeader("logo")}
@@ -79,7 +83,14 @@ export function Header() {
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
-              const sectionKey = link.href.replace(/^\//, ""); // "/#about" → "#about"
+              // Extract the "#anchor" portion regardless of the path prefix.
+              // Pre-move this used `link.href.replace(/^\//, "")` which turned
+              // "/#about" into "#about"; with rebased hrefs like "/dev#about"
+              // that would yield "dev#about" and miss the navTranslationKeys
+              // map. Slicing from the "#" keeps the active-section match and
+              // the translation-key lookup working.
+              const hashIndex = link.href.indexOf("#");
+              const sectionKey = hashIndex >= 0 ? link.href.slice(hashIndex) : link.href;
               return (
                 <a
                   key={link.href}
