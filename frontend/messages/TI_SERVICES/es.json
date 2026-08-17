@@ -51,13 +51,12 @@
     "subheading": "Con lo que trabajo a diario",
     "categories": {
       "Hardware": "Hardware",
-      "Sistemas Operativos": "Sistemas Operativos",
-      "Seguridad": "Seguridad",
-      "Redes": "Redes",
-      "Backup y Datos": "Backup y Datos",
-      "Desarrollo y Automatización": "Desarrollo y Automatización",
-      "Herramientas": "Herramientas",
-      "Soporte y Atención": "Soporte y Atención"
+      "Operating Systems": "Sistemas Operativos",
+      "Security": "Seguridad",
+      "Networking": "Redes",
+      "Backup & Recovery": "Backup y Datos",
+      "Automation": "Desarrollo y Automatización",
+      "Support & Client Relations": "Soporte y Atención"
     }
   },
   "Specialties": {
