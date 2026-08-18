@@ -59,13 +59,14 @@ export function Footer() {
             </a>
           </div>
 
-          <a
-            href="#hero"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="p-2 rounded-full text-muted-foreground hover:text-accent hover:bg-card transition-colors"
             aria-label={t("backToTop")}
           >
             <ArrowUp className="h-5 w-5" />
-          </a>
+          </button>
         </div>
 
         <div className="mt-8 pt-6 border-t border-border text-center">

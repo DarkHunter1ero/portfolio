@@ -51,9 +51,10 @@ interface MobileMenuProps {
   onClose: () => void;
   activeSection: string;
   basePath: string;
+  pathname: string;
 }
 
-export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, activeSection, basePath, pathname }: MobileMenuProps) {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
   const navLinks = getNavLinks(basePath, t);
@@ -97,7 +98,9 @@ export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileM
         </button>
 
         {navLinks.map((link) => {
-          const isActive = link.isAnchor && activeSection === link.href.slice(link.href.indexOf("#"));
+          const isActive = link.isAnchor
+            ? activeSection === link.href.slice(link.href.indexOf("#"))
+            : pathname === link.href;
           return (
             <a
               key={link.href}
@@ -105,11 +108,11 @@ export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileM
               onClick={onClose}
               className={cn(
                 "text-2xl font-[family-name:var(--font-playfair)] transition-colors duration-200",
-                link.isAnchor
-                  ? isActive
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
-                  : "text-muted-foreground hover:text-accent"
+                isActive
+                  ? "text-accent"
+                  : link.isAnchor
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-accent"
               )}
             >
               {link.label}

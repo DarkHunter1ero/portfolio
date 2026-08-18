@@ -22,6 +22,17 @@ export function Header() {
   const basePath = isSoporte ? "/soporte" : "/dev";
   const isHome = pathname === basePath;
 
+  const navLinks = [
+    { key: "home", href: basePath, label: tHeader("home") },
+    {
+      key: "professionalProfile",
+      href: `${basePath}/perfil-profesional`,
+      label: tNav("professionalProfile"),
+    },
+    { key: "formation", href: `${basePath}/formacion`, label: tNav("formation") },
+    { key: "contact", href: `${basePath}/contacto`, label: tNav("contact") },
+  ];
+
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -47,10 +58,6 @@ export function Header() {
     return () => observer.disconnect();
   }, [isHome]);
 
-  useEffect(() => {
-    // Update active states on navigation
-  }, [pathname]);
-
   return (
     <>
       <header
@@ -71,10 +78,6 @@ export function Header() {
               aria-label={tNav("professionalProfile")}
               title={tNav("professionalProfile")}
             >
-              <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-accent">
-                {tHeader("logo")}
-              </span>
-
               <span className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-border/50 transition-colors duration-300 group-hover:border-accent/50">
                 <Image
                   src="/images/my-foto.png"
@@ -86,52 +89,61 @@ export function Header() {
                 />
               </span>
 
-              <span
-                className="max-w-0 overflow-hidden whitespace-nowrap font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground opacity-0 translate-x-3 transition-all duration-500 ease-out group-hover:max-w-44 group-hover:opacity-100 group-hover:translate-x-0"
-                aria-hidden="true"
-              >
-                Diego Silva
+              <span className="relative flex items-center">
+                <span className="overflow-hidden whitespace-nowrap font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground transition-all duration-200 ease-out group-hover:opacity-0 group-hover:scale-95">
+                  {tHeader("logo")}
+                </span>
+
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center whitespace-nowrap text-foreground opacity-0 pointer-events-none transition-opacity duration-200 group-hover:opacity-100"
+                >
+                  <span className="flex font-[family-name:var(--font-playfair)] text-lg font-semibold">
+                    {"Diego".split("").map((ch, i) => (
+                      <span
+                        key={i}
+                        className="inline-block translate-y-3 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100"
+                        style={{ transitionDelay: `${i * 45}ms` }}
+                      >
+                        {ch}
+                      </span>
+                    ))}
+                  </span>
+                  <span className="w-1.5" />
+                  <span className="flex font-[family-name:var(--font-playfair)] text-lg font-semibold">
+                    {"Silva".split("").map((ch, i) => (
+                      <span
+                        key={i}
+                        className="inline-block translate-y-3 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100"
+                        style={{ transitionDelay: `${(5 + i) * 45}ms` }}
+                      >
+                        {ch}
+                      </span>
+                    ))}
+                  </span>
+                </span>
               </span>
             </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            {/* Home - always links to current portfolio home */}
-            <Link
-              href={basePath}
-              className={cn(
-                "px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200",
-                isHome
-                  ? "text-accent bg-accent/10"
-                  : "text-muted-foreground hover:text-accent"
-              )}
-            >
-              {tHeader("home")}
-            </Link>
-
-            {/* Perfil Profesional - always a page link */}
-            <Link
-              href={`${basePath}/perfil-profesional`}
-              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
-            >
-              {tNav("professionalProfile")}
-            </Link>
-
-            {/* Formación - always a page link */}
-            <Link
-              href={`${basePath}/formacion`}
-              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
-            >
-              {tNav("formation")}
-            </Link>
-
-            {/* Contacto - always a page link */}
-            <Link
-              href={`${basePath}/contacto`}
-              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
-            >
-              {tNav("contact")}
-            </Link>
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.key}
+                  href={link.href}
+                  className={cn(
+                    "px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200",
+                    active
+                      ? "text-accent bg-accent/10"
+                      : "text-muted-foreground hover:text-accent"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-2">
@@ -152,6 +164,7 @@ export function Header() {
         onClose={() => setMobileOpen(false)}
         activeSection={activeSection}
         basePath={basePath}
+        pathname={pathname}
       />
     </>
   );
