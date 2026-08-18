@@ -69,9 +69,7 @@ export async function ProfessionalProfileSection({
                   {t(key)}
                 </h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {t(key)}
-              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t(key)}</p>
             </article>
           ))}
         </div>

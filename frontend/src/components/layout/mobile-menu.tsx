@@ -54,7 +54,13 @@ interface MobileMenuProps {
   pathname: string;
 }
 
-export function MobileMenu({ isOpen, onClose, activeSection, basePath, pathname }: MobileMenuProps) {
+export function MobileMenu({
+  isOpen,
+  onClose,
+  activeSection,
+  basePath,
+  pathname,
+}: MobileMenuProps) {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
   const navLinks = getNavLinks(basePath, t);

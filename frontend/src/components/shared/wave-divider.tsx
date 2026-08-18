@@ -35,10 +35,7 @@ export function WaveDivider({ from, to, className }: WaveDividerProps) {
         className="block w-full h-16 sm:h-24"
         focusable="false"
       >
-        <path
-          d="M0,96 C360,16 1080,16 1440,96 L1440,120 L0,120 Z"
-          fill={fillColor[to]}
-        />
+        <path d="M0,96 C360,16 1080,16 1440,96 L1440,120 L0,120 Z" fill={fillColor[to]} />
       </svg>
     </div>
   );

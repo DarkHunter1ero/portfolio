@@ -823,9 +823,18 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Los registros de auditoría no son opcionales en industrias reguladas — los hashes criptográficos de cada operación deben almacenarse y ser recuperables, a veces años después.",
     ],
     gallery: [
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid-firma.jpg", alt: "FirmaPDF — Interfaz de firma digital TuID" },
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid.jpg", alt: "Plataforma de identidad digital TuID" },
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid2.jpg", alt: "Autenticación y verificación de identidad TuID" },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid-firma.jpg",
+        alt: "FirmaPDF — Interfaz de firma digital TuID",
+      },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid.jpg",
+        alt: "Plataforma de identidad digital TuID",
+      },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid2.jpg",
+        alt: "Autenticación y verificación de identidad TuID",
+      },
       { src: "/projects/placeholder.svg", alt: "Dashboard de firma por lotes FirmaPDF" },
     ],
     useCases: [
@@ -957,7 +966,9 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Construir capas de abstracción para integraciones multi-proveedor ahorra un enorme esfuerzo de mantenimiento",
       "Los despliegues sin tiempo de inactividad en e-commerce requieren planificación cuidadosa en torno a las sesiones de usuario activas",
     ],
-    gallery: [{ src: "/images/empresas/beacon42/beacon42.png", alt: "Beacon42 — Desarrollo Magento" }],
+    gallery: [
+      { src: "/images/empresas/beacon42/beacon42.png", alt: "Beacon42 — Desarrollo Magento" },
+    ],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/dev#experience",
@@ -1170,7 +1181,9 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Los despliegues rápidos de marketing necesitan flujos de desarrollo optimizados sin sacrificar calidad",
       "La colaboración entre equipos (Portlike + Takeoff) enseñó comunicación efectiva en entornos de oficina compartidos",
     ],
-    gallery: [{ src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" }],
+    gallery: [
+      { src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" },
+    ],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/dev#experience",

@@ -822,9 +822,18 @@ export const projectDetailsEn: ProjectDetail[] = [
       "Audit trails are not optional in regulated industries — cryptographic hashes of every operation must be stored and retrievable, sometimes years later.",
     ],
     gallery: [
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid-firma.jpg", alt: "FirmaPDF — TuID digital signing interface" },
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid.jpg", alt: "TuID digital identity platform" },
-      { src: "/images/empresas/isa-interfase/firmapdf/tuid2.jpg", alt: "TuID authentication and identity verification" },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid-firma.jpg",
+        alt: "FirmaPDF — TuID digital signing interface",
+      },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid.jpg",
+        alt: "TuID digital identity platform",
+      },
+      {
+        src: "/images/empresas/isa-interfase/firmapdf/tuid2.jpg",
+        alt: "TuID authentication and identity verification",
+      },
       { src: "/projects/placeholder.svg", alt: "FirmaPDF batch signing dashboard" },
     ],
     useCases: [
@@ -956,7 +965,9 @@ export const projectDetailsEn: ProjectDetail[] = [
       "Building abstraction layers for multi-provider integrations saves enormous maintenance effort",
       "Zero-downtime deployments in e-commerce require careful planning around active user sessions",
     ],
-    gallery: [{ src: "/images/empresas/beacon42/beacon42.png", alt: "Beacon42 — Magento Development" }],
+    gallery: [
+      { src: "/images/empresas/beacon42/beacon42.png", alt: "Beacon42 — Magento Development" },
+    ],
     callToAction: {
       text: "Explore other projects",
       link: "/dev#experience",
@@ -1169,7 +1180,9 @@ export const projectDetailsEn: ProjectDetail[] = [
       "Rapid marketing deployments need streamlined development workflows without sacrificing quality",
       "Cross-team collaboration (Portlike + Takeoff) taught effective communication in shared office environments",
     ],
-    gallery: [{ src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — WordPress Development" }],
+    gallery: [
+      { src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — WordPress Development" },
+    ],
     callToAction: {
       text: "Explore other projects",
       link: "/dev#experience",

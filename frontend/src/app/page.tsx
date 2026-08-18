@@ -51,9 +51,7 @@ export default async function LandingPage() {
         className="fixed top-0 left-0 right-0 z-50 glass-header shadow-lg shadow-black/5"
         role="banner"
       >
-        <nav
-          className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16"
-        >
+        <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
           <div className="flex items-center gap-3">
             <Link
               href="/"
@@ -90,9 +88,7 @@ export default async function LandingPage() {
       </header>
 
       <main id="main-content" className="pt-16">
-        <section
-          className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-card/50"
-        >
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-card/50">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--accent)/5,transparent_70%)]" />
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4">
@@ -130,9 +126,7 @@ export default async function LandingPage() {
                     </h2>
                     <ArrowRight className="h-5 w-5 text-accent transition-transform" />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {cta.description}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{cta.description}</p>
                 </Link>
               ))}
             </div>

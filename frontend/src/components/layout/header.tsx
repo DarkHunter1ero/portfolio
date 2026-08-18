@@ -135,9 +135,7 @@ export function Header() {
                   href={link.href}
                   className={cn(
                     "px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200",
-                    active
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-accent"
+                    active ? "text-accent bg-accent/10" : "text-muted-foreground hover:text-accent"
                   )}
                 >
                   {link.label}

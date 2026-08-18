@@ -8,13 +8,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: { template: `%s | ${t.ogSiteName}`, default: "Contacto" },
-    description: "Contacta a Diego Silva — Desarrollador Full Stack y Técnico en Soporte Informático. Servicios para empresas y particulares. Remoto y presencial.",
+    description:
+      "Contacta a Diego Silva — Desarrollador Full Stack y Técnico en Soporte Informático. Servicios para empresas y particulares. Remoto y presencial.",
     openGraph: {
       type: "website",
       locale: locale === "es" ? "es_LA" : "en_US",
       siteName: t.ogSiteName,
       title: "Contacto — Diego Silva",
-      description: "Consúltame sin compromiso por tu equipo o tu empresa. Soporte TI, desarrollo de software, automatizaciones a medida.",
+      description:
+        "Consúltame sin compromiso por tu equipo o tu empresa. Soporte TI, desarrollo de software, automatizaciones a medida.",
     },
   };
 }

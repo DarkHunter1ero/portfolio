@@ -33,7 +33,11 @@ export async function ProjectsSection() {
   return (
     <>
       <WaveDivider from="dark" to="light" />
-      <section id="projects" className="bg-slate-50 py-24 sm:py-32" aria-labelledby="projects-heading">
+      <section
+        id="projects"
+        className="bg-slate-50 py-24 sm:py-32"
+        aria-labelledby="projects-heading"
+      >
         <Container>
           {/* Custom heading: SectionHeading uses theme tokens, which resolve to
               dark-theme colors and break on this light island. */}

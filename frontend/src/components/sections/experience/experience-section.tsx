@@ -18,7 +18,11 @@ export async function ExperienceSection({ items }: { items?: Experience[] }) {
     <section id="experience" className="py-24 sm:py-32" aria-labelledby="experience-heading">
       <Container>
         <SectionHeading id="experience-heading" title={t("heading")} subtitle={t("subheading")} />
-        <ExperienceTimeline items={experienceItems} tPresent={t("present")} useDataValues={useDataValues} />
+        <ExperienceTimeline
+          items={experienceItems}
+          tPresent={t("present")}
+          useDataValues={useDataValues}
+        />
       </Container>
     </section>
   );
