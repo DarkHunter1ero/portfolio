@@ -3,7 +3,7 @@ import { ProjectsSection } from "@/components/sections/projects/projects-section
 import { SpecialtiesSection } from "@/components/sections/specialties/specialties-section";
 import { TechStackSection } from "@/components/sections/tech-stack/tech-stack-section";
 
-export default async function SoportePage() {
+export default async function DevPage() {
   return (
     <>
       <HeroSection />

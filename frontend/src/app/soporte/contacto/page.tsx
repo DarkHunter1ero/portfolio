@@ -1,0 +1,29 @@
+import type { Metadata } from "next";
+import { detectLocale, getMetadataFor, type Locale } from "@/lib/i18n";
+import { ContactSection } from "@/components/sections/contact/contact-section";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = (await detectLocale()) as Locale;
+  const t = getMetadataFor("soporte", locale);
+
+  return {
+    title: { template: `%s | ${t.ogSiteName}`, default: "Contacto" },
+    description: t.description,
+    openGraph: {
+      type: "website",
+      locale: locale === "es" ? "es_LA" : "en_US",
+      siteName: t.ogSiteName,
+      title: `Contacto | ${t.ogSiteName}`,
+      description: t.ogDescription,
+    },
+  };
+}
+
+export default async function SoporteContactoPage() {
+  return (
+    <>
+      <div className="h-16" aria-hidden="true" />
+      <ContactSection />
+    </>
+  );
+}

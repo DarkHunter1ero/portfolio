@@ -5,28 +5,44 @@ import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const anchorTranslationKeys = {
-  "#specialties": "specialties",
-  "#experience": "experience",
-  "#tech-stack": "techStack",
-} as const;
-
-type AnchorKey = (typeof anchorTranslationKeys)[keyof typeof anchorTranslationKeys];
-
 interface NavLink {
   label: string;
-  anchor: string;
-  page?: string;
+  href: string;
+  isAnchor: boolean;
 }
 
-function getNavLinks(basePath: string): NavLink[] {
+function getNavLinks(basePath: string, t: (key: string) => string): NavLink[] {
   return [
-    { label: "Perfil Profesional", anchor: "", page: `${basePath}/perfil-profesional` },
-    { label: "Servicios", anchor: `${basePath}#specialties` },
-    { label: "Experiencia", anchor: `${basePath}#experience` },
-    { label: "Herramientas", anchor: `${basePath}#tech-stack` },
-    { label: "Formación", anchor: "", page: `${basePath}/formacion` },
-    { label: "Contacto", anchor: "", page: `${basePath}/contacto` },
+    {
+      label: t("professionalProfile"),
+      href: `${basePath}/perfil-profesional`,
+      isAnchor: false,
+    },
+    {
+      label: t("specialties"),
+      href: `${basePath}#specialties`,
+      isAnchor: true,
+    },
+    {
+      label: t("experience"),
+      href: `${basePath}/formacion`,
+      isAnchor: false,
+    },
+    {
+      label: t("techStack"),
+      href: `${basePath}#tech-stack`,
+      isAnchor: true,
+    },
+    {
+      label: t("formation"),
+      href: `${basePath}/formacion`,
+      isAnchor: false,
+    },
+    {
+      label: t("contact"),
+      href: `${basePath}/contacto`,
+      isAnchor: false,
+    },
   ];
 }
 
@@ -40,7 +56,7 @@ interface MobileMenuProps {
 export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileMenuProps) {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
-  const navLinks = getNavLinks(basePath);
+  const navLinks = getNavLinks(basePath, t);
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -81,29 +97,22 @@ export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileM
         </button>
 
         {navLinks.map((link) => {
-          const isPage = !!link.page;
-          const href = isPage ? link.page! : link.anchor;
-          const isAnchor = !isPage;
-          const sectionKey = isAnchor ? link.anchor.slice(link.anchor.indexOf("#")) : null;
-          const isActive = isAnchor && activeSection === sectionKey;
-
+          const isActive = link.isAnchor && activeSection === link.href.slice(link.href.indexOf("#"));
           return (
             <a
-              key={href}
-              href={href}
+              key={link.href}
+              href={link.href}
               onClick={onClose}
               className={cn(
                 "text-2xl font-[family-name:var(--font-playfair)] transition-colors duration-200",
-                isAnchor
+                link.isAnchor
                   ? isActive
                     ? "text-accent"
                     : "text-muted-foreground hover:text-foreground"
                   : "text-muted-foreground hover:text-accent"
               )}
             >
-              {sectionKey
-                ? t(anchorTranslationKeys[sectionKey as keyof typeof anchorTranslationKeys] as AnchorKey)
-                : link.label}
+              {link.label}
             </a>
           );
         })}

@@ -18,7 +18,8 @@ export function Header() {
   const tNav = useTranslations("Nav");
   const tHeader = useTranslations("Header");
 
-  const basePath = pathname.startsWith("/soporte") ? "/soporte" : "/dev";
+  const isSoporte = pathname.startsWith("/soporte");
+  const basePath = isSoporte ? "/soporte" : "/dev";
   const isHome = pathname === basePath;
 
   useEffect(() => {
@@ -46,6 +47,10 @@ export function Header() {
     return () => observer.disconnect();
   }, [isHome]);
 
+  useEffect(() => {
+    // Update active states on navigation
+  }, [pathname]);
+
   return (
     <>
       <header
@@ -62,25 +67,31 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={basePath}
-              className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
-            >
-              {tHeader("logo")}
-            </Link>
-
-            <Link
-              href={basePath}
-              className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-border/50 hover:border-accent/50 transition-colors"
+              className="group flex items-center gap-3"
               aria-label={tNav("professionalProfile")}
               title={tNav("professionalProfile")}
             >
-              <Image
-                src="/images/my-foto.png"
-                alt=""
-                fill
-                className="object-cover"
-                sizes="36px"
-                priority
-              />
+              <span className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-accent">
+                {tHeader("logo")}
+              </span>
+
+              <span className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-border/50 transition-colors duration-300 group-hover:border-accent/50">
+                <Image
+                  src="/images/my-foto.png"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="36px"
+                  priority
+                />
+              </span>
+
+              <span
+                className="max-w-0 overflow-hidden whitespace-nowrap font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground opacity-0 translate-x-3 transition-all duration-500 ease-out group-hover:max-w-44 group-hover:opacity-100 group-hover:translate-x-0"
+                aria-hidden="true"
+              >
+                Diego Silva
+              </span>
             </Link>
           </div>
 
@@ -88,7 +99,12 @@ export function Header() {
             {/* Home - always links to current portfolio home */}
             <Link
               href={basePath}
-              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent bg-accent/10"
+              className={cn(
+                "px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200",
+                isHome
+                  ? "text-accent bg-accent/10"
+                  : "text-muted-foreground hover:text-accent"
+              )}
             >
               {tHeader("home")}
             </Link>
@@ -116,9 +132,6 @@ export function Header() {
             >
               {tNav("contact")}
             </Link>
-
-            
-            
           </div>
 
           <div className="flex items-center gap-2">
