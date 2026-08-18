@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "Designing certificate revocation lists (CRLs) that propagate across distributed services without compromising security.",
       "Building an intuitive UI for complex PKI workflows that non-technical users can navigate confidently.",
     ],
-    image: "/images/isa-interfase/ISCERT.jpg",
+    image: "/images/empresas/isa-interfase/iscert/ISCERT.jpg",
   },
   {
     name: "MiRecibo",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "Implementing granular role-based access that supports custom permission matrices per company without performance degradation.",
       "Handling bulk signing operations for thousands of documents while providing real-time progress feedback to users.",
     ],
-    image: "/images/isa-interfase/mirecibo-uy.jpg",
+    image: "/images/empresas/isa-interfase/mirecibo/mirecibo-uy.jpg",
   },
   {
     name: "FirmaPDF",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "Processing thousands of concurrent signing requests without overwhelming HSM resources through intelligent queuing and batching.",
       "Integrating with multiple external authentication providers, each with different token formats and validation requirements.",
     ],
-    image: "/images/isa-interfase/tuid-firma.jpg",
+    image: "/images/empresas/isa-interfase/firmapdf/tuid-firma.jpg",
   },
   // ─── Beacon42 ───
   {
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       "Automating recurring billing workflows within Magento's plugin architecture constraints.",
       "Integrating multiple third-party payment gateways with zero-downtime deployments.",
     ],
-    image: "/images/beacon42/beacon42.png",
+    image: "/images/empresas/beacon42/beacon42.png",
   },
   // ─── Portlike (Client: DIRECTV) ───
   {
@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Implementing consistent tracking across multiple disparate web properties with different architectures.",
       "Automating report generation to eliminate 15+ hours of weekly manual data entry.",
     ],
-    image: "/images/portlike/portlike.png",
+    image: "/images/empresas/portlike/portlike.png",
   },
   {
     name: "WordPress Corporate Site",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
       "Balancing rapid campaign deployments with production stability and performance.",
       "Integrating and maintaining third-party plugins while ensuring compatibility across updates.",
     ],
-    image: "/images/portlike/takeoff.jpg",
+    image: "/images/empresas/portlike/takeoff.jpg",
   },
   // ─── Personal ───
   {
