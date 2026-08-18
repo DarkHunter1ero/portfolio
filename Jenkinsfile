@@ -100,7 +100,7 @@ pipeline {
             }
             steps {
                 bat """
-                    npx vercel deploy --prod --project portfolio-web-dev --token=%VERCEL_TOKEN% --yes --cwd frontend
+                    npx vercel deploy --prod --project portfolio --token=%VERCEL_TOKEN% --yes --cwd frontend
                 """
             }
         }
