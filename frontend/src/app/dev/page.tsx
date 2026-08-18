@@ -6,7 +6,7 @@ import { TechStackSection } from "@/components/sections/tech-stack/tech-stack-se
 export default async function DevPage() {
   return (
     <>
-      <HeroSection />
+      <HeroSection workingImage="/images/working_on_web_developer.jpg" />
       <ProjectsSection />
       <SpecialtiesSection />
       <TechStackSection />

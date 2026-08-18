@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HeroBackground } from "./hero-background";
 import { HeroCTA } from "./hero-cta";
 
-export async function HeroSection() {
+export async function HeroSection({ workingImage }: { workingImage?: string } = {}) {
   const t = await getTranslations("Hero");
 
   return (
@@ -46,6 +46,19 @@ export async function HeroSection() {
               sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 416px"
               priority
             />
+
+            {/* Working photo overlay — differentiates each portfolio */}
+            {workingImage && (
+              <div className="relative aspect-[4/3] w-52 sm:w-64 lg:w-72 absolute -bottom-8 -left-4 sm:-left-8 overflow-hidden rounded-2xl border-4 border-background shadow-xl shadow-black/25 rotate-[-4deg]">
+                <Image
+                  src={workingImage}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 288px"
+                  className="object-cover"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

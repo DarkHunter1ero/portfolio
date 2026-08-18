@@ -7,7 +7,7 @@ import { techStack } from "@/data/soporte/tech-stack";
 export default async function SoportePage() {
   return (
     <>
-      <HeroSection />
+      <HeroSection workingImage="/images/working_on_TI_sopport.jpg" />
       <SpecialtiesSection items={specialties} />
       <TechStackSection categories={techStack} />
     </>
