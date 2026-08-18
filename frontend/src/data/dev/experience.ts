@@ -27,7 +27,7 @@ export const experience: Experience[] = [
     company: "ISA Interfase",
     role: "Full Stack Java Developer",
     period: "2019 — Sept 2025",
-    logo: "/images/isa interfase.jpg",
+    logo: "/images/empresas/isa interfase.jpg",
     description:
       "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
     highlights: [
@@ -60,7 +60,7 @@ export const experience: Experience[] = [
     company: "Beacon42",
     role: "Magento Developer",
     period: "2018 — 2019",
-    logo: "/images/beacon42.png",
+    logo: "/images/empresas/beacon42.png",
     description:
       "Developed custom Magento modules and backend integrations for eCommerce clients, automating billing workflows and extending platform capabilities beyond out-of-the-box features.",
     highlights: [
@@ -74,7 +74,7 @@ export const experience: Experience[] = [
     company: "Portlike",
     role: "Programmer Analyst",
     period: "2017 — 2018",
-    logo: "/images/portlike.png",
+    logo: "/images/empresas/portlike.png",
     description:
       "Built analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
     highlights: [

@@ -3,29 +3,44 @@
 import { useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
-import { navLinks } from "@/data/dev/navigation";
 import { cn } from "@/lib/utils";
 
-const navTranslationKeys = {
-  "#professional-profile": "professionalProfile",
+const anchorTranslationKeys = {
   "#specialties": "specialties",
   "#experience": "experience",
   "#tech-stack": "techStack",
-  "#education": "education",
-  "#contact": "contact",
 } as const;
 
-type NavKey = (typeof navTranslationKeys)[keyof typeof navTranslationKeys];
+type AnchorKey = (typeof anchorTranslationKeys)[keyof typeof anchorTranslationKeys];
+
+interface NavLink {
+  label: string;
+  anchor: string;
+  page?: string;
+}
+
+function getNavLinks(basePath: string): NavLink[] {
+  return [
+    { label: "Perfil Profesional", anchor: "", page: `${basePath}/perfil-profesional` },
+    { label: "Servicios", anchor: `${basePath}#specialties` },
+    { label: "Experiencia", anchor: `${basePath}#experience` },
+    { label: "Herramientas", anchor: `${basePath}#tech-stack` },
+    { label: "Formación", anchor: "", page: `${basePath}/formacion` },
+    { label: "Contacto", anchor: "", page: `${basePath}/contacto` },
+  ];
+}
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   activeSection: string;
+  basePath: string;
 }
 
-export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, activeSection, basePath }: MobileMenuProps) {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
+  const navLinks = getNavLinks(basePath);
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -66,26 +81,29 @@ export function MobileMenu({ isOpen, onClose, activeSection }: MobileMenuProps) 
         </button>
 
         {navLinks.map((link) => {
-          // Extract the "#anchor" portion regardless of the path prefix.
-          // After the navLinks rebase to "/dev#anchor", the old
-          // `link.href.replace(/^\//, "")` would yield "dev#anchor" and miss
-          // the navTranslationKeys map. Slicing from "#" keeps the active
-          // section comparison and translation-key lookup working.
-          const hashIndex = link.href.indexOf("#");
-          const sectionKey = hashIndex >= 0 ? link.href.slice(hashIndex) : link.href;
+          const isPage = !!link.page;
+          const href = isPage ? link.page! : link.anchor;
+          const isAnchor = !isPage;
+          const sectionKey = isAnchor ? link.anchor.slice(link.anchor.indexOf("#")) : null;
+          const isActive = isAnchor && activeSection === sectionKey;
+
           return (
             <a
-              key={link.href}
-              href={link.href}
+              key={href}
+              href={href}
               onClick={onClose}
               className={cn(
                 "text-2xl font-[family-name:var(--font-playfair)] transition-colors duration-200",
-                activeSection === sectionKey
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
+                isAnchor
+                  ? isActive
+                    ? "text-accent"
+                    : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-accent"
               )}
             >
-              {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
+              {sectionKey
+                ? t(anchorTranslationKeys[sectionKey as keyof typeof anchorTranslationKeys] as AnchorKey)
+                : link.label}
             </a>
           );
         })}

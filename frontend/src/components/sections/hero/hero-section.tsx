@@ -2,77 +2,52 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { HeroBackground } from "./hero-background";
 import { HeroCTA } from "./hero-cta";
-import { profile as devProfile } from "@/data/dev/profile";
-import { calculateAge } from "@/lib/utils";
 
-// Type derived from the imported profile value
-type DevProfile = typeof devProfile;
-
-export async function HeroSection({
-  profile: customProfile,
-}: {
-  profile?: DevProfile | undefined;
-}) {
-  const profile = customProfile || devProfile;
+export async function HeroSection() {
   const t = await getTranslations("Hero");
-  const age = calculateAge(profile.birthDate);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center overflow-hidden pt-16"
       aria-labelledby="hero-heading"
     >
       <HeroBackground />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-accent font-[family-name:var(--font-mono)] text-sm mb-4 tracking-wider uppercase">
-          {t("subtitle")}
-        </p>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col-reverse items-center gap-10 lg:grid lg:grid-cols-[1fr_auto] lg:gap-16 lg:items-center">
+          <div className="text-center lg:text-left">
+            <h1
+              id="hero-heading"
+              className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-foreground"
+            >
+              {t("welcome")}
+            </h1>
 
-        <h1
-          id="hero-heading"
-          className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6"
-        >
-          {t("title")}
-        </h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed mx-auto lg:mx-0">
+              {t("summary")}
+            </p>
 
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          {t("tagline")}
-        </p>
+            <div className="mt-10">
+              <HeroCTA />
+            </div>
+          </div>
 
-        <div className="mb-10">
-          <div className="relative mx-auto w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-border shadow-xl shadow-accent/10">
+          {/* Isometric illustration (dark-background PNG). The radial mask fades
+              the edges so it blends into the hero background, like the reference
+              design, instead of looking like a framed picture. Decorative. */}
+          <div className="relative w-64 sm:w-80 lg:w-[26rem] shrink-0">
             <Image
-              src={profile.photoUrl}
-              alt={profile.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 128px, 160px"
+              src="/images/hero-image.png"
+              alt=""
+              width={1402}
+              height={1122}
+              className="h-auto w-full [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_78%)]"
+              sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 416px"
               priority
             />
           </div>
-
-          <div className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground">
-            <span>
-              {age} {t("years")}
-            </span>
-            <span className="text-border">·</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Image
-                src="https://flagcdn.com/w20/uy.png"
-                alt="Uruguay"
-                width={16}
-                height={12}
-                className="rounded-sm"
-                unoptimized
-              />
-              {t("nationality")}
-            </span>
-          </div>
         </div>
-
-        <HeroCTA />
       </div>
     </section>
   );

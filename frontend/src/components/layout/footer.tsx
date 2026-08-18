@@ -1,11 +1,19 @@
+"use client";
+
 import Link from "next/link";
-import { Github, Linkedin, ArrowUp, Mail } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { profile } from "@/data/dev/profile";
 
-export async function Footer() {
-  const t = await getTranslations("Footer");
+export function Footer() {
+  const pathname = usePathname();
+  const isSoporte = pathname.startsWith("/soporte");
+  const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
+
+  const otherPortfolioPath = isSoporte ? "/dev" : "/soporte";
+  const otherPortfolioLabel = isSoporte ? "Portafolio Dev" : "Portafolio Soporte";
 
   return (
     <footer className="border-t border-border bg-card/30" role="contentinfo">
@@ -13,7 +21,7 @@ export async function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <Link
-              href="/dev"
+              href={isSoporte ? "/dev" : "/soporte"}
               className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
             >
               DS
@@ -62,6 +70,15 @@ export async function Footer() {
 
         <div className="mt-8 pt-6 border-t border-border text-center">
           <p className="text-xs text-muted-foreground">{t("builtWith")}</p>
+          {/* Portfolio switcher link */}
+          <p className="mt-2 text-sm text-muted-foreground">
+            <Link
+              href={otherPortfolioPath}
+              className="text-accent hover:text-foreground transition-colors"
+            >
+              {otherPortfolioLabel}
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

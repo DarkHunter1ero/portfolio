@@ -4,35 +4,22 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { MobileMenu } from "./mobile-menu";
 import { LocaleSwitcher } from "./locale-switcher";
-import { navLinks } from "@/data/dev/navigation";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
-
-const navTranslationKeys = {
-  "#professional-profile": "professionalProfile",
-  "#specialties": "specialties",
-  "#experience": "experience",
-  "#tech-stack": "techStack",
-  "#education": "education",
-  "#contact": "contact",
-} as const;
-
-type NavKey = (typeof navTranslationKeys)[keyof typeof navTranslationKeys];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
-  const t = useTranslations("Nav");
+  const tNav = useTranslations("Nav");
   const tHeader = useTranslations("Header");
-  // After the route rebase, the dev home lives at /dev. Hash anchors resolve
-  // against /dev, so the isHome scroll-section observer must fire only here.
-  // The legacy `|| pathname === "/es"` branch never matched (locales are not
-  // in the URL with localePrefix: "never") and is dropped.
-  const isHome = pathname === "/dev";
+
+  const basePath = pathname.startsWith("/soporte") ? "/soporte" : "/dev";
+  const isHome = pathname === basePath;
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -41,7 +28,6 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    // Only observe sections on the home page
     if (!isHome) return;
 
     const observer = new IntersectionObserver(
@@ -73,39 +59,66 @@ export function Header() {
           className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16"
           aria-label={tHeader("mainNav")}
         >
-          <Link
-            href="/dev"
-            className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
-          >
-            {tHeader("logo")}
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href={basePath}
+              className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
+            >
+              {tHeader("logo")}
+            </Link>
 
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              // Extract the "#anchor" portion regardless of the path prefix.
-              // Pre-move this used `link.href.replace(/^\//, "")` which turned
-              // "/#about" into "#about"; with rebased hrefs like "/dev#about"
-              // that would yield "dev#about" and miss the navTranslationKeys
-              // map. Slicing from the "#" keeps the active-section match and
-              // the translation-key lookup working.
-              const hashIndex = link.href.indexOf("#");
-              const sectionKey = hashIndex >= 0 ? link.href.slice(hashIndex) : link.href;
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200",
-                    activeSection && link.href.endsWith(activeSection)
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-card"
-                  )}
-                >
-                  {t(navTranslationKeys[sectionKey as keyof typeof navTranslationKeys] as NavKey)}
-                </a>
-              );
-            })}
+            <Link
+              href={basePath}
+              className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-border/50 hover:border-accent/50 transition-colors"
+              aria-label={tNav("professionalProfile")}
+              title={tNav("professionalProfile")}
+            >
+              <Image
+                src="/images/my-foto.png"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="36px"
+                priority
+              />
+            </Link>
+          </div>
+
+          <div className="hidden md:flex items-center gap-2">
+            {/* Home - always links to current portfolio home */}
+            <Link
+              href={basePath}
+              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent bg-accent/10"
+            >
+              {tHeader("home")}
+            </Link>
+
+            {/* Perfil Profesional - always a page link */}
+            <Link
+              href={`${basePath}/perfil-profesional`}
+              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
+            >
+              {tNav("professionalProfile")}
+            </Link>
+
+            {/* Formación - always a page link */}
+            <Link
+              href={`${basePath}/formacion`}
+              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
+            >
+              {tNav("formation")}
+            </Link>
+
+            {/* Contacto - always a page link */}
+            <Link
+              href={`${basePath}/contacto`}
+              className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
+            >
+              {tNav("contact")}
+            </Link>
+
+            
+            
           </div>
 
           <div className="flex items-center gap-2">
@@ -125,6 +138,7 @@ export function Header() {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         activeSection={activeSection}
+        basePath={basePath}
       />
     </>
   );

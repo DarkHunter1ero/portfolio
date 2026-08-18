@@ -6,15 +6,14 @@ import { useTranslations, useMessages } from "next-intl";
 import { Link } from "@/i18n/routing";
 import type { Project } from "@/types";
 import { projectDetails } from "@/data/dev/project-details";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, ArrowRight } from "lucide-react";
-import { buttonTap } from "@/lib/animations";
+import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
+  companySlug?: string | undefined;
+  companyPeriod?: string | undefined;
 }
 
 interface TranslatedProjectItem {
@@ -25,7 +24,7 @@ interface TranslatedProjectItem {
   challenges: string[];
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project, index, companySlug, companyPeriod }: ProjectCardProps) {
   const prefersReduced = useReducedMotion();
   const t = useTranslations("Projects");
   const td = useTranslations("ProjectDetail");
@@ -37,6 +36,22 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const description = translatedItem?.description ?? project.description;
   const slug = project.slug ?? project.name.toLowerCase().replace(/\s+/g, "-");
   const hasDetailPage = project.slug != null && projectDetails.some((p) => p.slug === project.slug);
+  const projectHref = `/dev/projects/${slug}`;
+
+  const image = (
+    <div className="relative h-48 overflow-hidden bg-slate-100">
+      <Image
+        src={project.image}
+        alt={project.name}
+        fill
+        className={cn(
+          "object-cover transition-transform duration-500",
+          !prefersReduced && "group-hover:scale-105"
+        )}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
+    </div>
+  );
 
   return (
     <motion.article
@@ -51,97 +66,87 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={
         prefersReduced ? undefined : { y: -4, transition: { duration: 0.3, ease: "easeOut" } }
       }
-      className="group rounded-2xl border border-border bg-card shadow-lg shadow-black/10 overflow-hidden hover:shadow-xl hover:shadow-black/20 transition-shadow"
+      className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white shadow-lg shadow-black/5 overflow-hidden hover:shadow-xl transition-shadow"
     >
-      {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-secondary/30">
-        <Image
-          src={project.image}
-          alt={project.name}
-          fill
-          className={cn(
-            "object-cover transition-transform duration-500",
-            !prefersReduced && "group-hover:scale-105"
-          )}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div>
+      {hasDetailPage ? (
+        <Link href={projectHref} className="block" aria-label={project.name}>
+          {image}
+        </Link>
+      ) : (
+        image
+      )}
 
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-foreground mb-2">
-          {project.name}
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-slate-900">
+          {hasDetailPage ? (
+            <Link href={projectHref} className="hover:text-slate-600 transition-colors">
+              {project.name}
+            </Link>
+          ) : (
+            project.name
+          )}
         </h3>
 
         {project.company && (
-          <p className="text-xs text-muted-foreground font-medium mb-1 tracking-wide uppercase">
-            {project.company}
+          <p className="mt-1">
+            {companySlug ? (
+              <Link
+                href={`/dev/companies/${companySlug}`}
+                className="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-colors"
+              >
+                {project.company}
+              </Link>
+            ) : (
+              <span className="text-xs font-medium uppercase tracking-widest text-slate-500">
+                {project.company}
+              </span>
+            )}
           </p>
         )}
 
-        <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+        <p className="mt-3 mb-4 text-sm text-slate-600 leading-relaxed line-clamp-4">
           {description}
         </p>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {project.technologies.slice(0, 6).map((tech) => (
-            <Badge key={tech} variant="secondary" className="text-xs">
-              {tech}
-            </Badge>
-          ))}
-          {project.technologies.length > 6 && (
-            <Badge variant="secondary" className="text-xs">
-              +{project.technologies.length - 6}
-            </Badge>
-          )}
-        </div>
+        <div className="mt-auto flex items-center justify-between gap-2 border-t border-slate-200 pt-4">
+          <div className="flex items-center gap-3">
+            {companyPeriod && (
+              <span className="text-xs font-[family-name:var(--font-mono)] text-slate-500">
+                {companyPeriod}
+              </span>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("viewOnGithub")}
+                className="text-slate-400 hover:text-slate-900 transition-colors"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("liveDemo")}
+                className="text-slate-400 hover:text-slate-900 transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            )}
+          </div>
 
-        {/* Links */}
-        <div className="flex flex-wrap gap-3 pt-2 border-t border-border">
           {hasDetailPage && (
-            <motion.div {...buttonTap}>
-              <Button
-                asChild
-                variant="ghost"
-                size="sm"
-                className="gap-1.5 text-accent hover:text-accent"
-              >
-                <Link href={`/dev/projects/${slug}`}>
-                  {td("viewProject")}
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-            </motion.div>
-          )}
-          {project.githubUrl && (
-            <motion.div {...buttonTap}>
-              <Button
-                asChild
-                variant="ghost"
-                size="sm"
-                className="gap-1.5 text-muted-foreground hover:text-accent"
-              >
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4" />
-                  {t("viewOnGithub")}
-                </a>
-              </Button>
-            </motion.div>
-          )}
-          {project.liveUrl && (
-            <motion.div {...buttonTap}>
-              <Button
-                asChild
-                variant="ghost"
-                size="sm"
-                className="gap-1.5 text-muted-foreground hover:text-accent"
-              >
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" />
-                  {t("liveDemo")}
-                </a>
-              </Button>
-            </motion.div>
+            <Link
+              href={projectHref}
+              className="inline-flex items-center gap-1 text-xs font-medium text-slate-900 transition-all hover:gap-2"
+            >
+              {td("viewProject")}
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           )}
         </div>
       </div>

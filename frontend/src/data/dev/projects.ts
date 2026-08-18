@@ -6,6 +6,8 @@ export const projects: Project[] = [
     name: "ISCERT",
     company: "ISA Interfase",
     slug: "iscert",
+    date: "2025-06",
+
     description:
       "Enterprise platform for digital identity management, authentication, certificate lifecycle, and electronic signatures. A comprehensive solution that enables organizations to issue, manage, and verify digital certificates at scale.",
     problem:
@@ -28,12 +30,14 @@ export const projects: Project[] = [
       "Designing certificate revocation lists (CRLs) that propagate across distributed services without compromising security.",
       "Building an intuitive UI for complex PKI workflows that non-technical users can navigate confidently.",
     ],
-    image: "/images/ISCERT.jpg",
+    image: "/images/isa-interfase/ISCERT.jpg",
   },
   {
     name: "MiRecibo",
     company: "ISA Interfase",
     slug: "mirecibo",
+    date: "2023-06",
+
     description:
       "Digital payroll signing platform with role-based access control and multi-tenant company configuration. Enables organizations to digitally sign and securely store payroll documents at scale.",
     problem:
@@ -53,12 +57,14 @@ export const projects: Project[] = [
       "Implementing granular role-based access that supports custom permission matrices per company without performance degradation.",
       "Handling bulk signing operations for thousands of documents while providing real-time progress feedback to users.",
     ],
-    image: "/images/mirecibo-uy.jpg",
+    image: "/images/isa-interfase/mirecibo-uy.jpg",
   },
   {
     name: "FirmaPDF",
     company: "ISA Interfase",
     slug: "firmapdf",
+    date: "2021-06",
+
     description:
       "Mass PDF digital signing platform with external authentication service integration. Designed for high-throughput environments where thousands of PDFs need to be signed with legally valid digital signatures.",
     problem:
@@ -70,13 +76,15 @@ export const projects: Project[] = [
       "Processing thousands of concurrent signing requests without overwhelming HSM resources through intelligent queuing and batching.",
       "Integrating with multiple external authentication providers, each with different token formats and validation requirements.",
     ],
-    image: "/images/tuid-firma.jpg",
+    image: "/images/isa-interfase/tuid-firma.jpg",
   },
   // ─── Beacon42 ───
   {
     name: "Magento Billing Plugin",
     company: "Beacon42",
     slug: "magento-billing-plugin",
+    date: "2018-09",
+
     description:
       "Custom Magento plugin for automated billing process management. Streamlined recurring invoicing, subscription handling, and payment gateway integration for e-commerce clients.",
     problem:
@@ -88,13 +96,15 @@ export const projects: Project[] = [
       "Automating recurring billing workflows within Magento's plugin architecture constraints.",
       "Integrating multiple third-party payment gateways with zero-downtime deployments.",
     ],
-    image: "/images/beacon42.png",
+    image: "/images/beacon42/beacon42.png",
   },
   // ─── Portlike (Client: DIRECTV) ───
   {
     name: "Web Analytics & Tracking",
     company: "Portlike · DIRECTV",
     slug: "web-analytics-tracking",
+    date: "2017-09",
+
     description:
       "Implementation of Google Analytics and Google Tag Manager tracking infrastructure across DIRECTV's web properties, enabling data-driven marketing decisions through custom dashboards and automated reporting.",
     problem:
@@ -113,12 +123,14 @@ export const projects: Project[] = [
       "Implementing consistent tracking across multiple disparate web properties with different architectures.",
       "Automating report generation to eliminate 15+ hours of weekly manual data entry.",
     ],
-    image: "/images/portlike.png",
+    image: "/images/portlike/portlike.png",
   },
   {
     name: "WordPress Corporate Site",
     company: "Portlike · DIRECTV",
     slug: "wordpress-corporate-site",
+    date: "2018-03",
+
     description:
       "Maintenance and evolution of DIRECTV's corporate WordPress website — developed at Portlike alongside Takeoff (partner company sharing the same office). New pages, commercial campaign components, and performance optimization for production environments.",
     problem:
@@ -130,13 +142,15 @@ export const projects: Project[] = [
       "Balancing rapid campaign deployments with production stability and performance.",
       "Integrating and maintaining third-party plugins while ensuring compatibility across updates.",
     ],
-    image: "/images/takeoff.jpg",
+    image: "/images/portlike/takeoff.jpg",
   },
   // ─── Personal ───
   {
     name: "Crowdfunding Platform",
     company: "QR S.A.S.",
     slug: "crowdfunding-platform",
+    date: "2026-02",
+
     description:
       "Modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. A personal project that showcases full-stack capabilities from infrastructure to UI.",
     problem:

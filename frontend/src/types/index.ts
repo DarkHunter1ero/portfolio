@@ -39,6 +39,8 @@ export interface Project {
   challenges: string[];
   company?: string;
   slug?: string;
+  /** Sort key "YYYY-MM" — displayed dates are refined separately. */
+  date: string;
   githubUrl?: string;
   liveUrl?: string;
   image: string;

@@ -7,7 +7,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     subtitle: "Plataforma de gestión digital de recibos de sueldo con firma electrónica y digital",
     shortDescription:
       "Plataforma empresarial para digitalizar completamente la entrega y firma de recibos de sueldo. Elimina el papel, se integra con cualquier sistema de liquidación y se despliega en Cloud u On-Premise.",
-    heroImage: "/images/mirecibo-uy.jpg",
+    heroImage: "/images/isa-interfase/mirecibo-uy.jpg",
     role: "Ingeniero de Software Backend",
     duration: "Proyecto Empresarial",
     instances: [
@@ -25,7 +25,7 @@ export const projectDetailsEs: ProjectDetail[] = [
           "CI Electrónica",
         ],
         videoUrl: "https://www.youtube.com/watch?v=w2G8tXRKwhk",
-        image: "/images/mirecibo-uy.jpg",
+        image: "/images/isa-interfase/mirecibo-uy.jpg",
       },
       {
         country: "Paraguay",
@@ -41,7 +41,7 @@ export const projectDetailsEs: ProjectDetail[] = [
           "Custodia en la nube",
         ],
         videoUrl: "https://www.youtube.com/watch?v=snnrY5ExBdM",
-        image: "/images/mirecibo-py.jpg",
+        image: "/images/isa-interfase/mirecibo-py.jpg",
       },
     ],
     about:
@@ -313,7 +313,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Infraestructura de Certificación Digital para autenticación, firma electrónica y firma digital",
     shortDescription:
       "Plataforma PKI empresarial especializada en certificación digital — garantiza identidad, autenticidad, integridad y no repudio en procesos electrónicos.",
-    heroImage: "/images/ISCERT.jpg",
+    heroImage: "/images/isa-interfase/ISCERT.jpg",
     videoUrl: "https://www.youtube.com/watch?v=w0v_YcHbtCY",
     role: "Ingeniero de Software Backend",
     duration: "Proyecto Empresarial",
@@ -639,7 +639,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Plataforma de firma digital masiva de PDF con integración de proveedores de identidad externos",
     shortDescription:
       "Plataforma de alto rendimiento para aplicar firmas digitales con validez legal a documentos PDF a escala. Se integra con proveedores de identidad OAuth2 y procesa miles de documentos de forma asíncrona.",
-    heroImage: "/images/tuid-firma.jpg",
+    heroImage: "/images/isa-interfase/tuid-firma.jpg",
     videoUrl: "https://www.youtube.com/watch?v=5y17IzfdYNg",
     role: "Ingeniero de Software Backend",
     duration: "Proyecto Empresarial",
@@ -823,9 +823,9 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Los registros de auditoría no son opcionales en industrias reguladas — los hashes criptográficos de cada operación deben almacenarse y ser recuperables, a veces años después.",
     ],
     gallery: [
-      { src: "/images/tuid-firma.jpg", alt: "FirmaPDF — Interfaz de firma digital TuID" },
-      { src: "/images/tuid.jpg", alt: "Plataforma de identidad digital TuID" },
-      { src: "/images/tuid2.jpg", alt: "Autenticación y verificación de identidad TuID" },
+      { src: "/images/isa-interfase/tuid-firma.jpg", alt: "FirmaPDF — Interfaz de firma digital TuID" },
+      { src: "/images/isa-interfase/tuid.jpg", alt: "Plataforma de identidad digital TuID" },
+      { src: "/images/isa-interfase/tuid2.jpg", alt: "Autenticación y verificación de identidad TuID" },
       { src: "/projects/placeholder.svg", alt: "Dashboard de firma por lotes FirmaPDF" },
     ],
     useCases: [
@@ -872,7 +872,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     subtitle: "Plugin personalizado de automatización de facturación para eCommerce Magento",
     shortDescription:
       "Plugin Magento personalizado que automatizó la facturación recurrente, gestión de suscripciones e integración de pasarelas de pago para clientes de e-commerce, reduciendo la carga de facturación manual en un 60%.",
-    heroImage: "/images/beacon42.png",
+    heroImage: "/images/beacon42/beacon42.png",
     role: "Desarrollador Magento",
     duration: "2018 — 2019",
     about:
@@ -957,7 +957,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Construir capas de abstracción para integraciones multi-proveedor ahorra un enorme esfuerzo de mantenimiento",
       "Los despliegues sin tiempo de inactividad en e-commerce requieren planificación cuidadosa en torno a las sesiones de usuario activas",
     ],
-    gallery: [{ src: "/images/beacon42.png", alt: "Beacon42 — Desarrollo Magento" }],
+    gallery: [{ src: "/images/beacon42/beacon42.png", alt: "Beacon42 — Desarrollo Magento" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/dev#experience",
@@ -975,7 +975,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     subtitle: "Infraestructura de analítica para propiedades web de DIRECTV",
     shortDescription:
       "Implementación de Google Analytics y Google Tag Manager en las propiedades web de DIRECTV, permitiendo marketing basado en datos a través de dashboards personalizados y reportes Excel automatizados.",
-    heroImage: "/images/portlike.png",
+    heroImage: "/images/portlike/portlike.png",
     role: "Analista Programador",
     duration: "2017 — 2018",
     about:
@@ -1067,7 +1067,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Automatizar procesos de reportes manuales entrega un ROI inmediato y tangible",
       "Combinar habilidades analíticas con desarrollo crea un valor único en cualquier equipo",
     ],
-    gallery: [{ src: "/images/portlike.png", alt: "Portlike — Analítica Web" }],
+    gallery: [{ src: "/images/portlike/portlike.png", alt: "Portlike — Analítica Web" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/dev#experience",
@@ -1085,7 +1085,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     subtitle: "Mantenimiento y evolución de sitio web corporativo para DIRECTV",
     shortDescription:
       "Mantenimiento y evolución del sitio web corporativo WordPress de DIRECTV — nuevas páginas de campaña, mejoras de funcionalidades, optimización de rendimiento y gestión de plugins de terceros.",
-    heroImage: "/images/takeoff.jpg",
+    heroImage: "/images/portlike/takeoff.jpg",
     role: "Desarrollador Web",
     duration: "2017 — 2018",
     about:
@@ -1170,7 +1170,7 @@ export const projectDetailsEs: ProjectDetail[] = [
       "Los despliegues rápidos de marketing necesitan flujos de desarrollo optimizados sin sacrificar calidad",
       "La colaboración entre equipos (Portlike + Takeoff) enseñó comunicación efectiva en entornos de oficina compartidos",
     ],
-    gallery: [{ src: "/images/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" }],
+    gallery: [{ src: "/images/portlike/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" }],
     callToAction: {
       text: "Explorar otros proyectos",
       link: "/dev#experience",
@@ -1188,7 +1188,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     subtitle: "Plataforma moderna de crowdfunding basada en microservicios",
     shortDescription:
       "Una plataforma moderna de crowdfunding inspirada en Kickstarter, construida con arquitectura de microservicios. Un proyecto personal que demuestra capacidades full-stack desde infraestructura hasta UI como parte de la iniciativa QR S.A.S.",
-    heroImage: "/images/qr_logo.webp",
+    heroImage: "/images/qr-sas/qr_logo.webp",
     role: "Fundador y Desarrollador Full Stack",
     duration: "2026 — Presente",
     about:

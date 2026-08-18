@@ -14,7 +14,7 @@ export function HeroCTA() {
   const cvUrl = locale === "es" ? profile.cvUrlEs : profile.cvUrlEn;
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
       <motion.div {...buttonTap}>
         <Button asChild variant="accent" size="lg" className="gap-2 font-medium">
           <Link href={cvUrl} download>
