@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import { useMessages, useTranslations } from "next-intl";
 import { ExternalLink, ArrowRight } from "lucide-react";
@@ -8,7 +9,7 @@ import type { Experience } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/dev/projects";
-import { companyDetailHref, projectDetailHref } from "@/lib/routes";
+import { companyDetailHref, projectDetailHref, withFrom } from "@/lib/routes";
 import { companySlug, cn } from "@/lib/utils";
 
 interface TimelineItemProps {
@@ -30,6 +31,8 @@ function TimelineItem({
 }: TimelineItemProps) {
   const prefersReduced = useReducedMotion();
   const isLeft = index % 2 === 0;
+  const pathname = usePathname();
+  const from = pathname.startsWith("/support") ? "support" : undefined;
   const messages = useMessages();
   const tCommon = useTranslations("Common");
   const expItems = (messages as Record<string, unknown>).Experience as
@@ -173,7 +176,7 @@ function TimelineItem({
                     </p>
                     {project.slug && (
                       <a
-                        href={projectDetailHref(project.slug)}
+                        href={withFrom(projectDetailHref(project.slug), from)}
                         className="inline-flex items-center gap-1 text-[10px] text-accent hover:underline mt-1"
                       >
                         <ExternalLink className="h-3 w-3" />
@@ -186,7 +189,7 @@ function TimelineItem({
             </div>
 
             <Button variant="outline" size="sm" className="gap-1 text-xs" asChild>
-              <a href={companyDetailHref(slug)}>
+              <a href={withFrom(companyDetailHref(slug), from)}>
                 {tViewCompany.replace("{company}", item.company)}
                 <ArrowRight className="h-3 w-3" />
               </a>

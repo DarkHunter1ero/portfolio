@@ -6,6 +6,7 @@ import type { ProjectDetail } from "@/types";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string }>;
 }
 
 async function getProjectDetails(locale: string): Promise<ProjectDetail[]> {
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   };
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params, searchParams }: ProjectPageProps) {
   const { slug } = await params;
+  const { from } = await searchParams;
   const locale = await getLocale();
   const projectDetails = await getProjectDetails(locale);
   const project = projectDetails.find((p) => p.slug === slug);
@@ -44,5 +46,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return <ProjectDetailView project={project} />;
+  return <ProjectDetailView project={project} from={from} />;
 }

@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { DEVELOPER_PATH } from "@/lib/routes";
+import { backToProjectsHref, SOPORTE_PATH } from "@/lib/routes";
 import type { ProjectDetail } from "@/types";
 import { Container } from "@/components/shared/container";
 import { Badge } from "@/components/ui/badge";
@@ -126,7 +126,15 @@ const sectionAnim = {
 
 // ─── ProjectHero ──────────────────────────────────────────────
 
-function ProjectHero({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
+function ProjectHero({
+  project,
+  t,
+  from,
+}: {
+  project: ProjectDetail;
+  t: (key: string) => string;
+  from?: string;
+}) {
   const prefersReduced = useReducedMotion();
 
   return (
@@ -138,7 +146,7 @@ function ProjectHero({ project, t }: { project: ProjectDetail; t: (key: string) 
         {/* Back link */}
         <motion.div {...(prefersReduced ? {} : sectionAnim)} className="mb-8">
           <Link
-            href={`${DEVELOPER_PATH}#projects`}
+            href={backToProjectsHref(from)}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -893,15 +901,16 @@ function ProjectGallery({ project, t }: { project: ProjectDetail; t: (key: strin
 
 // ─── ProjectCTA ───────────────────────────────────────────────
 
-function ProjectCTA({ project }: { project: ProjectDetail }) {
+function ProjectCTA({ project, from }: { project: ProjectDetail; from?: string }) {
   const prefersReduced = useReducedMotion();
+  const ctaHref = from === "support" ? `${SOPORTE_PATH}/education` : project.callToAction.link;
 
   return (
     <section className="py-24 sm:py-32 bg-card/30">
       <Container>
         <motion.div {...(prefersReduced ? {} : sectionAnim)} className="text-center">
           <Separator className="mb-12" />
-          <Link href={project.callToAction.link}>
+          <Link href={ctaHref}>
             <Button variant="outline" size="lg" className="gap-2">
               <ArrowLeft className="h-4 w-4" />
               {project.callToAction.text}
@@ -917,14 +926,15 @@ function ProjectCTA({ project }: { project: ProjectDetail }) {
 
 interface ProjectDetailViewProps {
   project: ProjectDetail;
+  from?: string;
 }
 
-export function ProjectDetailView({ project }: ProjectDetailViewProps) {
+export function ProjectDetailView({ project, from }: ProjectDetailViewProps) {
   const t = useTranslations("ProjectDetail");
 
   return (
     <>
-      <ProjectHero project={project} t={t} />
+      <ProjectHero project={project} t={t} from={from} />
       <InstancesSection project={project} t={t} />
       <ProjectAbout project={project} t={t} />
       <ProjectProblemSolution project={project} t={t} />
@@ -938,7 +948,7 @@ export function ProjectDetailView({ project }: ProjectDetailViewProps) {
       <ProjectDemoVideos project={project} t={t} />
       <ProjectLessons project={project} t={t} />
       <ProjectGallery project={project} t={t} />
-      <ProjectCTA project={project} />
+      <ProjectCTA project={project} from={from} />
     </>
   );
 }

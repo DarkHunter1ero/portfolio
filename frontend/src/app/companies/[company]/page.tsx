@@ -8,6 +8,7 @@ import { companySlug } from "@/lib/utils";
 
 interface CompanyPageProps {
   params: Promise<{ company: string }>;
+  searchParams: Promise<{ from?: string }>;
 }
 
 export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: CompanyPageProps): Promise<Me
   };
 }
 
-export default async function CompanyPage({ params }: CompanyPageProps) {
+export default async function CompanyPage({ params, searchParams }: CompanyPageProps) {
   const { company: slug } = await params;
+  const { from } = await searchParams;
 
   const exp = experience.find((e) => companySlug(e.company) === slug);
   if (!exp) notFound();
@@ -35,5 +37,5 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
     return pc === ec || pc.startsWith(ec);
   });
 
-  return <CompanyDetailView company={exp} companyProjects={companyProjects} />;
+  return <CompanyDetailView company={exp} companyProjects={companyProjects} from={from} />;
 }
