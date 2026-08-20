@@ -186,7 +186,7 @@
   },
   "Experience": {
     "heading": "Experiencia",
-    "subheading": "Trayectoria en el mundo IT",
+    "subheading": "Donde he construido y entregado",
     "present": "Presente",
     "viewCompany": "Ver todos los proyectos de {company}",
     "viewDetails": "Ver detalles",
@@ -196,35 +196,36 @@
     "technologiesUsedDesc": "Tecnologías con las que trabajé durante mi tiempo en {company}",
     "items": [
       {
-        "description": "Servicios de soporte TI para particulares y pequeñas empresas. Reparación de equipos, mantenimiento preventivo, eliminación de malware, configuración de redes, backup de datos y automatizaciones a medida. Atención remota y presencial.",
+        "description": "Proyecto emprendedor personal — una plataforma moderna de crowdfunding inspirada en Kickstarter, construida con arquitectura de microservicios. Demuestra capacidades full-stack desde infraestructura hasta interfaz de usuario.",
         "highlights": [
-          "Servicio integral de soporte TI: diagnóstico, reparación, mantenimiento preventivo y consultoría.",
-          "Automatizaciones y herramientas a medida gracias a mi experiencia en desarrollo de software.",
-          "Soporte remoto y presencial con respuesta rápida y seguimiento personalizado."
+          "Construí una plataforma de crowdfunding completa desde cero usando microservicios Spring Boot para campañas, usuarios, pagos y notificaciones.",
+          "Diseñé una descomposición de servicios que equilibra la autonomía con la velocidad práctica de desarrollo para un proyecto individual.",
+          "Implementé autenticación basada en JWT entre servicios con comunicación mediante APIs REST."
         ]
       },
       {
-        "description": "Desarrollo de plataformas empresariales con experiencia en infraestructura de servidores, administración de sistemas Linux, CI/CD con Docker y Jenkins, y resolución de problemas de producción.",
+        "description": "Diseño y desarrollo de plataformas empresariales de identidad digital y firma electrónica que atienden a miles de usuarios en industrias reguladas. Liderazgo de iniciativas full-stack, desde el diseño de bases de datos hasta frontends en React, con un fuerte énfasis en seguridad, escalabilidad y confiabilidad en producción.",
         "highlights": [
-          "Administración de servidores Linux con systemd, diagnóstico y resolución de incidentes en producción.",
-          "Implementación de pipelines CI/CD con Docker y Jenkins que automatizaron despliegues y redujeron errores operativos.",
-          "Experiencia en seguridad informática: PKI, certificados digitales, protección de datos sensibles."
+          "Diseñé e implementé servicios de autenticación OAuth2 / JWT que manejan miles de sesiones autenticadas diariamente, integrados con Módulos de Seguridad de Hardware (HSM) para protección de claves criptográficas.",
+          "Construí APIs REST consumidas por múltiples aplicaciones cliente (SPAs en Angular y React) con validación integral de entrada, limitación de tasa y registro de auditoría.",
+          "Lideré la migración de componentes monolíticos heredados a una arquitectura de microservicios contenerizados, reduciendo los ciclos de despliegue de horas a minutos con pipelines de CI/CD en Docker y Jenkins.",
+          "Desarrollé flujos de firma electrónica con gestión del ciclo de vida de certificados — generación, validación, revocación — cumpliendo con estándares regulatorios para identidad digital."
         ]
       },
       {
-        "description": "Desarrollo de módulos Magento para eCommerce con despliegues en producción, administración de servidores y soporte técnico a clientes.",
+        "description": "Desarrollo de módulos Magento personalizados e integraciones de backend para clientes de comercio electrónico, automatizando flujos de facturación y ampliando las capacidades de la plataforma más allá de las funcionalidades predefinidas.",
         "highlights": [
-          "Despliegues sin downtime en entornos de producción, asegurando continuidad operativa.",
-          "Soporte técnico directo a clientes para resolución de problemas en sus plataformas.",
-          "Integración de APIs de terceros con monitoreo y manejo de errores."
+          "Construí complementos Magento personalizados que automatizaron la facturación recurrente y la gestión de suscripciones, reduciendo la carga de facturación manual en un 60%.",
+          "Integré pasarelas de pago de terceros y APIs de envío en tiendas Magento existentes con despliegues sin tiempo de inactividad.",
+          "Desarrollé funcionalidades de backend en PHP que ampliaron el panel de administración de Magento para informes personalizados y paneles de gestión de inventario."
         ]
       },
       {
-        "description": "Desarrollo de herramientas de análisis y automatización. Implementación de tracking y reportes automatizados para clientes corporativos como DIRECTV.",
+        "description": "Construcción de paneles de analítica y herramientas de automatización de marketing utilizando Google Analytics, Google Tag Manager y APIs de Laravel. Contribución a sitios WordPress y reportes basados en Excel para inteligencia de negocio.",
         "highlights": [
-          "Automatización de reportes que eliminó 15+ horas semanales de trabajo manual.",
-          "Mantenimiento y evolución de sitios WordPress en producción, asegurando estabilidad.",
-          "Implementación de soluciones de tracking y analítica web para clientes empresariales."
+          "Implementé seguimiento de Google Analytics y Tag Manager en múltiples sitios web de clientes, permitiendo decisiones de marketing basadas en datos mediante paneles e informes personalizados.",
+          "Desarrollé APIs ligeras en Laravel (Lumen) para agregación de datos y reportes, consumiendo servicios externos y presentando información a través de interfaces limpias.",
+          "Creé pipelines automatizados de reportes en Excel que eliminaron más de 15 horas semanales de entrada manual de datos para los interesados del negocio."
         ]
       }
     ]
@@ -296,7 +297,7 @@
         "degree": "Bachillerato Tecnológico en Electromecánica",
         "period": "2007 — 2009",
         "type": "technical",
-        "description": "Base técnica en sistemas electromecánicos que desarrolló mi pensamiento lógico y capacidad para resolver problemas técnicos complejos — fundamental para el diagnóstico y reparación de hardware."
+        "description": "Base técnica en sistemas electromecánicos que desarrolló mi pensamiento lógico y capacidad para resolver problemas técnicos complejos."
       },
       {
         "institution": "Liceo Nº 2 — San José de Mayo",

@@ -36,13 +36,13 @@ export default async function LandingPage() {
   const devCta = {
     label: tCta("dev.label"),
     description: tCta("dev.description"),
-    href: "/dev",
+    href: "/developer",
   };
 
   const soporteCta = {
     label: tCta("soporte.label"),
     description: tCta("soporte.description"),
-    href: "/soporte",
+    href: "/support",
   };
 
   return (
@@ -61,13 +61,13 @@ export default async function LandingPage() {
             </Link>
             <div className="hidden md:flex items-center gap-2">
               <Link
-                href="/dev"
+                href="/developer"
                 className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
               >
                 {tCta("dev.label")}
               </Link>
               <Link
-                href="/soporte"
+                href="/support"
                 className="px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 text-muted-foreground hover:text-accent"
               >
                 {tCta("soporte.label")}

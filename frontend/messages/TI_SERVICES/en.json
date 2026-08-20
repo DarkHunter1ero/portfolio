@@ -186,7 +186,7 @@
   },
   "Experience": {
     "heading": "Experience",
-    "subheading": "My journey in the IT world",
+    "subheading": "Where I've built and shipped",
     "present": "Present",
     "viewCompany": "View all {company} projects",
     "viewDetails": "View details",
@@ -196,35 +196,36 @@
     "technologiesUsedDesc": "Technologies I worked with during my time at {company}",
     "items": [
       {
-        "description": "IT support services for individuals and small businesses. Equipment repair, preventive maintenance, malware removal, network configuration, data backup, and custom automation. Remote and on-site support.",
+        "description": "Personal entrepreneurial project — a modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. Showcases full-stack capabilities from infrastructure to UI.",
         "highlights": [
-          "Comprehensive IT support services: diagnosis, repair, preventive maintenance, and consulting.",
-          "Custom automations and tools thanks to my software development experience.",
-          "Remote and on-site support with fast response and personalized follow-up."
+          "Built a complete crowdfunding platform from scratch using Spring Boot microservices for campaigns, users, payments, and notifications.",
+          "Designed a service decomposition that balances autonomy with practical development velocity for a solo project.",
+          "Implemented JWT-based authentication across services with REST API communication."
         ]
       },
       {
-        "description": "Enterprise platform development with experience in server infrastructure, Linux system administration, CI/CD with Docker and Jenkins, and production issue resolution.",
+        "description": "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
         "highlights": [
-          "Linux server administration with systemd, diagnosis, and production incident resolution.",
-          "Implementation of CI/CD pipelines with Docker and Jenkins that automated deployments and reduced operational errors.",
-          "Information security experience: PKI, digital certificates, sensitive data protection."
+          "Designed and implemented OAuth2 / JWT authentication services handling thousands of authenticated sessions daily, integrated with Hardware Security Modules (HSM) for cryptographic key protection.",
+          "Built REST APIs consumed by multiple client applications (Angular and React SPAs) with comprehensive input validation, rate limiting, and audit logging.",
+          "Led migration of legacy monolith components to a containerized microservices architecture, reducing deployment cycles from hours to minutes with Docker and Jenkins CI/CD pipelines.",
+          "Developed electronic signature workflows with certificate lifecycle management — generation, validation, revocation — compliant with regulatory standards for digital identity."
         ]
       },
       {
-        "description": "Custom Magento module development for eCommerce with production deployments, server administration, and technical customer support.",
+        "description": "Developed custom Magento modules and backend integrations for eCommerce clients, automating billing workflows and extending platform capabilities beyond out-of-the-box features.",
         "highlights": [
-          "Zero-downtime deployments in production environments, ensuring operational continuity.",
-          "Direct technical support to clients for issue resolution on their platforms.",
-          "Third-party API integration with monitoring and error handling."
+          "Built custom Magento plugins that automated recurring billing and subscription management, reducing manual invoicing overhead by 60%.",
+          "Integrated third-party payment gateways and shipping APIs into existing Magento stores with zero downtime deployments.",
+          "Developed backend features in PHP that extended the Magento admin panel for custom reporting and inventory management dashboards."
         ]
       },
       {
-        "description": "Development of analytics and automation tools. Implementation of tracking and automated reporting for corporate clients such as DIRECTV.",
+        "description": "Built analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
         "highlights": [
-          "Report automation that eliminated 15+ hours of manual work per week.",
-          "Maintenance and evolution of WordPress sites in production, ensuring stability.",
-          "Implementation of web tracking and analytics solutions for enterprise clients."
+          "Implemented Google Analytics and Tag Manager tracking across multiple client websites, enabling data-driven marketing decisions through custom dashboards and reports.",
+          "Developed lightweight Laravel (Lumen) APIs for data aggregation and reporting, consuming external services and presenting insights through clean interfaces.",
+          "Created automated Excel reporting pipelines that eliminated 15+ hours of manual data entry per week for business stakeholders."
         ]
       }
     ]
@@ -289,14 +290,14 @@
         "degree": "Technologist in Computer Science",
         "period": "2013 — 2015",
         "type": "tertiary",
-        "description": "University program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
+        "description": "Joint university program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
       },
       {
         "institution": "UTU — Universidad del Trabajo del Uruguay",
         "degree": "Technical High School Degree in Electromechanics",
         "period": "2007 — 2009",
         "type": "technical",
-        "description": "Technical foundation in electromechanical systems that developed my logical thinking and ability to solve complex technical problems — essential for hardware diagnosis and repair."
+        "description": "Technical background in electromechanical systems that strengthened logical thinking and complex problem-solving skills."
       },
       {
         "institution": "Liceo Nº 2 — San José de Mayo",

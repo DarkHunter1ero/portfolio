@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { detectLocale, getMetadataFor, type Locale } from "@/lib/i18n";
 import { ExperienceSection } from "@/components/sections/experience/experience-section";
 import { EducationSection } from "@/components/sections/education/education-section";
-import { experience } from "@/data/soporte/experience";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = (await detectLocale()) as Locale;
@@ -26,7 +25,7 @@ export default async function SoporteFormacionPage() {
     <>
       <div className="h-16" aria-hidden="true" />
       <EducationSection />
-      <ExperienceSection items={experience} />
+      <ExperienceSection />
     </>
   );
 }

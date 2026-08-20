@@ -298,7 +298,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "MiRecibo — Digital Payroll Platform",
@@ -624,7 +624,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "ISCERT — Digital Certification Infrastructure",
@@ -865,7 +865,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "FirmaPDF — Mass PDF Digital Signing Platform",
@@ -970,7 +970,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Magento Billing Plugin — eCommerce Automation",
@@ -1080,7 +1080,7 @@ export const projectDetails: ProjectDetail[] = [
     gallery: [{ src: "/images/empresas/portlike/portlike.png", alt: "Portlike — Web Analytics" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Web Analytics & Tracking — DIRECTV",
@@ -1185,7 +1185,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "WordPress Corporate Site — DIRECTV",
@@ -1337,7 +1337,7 @@ export const projectDetails: ProjectDetail[] = [
     gallery: [{ src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" }],
     callToAction: {
       text: "Explore other projects",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Crowdfunding Platform — QR S.A.S.",

@@ -7,8 +7,9 @@ import type { NextRequest } from "next/server";
  * portfolio-specific messages (LANDING, WEB_DEVELOPER, TI_SERVICES).
  *
  * Labels:
- *  - `pathname` starts with `/dev`     → "dev"
- *  - `pathname` starts with `/soporte` → "soporte"
+ *  - `pathname` starts with `/developer` → "dev"
+ *  - `pathname` starts with `/support`    → "soporte"
+ *  - `pathname` starts with `/companies` or `/projects` → "dev" (global detail pages)
  *  - otherwise (incl. `/`, `/api`, unknown) → "landing"
  *
  * The header is consumed by:
@@ -19,10 +20,12 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   let portfolioRoute: string;
-  if (pathname.startsWith("/dev")) {
+  if (pathname.startsWith("/developer")) {
     portfolioRoute = "dev";
-  } else if (pathname.startsWith("/soporte")) {
+  } else if (pathname.startsWith("/support")) {
     portfolioRoute = "soporte";
+  } else if (pathname.startsWith("/companies") || pathname.startsWith("/projects")) {
+    portfolioRoute = "dev";
   } else {
     portfolioRoute = "landing";
   }

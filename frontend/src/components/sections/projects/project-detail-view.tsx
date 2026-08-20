@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { DEVELOPER_PATH } from "@/lib/routes";
 import type { ProjectDetail } from "@/types";
 import { Container } from "@/components/shared/container";
 import { Badge } from "@/components/ui/badge";
@@ -137,7 +138,7 @@ function ProjectHero({ project, t }: { project: ProjectDetail; t: (key: string) 
         {/* Back link */}
         <motion.div {...(prefersReduced ? {} : sectionAnim)} className="mb-8">
           <Link
-            href="/dev#projects"
+            href={`${DEVELOPER_PATH}#projects`}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -846,7 +847,13 @@ function ProjectDemoVideos({ project, t }: { project: ProjectDetail; t: (key: st
 function ProjectGallery({ project, t }: { project: ProjectDetail; t: (key: string) => string }) {
   const prefersReduced = useReducedMotion();
 
-  if (!project.gallery || project.gallery.length === 0) return null;
+  // Placeholder images represent "no image available" — filter them out so the
+  // gallery only renders real images. If nothing real remains, hide the section.
+  const galleryImages = (project.gallery ?? []).filter(
+    (img) => !img.src.endsWith("/placeholder.svg")
+  );
+
+  if (galleryImages.length === 0) return null;
 
   return (
     <section className="py-24 sm:py-32">
@@ -858,7 +865,7 @@ function ProjectGallery({ project, t }: { project: ProjectDetail; t: (key: strin
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-4">
-          {project.gallery.map((img, idx) => (
+          {galleryImages.map((img, idx) => (
             <motion.div
               key={img.alt}
               {...(prefersReduced

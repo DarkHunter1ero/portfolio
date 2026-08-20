@@ -8,11 +8,11 @@ import { profile } from "@/data/dev/profile";
 
 export function Footer() {
   const pathname = usePathname();
-  const isSoporte = pathname.startsWith("/soporte");
+  const isSoporte = pathname.startsWith("/support");
   const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
-  const otherPortfolioPath = isSoporte ? "/dev" : "/soporte";
+  const otherPortfolioPath = isSoporte ? "/developer" : "/support";
   const otherPortfolioLabel = isSoporte ? "Portafolio Dev" : "Portafolio Soporte";
 
   return (
@@ -21,7 +21,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <Link
-              href={isSoporte ? "/dev" : "/soporte"}
+              href={isSoporte ? "/developer" : "/support"}
               className="font-[family-name:var(--font-playfair)] text-xl font-bold text-foreground hover:text-accent transition-colors"
             >
               DS

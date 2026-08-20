@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { ArrowLeft, ExternalLink, Code2 } from "lucide-react";
 import { Container } from "@/components/shared/container";
+import { DEVELOPER_PATH, projectDetailHref } from "@/lib/routes";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Experience, Project } from "@/types";
@@ -38,7 +39,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
 
         <Container className="relative z-10">
           <Link
-            href="/dev#experience"
+            href={`${DEVELOPER_PATH}#experience`}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -122,7 +123,7 @@ export async function CompanyDetailView({ company, companyProjects }: CompanyDet
 
                 {project.slug && (
                   <Button variant="outline" size="sm" className="gap-1 text-xs" asChild>
-                    <a href={`/dev/projects/${project.slug}`}>
+                    <a href={projectDetailHref(project.slug)}>
                       <ExternalLink className="h-3 w-3" />
                       {tPd("viewProject")}
                     </a>

@@ -2,7 +2,7 @@ export const specialties: { name: string; description: string; image: string | n
   {
     name: "PC / Notebook Repair",
     description: "Repair and maintenance of personal computers and notebooks",
-    image: null,
+    image: "/support-services/reparacion_PC_notebooks.png",
   },
   {
     name: "Windows Installation",

@@ -15,7 +15,7 @@ function getNavLinks(basePath: string, t: (key: string) => string): NavLink[] {
   return [
     {
       label: t("professionalProfile"),
-      href: `${basePath}/perfil-profesional`,
+      href: `${basePath}/professional-profile`,
       isAnchor: false,
     },
     {
@@ -25,7 +25,7 @@ function getNavLinks(basePath: string, t: (key: string) => string): NavLink[] {
     },
     {
       label: t("experience"),
-      href: `${basePath}/formacion`,
+      href: `${basePath}/education`,
       isAnchor: false,
     },
     {
@@ -35,12 +35,12 @@ function getNavLinks(basePath: string, t: (key: string) => string): NavLink[] {
     },
     {
       label: t("formation"),
-      href: `${basePath}/formacion`,
+      href: `${basePath}/education`,
       isAnchor: false,
     },
     {
       label: t("contact"),
-      href: `${basePath}/contacto`,
+      href: `${basePath}/contact`,
       isAnchor: false,
     },
   ];

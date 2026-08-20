@@ -8,6 +8,7 @@ import type { Experience } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/dev/projects";
+import { companyDetailHref, projectDetailHref } from "@/lib/routes";
 import { companySlug, cn } from "@/lib/utils";
 
 interface TimelineItemProps {
@@ -172,7 +173,7 @@ function TimelineItem({
                     </p>
                     {project.slug && (
                       <a
-                        href={`/dev/projects/${project.slug}`}
+                        href={projectDetailHref(project.slug)}
                         className="inline-flex items-center gap-1 text-[10px] text-accent hover:underline mt-1"
                       >
                         <ExternalLink className="h-3 w-3" />
@@ -185,7 +186,7 @@ function TimelineItem({
             </div>
 
             <Button variant="outline" size="sm" className="gap-1 text-xs" asChild>
-              <a href={`/dev/companies/${slug}`}>
+              <a href={companyDetailHref(slug)}>
                 {tViewCompany.replace("{company}", item.company)}
                 <ArrowRight className="h-3 w-3" />
               </a>

@@ -2,30 +2,6 @@ import type { Experience } from "@/types";
 
 export const experience: Experience[] = [
   {
-    company: "Independiente",
-    role: "Técnico en Soporte Informático",
-    period: "2025 — Present",
-    description:
-      "Independent IT support technician serving businesses and individuals. Delivers hands-on hardware repair, system installation, malware cleanup, and custom automation scripts tailored to client workflows. Combines deep technical knowledge with a customer-first approach to keep systems running reliably.",
-    highlights: [
-      "Level 1-3 technical support for businesses and home users — diagnostics, repair, and preventive maintenance.",
-      "Custom automation and scripting to eliminate repetitive IT tasks and reduce manual overhead.",
-      "Local network setup, configuration, and troubleshooting for small office and home environments.",
-      "Remote support sessions for fast issue resolution without on-site visits.",
-    ],
-    technologies: [
-      "Windows",
-      "Linux",
-      "Networking",
-      "Hardware Diagnostics",
-      "Malware Removal",
-      "Backup Solutions",
-      "PowerShell",
-      "Bash",
-      "Remote Support",
-    ],
-  },
-  {
     company: "ISA Interfase",
     role: "Full Stack Java Developer",
     period: "2019 — 2025",

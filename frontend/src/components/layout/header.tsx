@@ -18,19 +18,19 @@ export function Header() {
   const tNav = useTranslations("Nav");
   const tHeader = useTranslations("Header");
 
-  const isSoporte = pathname.startsWith("/soporte");
-  const basePath = isSoporte ? "/soporte" : "/dev";
+  const isSoporte = pathname.startsWith("/support");
+  const basePath = isSoporte ? "/support" : "/developer";
   const isHome = pathname === basePath;
 
   const navLinks = [
     { key: "home", href: basePath, label: tHeader("home") },
     {
       key: "professionalProfile",
-      href: `${basePath}/perfil-profesional`,
+      href: `${basePath}/professional-profile`,
       label: tNav("professionalProfile"),
     },
-    { key: "formation", href: `${basePath}/formacion`, label: tNav("formation") },
-    { key: "contact", href: `${basePath}/contacto`, label: tNav("contact") },
+    { key: "formation", href: `${basePath}/education`, label: tNav("formation") },
+    { key: "contact", href: `${basePath}/contact`, label: tNav("contact") },
   ];
 
   useEffect(() => {

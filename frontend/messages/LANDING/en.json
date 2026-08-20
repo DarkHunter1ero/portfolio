@@ -32,12 +32,12 @@
   "Landing-CTA": {
     "dev": {
       "label": "Web Developer",
-      "href": "/dev",
+      "href": "/developer",
       "description": "Java, Spring Boot, microservices, React, and enterprise architecture."
     },
     "soporte": {
       "label": "TI / Soporte",
-      "href": "/soporte",
+      "href": "/support",
       "description": "PC repair, maintenance, networking, security, and custom automation."
     }
   }

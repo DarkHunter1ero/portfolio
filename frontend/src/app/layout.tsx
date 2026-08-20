@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-// Single metadataBase shared by the dev portfolio (/) and the soporte site (/soporte)
+// Single metadataBase shared by the dev portfolio (/) and the soporte site (/support)
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegosilva.dev"),
 };

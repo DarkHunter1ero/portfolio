@@ -1,7 +1,7 @@
 export const navigation = [
-  { name: "Servicios", href: "/soporte/#servicios" },
-  { name: "Perfil", href: "/soporte/#perfil" },
-  { name: "Experiencia", href: "/soporte/#experiencia" },
-  { name: "Herramientas", href: "/soporte/#herramientas" },
-  { name: "Contacto", href: "/soporte/#contacto" },
+  { name: "Services", href: "/support#services" },
+  { name: "Profile", href: "/support#profile" },
+  { name: "Experience", href: "/support#experience" },
+  { name: "Tools", href: "/support#tools" },
+  { name: "Contact", href: "/support#contact" },
 ];

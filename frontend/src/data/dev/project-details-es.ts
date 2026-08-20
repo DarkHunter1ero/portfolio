@@ -298,7 +298,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "MiRecibo — Plataforma de Recibos de Sueldo Digitales",
@@ -624,7 +624,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "ISCERT — Infraestructura de Certificación Digital",
@@ -866,7 +866,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "FirmaPDF — Plataforma de Firma Digital Masiva de PDF",
@@ -971,7 +971,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Plugin de Facturación Magento — Automatización eCommerce",
@@ -1081,7 +1081,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     gallery: [{ src: "/images/empresas/portlike/portlike.png", alt: "Portlike — Analítica Web" }],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Analítica y Seguimiento Web — DIRECTV",
@@ -1186,7 +1186,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Sitio Corporativo WordPress — DIRECTV",
@@ -1340,7 +1340,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     ],
     callToAction: {
       text: "Explorar otros proyectos",
-      link: "/dev#experience",
+      link: "/developer#experience",
     },
     metadata: {
       title: "Plataforma de Crowdfunding — QR S.A.S.",

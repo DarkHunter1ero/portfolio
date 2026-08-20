@@ -6,6 +6,7 @@ import { useTranslations, useMessages } from "next-intl";
 import { Link } from "@/i18n/routing";
 import type { Project } from "@/types";
 import { projectDetails } from "@/data/dev/project-details";
+import { companyDetailHref, projectDetailHref } from "@/lib/routes";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +37,7 @@ export function ProjectCard({ project, index, companySlug, companyPeriod }: Proj
   const description = translatedItem?.description ?? project.description;
   const slug = project.slug ?? project.name.toLowerCase().replace(/\s+/g, "-");
   const hasDetailPage = project.slug != null && projectDetails.some((p) => p.slug === project.slug);
-  const projectHref = `/dev/projects/${slug}`;
+  const projectHref = projectDetailHref(slug);
 
   const image = (
     <div className="relative h-48 overflow-hidden bg-slate-100">
@@ -91,7 +92,7 @@ export function ProjectCard({ project, index, companySlug, companyPeriod }: Proj
           <p className="mt-1">
             {companySlug ? (
               <Link
-                href={`/dev/companies/${companySlug}`}
+                href={companyDetailHref(companySlug)}
                 className="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-900 hover:underline underline-offset-4 transition-colors"
               >
                 {project.company}

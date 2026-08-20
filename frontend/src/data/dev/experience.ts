@@ -5,6 +5,7 @@ export const experience: Experience[] = [
     company: "QR S.A.S.",
     role: "Founder & Full Stack Developer",
     period: "2026 — Present",
+    logo: "/images/empresas/qr-sas/quiero_realizarlo_SAS.jpg",
     description:
       "Personal entrepreneurial project — a modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. Showcases full-stack capabilities from infrastructure to UI, demonstrating how a microservices approach enables independent scaling of specific features.",
     highlights: [

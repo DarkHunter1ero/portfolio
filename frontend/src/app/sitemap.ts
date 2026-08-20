@@ -13,14 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       // Dev portfolio section.
-      url: `${siteConfig.url}/dev`,
+      url: `${siteConfig.url}/developer`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       // IT Support / soporte portfolio section.
-      url: `${siteConfig.url}/soporte`,
+      url: `${siteConfig.url}/support`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,

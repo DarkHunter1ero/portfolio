@@ -6,10 +6,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "Perfil Profesional", href: "/dev/perfil-profesional", isPage: true },
-  { label: "Servicios", href: "/dev#specialties" },
-  { label: "Experiencia", href: "/dev#experience" },
-  { label: "Herramientas", href: "/dev#tech-stack" },
-  { label: "Formación", href: "/dev/formacion", isPage: true },
-  { label: "Contacto", href: "/dev/contacto", isPage: true },
+  { label: "Perfil Profesional", href: "/developer/professional-profile", isPage: true },
+  { label: "Servicios", href: "/developer#specialties" },
+  { label: "Experiencia", href: "/developer#experience" },
+  { label: "Herramientas", href: "/developer#tech-stack" },
+  { label: "Formación", href: "/developer/education", isPage: true },
+  { label: "Contacto", href: "/developer/contact", isPage: true },
 ];
