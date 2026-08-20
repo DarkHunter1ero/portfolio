@@ -1334,7 +1334,12 @@ export const projectDetails: ProjectDetail[] = [
       "Service boundaries should be drawn around business domains, not technical layers",
       "For solo projects, start with fewer services and split as complexity genuinely demands it",
     ],
-    gallery: [{ src: "/projects/placeholder.svg", alt: "Crowdfunding Platform Architecture" }],
+    gallery: [
+      {
+        src: "/images/empresas/qr-sas/quierorealizarlo/qr_logo.webp",
+        alt: "Crowdfunding Platform Architecture",
+      },
+    ],
     callToAction: {
       text: "Explore other projects",
       link: "/developer#experience",

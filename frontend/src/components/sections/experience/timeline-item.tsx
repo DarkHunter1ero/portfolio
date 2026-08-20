@@ -118,7 +118,14 @@ function TimelineItem({
             <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-foreground">
               {item.role}
             </h3>
-            <p className="text-sm text-muted-foreground">{item.company}</p>
+            <p className="text-sm text-muted-foreground">
+              <a
+                href={withFrom(companyDetailHref(slug), from)}
+                className="hover:text-accent hover:underline underline-offset-4 transition-colors"
+              >
+                {item.company}
+              </a>
+            </p>
           </div>
           <span className="text-xs font-[family-name:var(--font-mono)] text-accent ml-auto shrink-0">
             {item.period.replace(/Present/gi, tPresent)}

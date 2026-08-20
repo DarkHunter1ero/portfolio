@@ -171,7 +171,7 @@ export const projects: Project[] = [
       "Managing distributed transactions across campaign creation, payment processing, and notification services without a distributed transaction coordinator.",
       "Designing a service decomposition that balances autonomy with practical development velocity for a solo project.",
     ],
-    image: "/projects/placeholder.svg",
+    image: "/images/empresas/qr-sas/quierorealizarlo/qr_logo.webp",
     githubUrl: "https://github.com/DarkHunter1ero",
   },
 ];

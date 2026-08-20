@@ -190,7 +190,7 @@
     "heading": "Experience",
     "subheading": "Where I've built and shipped",
     "present": "Present",
-    "viewCompany": "View all {company} projects",
+    "viewCompany": "View details of {company}",
     "viewDetails": "View details",
     "backToExperience": "Back to Experience",
     "projectsAt": "Projects at {company}",
