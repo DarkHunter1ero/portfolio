@@ -44,7 +44,9 @@ export default async function DevLayout({ children }: { children: React.ReactNod
     <NextIntlClientProvider locale={locale} messages={messages}>
       <JsonLd />
       <Header />
-      <main id="main-content">{children}</main>
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
       <Footer />
     </NextIntlClientProvider>
   );

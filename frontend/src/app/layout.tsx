@@ -45,7 +45,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       suppressHydrationWarning
       className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen bg-background font-[family-name:var(--font-inter)] antialiased">
+      <body className="min-h-screen bg-background font-[family-name:var(--font-inter)] antialiased flex flex-col">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider
             attribute="class"

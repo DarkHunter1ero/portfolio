@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 import Image from "next/image";
 import { MobileMenu } from "./mobile-menu";
 import { LocaleSwitcher } from "./locale-switcher";
@@ -17,10 +17,16 @@ export function Header() {
   const pathname = usePathname();
   const tNav = useTranslations("Nav");
   const tHeader = useTranslations("Header");
+  const messages = useMessages();
 
   const isSoporte = pathname.startsWith("/support");
   const basePath = isSoporte ? "/support" : "/developer";
   const isHome = pathname === basePath;
+  // Neutral landing header: show both portfolios instead of a single nav
+  const isLanding = pathname === "/";
+  const logoHref = isLanding ? "/" : basePath;
+  const landingCta = (messages as Record<string, unknown>)["Landing-CTA"] as
+    { dev?: { label?: string }; soporte?: { label?: string } } | undefined;
 
   const navLinks = [
     { key: "home", href: basePath, label: tHeader("home") },
@@ -31,6 +37,11 @@ export function Header() {
     },
     { key: "formation", href: `${basePath}/education`, label: tNav("formation") },
     { key: "contact", href: `${basePath}/contact`, label: tNav("contact") },
+  ];
+
+  const landingNavLinks = [
+    { key: "dev", href: "/developer", label: landingCta?.dev?.label ?? "Web Developer" },
+    { key: "soporte", href: "/support", label: landingCta?.soporte?.label ?? "TI / Soporte" },
   ];
 
   useEffect(() => {
@@ -73,10 +84,10 @@ export function Header() {
         >
           <div className="flex items-center gap-3">
             <Link
-              href={basePath}
+              href={logoHref}
               className="group flex items-center gap-3"
-              aria-label={tNav("professionalProfile")}
-              title={tNav("professionalProfile")}
+              aria-label={isLanding ? tHeader("home") : tNav("professionalProfile")}
+              title={isLanding ? tHeader("home") : tNav("professionalProfile")}
             >
               <span className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-border/50 transition-colors duration-300 group-hover:border-accent/50">
                 <Image
@@ -127,7 +138,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            {navLinks.map((link) => {
+            {(isLanding ? landingNavLinks : navLinks).map((link) => {
               const active = pathname === link.href;
               return (
                 <Link
@@ -163,6 +174,7 @@ export function Header() {
         activeSection={activeSection}
         basePath={basePath}
         pathname={pathname}
+        isLanding={isLanding}
       />
     </>
   );

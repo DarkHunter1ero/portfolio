@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -52,6 +52,7 @@ interface MobileMenuProps {
   activeSection: string;
   basePath: string;
   pathname: string;
+  isLanding?: boolean;
 }
 
 export function MobileMenu({
@@ -60,10 +61,20 @@ export function MobileMenu({
   activeSection,
   basePath,
   pathname,
+  isLanding,
 }: MobileMenuProps) {
   const t = useTranslations("Nav");
   const tHeader = useTranslations("Header");
-  const navLinks = getNavLinks(basePath, t);
+  const messages = useMessages();
+  const landingCta = (messages as Record<string, unknown>)["Landing-CTA"] as
+    { dev?: { label?: string }; soporte?: { label?: string } } | undefined;
+
+  const navLinks = isLanding
+    ? [
+        { label: landingCta?.dev?.label ?? "Web Developer", href: "/developer", isAnchor: false },
+        { label: landingCta?.soporte?.label ?? "TI / Soporte", href: "/support", isAnchor: false },
+      ]
+    : getNavLinks(basePath, t);
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {

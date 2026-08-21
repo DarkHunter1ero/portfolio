@@ -35,7 +35,9 @@ export default async function SoporteLayout({ children }: { children: React.Reac
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <Header />
-      <main id="main-content">{children}</main>
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
       <Footer />
     </NextIntlClientProvider>
   );

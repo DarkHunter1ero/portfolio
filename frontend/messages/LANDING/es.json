@@ -40,5 +40,33 @@
       "href": "/support",
       "description": "Reparación de PC, mantenimiento, redes, seguridad y automatización a medida."
     }
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mainNav": "Navegación principal",
+    "mobileNav": "Menú de navegación",
+    "home": "Inicio"
+  },
+  "Nav": {
+    "professionalProfile": "Perfil",
+    "specialties": "Especialidades",
+    "experience": "Experiencia",
+    "techStack": "Tecnologías",
+    "education": "Formación",
+    "contact": "Contacto",
+    "formation": "Formación",
+    "devPortfolio": "Portafolio Dev",
+    "soportePortfolio": "Portafolio Soporte",
+    "switchToOtherPortfolio": "Cambiar a otro portafolio"
+  },
+  "Footer": {
+    "copyright": "Todos los derechos reservados.",
+    "backToTop": "Volver arriba",
+    "builtWith": "Construido con Next.js, TypeScript y Tailwind CSS",
+    "sendEmail": "Enviar correo",
+    "githubProfile": "Perfil de GitHub",
+    "linkedinProfile": "Perfil de LinkedIn"
   }
 }

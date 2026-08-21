@@ -40,5 +40,33 @@
       "href": "/support",
       "description": "PC repair, maintenance, networking, security, and custom automation."
     }
+  },
+  "Header": {
+    "logo": "DS",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Navigation menu",
+    "home": "Home"
+  },
+  "Nav": {
+    "professionalProfile": "Profile",
+    "specialties": "Specialties",
+    "experience": "Experience",
+    "techStack": "Tech Stack",
+    "education": "Education",
+    "contact": "Contact",
+    "formation": "Formation",
+    "devPortfolio": "Dev Portfolio",
+    "soportePortfolio": "Soporte Portfolio",
+    "switchToOtherPortfolio": "Switch Portfolio"
+  },
+  "Footer": {
+    "copyright": "All rights reserved.",
+    "backToTop": "Back to top",
+    "builtWith": "Built with Next.js, TypeScript & Tailwind CSS",
+    "sendEmail": "Send email",
+    "githubProfile": "GitHub profile",
+    "linkedinProfile": "LinkedIn profile"
   }
 }
