@@ -69,7 +69,7 @@ export default async function LandingPage() {
                   label: devCta.label,
                   description: devCta.description,
                   href: devCta.href,
-                  image: "/images/working_on_web_developer.jpg",
+                  image: "/images/working_on_web_developer.png",
                 },
                 {
                   label: soporteCta.label,
