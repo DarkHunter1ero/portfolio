@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { profile } from "@/data/dev/profile";
+import { track } from "@/lib/analytics/tracker";
 
 export function Footer() {
   const pathname = usePathname();
@@ -45,6 +46,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="p-2 rounded-full text-muted-foreground hover:text-accent hover:bg-card transition-colors"
               aria-label={t("githubProfile")}
+              onClick={() => track("github_click", { metadata: { source: "footer" } })}
             >
               <Github className="h-5 w-5" />
             </a>
@@ -54,6 +56,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="p-2 rounded-full text-muted-foreground hover:text-accent hover:bg-card transition-colors"
               aria-label={t("linkedinProfile")}
+              onClick={() => track("linkedin_click", { metadata: { source: "footer" } })}
             >
               <Linkedin className="h-5 w-5" />
             </a>

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
+import { TrackedAnchor } from "@/components/analytics/tracked-anchor";
 import { RepoCard } from "./repo-card";
 import { fetchUserProfile, fetchGitHubRepos } from "@/lib/github";
 import { pinnedRepos } from "@/data/dev/pinned-repos";
@@ -14,14 +15,16 @@ async function GitHubFallback() {
       <Github className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
       <h3 className="text-lg font-semibold text-foreground mb-2">{t("unavailable")}</h3>
       <p className="text-sm text-muted-foreground mb-6">{t("unavailableDesc")}</p>
-      <a
+      <TrackedAnchor
         href="https://github.com/DarkHunter1ero"
+        event="github_click"
+        metadata={{ source: "github-section" }}
         target="_blank"
         rel="noopener noreferrer"
         className="text-accent hover:underline text-sm font-medium"
       >
         github.com/DarkHunter1ero
-      </a>
+      </TrackedAnchor>
     </div>
   );
 }

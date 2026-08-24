@@ -104,6 +104,19 @@ Required:
 7. **GitHub** — Live repository data with ISR caching
 8. **Contact** — Form with client/server validation and Resend integration
 
+## Analytics
+
+Self-hosted, privacy-first visitor analytics — no third-party trackers. The Next.js frontend sends anonymous events to the Express backend, which enriches and aggregates them in PostgreSQL (Docker Compose service `db`). Includes an admin dashboard at `/admin/analytics` (login at `/admin/login`).
+
+```bash
+cp .env.example .env                  # set POSTGRES_*, ADMIN_JWT_SECRET, ANALYTICS_IP_SALT
+docker compose up --build -d          # db → migrations → backend → frontend
+docker compose exec -e ADMIN_EMAIL=admin@example.com -e ADMIN_PASSWORD=your_password \
+  backend node dist/scripts/seed-admin.js
+```
+
+See [docs/analytics.md](docs/analytics.md) for the full guide: architecture, environment variables, API reference, event catalog, and privacy details.
+
 ## Deploying
 
 ### Vercel (Frontend)

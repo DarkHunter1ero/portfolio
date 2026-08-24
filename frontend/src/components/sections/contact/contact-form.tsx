@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { contactSchema, type ContactFormData } from "@/types/contact";
 import { buttonTap } from "@/lib/animations";
+import { track } from "@/lib/analytics/tracker";
 
 type FormState =
   | { status: "idle" }
@@ -118,6 +119,10 @@ export function ContactForm() {
 
       setState({ status: "success" });
       setFormData({ name: "", email: "", message: "" });
+
+      // Analytics: only successful (2xx) submissions are counted; no form
+      // content is ever tracked.
+      track("contact_submit");
 
       // Reset to idle after 5 seconds
       setTimeout(() => setState({ status: "idle" }), 5000);

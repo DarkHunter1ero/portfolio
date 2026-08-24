@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { ProjectDetailView } from "@/components/sections/projects/project-detail-view";
+import { ProjectViewTracker } from "@/components/analytics/project-view-tracker";
 import type { ProjectDetail } from "@/types";
 
 interface ProjectPageProps {
@@ -46,5 +47,11 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
     notFound();
   }
 
-  return <ProjectDetailView project={project} from={from} />;
+  return (
+    <>
+      {/* Fires project_view with the slug for analytics. */}
+      <ProjectViewTracker slug={slug} />
+      <ProjectDetailView project={project} from={from} />
+    </>
+  );
 }

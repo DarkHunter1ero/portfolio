@@ -10,6 +10,7 @@ import { projectDetails } from "@/data/dev/project-details";
 import { companyDetailHref, projectDetailHref, withFrom } from "@/lib/routes";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics/tracker";
 
 interface ProjectCardProps {
   project: Project;
@@ -126,6 +127,7 @@ export function ProjectCard({ project, index, companySlug, companyPeriod }: Proj
                 rel="noopener noreferrer"
                 aria-label={t("viewOnGithub")}
                 className="text-slate-400 hover:text-slate-900 transition-colors"
+                onClick={() => track("github_click", { metadata: { project: slug } })}
               >
                 <Github className="h-4 w-4" />
               </a>

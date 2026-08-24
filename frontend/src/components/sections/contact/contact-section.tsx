@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
+import { TrackedAnchor } from "@/components/analytics/tracked-anchor";
+import type { AnalyticsEventName } from "@/lib/analytics/events";
 import { ContactForm } from "./contact-form";
 import { profile } from "@/data/dev/profile";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
@@ -10,9 +12,11 @@ interface ContactInfoItemProps {
   label: string;
   value: string;
   href?: string;
+  trackEvent?: AnalyticsEventName;
+  trackMetadata?: Record<string, string>;
 }
 
-function ContactInfoItem({ icon: Icon, label, value, href }: ContactInfoItemProps) {
+function ContactInfoItem({ icon: Icon, label, value, href, trackEvent, trackMetadata }: ContactInfoItemProps) {
   const content = (
     <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-card/50 transition-colors">
       <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
@@ -27,13 +31,15 @@ function ContactInfoItem({ icon: Icon, label, value, href }: ContactInfoItemProp
 
   if (href) {
     return (
-      <a
+      <TrackedAnchor
         href={href}
+        event={trackEvent}
+        metadata={trackMetadata}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
         {content}
-      </a>
+      </TrackedAnchor>
     );
   }
 
@@ -62,12 +68,16 @@ export async function ContactSection() {
               label={t("linkedinLabel")}
               value="Diego Silva"
               href={profile.linkedin}
+              trackEvent="linkedin_click"
+              trackMetadata={{ source: "contact" }}
             />
             <ContactInfoItem
               icon={Github}
               label={t("githubLabel")}
               value="DarkHunter1ero"
               href={profile.github}
+              trackEvent="github_click"
+              trackMetadata={{ source: "contact" }}
             />
             <ContactInfoItem icon={MapPin} label={t("locationLabel")} value={t("locationValue")} />
           </div>

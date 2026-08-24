@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { SkipLink } from "@/components/layout/skip-link";
+import { RouteViewTracker } from "@/components/analytics/route-view-tracker";
 import { getMessagesForRequest } from "@/lib/i18n";
 import "./globals.css";
 
@@ -54,6 +55,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             disableTransitionOnChange
           >
             <SkipLink />
+            {/* Fires page_view on every route change (skips /admin). */}
+            <RouteViewTracker />
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
