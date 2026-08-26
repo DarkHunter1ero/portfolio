@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTranslations, useMessages } from "next-intl";
 import { Link } from "@/i18n/routing";
 import type { Project } from "@/types";
-import { projectDetails } from "@/data/shared/project-details";
+import { projectDetails } from "@/data/shared";
 import { companyDetailHref, projectDetailHref, withFrom } from "@/lib/routes";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";

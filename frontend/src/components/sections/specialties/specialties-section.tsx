@@ -55,7 +55,7 @@ const specialtyIcons = [
 ];
 
 // Fallback: import from dev data if no items prop provided
-import { specialties as devSpecialties } from "@/data/dev/specialties";
+import { specialties as devSpecialties } from "@/data/dev";
 
 export async function SpecialtiesSection({ items }: { items?: SpecialtyItem[] }) {
   const t = await getTranslations("Specialties");

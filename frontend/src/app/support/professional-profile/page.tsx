@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { detectLocale, getMetadataFor, type Locale } from "@/lib/i18n";
 import { ProfessionalProfileSection } from "@/components/sections/professional-profile/professional-profile-section";
-import { professionalProfileSummary } from "@/data/soporte/professional-profile";
+import { professionalProfileSummary } from "@/data/soporte";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = (await detectLocale()) as Locale;

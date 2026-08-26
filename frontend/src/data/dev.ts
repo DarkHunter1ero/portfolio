@@ -1,5 +1,71 @@
-import type { ArchitectureDiagram } from "@/types";
+import type { ArchitectureDiagram, Profile, TechCategory } from "@/types";
+import {
+  devSpecialtiesSchema,
+  profileSchema,
+  techStackSchema,
+} from "@/lib/content/schemas";
+import profileRaw from "@/content/dev/profile.json";
+import specialtiesRaw from "@/content/dev/specialties.json";
+import techStackRaw from "@/content/dev/tech-stack.json";
 
+// ─────────────────────────────────────────────────────────────
+// Developer portfolio data. Narrative content lives in
+// src/content/dev/*.json (validated via zod); small technical
+// config lives inline below.
+// ─────────────────────────────────────────────────────────────
+
+/** Personal profile (name, links, bio, CV URLs). */
+export const profile: Profile = profileSchema.parse(profileRaw);
+
+export interface Specialty {
+  name: string;
+  icon: string;
+  description: string;
+}
+
+/** Core dev specialties shown in the services grid. */
+export const specialties: Specialty[] = devSpecialtiesSchema.parse(specialtiesRaw);
+
+/** Tech stack grouped by category. */
+export const techStack: TechCategory[] = techStackSchema.parse(techStackRaw);
+
+// Pinned repositories shown with priority in the GitHub section.
+// Format: "owner/repo"
+export const pinnedRepos: string[] = [
+  "DarkHunter1ero/ISCERT",
+  "DarkHunter1ero/MiRecibo",
+  "DarkHunter1ero/FirmaPDF",
+  "DarkHunter1ero/crowdfunding-platform",
+];
+
+// Site-wide SEO/social configuration.
+export const siteConfig = {
+  name: "Diego Silva — Portfolio",
+  description:
+    "Senior Full Stack Developer specializing in secure, scalable enterprise applications. Digital identity, authentication systems, and microservices architecture.",
+  url: "https://diegosilva.dev",
+  author: {
+    name: "Diego Silva",
+    jobTitle: "Senior Full Stack Developer",
+    email: "diego1silva2@gmail.com",
+    github: "https://github.com/DarkHunter1ero",
+    linkedin: "https://linkedin.com/in/diego-silva-fullstack",
+  },
+  keywords: [
+    "Full Stack Developer",
+    "Java",
+    "Spring Boot",
+    "React",
+    "Microservices",
+    "Digital Identity",
+    "OAuth2",
+    "JWT",
+    "Enterprise Software",
+    "Diego Silva",
+  ],
+};
+
+// Architecture showcase diagrams (Mermaid).
 export const architectureDiagrams: ArchitectureDiagram[] = [
   {
     id: "microservices",

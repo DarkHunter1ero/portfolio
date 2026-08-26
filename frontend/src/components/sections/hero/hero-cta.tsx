@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { buttonTap } from "@/lib/animations";
 import { Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { profile } from "@/data/dev/profile";
+import { profile } from "@/data/dev";
 import { track } from "@/lib/analytics/tracker";
 
 export function HeroCTA() {

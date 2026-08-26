@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { profile } from "@/data/dev/profile";
+import { profile } from "@/data/dev";
 import { track } from "@/lib/analytics/tracker";
 
 export function Footer() {

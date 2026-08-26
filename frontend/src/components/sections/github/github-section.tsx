@@ -4,7 +4,7 @@ import { Container } from "@/components/shared/container";
 import { TrackedAnchor } from "@/components/analytics/tracked-anchor";
 import { RepoCard } from "./repo-card";
 import { fetchUserProfile, fetchGitHubRepos } from "@/lib/github";
-import { pinnedRepos } from "@/data/dev/pinned-repos";
+import { pinnedRepos } from "@/data/dev";
 import { Github, FolderGit2, Users } from "lucide-react";
 
 async function GitHubFallback() {

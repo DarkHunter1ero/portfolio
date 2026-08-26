@@ -1,4 +1,4 @@
-﻿import { experience } from "@/data/shared/experience";
+import { experience } from "@/data/shared";
 import { companySlug } from "@/lib/utils";
 import type { Experience, Project } from "@/types";
 
@@ -15,7 +15,7 @@ export interface CompanyRef {
 
 /**
  * Matches a project to its experience (company) entry using the same rule as
- * the company detail page: exact match or prefix â€” "Portlike Â· DIRECTV"
+ * the company detail page: exact match or prefix — "Portlike · DIRECTV"
  * belongs to the "Portlike" experience entry. Returns undefined for projects
  * without a company or with no matching experience entry.
  */

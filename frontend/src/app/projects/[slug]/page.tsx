@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { ProjectDetailView } from "@/components/sections/projects/project-detail-view";
 import { ProjectViewTracker } from "@/components/analytics/project-view-tracker";
-import { projects } from "@/data/shared/projects";
+import { projects, projectDetailsEn, projectDetailsEs } from "@/data/shared";
 import { resolveCompanyExperience, toCompanyRef, type CompanyRef } from "@/lib/company";
 import type { ProjectDetail } from "@/types";
 
@@ -12,20 +12,15 @@ interface ProjectPageProps {
   searchParams: Promise<{ from?: string }>;
 }
 
-async function getProjectDetails(locale: string): Promise<ProjectDetail[]> {
-  if (locale === "es") {
-    const mod = await import("@/data/shared/project-details-es");
-    return mod.projectDetailsEs;
-  }
-  const mod = await import("@/data/shared/project-details-en");
-  return mod.projectDetailsEn;
+function getProjectDetails(locale: string): ProjectDetail[] {
+  return locale === "es" ? projectDetailsEs : projectDetailsEn;
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const locale = await getLocale();
   const t = await getTranslations("NotFound");
-  const projectDetails = await getProjectDetails(locale);
+  const projectDetails = getProjectDetails(locale);
   const project = projectDetails.find((p) => p.slug === slug);
 
   if (!project) {
@@ -42,7 +37,7 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
   const { slug } = await params;
   const { from } = await searchParams;
   const locale = await getLocale();
-  const projectDetails = await getProjectDetails(locale);
+  const projectDetails = getProjectDetails(locale);
   const project = projectDetails.find((p) => p.slug === slug);
 
   if (!project) {

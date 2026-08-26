@@ -5,7 +5,7 @@ import { TechStackGrid } from "./tech-category-card";
 import type { TechCategory } from "@/types";
 
 // Fallback: dev tech stack data
-import { techStack as devTechStack } from "@/data/dev/tech-stack";
+import { techStack as devTechStack } from "@/data/dev";
 
 export async function TechStackSection({ categories }: { categories?: TechCategory[] }) {
   const t = await getTranslations("TechStack");

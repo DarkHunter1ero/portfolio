@@ -4,7 +4,7 @@ import { Container } from "@/components/shared/container";
 import { TrackedAnchor } from "@/components/analytics/tracked-anchor";
 import type { AnalyticsEventName } from "@/lib/analytics/events";
 import { ContactForm } from "./contact-form";
-import { profile } from "@/data/dev/profile";
+import { profile } from "@/data/dev";
 import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 
 interface ContactInfoItemProps {

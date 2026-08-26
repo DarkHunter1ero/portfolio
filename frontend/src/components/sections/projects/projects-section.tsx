@@ -1,15 +1,15 @@
-﻿import { getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/shared/container";
 import { WaveDivider } from "@/components/shared/wave-divider";
 import { ProjectCard } from "./project-card";
-import { projects } from "@/data/shared/projects";
+import { projects } from "@/data/shared";
 import { resolveCompanyExperience } from "@/lib/company";
 import { companySlug } from "@/lib/utils";
 import type { Project } from "@/types";
 
 /**
  * Matches a project to its experience entry using the shared rule in
- * @/lib/company (exact match or prefix â€” "Portlike Â· DIRECTV" belongs to the
+ * @/lib/company (exact match or prefix — "Portlike · DIRECTV" belongs to the
  * "Portlike" experience entry).
  */
 function resolveCompany(project: Project): {

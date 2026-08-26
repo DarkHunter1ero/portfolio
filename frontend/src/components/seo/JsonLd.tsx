@@ -1,4 +1,4 @@
-import { siteConfig } from "@/data/dev/site-config";
+import { siteConfig } from "@/data/dev";
 
 export function JsonLd() {
   const schema = {

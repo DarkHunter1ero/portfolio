@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import type { Experience } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/data/shared/projects";
+import { projects } from "@/data/shared";
 import { companyDetailHref, projectDetailHref, withFrom } from "@/lib/routes";
 import { companySlug, cn } from "@/lib/utils";
 
@@ -84,7 +84,7 @@ function TimelineItem({
         isLeft ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
       )}
     >
-      {/* Timeline dot â€” on the center line (right edge for left cards, left edge for right cards) */}
+      {/* Timeline dot — on the center line (right edge for left cards, left edge for right cards) */}
       <div
         className={cn(
           "absolute w-3 h-3 rounded-full bg-accent border-2 border-background",
@@ -139,7 +139,7 @@ function TimelineItem({
         <ul className="space-y-2 mb-4">
           {translatedHighlights.map((highlight, i) => (
             <li key={i} className="text-sm text-foreground/80 flex gap-2">
-              <span className="text-accent mt-1 shrink-0">â–¹</span>
+              <span className="text-accent mt-1 shrink-0">▹</span>
               {highlight}
             </li>
           ))}
@@ -219,10 +219,10 @@ export function ExperienceTimeline({ items, tPresent, useDataValues }: Experienc
 
   return (
     <div className="relative mt-16">
-      {/* Vertical line â€” visible on desktop */}
+      {/* Vertical line — visible on desktop */}
       <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-px" />
 
-      {/* Vertical line â€” visible on mobile */}
+      {/* Vertical line — visible on mobile */}
       <div className="md:hidden absolute left-[3px] top-0 bottom-0 w-px bg-border" />
 
       <div className="flex flex-col gap-12">
