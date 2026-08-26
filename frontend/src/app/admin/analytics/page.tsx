@@ -2,16 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  AlertCircle,
-  Eye,
-  Inbox,
-  Layers,
-  LogOut,
-  RefreshCw,
-  Users,
-  Zap,
-} from "lucide-react";
+import { AlertCircle, Eye, Inbox, Layers, LogOut, RefreshCw, Users, Zap } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -63,7 +54,7 @@ interface ResolvedRange {
 function resolveRange(
   preset: RangePreset,
   customFrom: string,
-  customTo: string,
+  customTo: string
 ): ResolvedRange | null {
   const now = new Date();
 
@@ -101,20 +92,19 @@ interface DashboardData {
 async function fetchDashboard(
   from: string,
   to: string,
-  granularity: Granularity,
+  granularity: Granularity
 ): Promise<DashboardData> {
   const params = { from, to, granularity };
   // All aggregation happens server-side — this only fetches aggregates.
-  const [overview, timeseries, pages, events, geography, referrers, devices] =
-    await Promise.all([
-      getOverview(params),
-      getTimeseries(params),
-      getTopPages(params),
-      getEventCounts(params),
-      getGeography(params),
-      getReferrers(params),
-      getDevices(params),
-    ]);
+  const [overview, timeseries, pages, events, geography, referrers, devices] = await Promise.all([
+    getOverview(params),
+    getTimeseries(params),
+    getTopPages(params),
+    getEventCounts(params),
+    getGeography(params),
+    getReferrers(params),
+    getDevices(params),
+  ]);
   return { overview, timeseries, pages, events, geography, referrers, devices };
 }
 
@@ -195,7 +185,7 @@ export default function AdminAnalyticsPage() {
 
   const range = useMemo(
     () => resolveRange(preset, customFrom, customTo),
-    [preset, customFrom, customTo],
+    [preset, customFrom, customTo]
   );
 
   useEffect(() => {
@@ -304,9 +294,7 @@ export default function AdminAnalyticsPage() {
               />
             </label>
             {customRangeInvalid && (
-              <span className="text-xs text-destructive">
-                Select a valid start and end date.
-              </span>
+              <span className="text-xs text-destructive">Select a valid start and end date.</span>
             )}
           </div>
         )}
@@ -349,15 +337,10 @@ export default function AdminAnalyticsPage() {
               { label: "Events", value: null, icon: Zap },
             ]
         ).map((card) => (
-          <div
-            key={card.label}
-            className="rounded-2xl border border-border bg-card/50 p-5"
-          >
+          <div key={card.label} className="rounded-2xl border border-border bg-card/50 p-5">
             <div className="flex items-center gap-2 text-muted-foreground">
               <card.icon className="h-4 w-4" aria-hidden />
-              <span className="text-xs font-medium uppercase tracking-widest">
-                {card.label}
-              </span>
+              <span className="text-xs font-medium uppercase tracking-widest">{card.label}</span>
             </div>
             {card.value !== null ? (
               <p className="mt-2 font-[family-name:var(--font-playfair)] text-3xl font-bold text-foreground">

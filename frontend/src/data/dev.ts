@@ -1,9 +1,5 @@
 import type { ArchitectureDiagram, Profile, TechCategory } from "@/types";
-import {
-  devSpecialtiesSchema,
-  profileSchema,
-  techStackSchema,
-} from "@/lib/content/schemas";
+import { devSpecialtiesSchema, profileSchema, techStackSchema } from "@/lib/content/schemas";
 import profileRaw from "@/content/dev/profile.json";
 import specialtiesRaw from "@/content/dev/specialties.json";
 import techStackRaw from "@/content/dev/tech-stack.json";

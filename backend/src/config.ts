@@ -30,6 +30,16 @@ const configSchema = z.object({
   RESEND_API_KEY: z.string().default(""),
   EMAIL_FROM: z.string().default("Portfolio Contact <onboarding@resend.dev>"),
   EMAIL_TO: z.string().default("diego1silva2@gmail.com"),
+  // Admin seed credentials — optional. When both are set, the admin user is
+  // upserted automatically at startup (see services/admin-seed.ts).
+  ADMIN_EMAIL: z.preprocess(
+    (v) => (v === "" ? undefined : v),
+    z.string().optional(),
+  ),
+  ADMIN_PASSWORD: z.preprocess(
+    (v) => (v === "" ? undefined : v),
+    z.string().optional(),
+  ),
   DATABASE_URL: z
     .string()
     .default("postgresql://postgres:postgres@localhost:5432/portfolio"),

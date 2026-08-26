@@ -12,8 +12,7 @@ const VISITOR_KEY = "portfolio_analytics_visitor_id";
 const VISITOR_EXPIRY_KEY = "portfolio_analytics_visitor_expiry";
 const SESSION_KEY = "portfolio_analytics_session_id";
 
-const UUID_V4_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const UUID_V4_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function createStorageStub(initial: Record<string, string> = {}): Storage {
   const store = new Map<string, string>(Object.entries(initial));

@@ -30,6 +30,9 @@ services:
       - TRUST_PROXY=${TRUST_PROXY:-}
       - COOKIE_SAMESITE=${COOKIE_SAMESITE:-strict}
       - SESSION_TTL_HOURS=${SESSION_TTL_HOURS:-24}
+      # Auto-seeds the admin user at startup when both are set (idempotent).
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
     depends_on:
       db:
         condition: service_healthy

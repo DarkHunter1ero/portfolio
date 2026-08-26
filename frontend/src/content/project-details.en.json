@@ -797,13 +797,7 @@
         "icon": "Server"
       }
     ],
-    "technologies": [
-      "PHP",
-      "Magento",
-      "MySQL",
-      "JavaScript",
-      "REST APIs"
-    ],
+    "technologies": ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs"],
     "architecture": {
       "description": "PHP-based Magento plugin with MySQL backend, integrating third-party payment gateways and shipping APIs. Extended the Magento admin panel for custom reporting and inventory management dashboards."
     },
@@ -1018,14 +1012,7 @@
         "icon": "Shield"
       }
     ],
-    "technologies": [
-      "WordPress",
-      "PHP",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "MySQL"
-    ],
+    "technologies": ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     "architecture": {
       "description": "WordPress CMS with custom PHP development for new functionality. HTML, CSS, and JavaScript for frontend components. Third-party plugin integration and maintenance."
     },

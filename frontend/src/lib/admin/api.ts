@@ -113,10 +113,7 @@ async function parseBody(res: Response): Promise<ApiEnvelope<unknown> | null> {
 }
 
 /** GET an authenticated admin analytics endpoint. */
-export async function adminGet<T>(
-  path: string,
-  params?: AnalyticsQueryParams,
-): Promise<T> {
+export async function adminGet<T>(path: string, params?: AnalyticsQueryParams): Promise<T> {
   const url = new URL(`${API_URL}${path}`);
   for (const [key, value] of Object.entries(params ?? {})) {
     if (value !== undefined && value !== "") url.searchParams.set(key, value);

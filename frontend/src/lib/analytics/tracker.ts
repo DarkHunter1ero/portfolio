@@ -51,7 +51,7 @@ function isDuplicate(key: string): boolean {
  */
 export function track<E extends AnalyticsEventName>(
   event: E,
-  data?: AnalyticsEventPayloads[E],
+  data?: AnalyticsEventPayloads[E]
 ): void {
   try {
     if (typeof window === "undefined") return;
@@ -61,7 +61,7 @@ export function track<E extends AnalyticsEventName>(
     if (!visitorId || !sessionId) return;
 
     const page = stripQueryAndFragment(
-      data && "page" in data && data.page !== undefined ? data.page : window.location.pathname,
+      data && "page" in data && data.page !== undefined ? data.page : window.location.pathname
     );
 
     const metadata =

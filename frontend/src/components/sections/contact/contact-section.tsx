@@ -16,7 +16,14 @@ interface ContactInfoItemProps {
   trackMetadata?: Record<string, string>;
 }
 
-function ContactInfoItem({ icon: Icon, label, value, href, trackEvent, trackMetadata }: ContactInfoItemProps) {
+function ContactInfoItem({
+  icon: Icon,
+  label,
+  value,
+  href,
+  trackEvent,
+  trackMetadata,
+}: ContactInfoItemProps) {
   const content = (
     <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-card/50 transition-colors">
       <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">

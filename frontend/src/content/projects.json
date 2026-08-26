@@ -56,15 +56,7 @@
     "description": "Mass PDF digital signing platform with external authentication service integration. Designed for high-throughput environments where thousands of PDFs need to be signed with legally valid digital signatures.",
     "problem": "Enterprises generating large volumes of PDF documents needed a solution to apply digital signatures at scale — think thousands of invoices, contracts, or reports per day — while integrating with existing identity providers and ensuring each signature is cryptographically verifiable and legally binding.",
     "architecture": "The platform integrates with external OAuth2 identity providers for user authentication. PDF signing operations are queued and processed asynchronously using a message queue pattern, allowing the system to handle spikes in demand. Spring Boot services handle the actual cryptographic signing, and PostgreSQL tracks the status and metadata of every operation.",
-    "technologies": [
-      "Java",
-      "Spring Boot",
-      "PostgreSQL",
-      "OAuth2",
-      "JWT",
-      "React",
-      "Docker"
-    ],
+    "technologies": ["Java", "Spring Boot", "PostgreSQL", "OAuth2", "JWT", "React", "Docker"],
     "challenges": [
       "Processing thousands of concurrent signing requests without overwhelming HSM resources through intelligent queuing and batching.",
       "Integrating with multiple external authentication providers, each with different token formats and validation requirements."
@@ -79,13 +71,7 @@
     "description": "Custom Magento plugin for automated billing process management. Streamlined recurring invoicing, subscription handling, and payment gateway integration for e-commerce clients.",
     "problem": "E-commerce clients using Magento needed automated recurring billing and subscription management beyond the platform's built-in capabilities.",
     "architecture": "PHP-based Magento plugin with MySQL backend, integrating third-party payment gateways and shipping APIs.",
-    "technologies": [
-      "PHP",
-      "Magento",
-      "MySQL",
-      "JavaScript",
-      "REST APIs"
-    ],
+    "technologies": ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs"],
     "challenges": [
       "Automating recurring billing workflows within Magento's plugin architecture constraints.",
       "Integrating multiple third-party payment gateways with zero-downtime deployments."
@@ -122,14 +108,7 @@
     "description": "Maintenance and evolution of DIRECTV's corporate WordPress website — developed at Portlike · Takeoff Media (a merger of two companies). New pages, commercial campaign components, and performance optimization for production environments.",
     "problem": "DIRECTV's corporate site required ongoing evolution — new campaign pages, feature enhancements, bug fixes, and performance optimization — while maintaining stability in production.",
     "architecture": "WordPress CMS with custom PHP development for new functionality. HTML, CSS, and JavaScript for frontend components. Third-party plugin integration and maintenance.",
-    "technologies": [
-      "WordPress",
-      "PHP",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "MySQL"
-    ],
+    "technologies": ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     "challenges": [
       "Balancing rapid campaign deployments with production stability and performance.",
       "Integrating and maintaining third-party plugins while ensuring compatibility across updates."

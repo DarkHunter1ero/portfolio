@@ -152,9 +152,7 @@ export function BarList({ items }: BarListProps) {
           <div className="flex items-baseline justify-between gap-3 mb-1">
             <span className="min-w-0 truncate text-foreground" title={item.label}>
               {item.label}
-              {item.sublabel && (
-                <span className="text-muted-foreground"> · {item.sublabel}</span>
-              )}
+              {item.sublabel && <span className="text-muted-foreground"> · {item.sublabel}</span>}
             </span>
             <span className="shrink-0 font-[family-name:var(--font-mono)] text-xs text-muted-foreground">
               {formatNumber(item.value)}

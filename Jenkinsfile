@@ -68,6 +68,25 @@ pipeline {
         }
 
         // ═══════════════════════════════════════════════════════════
+        // TEST (db mocked - no Postgres needed in CI)
+        // ═══════════════════════════════════════════════════════════
+        stage('Backend — Test') {
+            steps {
+                dir('backend') {
+                    bat 'npm test'
+                }
+            }
+        }
+
+        stage('Frontend — Test') {
+            steps {
+                dir('frontend') {
+                    bat 'npm test'
+                }
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════
         // BUILD
         // ═══════════════════════════════════════════════════════════
         stage('Frontend — Build') {

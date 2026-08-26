@@ -797,13 +797,7 @@
         "icon": "Server"
       }
     ],
-    "technologies": [
-      "PHP",
-      "Magento",
-      "MySQL",
-      "JavaScript",
-      "REST APIs"
-    ],
+    "technologies": ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs"],
     "architecture": {
       "description": "Plugin Magento basado en PHP con backend MySQL, integrando pasarelas de pago de terceros y APIs de envío. Extendió el panel de administración de Magento para dashboards personalizados de reportes y gestión de inventario."
     },
@@ -1018,14 +1012,7 @@
         "icon": "Shield"
       }
     ],
-    "technologies": [
-      "WordPress",
-      "PHP",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "MySQL"
-    ],
+    "technologies": ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     "architecture": {
       "description": "CMS WordPress con desarrollo PHP personalizado para nuevas funcionalidades. HTML, CSS y JavaScript para componentes frontend. Integración y mantenimiento de plugins de terceros."
     },

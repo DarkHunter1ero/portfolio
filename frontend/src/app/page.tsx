@@ -91,9 +91,7 @@ export default async function LandingPage() {
                       </h2>
                       <ArrowRight className="h-5 w-5 text-accent transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
                     </div>
-                    <p className="text-sm text-foreground/85 leading-relaxed">
-                      {cta.description}
-                    </p>
+                    <p className="text-sm text-foreground/85 leading-relaxed">{cta.description}</p>
                   </div>
 
                   {/* Illustrative image — right on desktop, top on mobile */}

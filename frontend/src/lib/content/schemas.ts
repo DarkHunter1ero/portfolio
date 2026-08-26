@@ -108,9 +108,7 @@ export const projectDetailSchema = z.object({
     .optional(),
   lessonsLearned: z.array(z.string()),
   gallery: z.array(z.object({ src: z.string(), alt: z.string() })),
-  useCases: z
-    .array(z.object({ title: z.string(), description: z.string() }))
-    .optional(),
+  useCases: z.array(z.object({ title: z.string(), description: z.string() })).optional(),
   demoVideos: z.array(z.object({ title: z.string(), url: z.string() })).optional(),
   callToAction: z.object({ text: z.string(), link: z.string() }),
   metadata: z.object({ title: z.string(), description: z.string() }),

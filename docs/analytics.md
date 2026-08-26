@@ -30,20 +30,10 @@ This document covers the portfolio's built-in analytics system: a self-hosted, c
    What happens automatically:
    - The `db` service (PostgreSQL 16) starts with a healthcheck; data persists in the `postgres_data` volume.
    - The `backend` service waits until the database is healthy, then **runs all pending migrations** from `backend/drizzle/` at boot (the server exits if migration fails).
+   - If `ADMIN_EMAIL` **and** `ADMIN_PASSWORD` are set (root `.env`), the backend **upserts the admin user at startup** — no manual command needed. The seed is idempotent: re-running with the same email updates the password hash. Leave both unset to disable admin login entirely.
    - The `frontend` service starts once the backend is healthy.
 
-3. **Seed the admin user** (required once, before first login):
-
-   ```bash
-   docker compose exec \
-     -e ADMIN_EMAIL=admin@example.com \
-     -e ADMIN_PASSWORD=your_admin_password \
-     backend node dist/scripts/seed-admin.js
-   ```
-
-   The password must be at least 8 characters. The seed is idempotent — re-running it with the same email updates the password.
-
-4. **Verify:**
+3. **Verify:**
    - Frontend: http://localhost:3000
    - Backend health: http://localhost:4000/api/health → `{"status":"ok",...}`
    - Dashboard: http://localhost:3000/admin/analytics → redirects to login → sign in with the seeded credentials.
@@ -146,7 +136,7 @@ Deployment topology (Docker Compose): `frontend` (port 3000) depends on a health
 
 | Variable | Required | Validation | Purpose |
 |----------|----------|------------|---------|
-| `ADMIN_EMAIL` | Yes (only when seeding) | valid email | Email of the admin user created/updated by `npm run db:seed` |
+| `ADMIN_EMAIL` | Yes (only when seeding/auto-seeding) | valid email | Email of the admin user. When set with `ADMIN_PASSWORD`, the backend upserts the admin at startup |
 | `ADMIN_PASSWORD` | Yes (only when seeding) | min 8 characters | Admin password; hashed with bcrypt (cost 12) and never logged |
 
 ### Frontend `frontend/.env.local`
@@ -205,8 +195,8 @@ Indexes:
 
 ## Admin setup
 
-- **Seeding:** see step 3 of [Quick start](#quick-start-docker) (Docker) or `npm run db:seed` (local dev). Requires `ADMIN_EMAIL` + `ADMIN_PASSWORD`.
-- **Changing credentials:** re-run the seed with the same `ADMIN_EMAIL` and a new `ADMIN_PASSWORD` — it updates the stored bcrypt hash (idempotent). A different `ADMIN_EMAIL` creates a second admin account.
+- **Seeding:** automatic at backend startup whenever `ADMIN_EMAIL` + `ADMIN_PASSWORD` are set (see [Quick start](#quick-start-docker)). A manual path still exists via `npm run db:seed` (local dev).
+- **Changing credentials:** update `ADMIN_PASSWORD` in `.env` and restart/redeploy the backend — startup re-seeding updates the stored bcrypt hash (idempotent). A different `ADMIN_EMAIL` creates a second admin account.
 - **How sessions work:** on successful login the backend signs an HS256 JWT (`sub` = admin id, `exp` = `SESSION_TTL_HOURS`) with `ADMIN_JWT_SECRET` and sets it as the `admin_session` cookie: `httpOnly`, `sameSite` from `COOKIE_SAMESITE`, `secure` in production, `path=/`, `maxAge` = `SESSION_TTL_HOURS`. Every admin request re-verifies the JWT **and** confirms the admin still exists in the database — deleting an admin user immediately invalidates their outstanding tokens.
 
 ## Event catalog
@@ -387,7 +377,7 @@ The dashboard UI is English-only by design; it lives under `/admin/*` and is exc
 ## Checklist
 
 - [ ] `docker compose up --build -d` brings up db → backend (migrations applied) → frontend
-- [ ] Admin seeded with `docker compose exec ... backend node dist/scripts/seed-admin.js`
+- [x] Admin seeded automatically at backend startup when `ADMIN_EMAIL` / `ADMIN_PASSWORD` are set
 - [ ] `POST /api/analytics/events` returns `{ "success": true }` for a valid payload and `400` with `fieldErrors` for an invalid one
 - [ ] `/admin/analytics` redirects to login without a session and shows data after login
 - [ ] No raw IPs, full user agents, or full referrer URLs anywhere in `analytics_events`

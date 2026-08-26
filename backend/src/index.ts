@@ -9,6 +9,7 @@ import { adminAuthRouter } from "./routes/admin/auth";
 import { contactRouter } from "./routes/contact";
 import { healthRouter } from "./routes/health";
 import { analyticsEventsRouter } from "./routes/analytics/events";
+import { seedAdminFromEnv } from "./services/admin-seed";
 
 const app = express();
 
@@ -42,6 +43,20 @@ async function main(): Promise<void> {
   } catch (error) {
     // Exit on failure so orchestrators (docker compose, CI) see the crash.
     console.error("[DB] Migration failed:", error);
+    process.exit(1);
+  }
+
+  // Auto-seed the admin user from ADMIN_EMAIL/ADMIN_PASSWORD when both are
+  // set, so deploys need zero manual commands. Idempotent; skips silently
+  // when unset; exits on invalid configuration.
+  try {
+    const result = await seedAdminFromEnv();
+    console.log(`[Seed] ${result.message}`);
+  } catch (error) {
+    console.error(
+      "[Seed] Failed:",
+      error instanceof Error ? error.message : error,
+    );
     process.exit(1);
   }
 

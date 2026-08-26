@@ -179,12 +179,8 @@ export async function CompanyDetailView({
                     </span>
                   </div>
                   <div className="min-w-0">
-                    <p className="font-semibold text-foreground truncate">
-                      {member.name}
-                    </p>
-                    {member.role && (
-                      <p className="text-sm text-muted-foreground">{member.role}</p>
-                    )}
+                    <p className="font-semibold text-foreground truncate">{member.name}</p>
+                    {member.role && <p className="text-sm text-muted-foreground">{member.role}</p>}
                   </div>
                 </div>
               ))}

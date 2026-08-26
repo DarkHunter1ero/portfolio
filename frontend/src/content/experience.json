@@ -82,14 +82,7 @@
       "Integrated third-party payment gateways and shipping APIs into existing Magento stores with zero downtime deployments.",
       "Developed backend features in PHP that extended the Magento admin panel for custom reporting and inventory management dashboards."
     ],
-    "technologies": [
-      "PHP",
-      "Magento",
-      "MySQL",
-      "JavaScript",
-      "REST APIs",
-      "Linux"
-    ],
+    "technologies": ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs", "Linux"],
     "team": [
       {
         "name": "Alejandro Triaca",
