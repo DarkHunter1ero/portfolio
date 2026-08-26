@@ -132,7 +132,7 @@ export const projects: Project[] = [
     date: "2018-03",
 
     description:
-      "Maintenance and evolution of DIRECTV's corporate WordPress website — developed at Portlike alongside Takeoff (partner company sharing the same office). New pages, commercial campaign components, and performance optimization for production environments.",
+      "Maintenance and evolution of DIRECTV's corporate WordPress website — developed at Portlike · Takeoff Media (a merger of two companies). New pages, commercial campaign components, and performance optimization for production environments.",
     problem:
       "DIRECTV's corporate site required ongoing evolution — new campaign pages, feature enhancements, bug fixes, and performance optimization — while maintaining stability in production.",
     architecture:

@@ -196,6 +196,8 @@
     "projectsAt": "Proyectos en {company}",
     "technologiesUsed": "Tecnologías utilizadas",
     "technologiesUsedDesc": "Tecnologías con las que trabajé durante mi tiempo en {company}",
+    "team": "Equipo",
+    "teamDesc": "Personas que formaron parte de {company} mientras trabajé allí",
     "items": [
       {
         "description": "Proyecto emprendedor personal — una plataforma moderna de crowdfunding inspirada en Kickstarter, construida con arquitectura de microservicios. Demuestra capacidades full-stack desde infraestructura hasta interfaz de usuario.",
@@ -452,6 +454,7 @@
     "instancesHeading": "Instancias",
     "demoVideoTitle": "Video demo del proyecto",
     "viewProject": "Ver proyecto",
+    "viewCompany": "Ver perfil de la empresa: {company}",
     "backToProjects": "← Volver a proyectos",
     "exploreOther": "Explorar otros proyectos"
   },

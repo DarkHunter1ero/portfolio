@@ -1100,7 +1100,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     role: "Desarrollador Web",
     duration: "2017 — 2018",
     about:
-      "Como parte de mi trabajo en Portlike (junto a Takeoff, una empresa socia que compartía la misma oficina), contribuí al mantenimiento y evolución del sitio web corporativo WordPress de DIRECTV. Esto implicó desarrollar nuevas páginas de campañas comerciales, corregir errores, optimizar el rendimiento e integrar plugins de terceros.\n\nEl rol requería equilibrar las demandas de despliegue rápido de campañas con la estabilidad en producción — asegurando que los equipos de marketing pudieran lanzar nuevas páginas rápidamente sin comprometer la confiabilidad del sitio.",
+      "Como parte de mi trabajo en Portlike · Takeoff Media (resultado de la fusión entre Portlike y Takeoff), contribuí al mantenimiento y evolución del sitio web corporativo WordPress de DIRECTV. Esto implicó desarrollar nuevas páginas de campañas comerciales, corregir errores, optimizar el rendimiento e integrar plugins de terceros.\n\nEl rol requería equilibrar las demandas de despliegue rápido de campañas con la estabilidad en producción — asegurando que los equipos de marketing pudieran lanzar nuevas páginas rápidamente sin comprometer la confiabilidad del sitio.",
     problem:
       "El sitio corporativo de DIRECTV requería evolución continua — nuevas páginas de campaña, mejoras de funcionalidades, corrección de errores y optimización de rendimiento — mientras se mantenía la estabilidad en un entorno de producción de alto tráfico.",
     solution:
@@ -1179,7 +1179,7 @@ export const projectDetailsEs: ProjectDetail[] = [
     lessonsLearned: [
       "Los sitios WordPress en producción requieren gestión disciplinada de plugins y estrategias de actualización",
       "Los despliegues rápidos de marketing necesitan flujos de desarrollo optimizados sin sacrificar calidad",
-      "La colaboración entre equipos (Portlike + Takeoff) enseñó comunicación efectiva en entornos de oficina compartidos",
+      "La colaboración entre equipos en una empresa fusionada (Portlike + Takeoff) enseñó comunicación efectiva a través de fronteras organizacionales",
     ],
     gallery: [
       { src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — Desarrollo WordPress" },

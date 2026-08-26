@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { ProjectDetailView } from "@/components/sections/projects/project-detail-view";
 import { ProjectViewTracker } from "@/components/analytics/project-view-tracker";
+import { projects } from "@/data/shared/projects";
+import { resolveCompanyExperience, toCompanyRef, type CompanyRef } from "@/lib/company";
 import type { ProjectDetail } from "@/types";
 
 interface ProjectPageProps {
@@ -12,10 +14,10 @@ interface ProjectPageProps {
 
 async function getProjectDetails(locale: string): Promise<ProjectDetail[]> {
   if (locale === "es") {
-    const mod = await import("@/data/dev/project-details-es");
+    const mod = await import("@/data/shared/project-details-es");
     return mod.projectDetailsEs;
   }
-  const mod = await import("@/data/dev/project-details-en");
+  const mod = await import("@/data/shared/project-details-en");
   return mod.projectDetailsEn;
 }
 
@@ -47,11 +49,17 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
     notFound();
   }
 
+  // Company attribution: project listing data carries the company name, and
+  // the shared resolver maps it to the experience entry (logo + detail slug).
+  const projectEntry = projects.find((p) => p.slug === slug);
+  const companyExp = projectEntry ? resolveCompanyExperience(projectEntry) : undefined;
+  const company: CompanyRef | undefined = companyExp ? toCompanyRef(companyExp) : undefined;
+
   return (
     <>
       {/* Fires project_view with the slug for analytics. */}
       <ProjectViewTracker slug={slug} />
-      <ProjectDetailView project={project} from={from} />
+      <ProjectDetailView project={project} from={from} company={company} />
     </>
   );
 }

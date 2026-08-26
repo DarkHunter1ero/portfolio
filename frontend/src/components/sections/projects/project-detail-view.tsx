@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { backToProjectsHref, SOPORTE_PATH } from "@/lib/routes";
+import { backToProjectsHref, companyDetailHref, withFrom, SOPORTE_PATH } from "@/lib/routes";
+import type { CompanyRef } from "@/lib/company";
 import type { ProjectDetail } from "@/types";
 import { Container } from "@/components/shared/container";
 import { Badge } from "@/components/ui/badge";
@@ -124,16 +125,54 @@ const sectionAnim = {
   transition: { duration: 0.5, ease: "easeOut" as const },
 };
 
+// ─── CompanyAttribution ───────────────────────────────────────
+
+/**
+ * Subtle badge above the project title linking to the company detail page.
+ * Shows the same logo the company page uses; falls back to the company
+ * initial (same pattern as the company detail hero).
+ */
+function CompanyAttribution({ company, from }: { company: CompanyRef; from?: string }) {
+  const t = useTranslations("ProjectDetail");
+
+  return (
+    <Link
+      href={withFrom(companyDetailHref(company.slug), from)}
+      aria-label={t("viewCompany", { company: company.name })}
+      className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card/60 py-1.5 pl-1.5 pr-4 text-sm text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
+    >
+      {company.logo ? (
+        <span className="relative flex h-7 w-7 shrink-0 overflow-hidden rounded-full bg-secondary/40">
+          <Image
+            src={company.logo}
+            alt={company.name}
+            fill
+            className="object-contain p-0.5"
+            sizes="28px"
+          />
+        </span>
+      ) : (
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-bold text-accent">
+          {company.name.charAt(0)}
+        </span>
+      )}
+      <span className="font-medium">{company.name}</span>
+    </Link>
+  );
+}
+
 // ─── ProjectHero ──────────────────────────────────────────────
 
 function ProjectHero({
   project,
   t,
   from,
+  company,
 }: {
   project: ProjectDetail;
   t: (key: string) => string;
   from?: string;
+  company?: CompanyRef;
 }) {
   const prefersReduced = useReducedMotion();
 
@@ -153,6 +192,13 @@ function ProjectHero({
             {t("backToProjects")}
           </Link>
         </motion.div>
+
+        {/* Company attribution — which company the project belongs to */}
+        {company && (
+          <motion.div {...(prefersReduced ? {} : sectionAnim)} className="mb-6">
+            <CompanyAttribution company={company} from={from} />
+          </motion.div>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text column */}
@@ -927,14 +973,15 @@ function ProjectCTA({ project, from }: { project: ProjectDetail; from?: string }
 interface ProjectDetailViewProps {
   project: ProjectDetail;
   from?: string;
+  company?: CompanyRef;
 }
 
-export function ProjectDetailView({ project, from }: ProjectDetailViewProps) {
+export function ProjectDetailView({ project, from, company }: ProjectDetailViewProps) {
   const t = useTranslations("ProjectDetail");
 
   return (
     <>
-      <ProjectHero project={project} t={t} from={from} />
+      <ProjectHero project={project} t={t} from={from} company={company} />
       <InstancesSection project={project} t={t} />
       <ProjectAbout project={project} t={t} />
       <ProjectProblemSolution project={project} t={t} />

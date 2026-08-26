@@ -4,7 +4,7 @@ export const experience: Experience[] = [
   {
     company: "QR S.A.S.",
     role: "Founder & Full Stack Developer",
-    period: "2026 — Present",
+    period: "Jan 2026 — Jun 2026",
     logo: "/images/empresas/qr-sas/quiero_realizarlo_SAS.jpg",
     description:
       "Personal entrepreneurial project — a modern crowdfunding platform inspired by Kickstarter, built with a microservices architecture. Showcases full-stack capabilities from infrastructure to UI, demonstrating how a microservices approach enables independent scaling of specific features.",
@@ -27,7 +27,7 @@ export const experience: Experience[] = [
   {
     company: "ISA Interfase",
     role: "Full Stack Java Developer",
-    period: "2019 — Sept 2025",
+    period: "Dec 2018 — Sept 2025",
     logo: "/images/empresas/isa-interfase/isa interfase.jpg",
     description:
       "Architecting and developing enterprise digital identity and electronic signature platforms serving thousands of users across regulated industries. Leading full-stack initiatives from database design to React frontends, with a strong emphasis on security, scalability, and production reliability.",
@@ -56,11 +56,17 @@ export const experience: Experience[] = [
       "Microservices",
       "WildFly",
     ],
+    team: [
+      { name: "Leonardo Noach", role: "Director" },
+      { name: "Martín Taruselli", role: "Supervisor" },
+      { name: "Rodrigo Aratti", role: "Supervisor" },
+      { name: "Juan Manuel Miraballes", role: "Supervisor" },
+    ],
   },
   {
     company: "Beacon42",
     role: "Magento Developer",
-    period: "2018 — 2019",
+    period: "Aug 13, 2018 — Dec 21, 2018",
     logo: "/images/empresas/beacon42/beacon42.png",
     description:
       "Developed custom Magento modules and backend integrations for eCommerce clients, automating billing workflows and extending platform capabilities beyond out-of-the-box features.",
@@ -70,14 +76,18 @@ export const experience: Experience[] = [
       "Developed backend features in PHP that extended the Magento admin panel for custom reporting and inventory management dashboards.",
     ],
     technologies: ["PHP", "Magento", "MySQL", "JavaScript", "REST APIs", "Linux"],
+    team: [
+      { name: "Alejandro Triaca", role: "Manager" },
+      { name: "Gabriel Piffaretti" },
+    ],
   },
   {
     company: "Portlike",
     role: "Programmer Analyst",
-    period: "2017 — 2018",
+    period: "Jan 2017 — Feb 2018",
     logo: "/images/empresas/portlike/portlike.png",
     description:
-      "Built analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
+      "Worked at Portlike · Takeoff Media (a merger of two companies) building analytics dashboards and marketing automation tools using Google Analytics, Google Tag Manager, and Laravel APIs. Contributed to WordPress sites and Excel-based reporting for business intelligence.",
     highlights: [
       "Implemented Google Analytics and Tag Manager tracking across multiple client websites, enabling data-driven marketing decisions through custom dashboards and reports.",
       "Developed lightweight Laravel (Lumen) APIs for data aggregation and reporting, consuming external services and presenting insights through clean interfaces.",
@@ -92,6 +102,10 @@ export const experience: Experience[] = [
       "Google Analytics",
       "Google Tag Manager",
       "MySQL",
+    ],
+    team: [
+      { name: "Ignacio Bazzano", role: "Director" },
+      { name: "Ignacio Blitzer", role: "Supervisor" },
     ],
   },
 ];

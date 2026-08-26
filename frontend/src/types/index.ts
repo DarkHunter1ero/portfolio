@@ -18,6 +18,12 @@ export interface Profile {
 
 // ─── Experience ────────────────────────────────────────────
 
+export interface TeamMember {
+  name: string;
+  /** Optional role within the company (e.g. "Director", "Supervisor"). */
+  role?: string;
+}
+
 export interface Experience {
   company: string;
   role: string;
@@ -26,6 +32,8 @@ export interface Experience {
   highlights: string[];
   technologies: string[];
   logo?: string;
+  /** People who were part of the company while I worked there. */
+  team?: TeamMember[];
 }
 
 // ─── Projects ──────────────────────────────────────────────

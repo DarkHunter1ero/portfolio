@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Hero ambient background: subtle blue radial pulses for depth. The base
+ * color behind them is set by HeroSection (it matches the working photo's
+ * edge color so the masked photo dissolves into it).
+ */
 export function HeroBackground() {
   return (
     <div className="absolute inset-0 z-0" aria-hidden="true">

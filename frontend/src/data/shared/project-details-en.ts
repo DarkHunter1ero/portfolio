@@ -1099,7 +1099,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     role: "Web Developer",
     duration: "2017 — 2018",
     about:
-      "As part of my work at Portlike (alongside Takeoff, a partner company sharing the same office), I contributed to the maintenance and evolution of DIRECTV's corporate WordPress website. This involved developing new commercial campaign pages, fixing bugs, optimizing performance, and integrating third-party plugins.\n\nThe role required balancing rapid campaign deployment demands with production stability — ensuring that marketing teams could launch new pages quickly without compromising the site's reliability.",
+      "As part of my work at Portlike · Takeoff Media (the result of a merger between Portlike and Takeoff), I contributed to the maintenance and evolution of DIRECTV's corporate WordPress website. This involved developing new commercial campaign pages, fixing bugs, optimizing performance, and integrating third-party plugins.\n\nThe role required balancing rapid campaign deployment demands with production stability — ensuring that marketing teams could launch new pages quickly without compromising the site's reliability.",
     problem:
       "DIRECTV's corporate site required ongoing evolution — new campaign pages, feature enhancements, bug fixes, and performance optimization — while maintaining stability in a high-traffic production environment.",
     solution:
@@ -1178,7 +1178,7 @@ export const projectDetailsEn: ProjectDetail[] = [
     lessonsLearned: [
       "Production WordPress sites require disciplined plugin management and update strategies",
       "Rapid marketing deployments need streamlined development workflows without sacrificing quality",
-      "Cross-team collaboration (Portlike + Takeoff) taught effective communication in shared office environments",
+      "Cross-team collaboration in a merged company (Portlike + Takeoff) taught effective communication across organizational boundaries",
     ],
     gallery: [
       { src: "/images/empresas/portlike/takeoff.jpg", alt: "Takeoff — WordPress Development" },

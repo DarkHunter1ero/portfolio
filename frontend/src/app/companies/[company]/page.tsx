@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { experience } from "@/data/dev/experience";
-import { projects } from "@/data/dev/projects";
+import { experience } from "@/data/shared/experience";
+import { projects } from "@/data/shared/projects";
 import { CompanyDetailView } from "@/components/sections/projects/company-detail-view";
 import { companySlug } from "@/lib/utils";
 

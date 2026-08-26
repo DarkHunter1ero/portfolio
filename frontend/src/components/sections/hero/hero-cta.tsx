@@ -26,7 +26,12 @@ export function HeroCTA() {
       </motion.div>
 
       <motion.div {...buttonTap}>
-        <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="gap-2 font-medium text-white border-white/40 hover:bg-white/10 hover:text-white"
+        >
           <a
             href={profile.github}
             target="_blank"
@@ -40,7 +45,12 @@ export function HeroCTA() {
       </motion.div>
 
       <motion.div {...buttonTap}>
-        <Button asChild variant="outline" size="lg" className="gap-2 font-medium">
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="gap-2 font-medium text-white border-white/40 hover:bg-white/10 hover:text-white"
+        >
           <a
             href={profile.linkedin}
             target="_blank"

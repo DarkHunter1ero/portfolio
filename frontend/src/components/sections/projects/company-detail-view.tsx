@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, ExternalLink, Code2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, Code2, Users } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { backToExperienceHref, projectDetailHref, withFrom } from "@/lib/routes";
 import { Badge } from "@/components/ui/badge";
@@ -150,6 +150,48 @@ export async function CompanyDetailView({
           </div>
         </Container>
       </section>
+
+      {/* Team section */}
+      {company.team && company.team.length > 0 && (
+        <section className="py-24 sm:py-32">
+          <Container>
+            <div className="text-center mb-12">
+              <Users className="h-8 w-8 text-accent mx-auto mb-4" />
+              <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                {t("team")}
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+                {t("teamDesc", { company: company.company })}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {company.team.map((member) => (
+                <div
+                  key={member.name}
+                  className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm"
+                >
+                  {/* Initial-letter avatar (same fallback pattern as the
+                      company logo above). */}
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                    <span className="text-accent font-[family-name:var(--font-playfair)] text-xl font-bold">
+                      {member.name.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground truncate">
+                      {member.name}
+                    </p>
+                    {member.role && (
+                      <p className="text-sm text-muted-foreground">{member.role}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Technologies section */}
       <section className="py-24 sm:py-32 bg-card/30">

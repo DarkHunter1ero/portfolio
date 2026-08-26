@@ -1,26 +1,22 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/shared/container";
 import { WaveDivider } from "@/components/shared/wave-divider";
 import { ProjectCard } from "./project-card";
-import { projects } from "@/data/dev/projects";
-import { experience } from "@/data/dev/experience";
+import { projects } from "@/data/shared/projects";
+import { resolveCompanyExperience } from "@/lib/company";
 import { companySlug } from "@/lib/utils";
 import type { Project } from "@/types";
 
 /**
- * Matches a project to its experience entry using the same rule as the
- * company detail page: exact match or prefix ("Portlike · DIRECTV" belongs
- * to the "Portlike" experience entry).
+ * Matches a project to its experience entry using the shared rule in
+ * @/lib/company (exact match or prefix â€” "Portlike Â· DIRECTV" belongs to the
+ * "Portlike" experience entry).
  */
 function resolveCompany(project: Project): {
   slug: string | undefined;
   period: string | undefined;
 } {
-  const pc = (project.company ?? "").toLowerCase();
-  const exp = experience.find((e) => {
-    const ec = e.company.toLowerCase();
-    return pc === ec || pc.startsWith(ec);
-  });
+  const exp = resolveCompanyExperience(project);
   if (!exp) return { slug: undefined, period: undefined };
   return { slug: companySlug(exp.company), period: exp.period };
 }

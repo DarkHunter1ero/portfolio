@@ -1,11 +1,11 @@
-import { getTranslations } from "next-intl/server";
+﻿import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Container } from "@/components/shared/container";
 import { ExperienceTimeline } from "./timeline-item";
 import type { Experience } from "@/types";
 
 // Fallback: dev experience data
-import { experience as devExperience } from "@/data/dev/experience";
+import { experience as devExperience } from "@/data/shared/experience";
 
 export async function ExperienceSection({ items }: { items?: Experience[] }) {
   const t = await getTranslations("Experience");

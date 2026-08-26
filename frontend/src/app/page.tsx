@@ -63,7 +63,7 @@ export default async function LandingPage() {
             <p className="text-lg text-foreground/90 font-medium mb-6 leading-relaxed">
               {tHero("subtitle")}
             </p>
-            <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
               {[
                 {
                   label: devCta.label,
@@ -81,28 +81,31 @@ export default async function LandingPage() {
                 <Link
                   key={cta.href}
                   href={cta.href}
-                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:border-accent/40 transition-all duration-300 h-full flex flex-col"
+                  className="group relative flex flex-col-reverse sm:flex-row overflow-hidden rounded-2xl border border-border bg-card shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:border-accent/40 transition-all duration-300 h-full"
                 >
-                  {/* Background image (photo of the actual work) */}
-                  <Image
-                    src={cta.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 640px) 50vw, 384px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Scrim so the text stays readable over the photo */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30" />
-
-                  <div className="relative z-10 flex items-center justify-between mb-4">
-                    <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">
-                      {cta.label}
-                    </h2>
-                    <ArrowRight className="h-5 w-5 text-accent transition-transform duration-300 group-hover:translate-x-1" />
+                  {/* Text — left on desktop, below the image on mobile */}
+                  <div className="relative z-10 p-8 flex-1 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-4">
+                      <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">
+                        {cta.label}
+                      </h2>
+                      <ArrowRight className="h-5 w-5 text-accent transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
+                    </div>
+                    <p className="text-sm text-foreground/85 leading-relaxed">
+                      {cta.description}
+                    </p>
                   </div>
-                  <p className="relative z-10 text-sm text-foreground/85 leading-relaxed">
-                    {cta.description}
-                  </p>
+
+                  {/* Illustrative image — right on desktop, top on mobile */}
+                  <div className="relative w-full sm:w-1/2 aspect-[16/10] sm:aspect-auto sm:min-h-56">
+                    <Image
+                      src={cta.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 480px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </Link>
               ))}
             </div>
