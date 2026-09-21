@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { jwtVerify } from "jose";
 
 /**
  * Legacy Spanish URIs under `/soporte` → permanent (308) redirect to the
@@ -14,26 +15,54 @@ const LEGACY_SOPORTE_TO_SUPPORT: Record<string, string> = {
   "/soporte/contacto": "/support/contact",
 };
 
+const ADMIN_JWT_SECRET = new TextEncoder().encode(process.env.ADMIN_JWT_SECRET ?? "");
+
 /**
- * Lightweight middleware that labels the current route group so that
- * server components and next-intl's getRequestConfig can load the
- * portfolio-specific messages (LANDING, WEB_DEVELOPER, TI_SERVICES).
- *
- * Labels:
- *  - `pathname` starts with `/developer` → "dev"
- *  - `pathname` starts with `/support`    → "soporte"
- *  - `pathname` starts with `/companies` or `/projects` → "dev" (global detail pages)
- *  - otherwise (incl. `/`, `/api`, unknown) → "landing"
- *
- * The header is consumed by:
- *  - src/app/layout.tsx        → NextIntlClientProvider messages
- *  - src/i18n/request.ts       → getTranslations / getMessages (server)
- *  - src/lib/i18n.ts           → getMessagesForRequest helper
+ * Verifies the admin session JWT from the cookie.
+ * Returns the payload if valid, null otherwise.
  */
-export function middleware(request: NextRequest) {
+async function verifyAdminSession(token: string): Promise<{ email: string; role: string; sub: string } | null> {
+  if (!ADMIN_JWT_SECRET.length) return null;
+  try {
+    const { payload } = await jwtVerify(token, ADMIN_JWT_SECRET);
+    if (
+      typeof payload.sub !== "string" ||
+      typeof payload.email !== "string" ||
+      typeof payload.role !== "string"
+    ) {
+      return null;
+    }
+    return { sub: payload.sub, email: payload.email, role: payload.role };
+  } catch {
+    return null;
+  }
+}
+
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Permanent redirect for legacy `/soporte*` URIs → `/support*`.
+  // 1) Admin area protection — runs BEFORE portfolio route labeling
+  if (pathname.startsWith("/admin")) {
+    // Allow login page without auth
+    if (pathname === "/admin/login") {
+      // If already authenticated, redirect to dashboard
+      const token = request.cookies.get("admin_session")?.value;
+      if (token && (await verifyAdminSession(token))) {
+        return NextResponse.redirect(new URL("/admin/analytics", request.url));
+      }
+      // Continue to login page
+    } else {
+      // Protect all other /admin/* routes
+      const token = request.cookies.get("admin_session")?.value;
+      if (!token || !(await verifyAdminSession(token))) {
+        const loginUrl = new URL("/admin/login", request.url);
+        loginUrl.searchParams.set("next", pathname);
+        return NextResponse.redirect(loginUrl);
+      }
+    }
+  }
+
+  // 2) Legacy Spanish URIs redirect
   if (pathname === "/soporte" || pathname.startsWith("/soporte/")) {
     const target = LEGACY_SOPORTE_TO_SUPPORT[pathname] ?? "/support";
     const url = request.nextUrl.clone();
@@ -41,6 +70,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // 3) Portfolio route labeling for i18n
   let portfolioRoute: string;
   if (pathname.startsWith("/developer")) {
     portfolioRoute = "dev";

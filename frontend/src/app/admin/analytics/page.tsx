@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AlertCircle, Eye, Inbox, Layers, LogOut, RefreshCw, Users, Zap } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BarList, TimeseriesChart } from "@/components/admin/charts";
 import {
-  AdminApiError,
-  adminLogout,
   getDevices,
   getEventCounts,
   getGeography,
@@ -183,19 +181,15 @@ export default function AdminAnalyticsPage() {
   // response carrying the LATEST id is allowed to update state.
   const latestRequestIdRef = useRef(0);
 
-  const range = useMemo(
-    () => resolveRange(preset, customFrom, customTo),
-    [preset, customFrom, customTo]
-  );
-
   useEffect(() => {
-    if (!range) return;
+    const resolvedRange = resolveRange(preset, customFrom, customTo);
+    if (!resolvedRange) return;
 
     const requestId = ++latestRequestIdRef.current;
     setLoading(true);
     setError(null);
 
-    fetchDashboard(range.from.toISOString(), range.to.toISOString(), granularity)
+    fetchDashboard(resolvedRange.from.toISOString(), resolvedRange.to.toISOString(), granularity)
       .then((result) => {
         // Ignore stale responses from an earlier request round.
         if (requestId !== latestRequestIdRef.current) return;
@@ -203,25 +197,20 @@ export default function AdminAnalyticsPage() {
       })
       .catch((err: unknown) => {
         if (requestId !== latestRequestIdRef.current) return;
-        if (err instanceof AdminApiError && err.status === 401) {
-          // Session expired or missing — back to the login screen.
-          router.replace("/admin/login");
-          return;
-        }
         setError(err instanceof Error ? err.message : "Failed to load analytics.");
       })
       .finally(() => {
         // Keep the spinner on if a newer request is already in flight.
         if (requestId === latestRequestIdRef.current) setLoading(false);
       });
-  }, [range, granularity, retryCount, router]);
+  }, [preset, customFrom, customTo, granularity, retryCount, router]);
 
   async function handleLogout() {
-    await adminLogout();
+    await fetch("/api/admin/auth/logout", { method: "POST", credentials: "include" });
     router.replace("/admin/login");
   }
 
-  const customRangeInvalid = preset === "custom" && range === null;
+  const customRangeInvalid = preset === "custom" && resolveRange(preset, customFrom, customTo) === null;
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">

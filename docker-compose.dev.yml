@@ -3,6 +3,8 @@ services:
     build:
       target: deps
     command: npm run dev
+    ports:
+      - "3000:3000"
     depends_on:
       - backend
     volumes:
@@ -17,6 +19,8 @@ services:
     build:
       target: deps
     command: npm run dev
+    ports:
+      - "4000:4000"
     volumes:
       - ./backend:/app
       - /app/node_modules

@@ -73,6 +73,17 @@ npm run dev
 
 The frontend runs on [http://localhost:3000](http://localhost:3000) and the backend on [http://localhost:4000](http://localhost:4000).
 
+### Docker Production-like Stack (Nginx Edge)
+
+```bash
+docker compose up --build
+```
+
+The stack runs behind an Nginx edge on [http://localhost:8080](http://localhost:8080):
+- Frontend: `http://localhost:8080/`
+- Backend API: `http://localhost:8080/api/`
+- Admin analytics dashboard: `http://localhost:8080/admin/analytics`
+
 ### Docker Development
 
 ```bash

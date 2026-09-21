@@ -2,14 +2,14 @@
  * Client for the backend admin analytics API.
  *
  * All requests send `credentials: "include"` because the admin session
- * lives in an httpOnly `admin_session` cookie set by the (cross-origin)
- * Express backend. All aggregation happens server-side — this client only
- * fetches pre-aggregated responses.
+ * lives in an httpOnly `admin_session` cookie set by the backend. In
+ * production the call is same-origin (nginx routes /api/*), in dev the
+ * helper below hits the local Express backend directly. All aggregation
+ * happens server-side — this client only fetches pre-aggregated responses.
  */
 
 import type { AnalyticsEventName } from "@/lib/analytics/events";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
+import { API_URL } from "../api-url";
 
 export type Granularity = "day" | "week" | "month";
 
@@ -114,7 +114,7 @@ async function parseBody(res: Response): Promise<ApiEnvelope<unknown> | null> {
 
 /** GET an authenticated admin analytics endpoint. */
 export async function adminGet<T>(path: string, params?: AnalyticsQueryParams): Promise<T> {
-  const url = new URL(`${API_URL}${path}`);
+  const url = new URL(path, window.location.origin);
   for (const [key, value] of Object.entries(params ?? {})) {
     if (value !== undefined && value !== "") url.searchParams.set(key, value);
   }
@@ -158,29 +158,29 @@ export async function adminLogout(): Promise<void> {
 // ─── Analytics endpoints ──────────────────────────────────────────────────
 
 export function getOverview(params: AnalyticsQueryParams): Promise<OverviewStats> {
-  return adminGet<OverviewStats>("/admin/analytics/overview", params);
+  return adminGet<OverviewStats>("/api/admin/analytics/overview", params);
 }
 
 export function getTimeseries(params: AnalyticsQueryParams): Promise<TimeseriesRow[]> {
-  return adminGet<TimeseriesRow[]>("/admin/analytics/timeseries", params);
+  return adminGet<TimeseriesRow[]>("/api/admin/analytics/timeseries", params);
 }
 
 export function getTopPages(params: AnalyticsQueryParams): Promise<PageStatsRow[]> {
-  return adminGet<PageStatsRow[]>("/admin/analytics/pages", params);
+  return adminGet<PageStatsRow[]>("/api/admin/analytics/pages", params);
 }
 
 export function getEventCounts(params: AnalyticsQueryParams): Promise<EventTypeCount[]> {
-  return adminGet<EventTypeCount[]>("/admin/analytics/events", params);
+  return adminGet<EventTypeCount[]>("/api/admin/analytics/events", params);
 }
 
 export function getGeography(params: AnalyticsQueryParams): Promise<GeographyRow[]> {
-  return adminGet<GeographyRow[]>("/admin/analytics/geography", params);
+  return adminGet<GeographyRow[]>("/api/admin/analytics/geography", params);
 }
 
 export function getReferrers(params: AnalyticsQueryParams): Promise<ReferrerRow[]> {
-  return adminGet<ReferrerRow[]>("/admin/analytics/referrers", params);
+  return adminGet<ReferrerRow[]>("/api/admin/analytics/referrers", params);
 }
 
 export function getDevices(params: AnalyticsQueryParams): Promise<DevicesStats> {
-  return adminGet<DevicesStats>("/admin/analytics/devices", params);
+  return adminGet<DevicesStats>("/api/admin/analytics/devices", params);
 }

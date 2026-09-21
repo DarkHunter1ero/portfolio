@@ -1,150 +1,106 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
 cv:
   name: Diego Silva
-  headline: Full Stack Java Developer – Semi Senior
-  location: San José de Mayo, Uruguay
+  headline: Semi-Senior Java Full Stack Developer
   email: diego1silva2@gmail.com
   phone: +598 97 257 167
   photo: ./foto_perfil.png
 
   sections:
     about_me:
-      - "Full Stack Web Developer specialized in Java with Semi-Senior level experience. With over 10 years in software development, I am passionate about building robust and secure technological solutions, especially in the areas of digital identity and electronic signature."
-      - "Throughout my career, I have developed a strong ability to analyze complex problems, design scalable architectures, and lead successful technological migrations. My approach combines technical rigor with a practical, business-oriented mindset."
-      - "I am a proactive professional with a high capacity to adapt to new challenges and technologies, always focused on optimizing processes and improving software quality."
-      - "I work daily with AI tools to boost productivity during software development. I use them to accelerate repetitive code generation, solve low-complexity problems, research new technologies, validate implementation approaches, and develop internal tools that optimize my workflow."
-      - "I have knowledge of AI Harness Engineering, including defining skills, designing workflows with orchestrators and specialized sub-agents for different tasks, enabling clear separation of responsibilities and improving the quality of responses and automations."
-      - "Additionally, I use Gentle AI together with Engram to maintain persistent project context, and the OpenCode client to assist development and technical context management during programming."
+      - "Full Stack Developer with over 6 years of experience, specialized in Java and Spring Boot for REST APIs, microservices, and secure backends. Additional experience with React and Angular (TypeScript). Experience working on digital identity, electronic signature, and authentication solutions."
+      - "Focused on solving real-world problems, participating in technology migrations, and delivering high-quality software. I use AI tools daily to increase productivity and have knowledge of AI Harness Engineering."
 
     detailed_experience:
-      - company: ISA INTERFASE (6+ years)
-        position: Full Stack Developer – Digital Security Specialist
-        start_date: 2019
-        end_date: 2025
+      - company: ISA INTERFASE (6 years, 9 months)
+        position: Full Stack Developer - Digital Security Specialist
+        start_date: 2018-12
+        end_date: 2025-09
         location: Montevideo, Uruguay
-        summary: Development of digital identity, electronic signature, and secure authentication solutions
+        summary: Digital identity, electronic signature, and secure authentication solutions
         highlights:
-          - "Led the development and maintenance of digital signature applications integrated with external authentication systems such as Antel TuID"
-          - "Developed the MiRecibo platform for digital signing of payroll receipts, with role-based access and company-level configurations"
-          - "Creation and management of digital certificates for secure signing of PDF and XML documents"
-          - "Implementation of OAuth2 authentication services and development of secure APIs for critical applications"
-          - "Integration with HSMs (Hardware Security Modules) to automate certificate issuance, signing, and revocation"
-          - "Active participation in the architectural evolution toward microservices and distributed systems"
-          - "Worked in production environments with high availability and strict security requirements"
+          - "Development and maintenance of digital signature applications integrated with TuID (Antel), using Java, Spring Boot, REST APIs, and OpenAPI/Swagger"
+          - "Development of MiRecibo: digital payslip signature platform with company-specific roles and configurations"
+          - "Management of digital certificates (CA) and HSM integration for certificate issuance, signing, and key protection"
+          - "Securing REST endpoints using JWT and OAuth2"
+          - "Frontend development with Angular and React; Spring Boot backends deployed as bootable JARs (WildFly) and on Tomcat"
+          - "MySQL → PostgreSQL migrations and monolith-to-microservices migrations (HTTP communication), including database separation"
+          - "Linux deployment using systemctl, environment variables, and Log4j; testing with Postman, JMeter, JUnit, and Mockito"
+          - "Work in small teams using Scrum (2-week sprints), Jira, and Confluence"
 
-      - company: Beacon42
-        position: Magento Developer – eCommerce Specialist
-        start_date: 2018
-        end_date: 2019
+      - company: Beacon42 (4 months)
+        position: Magento Developer
+        start_date: 2018-08
+        end_date: 2018-12
         location: Montevideo, Uruguay
-        summary: Development of customized eCommerce solutions for Magento
+        summary: Custom eCommerce solutions
         highlights:
-          - "Developed a Magento plugin from scratch to manage billing workflows"
-          - "Implemented custom integrations for eCommerce platforms"
-          - "Gained deep knowledge of the Magento ecosystem and eCommerce architectures"
-          - "Collaborated in the growth of a fast-scaling startup"
+          - "Developed a Magento plugin from scratch for invoice management"
+          - "Custom integrations on Magento and work within the PHP/eCommerce ecosystem"
+          - "Collaborated in the growth of an expanding startup"
 
-      - company: Portlike
-        position: Programmer Analyst – Web Development & Analysis
-        start_date: 2017
-        end_date: 2018
+      - company: Portlike (1 year, 1 month)
+        position: PHP Web Developer
+        start_date: 2017-01
+        end_date: 2018-02
         location: Montevideo, Uruguay
-        summary: First professional experience combining web development and data analysis
+        summary: Development and maintenance of PHP web applications
         highlights:
-          - "Started as a Programmer Analyst, analyzing metrics and statistics using Google Analytics"
-          - "Generated reports and user behavior tracking with Google Tag Manager"
-          - "Created graphical Excel reports to support executive decision-making"
-          - "Maintained a Lumen (Laravel) project after demonstrating strong JavaScript skills"
-          - "Transitioned into the web development team, working mainly with WordPress"
-          - "Maintained and fixed bugs across multiple corporate client websites"
-
-    professional_journey:
-      - "**2017–2018:** Professional beginnings at Portlike combining web analysis and development"
-      - "**2018–2019:** Specialization in eCommerce with Magento at Beacon42"
-      - "**2019–2025:** Over 6 years at ISA INTERFASE as a digital security specialist"
-      - "**Growth:** From junior developer to semi-senior with technical leadership in critical projects"
-
-    key_achievements:
-      - "Over 6 years of continuous experience in digital security and electronic signature solutions"
-      - "Successful migration of multiple critical technologies (MySQL → PostgreSQL, Java 8 → 11, etc.)"
-      - "Implementation of high-availability systems using HSMs for certificate security"
-      - "Development of enterprise platforms used by multiple organizations"
-      - "Proven ability to grow from analyst roles to specialized developer positions"
-
-    specializations:
-      - label: Digital Security & Cryptography
-        details: "Electronic signature, digital certificates, HSM, OAuth2, multi-factor authentication"
-
-      - label: Java Backend Development
-        details: "Spring Boot, REST APIs, microservices, relational databases, security"
-
-      - label: Enterprise Systems
-        details: "Digital signature platforms, document management, high-availability systems"
-
-      - label: Technology Integration
-        details: "Technology migrations, legacy system integration, architecture modernization"
+          - "Development and maintenance of applications using Lumen (Laravel) and WordPress"
+          - "Main client: DirecTV"
+          - "Bug fixing and implementation of improvements for corporate client websites"
 
     education:
-      - institution: Faculty of Engineering (UDELAR) & UTU
-        area: Computer Science Technologist
-        start_date: 2013
-        end_date: 2015
+      - institution: Faculty of Engineering (UDELAR) & UTU (3 years)
+        area: Information Technology Technologist
+        start_date: 2013-03
+        end_date: 2015-12
         location: Uruguay
-        summary: "Joint university program combining theoretical foundations with practical application. Comprehensive training in software development, system architectures, and technology project management."
+        summary: "Comprehensive training in software development, system architecture, and project management."
 
-      - institution: Universidad del Trabajo del Uruguay (UTU)
-        area: Technical High School Degree in Electromechanics
-        start_date: 2007
-        end_date: 2009
+      - institution: Universidad del Trabajo del Uruguay (UTU) (3 years)
+        area: Technical Baccalaureate in Electromechanics
+        start_date: 2007-03
+        end_date: 2009-12
         location: Uruguay
-        summary: "Technical background in electromechanical systems that strengthened logical thinking and complex problem-solving skills."
 
-    technologies_expertise:
-      - label: Backend & Security
-        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs"
+    technical_expertise:
+      - label: Backend and Security
+        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs, PHP, JUnit, Mockito, OpenAPI, Swagger, Maven, Gradle, Log4j"
 
-      - label: Frontend & Web
-        details: "ReactJS, AngularJS, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
+      - label: Frontend and Web
+        details: "React, Angular, TypeScript, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
 
-      - label: Infrastructure & DevOps
-        details: "Wildfly, Tomcat, Docker, GitLab, Maven, Gradle, Log4j, OpenAPI"
+      - label: Infrastructure and DevOps
+        details: "WildFly, Tomcat, Docker, GitHub/GitLab, AWS, Linux, Jenkins"
 
-      - label: Tools & Methodologies
-        details: "Google Analytics, Google Tag Manager, Advanced Excel, Scrum, Git"
+      - label: Tools and Methodologies
+        details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman, JMeter"
 
-    core_skills:
-      - "**Technical Leadership:** Ability to guide technology migrations and architectural evolution"
+    key_competencies:
       - "**Problem Solving:** Analytical approach to complex technical challenges"
-      - "**Adaptability:** Successful transitions across roles and technologies"
+      - "**Adaptability:** Successful transition between roles and technologies"
       - "**Teamwork:** Effective collaboration in multidisciplinary teams"
-      - "**Technical Communication:** Ability to explain complex concepts to diverse audiences"
-      - "**Results-Oriented:** Practical focus on delivering business value"
+      - "**Results-Oriented:** Practical approach to delivering value"
 
-    significant_projects:
-      - "**ISCERT System:** Comprehensive digital identity solution with authentication, electronic signature, and certificate management"
-      - "**MiRecibo:** Enterprise platform for digital payroll signing with roles, configurable templates, and secure storage"
-      - "**FirmaPDF:** Web application for mass digital signing of PDF documents with external system integration"
-      - "**Magento Billing Plugin:** Custom billing solution for Magento-based eCommerce platforms"
-
-    professional_outlook:
-      - "Seeking to continue growing as a specialist in digital security and enterprise systems"
-      - "Interested in challenging projects involving distributed architectures and high scalability"
-      - "Motivated to contribute experience in technology migrations and system modernization"
-      - "Value environments that promote continuous learning and technological innovation"
+    professional_goals:
+      - "Seeking a stable position that allows me to grow professionally in a positive and collaborative environment"
+      - "Interested in software development projects, scalable architectures, and system modernization"
+      - "Open to different domains (fintech, digital products, enterprise solutions)"
+      - "Value environments that foster continuous learning and long-term technical growth"
 
     personal_information:
-      - "**Age:** 34"
-      - "**Nationality:** Uruguayan"
-      - "**Marital Status:** Single"
       - "**Date of Birth:** February 20, 1992"
-      - "**ID Number:** 4.860.251-1"
-      - "**Availability:** Immediate"
-      - "**Mobility:** Available for travel within Uruguay"
+      - "**Age:** 34 years"
+      - "**Nationality:** Uruguayan"
+      - "**National ID:** 4.860.251-1"
+      - "**Driver's License:** Category E (taxis)"
 
     references:
-      - "**Juan Manuel Miraballes** – CEO / ISA INTERFASE – +598 99 336 405 – juan.miraballes@interfase.uy"
-      - "**Rodrigo Aratti** – CEO / ISA INTERFASE – +598 98 530 100"
-      - "**Matías Pintaluba** – CEO / ISA INTERFASE – Matías.Pintaluba@interfase.uy"
+      - "**Juan Manuel Miraballes** - Product Manager / ISA INTERFASE - +598 99 336 405 - juan.miraballes@interfase.uy"
+      - "**Rodrigo Aratti** - Country Manager Paraguay / ISA INTERFASE - +598 98 530 100"
+      - "**Matías Pintaluba** - Scrum Master / ISA INTERFASE - Matías.Pintaluba@interfase.uy"
+      - "**Ignacio Blitzer** - Technical Lead / PORTLIKE - LinkedIn: https://www.linkedin.com/in/ignacio-blitzer-854369a1/"
 
 design:
   theme: classic
@@ -178,6 +134,6 @@ locale:
   present: present
 
 settings:
-  current_date: "2026-01-20"
+  current_date: "2026-09-15"
   render_command:
     pdf_path: Diego_Silva_CV.pdf

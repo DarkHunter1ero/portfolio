@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2, Lock, LogIn, Mail } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -11,13 +11,24 @@ import { AdminApiError, adminLogin } from "@/lib/admin/api";
 /**
  * Admin login. Posts credentials with `credentials: "include"` so the
  * backend's httpOnly `admin_session` cookie is stored by the browser.
+ * Respects `?next=/target` query param from middleware redirect.
  */
 export default function AdminLoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Force dynamic rendering: useSearchParams in Client Component needs this
+  // to avoid static caching where searchParams would be empty
+  useEffect(() => {
+    // Access searchParams to ensure dynamic rendering
+    void searchParams.get("next");
+  }, [searchParams]);
+
+  const nextPath = searchParams.get("next") ?? "/admin/analytics";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -33,7 +44,14 @@ export default function AdminLoginPage() {
     setSubmitting(true);
     try {
       await adminLogin(email, password);
-      router.replace("/admin/analytics");
+      // Try router.replace first (client-side navigation)
+      router.replace(nextPath);
+      // Fallback: if router doesn't navigate within 500ms, force full reload
+      setTimeout(() => {
+        if (window.location.pathname === "/admin/login") {
+          window.location.href = nextPath;
+        }
+      }, 500);
     } catch (err) {
       if (err instanceof AdminApiError) {
         if (err.status === 429) {

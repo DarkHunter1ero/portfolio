@@ -13,9 +13,8 @@
  */
 
 import type { AnalyticsEventBody, AnalyticsEventName, AnalyticsEventPayloads } from "./events";
+import { API_URL } from "../api-url";
 import { getSessionId, getVisitorId } from "./session";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
 
 /** Window in which an identical event+page pair is considered a duplicate. */
 const DEDUPE_WINDOW_MS = 1500;

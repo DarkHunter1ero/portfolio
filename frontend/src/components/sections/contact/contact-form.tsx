@@ -11,6 +11,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { contactSchema, type ContactFormData } from "@/types/contact";
 import { buttonTap } from "@/lib/animations";
 import { track } from "@/lib/analytics/tracker";
+import { API_URL } from "@/lib/api-url";
 
 type FormState =
   | { status: "idle" }
@@ -84,8 +85,7 @@ export function ContactForm() {
     setFieldErrors({});
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
-      const res = await fetch(`${apiUrl}/contact`, {
+      const res = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(result.data),

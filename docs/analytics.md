@@ -34,11 +34,11 @@ This document covers the portfolio's built-in analytics system: a self-hosted, c
    - The `frontend` service starts once the backend is healthy.
 
 3. **Verify:**
-   - Frontend: http://localhost:3000
-   - Backend health: http://localhost:4000/api/health → `{"status":"ok",...}`
-   - Dashboard: http://localhost:3000/admin/analytics → redirects to login → sign in with the seeded credentials.
+   - Frontend: http://localhost:8080
+   - Backend health: http://localhost:8080/api/health → `{"status":"ok",...}`
+   - Dashboard: http://localhost:8080/admin/analytics → redirects to login → sign in with the seeded credentials.
 
-> **Docker networking caveat:** `docker-compose.yml` sets `NEXT_PUBLIC_API_URL=http://backend:4000/api` as a *runtime* environment variable, but Next.js inlines `NEXT_PUBLIC_*` values into the client bundle at *build* time. In practice the browser-side tracker and dashboard fall back to the baked-in default `http://localhost:4000/api`. That works when you browse from the same machine that runs Docker (port 4000 is published). For remote access, rebuild the frontend with the browser-reachable API URL as a build argument.
+> **Single entry point (Nginx edge):** `docker-compose.yml` runs an Nginx reverse proxy on port 8080 (configurable via `NGINX_PORT`). All external traffic enters via Nginx: `/api/*` proxies to `backend:4000` and `/*` proxies to `frontend:3000`. This means API calls from the frontend are same-origin (`/api`), eliminating CORS issues and ensuring session cookies work with `SameSite=strict`.
 
 ## Local development without Docker
 
@@ -95,9 +95,9 @@ Other backend scripts:
 | Admin auth (JWT cookie) | `backend/src/routes/admin/auth.ts`, `backend/src/services/admin-auth.ts`, `backend/src/middleware/require-admin.ts` |
 | Dashboard UI (custom SVG charts) | `frontend/src/app/admin/**`, `frontend/src/lib/admin/api.ts` |
 
-Deployment topology (Docker Compose): `frontend` (port 3000) depends on a healthy `backend` (port 4000), which depends on a healthy `db` (PostgreSQL 16-alpine, `pg_isready` healthcheck, persistent `postgres_data` volume).
+Deployment topology (Docker Compose): `nginx` (port 8080) acts as the edge reverse proxy, routing `/` to `frontend` (port 3000 internal) and `/api/` to `backend` (port 4000 internal). `backend` depends on a healthy `db` (PostgreSQL 16-alpine, `pg_isready` healthcheck, persistent `postgres_data` volume).
 
-> **Reverse proxy deployments:** by default the backend treats `X-Forwarded-For` as untrusted (it is client-spoofable) and derives the client IP from the socket address. If you put the backend behind a reverse proxy, set `TRUST_PROXY` (to `1`, `true`, or your proxy hop count) — otherwise every visitor appears to come from the proxy IP: geo lookups degrade, all visitors share one 120 req/5 min ingestion bucket, and the admin login limiter would let a single attacker lock out the real admin.
+> **Reverse proxy & TRUST_PROXY:** in Docker Compose, `TRUST_PROXY` defaults to `1` so Express trusts the single hop from Nginx. Nginx forwards `X-Forwarded-For`, `X-Real-IP`, and `Host` headers. All rate-limit buckets and geo enrichment see the real client IP.
 
 ## Environment variables
 
@@ -105,17 +105,17 @@ Deployment topology (Docker Compose): `frontend` (port 3000) depends on a health
 
 | Variable | Used by | Required | Example | Purpose |
 |----------|---------|----------|---------|---------|
+| `NGINX_PORT` | `nginx` service | No (default `8080`) | `80` \| `8080` | Public host port for the Nginx edge entry point |
 | `POSTGRES_USER` | `db` service + backend `DATABASE_URL` | Yes | `portfolio_user` | PostgreSQL superuser name |
 | `POSTGRES_PASSWORD` | `db` service + backend `DATABASE_URL` | Yes | *(strong password)* | PostgreSQL password |
 | `POSTGRES_DB` | `db` service + backend `DATABASE_URL` | Yes | `portfolio` | Database name |
 | `ADMIN_JWT_SECRET` | backend | Yes (min 32 chars) | `openssl rand -hex 32` output | HS256 signing key for admin session JWTs |
 | `ANALYTICS_IP_SALT` | backend | Yes (min 32 chars) | `openssl rand -hex 32` output | Salt for the visitor IP hash (see [Privacy](#privacy)) |
-| `TRUST_PROXY` | backend | No (default: off) | `1` \| `true` \| *(hop count, e.g. `1`)* | Enables Express `trust proxy`. **Set it when the backend runs behind a reverse proxy** (nginx, Traefik, a cloud LB…) so `req.ip`, geo, the IP hash, and all rate-limit buckets use the real client IP from `X-Forwarded-For`. Leave unset/empty when the backend port is exposed directly — then `X-Forwarded-For` is ignored (unspoofable) and `req.ip` is the socket address. A hop count (e.g. `1` for a single proxy) is more precise than `true`. |
+| `TRUST_PROXY` | backend | No (default `1` in compose) | `1` \| `true` | Enables Express `trust proxy`. Set to `1` behind Nginx so `req.ip`, geo, and rate-limit buckets use the real client IP from `X-Forwarded-For`. |
 | `COOKIE_SAMESITE` | backend | No (default `strict`) | `strict` \| `lax` \| `none` | `SameSite` attribute of the admin session cookie |
 | `SESSION_TTL_HOURS` | backend | No (default `24`) | `24` | Admin session lifetime (JWT expiry + cookie `maxAge`) |
 | `RESEND_API_KEY` | backend (contact form) | Yes | `re_...` | Pre-existing; contact form email |
 | `GITHUB_TOKEN` | GitHub data fetching | No | `ghp_...` | Pre-existing; raises GitHub API rate limits |
-| `NEXT_PUBLIC_API_URL` | frontend container | No | `http://backend:4000/api` | See the Docker networking caveat in [Quick start](#quick-start-docker) |
 
 ### Backend `backend/.env` — local dev, migrations, seed
 
