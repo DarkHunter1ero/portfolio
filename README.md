@@ -7,6 +7,7 @@ Senior Full Stack Developer portfolio built with Next.js 15, React 19, TypeScrip
 ## Tech Stack
 
 ### Frontend
+
 - **Framework**: Next.js 15 (App Router)
 - **UI**: React 19, Tailwind CSS v4, shadcn/ui
 - **Animations**: Motion (Framer Motion)
@@ -15,12 +16,14 @@ Senior Full Stack Developer portfolio built with Next.js 15, React 19, TypeScrip
 - **Diagrams**: Mermaid.js (lazy-loaded)
 
 ### Backend
+
 - **Server**: Express.js + TypeScript
 - **Email**: Resend
 - **Validation**: Zod
 - **Security**: Rate limiting, CORS
 
 ### DevOps
+
 - **Containers**: Docker with multi-stage builds
 - **Orchestration**: Docker Compose (prod + dev)
 - **Deployment**: Vercel (frontend), Docker (backend)
@@ -53,6 +56,7 @@ portfolio_workspace/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 22+
 - Docker (optional, for containerized development)
 - Resend API key (for contact form emails)
@@ -80,6 +84,7 @@ docker compose up --build
 ```
 
 The stack runs behind an Nginx edge on [http://localhost:8080](http://localhost:8080):
+
 - Frontend: `http://localhost:8080/`
 - Backend API: `http://localhost:8080/api/`
 - Admin analytics dashboard: `http://localhost:8080/admin/analytics`
@@ -101,6 +106,7 @@ cp frontend/.env.example frontend/.env.local
 ```
 
 Required:
+
 - `RESEND_API_KEY` — Resend API key for contact form emails
 - `GITHUB_TOKEN` — (optional) GitHub PAT for higher API rate limits
 
@@ -146,3 +152,12 @@ docker compose up --build
 ## License
 
 All rights reserved — Diego Silva, 2026.
+
+Analiticas:
+http://localhost/admin/analytics
+usuario: diego1silva2@gmail.com
+pass: Isa.1234
+
+api: http://localhost/api/admin/analytics/\*
+http://localhost/api/health
+http://localhost/api/admin/auth/me
