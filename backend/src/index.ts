@@ -36,7 +36,7 @@ app.use("/api", adminAnalyticsRouter);
 
 app.use(errorHandler);
 
-async function main(): Promise<void> {
+async function initializeApp(): Promise<void> {
   try {
     await runMigrations();
     console.log("[DB] Migrations applied");
@@ -59,12 +59,20 @@ async function main(): Promise<void> {
     );
     process.exit(1);
   }
+}
 
+// Initialize app (runs migrations + seed)
+// In Vercel Serverless, this runs on first cold start
+// In local/Docker, this runs before app.listen()
+void initializeApp();
+
+// Only start HTTP server when running directly (local/Docker), not when imported by Vercel
+if (require.main === module) {
   app.listen(config.PORT, () => {
     console.log(`Backend running on port ${config.PORT}`);
   });
 }
 
-void main();
-
+// Export for Vercel Serverless Functions
 export default app;
+export { app, initializeApp };

@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+
+# Docker
+docker-compose*.yml
+Dockerfile
+docker/
+nginx/
+
+# Frontend (separate project)
+frontend/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment files (except example)
+.env*
+!.env.example
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db

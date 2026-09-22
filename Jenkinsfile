@@ -3,8 +3,10 @@ pipeline {
 
     // ─── Environment ─────────────────────────────────────────────
     environment {
-        // Vercel deploy token — create at https://vercel.com/account/tokens
-        VERCEL_TOKEN = credentials('VERCEL_TOKEN_FOR_PORTFOLIO')
+        // Vercel deploy token for frontend — create at https://vercel.com/account/tokens
+        VERCEL_TOKEN_FRONTEND = credentials('VERCEL_TOKEN_FOR_PORTFOLIO')
+        // Vercel deploy token for backend — create at https://vercel.com/account/tokens
+        VERCEL_TOKEN_BACKEND = credentials('VERCEL_TOKEN_FOR_PORTFOLIO_API')
     }
 
     stages {
@@ -106,6 +108,25 @@ pipeline {
         }
 
         // ═══════════════════════════════════════════════════════════
+        // DATABASE MIGRATIONS (run before backend deploy)
+        // ═══════════════════════════════════════════════════════════
+        stage('Backend — DB Migrate') {
+            when {
+                expression {
+                    env.BRANCH_NAME == null || env.BRANCH_NAME == 'main'
+                }
+            }
+            steps {
+                dir('backend') {
+                    // Run migrations against production database
+                    // Requires DATABASE_URL and other env vars to be set in Vercel
+                    // This runs locally in Jenkins with access to Vercel env vars
+                    bat 'npm run db:migrate'
+                }
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════
         // DEPLOY FRONTEND → VERCEL (production, solo en main)
         // ═══════════════════════════════════════════════════════════
         stage('Deploy Frontend to Vercel') {
@@ -119,23 +140,28 @@ pipeline {
             }
             steps {
                 bat """
-                    npx vercel deploy --prod --project portfolio --token=%VERCEL_TOKEN% --yes --cwd frontend
+                    npx vercel deploy --prod --project portfolio --token=%VERCEL_TOKEN_FRONTEND% --yes --cwd frontend
                 """
             }
         }
 
         // ═══════════════════════════════════════════════════════════
-        // OPCIONAL — Deploy Backend via Docker
+        // DEPLOY BACKEND → VERCEL (production, solo en main)
         // ═══════════════════════════════════════════════════════════
-        // Descomentar cuando tengas un registry configurado:
-        //
-        // stage('Deploy Backend — Docker') {
-        //     when { branch 'main' }
-        //     steps {
-        //         bat "docker build -f backend/Dockerfile -t portfolio-backend:%BUILD_NUMBER% backend"
-        //         // bat "docker push registry.example.com/portfolio-backend:%BUILD_NUMBER%"
-        //     }
-        // }
+        stage('Deploy Backend to Vercel') {
+            when {
+                expression {
+                    env.BRANCH_NAME == null || env.BRANCH_NAME == 'main'
+                }
+            }
+            steps {
+                dir('backend') {
+                    bat """
+                        npx vercel deploy --prod --project portfolio-api --token=%VERCEL_TOKEN_BACKEND% --yes --cwd .
+                    """
+                }
+            }
+        }
     }
 
     // ─── Post actions ────────────────────────────────────────────

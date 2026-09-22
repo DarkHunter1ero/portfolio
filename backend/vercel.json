@@ -1,0 +1,27 @@
+{
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "framework": "express",
+  "functions": {
+    "dist/index.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "CORS_ORIGIN": "https://portfolio-six-azure-69.vercel.app",
+    "DATABASE_URL": "@postgres-url",
+    "ADMIN_JWT_SECRET": "@admin-jwt-secret",
+    "ANALYTICS_IP_SALT": "@analytics-ip-salt",
+    "RESEND_API_KEY": "@resend-api-key",
+    "GITHUB_TOKEN": "@github-token",
+    "TRUST_PROXY": "1",
+    "COOKIE_SAMESITE": "none",
+    "SESSION_TTL_HOURS": "24"
+  }
+}
