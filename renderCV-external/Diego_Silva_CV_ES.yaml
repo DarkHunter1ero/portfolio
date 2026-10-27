@@ -12,6 +12,16 @@ cv:
       - "Enfocado en resolver problemas reales, participar en migraciones tecnológicas y entregar software de calidad. Utilizo herramientas de IA diariamente para aumentar productividad, y tengo conocimientos en AI Harness Engineering."
 
     experiencia_detallada:
+      - company: Centro de Ensayos de Software (CES)
+        position: Tester de Software - Automatización de Pruebas
+        start_date: 2026-10
+        end_date: presente
+        location: Uruguay
+        summary: Pruebas de software y automatización de pruebas de aplicaciones web
+        highlights:
+          - "Desarrollo y ejecución de pruebas automatizadas utilizando Java, Selenium y TestNG"
+          - "Contribución a la calidad del software mediante la automatización de pruebas"
+
       - company: ISA INTERFASE (6 años, 9 meses)
         position: Desarrollador Full Stack - Especialista en Seguridad Digital
         start_date: 2018-12
@@ -66,7 +76,10 @@ cv:
 
     tecnologias_expertise:
       - label: Backend y Seguridad
-        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, APIs REST/SOAP, PHP, JUnit, Mockito, OpenAPI, Swagger, Maven, Gradle, Log4j"
+        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, APIs REST/SOAP, PHP, OpenAPI, Swagger, Maven, Gradle, Log4j"
+
+      - label: Testing y Automatización de Pruebas
+        details: "Selenium, TestNG, JUnit, Mockito, Postman, JMeter
 
       - label: Frontend y Web
         details: "React, Angular, TypeScript, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
@@ -75,7 +88,7 @@ cv:
         details: "WildFly, Tomcat, Docker, GitHub/GitLab, AWS, Linux, Jenkins"
 
       - label: Herramientas y Metodologías
-        details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman, JMeter"
+        details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman"
 
     competencias_clave:
       - "**Resolución de Problemas:** Enfoque analítico para desafíos técnicos complejos"

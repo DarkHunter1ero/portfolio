@@ -12,6 +12,16 @@ cv:
       - "Focused on solving real-world problems, participating in technology migrations, and delivering high-quality software. I use AI tools daily to increase productivity and have knowledge of AI Harness Engineering."
 
     detailed_experience:
+      - company: CES (Centro de Ensayos de Software)
+        position: Software Tester - Test Automation
+        start_date: 2026-10
+        end_date: present
+        location: Uruguay
+        summary: Software testing and automated testing of web applications
+        highlights:
+          - "Development and execution of automated tests using Java, Selenium, and TestNG"
+          - "Contribution to software quality through automated testing"
+
       - company: ISA INTERFASE (6 years, 9 months)
         position: Full Stack Developer - Digital Security Specialist
         start_date: 2018-12
@@ -66,7 +76,10 @@ cv:
 
     technical_expertise:
       - label: Backend and Security
-        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs, PHP, JUnit, Mockito, OpenAPI, Swagger, Maven, Gradle, Log4j"
+        details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs, PHP, OpenAPI, Swagger, Maven, Gradle, Log4j"
+
+      - label: Testing and QA Automation
+        details: "Selenium, TestNG, JUnit, Mockito, Postman, JMeter"
 
       - label: Frontend and Web
         details: "React, Angular, TypeScript, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
@@ -75,7 +88,7 @@ cv:
         details: "WildFly, Tomcat, Docker, GitHub/GitLab, AWS, Linux, Jenkins"
 
       - label: Tools and Methodologies
-        details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman, JMeter"
+        details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman"
 
     key_competencies:
       - "**Problem Solving:** Analytical approach to complex technical challenges"
