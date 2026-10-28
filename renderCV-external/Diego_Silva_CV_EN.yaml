@@ -1,3 +1,4 @@
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
 cv:
   name: Diego Silva
@@ -8,19 +9,18 @@ cv:
 
   sections:
     about_me:
-      - "Full Stack Developer with over 6 years of experience, specialized in Java and Spring Boot for REST APIs, microservices, and secure backends. Additional experience with React and Angular (TypeScript). Experience working on digital identity, electronic signature, and authentication solutions."
+      - "Full Stack Developer with over 6 years of experience, specialized in Java and Spring Boot for REST APIs, microservices, and secure backends. Additional experience with React and Angular (TypeScript), as well as software test automation using Java, Selenium, and TestNG. Experience working on digital identity, electronic signature, and authentication solutions."
       - "Focused on solving real-world problems, participating in technology migrations, and delivering high-quality software. I use AI tools daily to increase productivity and have knowledge of AI Harness Engineering."
 
     detailed_experience:
-      - company: CES (Centro de Ensayos de Software)
+      - company: Software Testing Center (CES)
         position: Software Tester - Test Automation
         start_date: 2026-10
-        end_date: present
         location: Uruguay
-        summary: Software testing and automated testing of web applications
+        summary: Software testing and test automation for web applications
         highlights:
           - "Development and execution of automated tests using Java, Selenium, and TestNG"
-          - "Contribution to software quality through automated testing"
+          - "Contributing to software quality through test automation"
 
       - company: ISA INTERFASE (6 years, 9 months)
         position: Full Stack Developer - Digital Security Specialist
@@ -30,13 +30,13 @@ cv:
         summary: Digital identity, electronic signature, and secure authentication solutions
         highlights:
           - "Development and maintenance of digital signature applications integrated with TuID (Antel), using Java, Spring Boot, REST APIs, and OpenAPI/Swagger"
-          - "Development of MiRecibo: digital payslip signature platform with company-specific roles and configurations"
+          - "Development of MiRecibo: a digital payslip signing platform with company-specific roles and configurations"
           - "Management of digital certificates (CA) and HSM integration for certificate issuance, signing, and key protection"
           - "Securing REST endpoints using JWT and OAuth2"
-          - "Frontend development with Angular and React; Spring Boot backends deployed as bootable JARs (WildFly) and on Tomcat"
-          - "MySQL → PostgreSQL migrations and monolith-to-microservices migrations (HTTP communication), including database separation"
-          - "Linux deployment using systemctl, environment variables, and Log4j; testing with Postman, JMeter, JUnit, and Mockito"
-          - "Work in small teams using Scrum (2-week sprints), Jira, and Confluence"
+          - "Frontend development with Angular and React; Spring Boot backends deployed as executable JARs on WildFly and Tomcat"
+          - "MySQL to PostgreSQL migrations and monolith-to-microservices migrations, including database separation"
+          - "Linux deployments using systemctl, environment variables, and Log4j; testing with Postman, JMeter, JUnit, and Mockito"
+          - "Working in small teams using Scrum (2-week sprints), Jira, and Confluence"
 
       - company: Beacon42 (4 months)
         position: Magento Developer
@@ -47,7 +47,7 @@ cv:
         highlights:
           - "Developed a Magento plugin from scratch for invoice management"
           - "Custom integrations on Magento and work within the PHP/eCommerce ecosystem"
-          - "Collaborated in the growth of an expanding startup"
+          - "Contributed to the growth of an expanding startup"
 
       - company: Portlike (1 year, 1 month)
         position: PHP Web Developer
@@ -57,8 +57,8 @@ cv:
         summary: Development and maintenance of PHP web applications
         highlights:
           - "Development and maintenance of applications using Lumen (Laravel) and WordPress"
-          - "Main client: DirecTV"
-          - "Bug fixing and implementation of improvements for corporate client websites"
+          - "Main client: DIRECTV"
+          - "Bug fixing and implementation of improvements to corporate client websites"
 
     education:
       - institution: Faculty of Engineering (UDELAR) & UTU (3 years)
@@ -78,7 +78,7 @@ cv:
       - label: Backend and Security
         details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, REST/SOAP APIs, PHP, OpenAPI, Swagger, Maven, Gradle, Log4j"
 
-      - label: Testing and QA Automation
+      - label: Testing and Test Automation
         details: "Selenium, TestNG, JUnit, Mockito, Postman, JMeter"
 
       - label: Frontend and Web
@@ -98,8 +98,8 @@ cv:
 
     professional_goals:
       - "Seeking a stable position that allows me to grow professionally in a positive and collaborative environment"
-      - "Interested in software development projects, scalable architectures, and system modernization"
-      - "Open to different domains (fintech, digital products, enterprise solutions)"
+      - "Interested in software development, test automation, quality assurance, scalable architectures, and system modernization"
+      - "Open to different domains, including fintech, digital products, and enterprise solutions"
       - "Value environments that foster continuous learning and long-term technical growth"
 
     personal_information:
@@ -147,6 +147,6 @@ locale:
   present: present
 
 settings:
-  current_date: "2026-09-15"
+  current_date: "2026-10-27"
   render_command:
     pdf_path: Diego_Silva_CV.pdf

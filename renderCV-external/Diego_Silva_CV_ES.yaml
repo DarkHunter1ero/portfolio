@@ -1,3 +1,4 @@
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
 cv:
   name: Diego Silva
@@ -8,14 +9,13 @@ cv:
 
   sections:
     sobre_mi:
-      - "Desarrollador Full Stack con más de 6 años de experiencia, especializado en Java y Spring Boot para APIs REST, microservicios y backends seguros. Experiencia complementaria en React y Angular (TypeScript). He trabajado en soluciones de identidad digital, firma electrónica y autenticación."
-      - "Enfocado en resolver problemas reales, participar en migraciones tecnológicas y entregar software de calidad. Utilizo herramientas de IA diariamente para aumentar productividad, y tengo conocimientos en AI Harness Engineering."
+      - "Desarrollador Full Stack con más de 6 años de experiencia, especializado en Java y Spring Boot para APIs REST, microservicios y backends seguros. Experiencia complementaria en React y Angular (TypeScript), así como en automatización de pruebas de software con Java, Selenium y TestNG. He trabajado en soluciones de identidad digital, firma electrónica y autenticación."
+      - "Enfocado en resolver problemas reales, participar en migraciones tecnológicas y entregar software de calidad. Utilizo herramientas de IA diariamente para aumentar la productividad y tengo conocimientos en AI Harness Engineering."
 
     experiencia_detallada:
       - company: Centro de Ensayos de Software (CES)
         position: Tester de Software - Automatización de Pruebas
         start_date: 2026-10
-        end_date: presente
         location: Uruguay
         summary: Pruebas de software y automatización de pruebas de aplicaciones web
         highlights:
@@ -32,10 +32,10 @@ cv:
           - "Desarrollo y mantenimiento de aplicaciones de firma digital integradas con TuID (Antel), usando Java, Spring Boot, APIs REST y OpenAPI/Swagger"
           - "Desarrollo de MiRecibo: plataforma de firma digital de recibos de sueldo con roles y configuraciones por empresa"
           - "Gestión de certificados digitales (CA) e integración con HSM para emisión, firma y resguardo de claves"
-          - "Securización de endpoints REST con JWT y OAuth2"
-          - "Frontend con Angular y React; backends Spring Boot en JARs bootables (WildFly) y Tomcat"
-          - "Migraciones MySQL → PostgreSQL y de monolito a microservicios (comunicación HTTP), dividiendo bases de datos"
-          - "Deploy en Linux con systemctl, variables de entorno, Log4j, pruebas con Postman, JMeter, JUnit y Mockito"
+          - "Seguridad de endpoints REST mediante JWT y OAuth2"
+          - "Desarrollo frontend con Angular y React; backends Spring Boot desplegados (JARs bootables) en WildFly y Tomcat"
+          - "Migraciones de MySQL a PostgreSQL y de monolitos a microservicios, incluyendo separación de bases de datos"
+          - "Despliegues en Linux con systemctl, variables de entorno y Log4j; pruebas con Postman, JMeter, JUnit y Mockito"
           - "Trabajo en equipos pequeños con Scrum (sprints de 2 semanas), Jira y Confluence"
 
       - company: Beacon42 (4 meses)
@@ -57,16 +57,16 @@ cv:
         summary: Desarrollo y mantenimiento de aplicaciones web en PHP
         highlights:
           - "Desarrollo y mantenimiento de aplicaciones con Lumen (Laravel) y WordPress"
-          - "Cliente principal: DirectTV"
-          - "Corrección de bugs e implementación de mejoras en sitios de clientes corporativos"
+          - "Cliente principal: DIRECTV"
+          - "Corrección de errores e implementación de mejoras en sitios web de clientes corporativos"
 
     formacion_academica:
-      - institution: Facultad de Ingeniería (UDELAR) & UTU (3 años)
+      - institution: Facultad de Ingeniería (UDELAR) y UTU (3 años)
         area: Tecnólogo en Informática
         start_date: 2013-03
         end_date: 2015-12
         location: Uruguay
-        summary: "Formación integral en desarrollo de software, arquitecturas de sistemas y gestión de proyectos."
+        summary: "Formación integral en desarrollo de software, arquitectura de sistemas y gestión de proyectos."
 
       - institution: Universidad del Trabajo del Uruguay (UTU) (3 años)
         area: Bachillerato Tecnológico en Electromecánica
@@ -79,7 +79,7 @@ cv:
         details: "Java, Spring Boot, HSM, OAuth2, JWT, PostgreSQL, MySQL, APIs REST/SOAP, PHP, OpenAPI, Swagger, Maven, Gradle, Log4j"
 
       - label: Testing y Automatización de Pruebas
-        details: "Selenium, TestNG, JUnit, Mockito, Postman, JMeter
+        details: "Selenium, TestNG, JUnit, Mockito, Postman, JMeter"
 
       - label: Frontend y Web
         details: "React, Angular, TypeScript, JavaScript, HTML/CSS, Thymeleaf, WordPress, Magento"
@@ -91,29 +91,29 @@ cv:
         details: "Scrum, Jira, Confluence, Git, Microsoft Teams, Slack, Postman"
 
     competencias_clave:
-      - "**Resolución de Problemas:** Enfoque analítico para desafíos técnicos complejos"
+      - "**Resolución de problemas:** Enfoque analítico para desafíos técnicos complejos"
       - "**Adaptabilidad:** Transición exitosa entre roles y tecnologías"
-      - "**Trabajo en Equipo:** Colaboración efectiva en equipos multidisciplinarios"
-      - "**Orientación a Resultados:** Enfoque práctico para entregar valor"
+      - "**Trabajo en equipo:** Colaboración efectiva en equipos multidisciplinarios"
+      - "**Orientación a resultados:** Enfoque práctico para generar valor"
 
     perspectiva_profesional:
       - "Busco un trabajo estable que me permita crecer profesionalmente en un ambiente agradable y colaborativo"
-      - "Interesado en proyectos de desarrollo de software, arquitecturas escalables y modernización de sistemas"
-      - "Abierto a distintos dominios (fintech, productos digitales, soluciones empresariales)"
-      - "Valoro entornos que fomenten aprendizaje continuo y crecimiento técnico a largo plazo"
+      - "Interesado en proyectos de desarrollo de software, automatización de pruebas, aseguramiento de la calidad, arquitecturas escalables y modernización de sistemas"
+      - "Abierto a distintos dominios, como fintech, productos digitales y soluciones empresariales"
+      - "Valoro los entornos que fomentan el aprendizaje continuo y el crecimiento técnico a largo plazo"
 
     informacion_personal:
-      - "**Fecha de Nacimiento:** 20 de febrero de 1992"
+      - "**Fecha de nacimiento:** 20 de febrero de 1992"
       - "**Edad:** 34 años"
       - "**Nacionalidad:** Uruguaya"
-      - "**Cédula:** 4.860.251-1"
-      - "**Libreta de condicur:** Cat. E (taxis)"
+      - "**Cédula de identidad:** 4.860.251-1"
+      - "**Libreta de conducir:** Categoría E (taxis)"
 
     referencias:
       - "**Juan Manuel Miraballes** - Product Manager / ISA INTERFASE - +598 99 336 405 - juan.miraballes@interfase.uy"
       - "**Rodrigo Aratti** - Country Manager Paraguay / ISA INTERFASE - +598 98 530 100"
-      - "**Matías Pintaluba** - Srum Master / ISA INTERFASE - Matías.Pintaluba@interfase.uy"
-      - "**Ignacio Blitzer** - Technical Lead / PORTLIKE - Linkedin: https://www.linkedin.com/in/ignacio-blitzer-854369a1/"
+      - "**Matías Pintaluba** - Scrum Master / ISA INTERFASE - Matías.Pintaluba@interfase.uy"
+      - "**Ignacio Blitzer** - Technical Lead / PORTLIKE - LinkedIn: https://www.linkedin.com/in/ignacio-blitzer-854369a1/"
 
 design:
   theme: classic
@@ -147,6 +147,6 @@ locale:
   present: presente
 
 settings:
-  current_date: "2026-09-15"
+  current_date: "2026-10-27"
   render_command:
     pdf_path: Diego_Silva_CV.pdf
